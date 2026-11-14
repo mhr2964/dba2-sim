@@ -1132,9 +1132,24 @@ def test_a_positive_recovery_probability_without_candidates_raises():
 # `loose_ball_recovery_probability` existed. The two new `TerminalOutcome`
 # fields are excluded because adding a field is a shape change, not a
 # behaviour change (TR-7.1's own note).
+#
+# Floats are rounded to 12 significant digits before hashing. Windows (UCRT)
+# and Linux (glibc) libm round exp/pow differently in the last bit, so a raw
+# repr hash only matched on the machine that recorded it. Rounding keeps every
+# real behaviour change visible (those move probabilities far more than 1 ulp)
+# and makes the digest the same on both platforms.
 _PRE_CHANGE_DEFAULT_CALL_DIGEST = (
-    "b8a34f3c1386e90af61583b0413ebfb6a07e9fa95b26e484358c06d4627600c5"
+    "86f33bc80bdf53fcf7d0ec5cd05cd7f8418b3240d2da55e5c1accee7ac15b802"
 )
+
+
+def _portable(value):
+    """`value` with every float rounded to 12 significant digits, recursively."""
+    if isinstance(value, float):
+        return float(f"{value:.12g}")
+    if isinstance(value, (list, tuple)):
+        return type(value)(_portable(v) for v in value)
+    return value
 
 
 def test_default_call_is_byte_identical_to_the_pre_change_engine():
@@ -1165,6 +1180,7 @@ def test_default_call_is_byte_identical_to_the_pre_change_engine():
             record = result.record
             digest.update(
                 repr(
+                    _portable(
                     (
                         record.outcome,
                         list(result.probabilities.items()),
@@ -1175,6 +1191,7 @@ def test_default_call_is_byte_identical_to_the_pre_change_engine():
                         record.clock_seconds,
                         record.home_score,
                         record.away_score,
+                    )
                     )
                 ).encode()
             )
