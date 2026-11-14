@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DBA 2 — Matchup Sim</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+
+  :root {
+    --bg: #f4f3ef;
+    --surface: #ffffff;
+    --surface-alt: #ecebe6;
+    --border: #ddd9d0;
+    --text: #17181c;
+    --text-muted: #686b6f;
+    --text-faint: #93958f;
+    --accent: #1d428a;
+    --win: #1c6e3f;
+    --loss: #a13327;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #101215; --surface: #191c21; --surface-alt: #20242a; --border: #2c3038;
+      --text: #edeef0; --text-muted: #9a9ea6; --text-faint: #6b6f77;
+      --win: #4caf7d; --loss: #e0685a;
+      color-scheme: dark;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+    margin: 0; padding: 0 16px 60px;
+    max-width: 920px; margin-inline: auto;
+  }
+  .eyebrow {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--text-faint); margin: 28px 0 6px;
+  }
+  h1 {
+    font-family: 'Oswald', sans-serif; font-weight: 700; font-size: clamp(1.6rem, 5vw, 2.2rem);
+    text-transform: uppercase; letter-spacing: 0.01em; margin: 0 0 6px; text-wrap: balance;
+  }
+  .subtitle { color: var(--text-muted); font-size: 0.9rem; margin: 0 0 24px; max-width: 62ch; }
+
+  /* picker */
+  #picker {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+    padding: 24px; display: flex; flex-direction: column; gap: 18px;
+  }
+  .picker-row { display: flex; gap: 16px; align-items: flex-end; flex-wrap: wrap; }
+  .picker-field { flex: 1; min-width: 220px; display: flex; flex-direction: column; gap: 6px; }
+  .picker-field label {
+    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--text-faint);
+  }
+  select {
+    font-family: 'IBM Plex Sans', sans-serif; font-size: 0.95rem; padding: 10px 12px;
+    border-radius: 10px; border: 1px solid var(--border); background: var(--surface-alt); color: var(--text);
+  }
+  .vs {
+    font-family: 'Oswald', sans-serif; font-weight: 600; color: var(--text-faint); font-size: 1.1rem;
+    padding-bottom: 10px;
+  }
+  button.primary {
+    font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 0.95rem; text-transform: uppercase;
+    letter-spacing: 0.04em; padding: 13px 20px; border-radius: 10px; border: none;
+    background: var(--text); color: var(--bg); cursor: pointer;
+  }
+  button.primary:disabled { opacity: 0.5; cursor: default; }
+  button.secondary {
+    font-family: 'IBM Plex Sans', sans-serif; font-weight: 600; font-size: 0.82rem;
+    padding: 9px 16px; border-radius: 8px; border: 1px solid var(--border);
+    background: var(--surface); color: var(--text-muted); cursor: pointer;
+  }
+  #status { font-size: 0.85rem; color: var(--text-muted); min-height: 1.2em; }
+  #roster-note { font-size: 0.76rem; color: var(--text-faint); line-height: 1.5; }
+
+  /* series */
+  #series-view { display: none; }
+  .series-header {
+    display: flex; justify-content: space-between; align-items: center; gap: 12px;
+    margin-bottom: 16px; flex-wrap: wrap;
+  }
+  .series-title { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 1.3rem; text-transform: uppercase; }
+  .series-status { font-size: 0.85rem; color: var(--text-muted); }
+  .series-status .winner { color: var(--win); font-weight: 600; }
+
+  .tabs { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; margin-bottom: 20px; }
+  .tab {
+    flex: 0 0 auto; display: flex; flex-direction: column; align-items: flex-start; gap: 2px;
+    padding: 8px 14px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface);
+    color: var(--text-muted); font-family: 'IBM Plex Sans', sans-serif; cursor: pointer; min-width: 100px;
+  }
+  .tab .tab-label { font-size: 0.66rem; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; }
+  .tab .tab-score { font-family: 'Oswald', sans-serif; font-size: 0.92rem; font-weight: 600; color: var(--text); font-variant-numeric: tabular-nums; }
+  .tab[aria-selected="true"] { background: var(--text); border-color: var(--text); }
+  .tab[aria-selected="true"] .tab-label { color: var(--bg); opacity: 0.65; }
+  .tab[aria-selected="true"] .tab-score { color: var(--bg); }
+
+  .scoreboard { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; margin-bottom: 22px; }
+  .score-row { display: flex; }
+  .score-side { flex: 1; padding: 18px 18px 14px; display: flex; flex-direction: column; gap: 2px; }
+  .team-name { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); }
+  .team-name .swatch { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 6px; vertical-align: middle; }
+  .team-score { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: clamp(2rem, 8vw, 2.6rem); line-height: 1; font-variant-numeric: tabular-nums; }
+  .team-result { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+  .team-result.win { color: var(--win); }
+  .team-result.loss { color: var(--loss); }
+  .periods { border-top: 1px solid var(--border); padding: 10px 18px 14px; }
+  .periods table { width: 100%; border-collapse: collapse; font-size: 0.78rem; }
+  .periods th, .periods td { text-align: center; padding: 3px 6px; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+  .periods th { font-weight: 600; color: var(--text-faint); font-size: 0.66rem; letter-spacing: 0.04em; text-transform: uppercase; }
+  .periods td:first-child, .periods th:first-child { text-align: left; color: var(--text); font-weight: 600; }
+  .meta-line { padding: 0 18px 14px; font-size: 0.74rem; color: var(--text-faint); }
+
+  .box { margin-bottom: 22px; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; background: var(--surface); }
+  .box-header { padding: 10px 16px; font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 0.92rem; text-transform: uppercase; letter-spacing: 0.02em; color: #fff; }
+  .table-scroll { overflow-x: auto; }
+  table.stats { width: 100%; border-collapse: collapse; font-size: 0.78rem; white-space: nowrap; }
+  table.stats th, table.stats td { padding: 6px 8px; text-align: right; font-variant-numeric: tabular-nums; border-bottom: 1px solid var(--border); }
+  table.stats th { color: var(--text-faint); font-weight: 600; font-size: 0.66rem; letter-spacing: 0.03em; text-transform: uppercase; background: var(--surface-alt); }
+  table.stats td.name, table.stats th.name { text-align: left; color: var(--text); font-weight: 500; position: sticky; left: 0; background: var(--surface); }
+  table.stats th.name { background: var(--surface-alt); }
+  table.stats td.pos { color: var(--text-faint); text-align: left; }
+  table.stats tr:last-child td { border-bottom: none; }
+  table.stats tr.totals td { font-weight: 700; background: var(--surface-alt); }
+
+  footer { margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--border); font-size: 0.76rem; color: var(--text-faint); line-height: 1.5; }
+</style>
+</head>
+<body>
+
+<div class="eyebrow">DBA 2 — possession engine, live local sim</div>
+<h1>Matchup Simulator</h1>
+<p class="subtitle">Pick a season and a team on each side — any real NBA team-season from 1996-97 through 2025-26 — and simulate a real best-of-7 series against the actual DBA 2 possession engine, running live on this machine — nothing here is precomputed.</p>
+
+<div id="picker">
+  <div class="picker-row">
+    <div class="picker-field">
+      <label for="season-a-select">Season — Team A (home-court advantage)</label>
+      <select id="season-a-select"></select>
+    </div>
+    <div class="picker-field">
+      <label for="team-a-select">Team A</label>
+      <select id="team-a-select"></select>
+    </div>
+  </div>
+  <div class="picker-row">
+    <div class="vs">VS</div>
+  </div>
+  <div class="picker-row">
+    <div class="picker-field">
+      <label for="season-b-select">Season — Team B</label>
+      <select id="season-b-select"></select>
+    </div>
+    <div class="picker-field">
+      <label for="team-b-select">Team B</label>
+      <select id="team-b-select"></select>
+    </div>
+  </div>
+  <div class="picker-row">
+    <button class="primary" id="sim-btn" type="button">Simulate Best-of-7</button>
+    <div id="status"></div>
+  </div>
+  <div id="roster-note">Rosters are real: each team-season's top 10 players by real minutes played that season, derived straight from <code>seeds/real_players/&lt;season&gt;.json</code>. Team identity reflects each franchise's current name/city even for old seasons (e.g. pre-2008 Thunder entries are really the Seattle SuperSonics) — a limit of the underlying data, not something invented here.</div>
+</div>
+
+<div id="series-view">
+  <div class="series-header">
+    <div class="series-title" id="series-title"></div>
+    <button class="secondary" id="restart-btn" type="button">&larr; Restart</button>
+  </div>
+  <div class="series-status" id="series-status"></div>
+  <div class="tabs" role="tablist" id="game-tabs" style="margin-top:16px;"></div>
+  <div class="scoreboard" id="scoreboard"></div>
+  <div class="box" id="box-home"></div>
+  <div class="box" id="box-away"></div>
+</div>
+
+<footer>
+  <strong>Reading these:</strong> position labels are a coarse guess (the underlying data only distinguishes G / F / C, not PG-vs-SG or SF-vs-PF), and playing time reflects each player's rated overall rather than their real historical role — a bench player can land starter minutes here if his rated overall is high enough. Team identity and player ratings are real; rotations, game flow, and the series outcome are the sim engine's own, freshly computed on this run.
+</footer>
+
+<script>
+const COLS = [
+  ["min", "MIN"], ["pts", "PTS"], ["fgm_fga", "FG"], ["tpm_tpa", "3P"], ["ftm_fta", "FT"],
+  ["oreb", "OREB"], ["dreb", "DREB"], ["reb", "REB"], ["ast", "AST"], ["stl", "STL"],
+  ["blk", "BLK"], ["tov", "TOV"], ["pf", "PF"], ["pm", "+/-"],
+];
+
+const TEAM_COLORS = {
+  ATL: "#E03A3E", BKN: "#000000", BOS: "#007A33", CHA: "#1D1160", CHI: "#CE1141",
+  CLE: "#860038", DAL: "#00538C", DEN: "#0E2240", DET: "#C8102E", GSW: "#1D428A",
+  HOU: "#CE1141", IND: "#002D62", LAC: "#C8102E", LAL: "#552583", MEM: "#5D76A9",
+  MIA: "#98002E", MIL: "#00471B", MIN: "#0C2340", NOP: "#0C2340", NYK: "#006BB6",
+  OKC: "#007AC1", ORL: "#0077C0", PHI: "#006BB6", PHX: "#1D1160", POR: "#E03A3E",
+  SAC: "#5A2D81", SAS: "#4A4E54", TOR: "#CE1141", UTA: "#002B5C", WAS: "#002B5C",
+};
+function colorFor(label) {
+  for (const code in TEAM_COLORS) {
+    if (label.includes(code)) return TEAM_COLORS[code];
+  }
+  return "#4b5563";
+}
+function teamColorByLabel(label) {
+  // label is a full "City Name" string; match by known codes embedded in team catalog instead.
+  return TEAM_COLOR_BY_LABEL[label] || "#4b5563";
+}
+
+let TEAM_COLOR_BY_LABEL = {};
+let currentSeries = null;
+let CATALOG = [];
+let SEASONS = [];
+
+function fmtCell(row, key) {
+  if (key === "min") return row.min === null ? "–" : row.min.toFixed(1);
+  if (key === "fgm_fga") return `${row.fgm}-${row.fga}`;
+  if (key === "tpm_tpa") return `${row.tpm}-${row.tpa}`;
+  if (key === "ftm_fta") return `${row.ftm}-${row.fta}`;
+  if (key === "pm") return row.pm === null ? "–" : (row.pm > 0 ? `+${row.pm}` : `${row.pm}`);
+  return row[key];
+}
+
+function seasonLabel(season) {
+  const endYy = (season + 1) % 100;
+  return `${season}-${String(endYy).padStart(2, "0")}`;
+}
+
+function populateSeasonSelect(selectId) {
+  const sel = document.getElementById(selectId);
+  sel.innerHTML = "";
+  // Newest first -- most usable default for a flat dropdown of 30 seasons.
+  SEASONS.forEach(season => {
+    const opt = document.createElement("option");
+    opt.value = season; opt.textContent = seasonLabel(season);
+    sel.appendChild(opt);
+  });
+}
+
+function populateTeamSelect(selectId, season) {
+  const sel = document.getElementById(selectId);
+  sel.innerHTML = "";
+  const teams = CATALOG
+    .filter(t => t.season === Number(season))
+    .slice()
+    .sort((a, b) => a.city.localeCompare(b.city) || a.name.localeCompare(b.name));
+  teams.forEach(t => {
+    const opt = document.createElement("option");
+    opt.value = t.key; opt.textContent = `${t.city} ${t.name}`;
+    sel.appendChild(opt);
+  });
+}
+
+async function loadTeams() {
+  const res = await fetch("/api/teams");
+  const data = await res.json();
+  CATALOG = data.teams;
+  CATALOG.forEach(t => { TEAM_COLOR_BY_LABEL[t.label] = TEAM_COLORS[t.code] || "#4b5563"; });
+  SEASONS = [...new Set(CATALOG.map(t => t.season))].sort((a, b) => b - a);
+
+  populateSeasonSelect("season-a-select");
+  populateSeasonSelect("season-b-select");
+  const seasonA = document.getElementById("season-a-select");
+  const seasonB = document.getElementById("season-b-select");
+  seasonA.value = SEASONS[0];
+  seasonB.value = SEASONS[0];
+  populateTeamSelect("team-a-select", seasonA.value);
+  populateTeamSelect("team-b-select", seasonB.value);
+  const teamB = document.getElementById("team-b-select");
+  if (teamB.options.length > 1) teamB.selectedIndex = 1;
+
+  seasonA.addEventListener("change", () => populateTeamSelect("team-a-select", seasonA.value));
+  seasonB.addEventListener("change", () => populateTeamSelect("team-b-select", seasonB.value));
+}
+
+function renderTabs(games, activeIdx) {
+  const tabs = document.getElementById("game-tabs");
+  tabs.innerHTML = "";
+  games.forEach((g, i) => {
+    const btn = document.createElement("button");
+    btn.id = `tab-${i}`;
+    btn.className = "tab";
+    btn.type = "button";
+    btn.role = "tab";
+    btn.setAttribute("aria-selected", i === activeIdx ? "true" : "false");
+    btn.innerHTML = `<span class="tab-label">Game ${g.game_number}</span><span class="tab-score">${g.home_score}–${g.away_score}</span>`;
+    btn.addEventListener("click", () => renderGame(i));
+    tabs.appendChild(btn);
+  });
+}
+
+function renderScoreboard(g) {
+  const homeWin = g.home_score > g.away_score;
+  const el = document.getElementById("scoreboard");
+  const periodHeaders = g.periods.map(p => `<th>${p.period <= 4 ? "Q" + p.period : "OT" + (p.period - 4)}</th>`).join("");
+  const homePeriods = g.periods.map(p => `<td>${p.home}</td>`).join("");
+  const awayPeriods = g.periods.map(p => `<td>${p.away}</td>`).join("");
+  el.innerHTML = `
+    <div class="score-row">
+      <div class="score-side" style="background: color-mix(in srgb, ${teamColorByLabel(g.home_label)} 12%, var(--surface));">
+        <div class="team-name"><span class="swatch" style="background:${teamColorByLabel(g.home_label)}"></span>${g.home_label}</div>
+        <div class="team-score">${g.home_score}</div>
+        <div class="team-result ${homeWin ? "win" : "loss"}">${homeWin ? "W" : "L"}</div>
+      </div>
+      <div class="score-side" style="background: color-mix(in srgb, ${teamColorByLabel(g.away_label)} 12%, var(--surface));">
+        <div class="team-name"><span class="swatch" style="background:${teamColorByLabel(g.away_label)}"></span>${g.away_label}</div>
+        <div class="team-score">${g.away_score}</div>
+        <div class="team-result ${homeWin ? "loss" : "win"}">${homeWin ? "L" : "W"}</div>
+      </div>
+    </div>
+    <div class="periods">
+      <table>
+        <thead><tr><th></th>${periodHeaders}<th>Final</th></tr></thead>
+        <tbody>
+          <tr><td>${g.home_label.split(" ").pop()}</td>${homePeriods}<td>${g.home_score}</td></tr>
+          <tr><td>${g.away_label.split(" ").pop()}</td>${awayPeriods}<td>${g.away_score}</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="meta-line">Game ${g.game_number} · seed ${g.seed}${g.ot ? ` · ${g.ot} OT period(s)` : ""} · series ${g.wins_a_after}-${g.wins_b_after}</div>
+  `;
+}
+
+function renderBox(containerId, side, team, color) {
+  const el = document.getElementById(containerId);
+  const headerCols = COLS.map(([key, label]) => `<th>${label}</th>`).join("");
+  const rows = team.rows.map(row => {
+    const cls = row.name === "Team" ? "totals" : "";
+    const cells = COLS.map(([key]) => `<td>${fmtCell(row, key)}</td>`).join("");
+    return `<tr class="${cls}"><td class="name">${row.name}</td><td class="pos">${row.pos}</td>${cells}</tr>`;
+  }).join("");
+  el.innerHTML = `
+    <div class="box-header" style="background:${color}">${team.label}</div>
+    <div class="table-scroll">
+      <table class="stats"><thead><tr><th class="name">Player</th><th>Pos</th>${headerCols}</tr></thead><tbody>${rows}</tbody></table>
+    </div>
+  `;
+}
+
+function renderGame(idx) {
+  const g = currentSeries.games[idx];
+  renderTabs(currentSeries.games, idx);
+  renderScoreboard(g);
+  renderBox("box-home", "home", g.home, teamColorByLabel(g.home_label));
+  renderBox("box-away", "away", g.away, teamColorByLabel(g.away_label));
+}
+
+function renderSeries(series) {
+  currentSeries = series;
+  document.getElementById("picker").style.display = "none";
+  document.getElementById("series-view").style.display = "block";
+  document.getElementById("series-title").textContent = `${series.label_a} vs ${series.label_b}`;
+  const done = series.wins_a === 4 || series.wins_b === 4;
+  document.getElementById("series-status").innerHTML = done
+    ? `<span class="winner">${series.winner} wins the series</span> ${series.wins_a}–${series.wins_b}`
+    : `In progress: ${series.wins_a}–${series.wins_b}`;
+  renderGame(series.games.length - 1);
+}
+
+async function simulate() {
+  const teamA = document.getElementById("team-a-select").value;
+  const teamB = document.getElementById("team-b-select").value;
+  const status = document.getElementById("status");
+  const btn = document.getElementById("sim-btn");
+  if (teamA === teamB) { status.textContent = "Pick two different teams."; return; }
+  btn.disabled = true;
+  status.textContent = "Simulating (this runs the real engine live, up to 7 games)…";
+  try {
+    const res = await fetch("/api/series", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ team_a: teamA, team_b: teamB }),
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || "sim failed");
+    renderSeries(data);
+  } catch (e) {
+    status.textContent = `Error: ${e.message}`;
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+function restart() {
+  document.getElementById("series-view").style.display = "none";
+  document.getElementById("picker").style.display = "flex";
+  document.getElementById("status").textContent = "";
+  currentSeries = null;
+}
+
+document.getElementById("sim-btn").addEventListener("click", simulate);
+document.getElementById("restart-btn").addEventListener("click", restart);
+loadTeams();
+</script>
+</body>
+</html>

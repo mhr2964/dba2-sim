@@ -1,0 +1,24 @@
+{
+  "title": "New York Knicks -- pending trade offers",
+  "description": "2 received, 1 sent. Offers expire when the league moves to a new phase.\nAnswer a received offer with `/offer-respond` (accept or reject) or `/counter-offer`.",
+  "fields": [
+    {
+      "name": "Received #7 from BOS",
+      "value": "You get: Marcus Webb (SF, 74 OVR), Jalen Hart (PG, 69 OVR), 2027 round 1 pick (BOS)\nYou send: Devin Ortiz (C, 81 OVR)\nProposed by the BOS AI GM during TRADE_DEADLINE",
+      "inline": false
+    },
+    {
+      "name": "Received #8 from BOS",
+      "value": "You get: Marcus Webb (SF, 74 OVR), Jalen Hart (PG, 69 OVR), 2027 round 1 pick (BOS)\nYou send: Devin Ortiz (C, 81 OVR)\nProposed by <@555> during TRADE_DEADLINE",
+      "inline": false
+    },
+    {
+      "name": "Sent #10 to BOS",
+      "value": "You get: Marcus Webb (SF, 74 OVR), 2027 round 1 pick (BOS)\nYou send: Devin Ortiz (C, 81 OVR)\nProposed by <@777> during TRADE_DEADLINE",
+      "inline": false
+    }
+  ],
+  "color": 5793266,
+  "footer": "",
+  "author": ""
+}

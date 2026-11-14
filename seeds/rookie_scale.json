@@ -1,0 +1,36 @@
+{
+  "_note": "The REAL, REPAIRED 30-row rookie_scale table (phase-2-manager-minds.md §12 step 10, T1c) -- rows 1-29 are migration 003's own seeded 2024-25 approximation, byte-identical; row 30 carries migration 009's Decision P2-33 repair (year1-4 = 3,079,775 / 3,233,763 / 3,387,752 / 3,064,280), not migration 003's corrupt original (2,082,678 / 2,186,812 / 2,290,946 / 2,000,000). This is NOT tests/fixtures/managers.py::ROOKIE_SCALE, which is deliberately left un-repaired at row 30 for step-5's own test purposes -- this file must never be sourced from that fixture. tests/integration/test_contract_repo.py asserts this file stays byte-identical (all four salary columns) to what contract_repo.list_rookie_scale returns from the real, migrated database, so the two can never silently drift apart.",
+
+  "rookie_scale": [
+    { "pick_number": 1,  "year_1_salary": 10306508, "year_2_salary": 10821833, "year_3_salary": 11337157, "year_4_salary": 14858652 },
+    { "pick_number": 2,  "year_1_salary": 9700911,  "year_2_salary": 10185957, "year_3_salary": 10671002, "year_4_salary": 13925000 },
+    { "pick_number": 3,  "year_1_salary": 9145524,  "year_2_salary": 9602800,  "year_3_salary": 10060076, "year_4_salary": 13105500 },
+    { "pick_number": 4,  "year_1_salary": 8633147,  "year_2_salary": 9064804,  "year_3_salary": 9496462,  "year_4_salary": 12330000 },
+    { "pick_number": 5,  "year_1_salary": 8160117,  "year_2_salary": 8568123,  "year_3_salary": 8976128,  "year_4_salary": 11600000 },
+    { "pick_number": 6,  "year_1_salary": 7722917,  "year_2_salary": 8109063,  "year_3_salary": 8495209,  "year_4_salary": 10910000 },
+    { "pick_number": 7,  "year_1_salary": 7319127,  "year_2_salary": 7685083,  "year_3_salary": 8051039,  "year_4_salary": 10265000 },
+    { "pick_number": 8,  "year_1_salary": 6945399,  "year_2_salary": 7292669,  "year_3_salary": 7639939,  "year_4_salary": 9662000 },
+    { "pick_number": 9,  "year_1_salary": 6599445,  "year_2_salary": 6929417,  "year_3_salary": 7259389,  "year_4_salary": 9097000 },
+    { "pick_number": 10, "year_1_salary": 6279079,  "year_2_salary": 6593033,  "year_3_salary": 6906986,  "year_4_salary": 8571000 },
+    { "pick_number": 11, "year_1_salary": 5982158,  "year_2_salary": 6281266,  "year_3_salary": 6580374,  "year_4_salary": 8080000 },
+    { "pick_number": 12, "year_1_salary": 5706614,  "year_2_salary": 5991945,  "year_3_salary": 6277275,  "year_4_salary": 7622000 },
+    { "pick_number": 13, "year_1_salary": 5450437,  "year_2_salary": 5722959,  "year_3_salary": 5995481,  "year_4_salary": 7195000 },
+    { "pick_number": 14, "year_1_salary": 5212638,  "year_2_salary": 5473270,  "year_3_salary": 5733902,  "year_4_salary": 6796000 },
+    { "pick_number": 15, "year_1_salary": 4992269,  "year_2_salary": 5241882,  "year_3_salary": 5491496,  "year_4_salary": 6425000 },
+    { "pick_number": 16, "year_1_salary": 4787395,  "year_2_salary": 5026765,  "year_3_salary": 5266134,  "year_4_salary": 6078000 },
+    { "pick_number": 17, "year_1_salary": 4597110,  "year_2_salary": 4826966,  "year_3_salary": 5056821,  "year_4_salary": 5756000 },
+    { "pick_number": 18, "year_1_salary": 4420537,  "year_2_salary": 4641564,  "year_3_salary": 4862590,  "year_4_salary": 5455000 },
+    { "pick_number": 19, "year_1_salary": 4256826,  "year_2_salary": 4469667,  "year_3_salary": 4682508,  "year_4_salary": 5174000 },
+    { "pick_number": 20, "year_1_salary": 4105149,  "year_2_salary": 4310406,  "year_3_salary": 4515664,  "year_4_salary": 4912000 },
+    { "pick_number": 21, "year_1_salary": 3964702,  "year_2_salary": 4162937,  "year_3_salary": 4361172,  "year_4_salary": 4668000 },
+    { "pick_number": 22, "year_1_salary": 3834700,  "year_2_salary": 4026435,  "year_3_salary": 4218171,  "year_4_salary": 4441000 },
+    { "pick_number": 23, "year_1_salary": 3714376,  "year_2_salary": 3900095,  "year_3_salary": 4085814,  "year_4_salary": 4228000 },
+    { "pick_number": 24, "year_1_salary": 3602982,  "year_2_salary": 3782131,  "year_3_salary": 3961281,  "year_4_salary": 4029000 },
+    { "pick_number": 25, "year_1_salary": 3499789,  "year_2_salary": 3672778,  "year_3_salary": 3845768,  "year_4_salary": 3842000 },
+    { "pick_number": 26, "year_1_salary": 3404091,  "year_2_salary": 3571296,  "year_3_salary": 3738500,  "year_4_salary": 3667000 },
+    { "pick_number": 27, "year_1_salary": 3315200,  "year_2_salary": 3476960,  "year_3_salary": 3638720,  "year_4_salary": 3503000 },
+    { "pick_number": 28, "year_1_salary": 3232448,  "year_2_salary": 3394070,  "year_3_salary": 3555693,  "year_4_salary": 3348000 },
+    { "pick_number": 29, "year_1_salary": 3155188,  "year_2_salary": 3312947,  "year_3_salary": 3470707,  "year_4_salary": 3203000 },
+    { "pick_number": 30, "year_1_salary": 3079775,  "year_2_salary": 3233763,  "year_3_salary": 3387752,  "year_4_salary": 3064280 }
+  ]
+}

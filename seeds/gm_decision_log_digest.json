@@ -1,0 +1,23 @@
+{
+  "_description": "Decision P3-29(b)'s committed control digest -- a per-season SHA-256 over SeasonRecord.jsonl_lines at 1 seed x 2 seasons x --skip-games, generated before any Phase 3 mechanism exists in the codebase. Regenerate with `python -m tools.generate_gm_decision_log_digest`; see that module's own docstring for the seed-derivation formula. No dependency on any other Phase 3 step or switch -- this is a baseline, not a gate.",
+  "rng_seed": 1,
+  "derived_seed": 7416152710283060417,
+  "league_id": 1,
+  "season_year": 2026,
+  "seasons": 2,
+  "players_per_team": 15,
+  "skip_games": true,
+  "gm_tuning_version": 2,
+  "season_digests": [
+    {
+      "season": 2026,
+      "digest": "b8e84beccaf4b5bb660820f31f9d8344b02fcfa6c7eabe08ad9e913339e067a5",
+      "line_count": 14468
+    },
+    {
+      "season": 2027,
+      "digest": "450e38b0e3238c745890a3c5b9f270679de4e87aed5d03a1d05d55148ebffed8",
+      "line_count": 14357
+    }
+  ]
+}

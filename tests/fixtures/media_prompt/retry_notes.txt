@@ -1,0 +1,26 @@
+Your previous draft of this item was rejected by an automatic fact check and will not be published. Write the whole item again from the same JSON above, following every rule. The check rejected:
+- 9: not a number the facts give for Phoenix Suns; the facts give it to Denver Nuggets
+- record 24-13: not a number the facts give for Los Angeles Lakers; the facts give it to Denver Nuggets
+- spots '14 places': not a number the facts give for Minnesota Timberwolves; no fact you were given holds it
+Use a number only where the facts, the brief or the `derived` list give it for the team or player that sentence is about, or leave it out.
+
+=====
+Your previous draft of this item was rejected by an automatic fact check and will not be published. Write the whole item again from the same JSON above, following every rule. The check rejected:
+- move direction 'up' '4 spots': not what the facts say about Golden State Warriors
+- games left '1 game left': not what the facts say about Los Angeles Clippers, Phoenix Suns
+State a streak, a standings place, a standings move or games left only as the facts and the `derived` list give them for that team, or leave it out.
+
+=====
+Your previous draft of this item was rejected by an automatic fact check and will not be published. Write the whole item again from the same JSON above, following every rule. The check rejected:
+- 47.7: not a number in the facts
+Use only numbers written in the facts, the brief or the `derived` list.
+
+=====
+Your previous draft of this item was rejected by an automatic fact check and will not be published. Write the whole item again from the same JSON above, following every rule. The check rejected:
+- Tyrese Holloway: a name that is not in the facts
+Use only names that appear in the JSON.
+
+=====
+Your previous draft of this item was rejected by an automatic fact check and will not be published. Write the whole item again from the same JSON above, following every rule. The check rejected:
+- "We will win this": a quotation (this league records no spoken words)
+Write no quotation of anyone.

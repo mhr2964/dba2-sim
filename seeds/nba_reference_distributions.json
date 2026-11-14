@@ -1,0 +1,430 @@
+{
+  "_note": "Real-NBA reference targets for docs/design/phase-1-simulation-engine.md §10's validation harness (tools/validate_sim.py, tests/integration/test_sim_validation.py). Per §10's own decision ('reference targets live in seeds/nba_reference_distributions.json with source and season fields, not hardcoded in Python'), every metric below carries its own provenance rather than one blanket citation for the whole file, because two different provenance tiers are mixed here on purpose: 4 metrics (possessions_per_48, efg_pct, tov_per_100_poss, fta_per_fga) were confirmed against a live web search this round and are the tightest-trust numbers in the file; `starter_mpg`/`rotation_bench_mpg`/`deep_bench_mpg` are copied verbatim from `phase-1-step-7-calibration.md` §10.1's already-closed decision; everything else is general basketball knowledge for the 2023-24 season, stated as approximate and flagged for tightening against a primary source in a later pass. `band_low`/`band_high` are this harness's actual pass/fail gate -- deliberately wide (this stage exists to catch gross miscalibration, e.g. an engine producing 25% eFG% or zero turnovers, not to certify NBA-identical realism; that finer tuning is step 11's job). **Correction (critic round 24, B24-1): 4 entries are derived/non-independent, not 3 as the round-23 fix claimed** -- `seconds_per_possession` (`1440/possessions_per_48`, see its own note), `dreb_pct` (`1 - oreb_pct`, an algebraic identity of `tools/validate_sim.py`'s own aggregation formula, not an engine property), `share_fga_mid` (the remainder after `share_fga_rim`/`share_fga_three`, since all 3 shot-mix shares sum to exactly 1.0 by the same aggregation formula), and `deep_bench_mpg` (constrained by the 240-team-minutes-per-game identity against `starter_mpg`/`rotation_bench_mpg` at this harness's 14-player-per-team roster size). All 4 are kept as separate JSON entries rather than removed, because each still reads a real (if non-independent) harness output and the report format has no 'informational' row type; a reader should not treat the naive '27 metrics' or post-fix '26 gating metrics' count as independent findings -- it is closer to 22. Percentages are stored as 0-1 fractions, not 0-100, throughout. **BDA-6.3 addition (docs/design/block-defender-attribution.md): `blk_per_game` and `top_shot_blocker_bpg` are two new, genuinely independent gating entries** -- nothing else in this file reads `blk`, so neither is derived from an existing band the way the 4 above are; the file's own historical '27'/'26'/'22' counts above predate this addition and are not restated here.",
+  "band_rationale": "Every metric's band is a relative width around a stated reference value: +/-15% for FT% (a historically low year-to-year variance stat), +/-20% for most rate/percentage stats (pace, eFG%, zone FG%, shot-mix shares, TOV/100, PF/game, FTA/game, top-scorer PPG, win-total SD uses +/-25%), +/-25%-30% for derived/remainder or looser-variance stats (mid-range share, p90 PPG), and +/-40% for small-magnitude or structurally noisier shape stats (p10 PPG, share of players over 30 mpg) where a fixed relative width would otherwise be too tight to survive normal seed-to-seed variance. `starter_mpg`/`rotation_bench_mpg`/`deep_bench_mpg` use the exact bands `phase-1-step-7-calibration.md` §10.1 already closed, not an independently-chosen width. `dreb_pct`'s band is the arithmetic complement of `oreb_pct`'s band (1 - `oreb_pct`'s bounds, reordered) -- **corrected (critic round 24, B24-1): this is exact by the harness's own aggregation formula (`dreb_pct = 1 - oreb_pct` identically), not merely 'nearly complementary,' and the prior wording's 'engine's own Tier-2 invariant' framing was a false attribution — Tier-2 invariants are steps 4-5's possession-chain identities and have nothing to do with this harness's rebound aggregation.**",
+
+  "possessions_per_48": {
+    "group": "pace",
+    "reference_value": 99.0,
+    "band_low": 79.2,
+    "band_high": 118.8,
+    "band_width_pct": 0.20,
+    "source": "web search, 2023-24 season league averages",
+    "season": 2024,
+    "note": "2023-24 league-wide possessions per 48 minutes."
+  },
+  "seconds_per_possession": {
+    "group": "pace",
+    "reference_value": 14.55,
+    "band_low": 12.12,
+    "band_high": 18.18,
+    "band_width_pct": null,
+    "source": "derived from possessions_per_48 (1440/99.0), not independently sourced",
+    "season": 2024,
+    "note": "FIXED (critic round 23, B23-1): the prior 29.09/[24.24,36.36] figures used 2880/pace, which is the wall-clock interval between one team's own consecutive possessions -- not what tools/validate_sim.py measures. The harness accumulates total_seconds once per game but team_possessions_raw once per team_box_line (i.e. twice per game), so `total_seconds / team_possessions_raw` = 2880 / (2 x per-team pace) = 1440 / possessions_per_48. Reference and band are 1440/99.0 and 1440/possessions_per_48's own band (79.2, 118.8), inverted (1440/118.8 = 12.12, 1440/79.2 = 18.18) -- these now actually overlap the range a correctly-paced engine produces, unlike the prior band."
+  },
+  "points_per_game": {
+    "group": "pace",
+    "reference_value": 114.5,
+    "band_low": 91.6,
+    "band_high": 137.4,
+    "band_width_pct": 0.20,
+    "source": "general knowledge, approximate, 2023-24 season -- tighten against a primary source in a later pass if precision matters",
+    "season": 2024,
+    "note": "team points per game, midpoint of the ~114-115 range."
+  },
+
+  "efg_pct": {
+    "group": "shooting",
+    "reference_value": 0.547,
+    "band_low": 0.4376,
+    "band_high": 0.6564,
+    "band_width_pct": 0.20,
+    "source": "web search, 2023-24 season league averages",
+    "season": 2024,
+    "note": "stated as an all-time record high that season."
+  },
+  "fg_pct_rim": {
+    "group": "shooting",
+    "reference_value": 0.65,
+    "band_low": 0.52,
+    "band_high": 0.78,
+    "band_width_pct": 0.20,
+    "source": "general knowledge, approximate, 2023-24 season -- tighten against a primary source in a later pass if precision matters",
+    "season": 2024,
+    "note": "rim-zone FG%."
+  },
+  "fg_pct_mid": {
+    "group": "shooting",
+    "reference_value": 0.41,
+    "band_low": 0.328,
+    "band_high": 0.492,
+    "band_width_pct": 0.20,
+    "source": "general knowledge, approximate, 2023-24 season -- tighten against a primary source in a later pass if precision matters",
+    "season": 2024,
+    "note": "mid-range FG%."
+  },
+  "fg_pct_three": {
+    "group": "shooting",
+    "reference_value": 0.366,
+    "band_low": 0.2928,
+    "band_high": 0.4392,
+    "band_width_pct": 0.20,
+    "source": "general knowledge, approximate, 2023-24 season -- tighten against a primary source in a later pass if precision matters",
+    "season": 2024,
+    "note": "three-point FG%."
+  },
+  "ft_pct": {
+    "group": "shooting",
+    "reference_value": 0.78,
+    "band_low": 0.663,
+    "band_high": 0.897,
+    "band_width_pct": 0.15,
+    "source": "general knowledge, approximate, 2023-24 season -- tighten against a primary source in a later pass if precision matters",
+    "season": 2024,
+    "note": "free-throw %; tighter band than the other shooting rates since FT% is historically the lowest year-to-year variance shooting stat."
+  },
+
+  "share_fga_rim": {
+    "group": "shot_mix",
+    "reference_value": 0.35,
+    "band_low": 0.28,
+    "band_high": 0.42,
+    "band_width_pct": 0.20,
+    "source": "general knowledge, approximate, 2023-24 season -- tighten against a primary source in a later pass if precision matters",
+    "season": 2024,
+    "note": "share of FGA taken at the rim."
+  },
+  "share_fga_mid": {
+    "group": "shot_mix",
+    "reference_value": 0.255,
+    "band_low": 0.19125,
+    "band_high": 0.31875,
+    "band_width_pct": 0.25,
+    "source": "general knowledge, approximate, 2023-24 season -- tighten against a primary source in a later pass if precision matters",
+    "season": 2024,
+    "note": "share of FGA taken from mid-range -- the remainder after rim (~35%) and three (~39-40%), so this figure is itself derived rather than independently stated, hence the wider band."
+  },
+  "share_fga_three": {
+    "group": "shot_mix",
+    "reference_value": 0.395,
+    "band_low": 0.316,
+    "band_high": 0.474,
+    "band_width_pct": 0.20,
+    "source": "general knowledge, approximate, 2023-24 season -- tighten against a primary source in a later pass if precision matters",
+    "season": 2024,
+    "note": "share of FGA taken from three; midpoint of the stated ~39-40% range."
+  },
+  "fta_per_fga": {
+    "group": "shot_mix",
+    "reference_value": 0.244,
+    "band_low": 0.1952,
+    "band_high": 0.2928,
+    "band_width_pct": 0.20,
+    "source": "web search, 2023-24 season league averages",
+    "season": 2024,
+    "note": "FTA rate: 24.4 attempts per 100 field-goal attempts, stated as an all-time low that season."
+  },
+
+  "ast_per_made_fg": {
+    "group": "playmaking",
+    "reference_value": 0.62,
+    "band_low": 0.496,
+    "band_high": 0.744,
+    "band_width_pct": 0.20,
+    "source": "general knowledge, approximate, 2023-24 season -- tighten against a primary source in a later pass if precision matters",
+    "season": 2024,
+    "note": "assists per made field goal."
+  },
+  "tov_per_100_poss": {
+    "group": "playmaking",
+    "reference_value": 13.6,
+    "band_low": 10.88,
+    "band_high": 16.32,
+    "band_width_pct": 0.20,
+    "source": "web search, 2023-24 season league averages",
+    "season": 2024,
+    "note": "turnovers per 100 possessions, stated as an all-time low that season."
+  },
+
+  "oreb_pct": {
+    "group": "rebounding",
+    "reference_value": 0.24,
+    "band_low": 0.18,
+    "band_high": 0.30,
+    "band_width_pct": 0.25,
+    "source": "general knowledge, approximate, 2023-24 season -- still not primary-sourced (critic round 23, B23-4: no network access this round either); this remains an approximation pending a primary source",
+    "season": 2024,
+    "note": "REVISED (critic round 23, B23-4): raised from 0.225 to ~0.24, closer to recalled 2023-24 league rebounding totals (~10.6 ORB / ~33.0 DRB per team per game, implying ORB% ~0.243); 0.225 reads closer to the 2017-19 trough and ORB% has climbed since. Band widened from +/-20% to +/-25% to cover real uncertainty at this precision, since neither this round nor the prior one could confirm an exact figure without network access."
+  },
+  "dreb_pct": {
+    "group": "rebounding",
+    "reference_value": 0.76,
+    "band_low": 0.70,
+    "band_high": 0.82,
+    "band_width_pct": null,
+    "source": "derived as 1 - oreb_pct, not independently sourced",
+    "season": 2024,
+    "note": "band is the arithmetic complement of oreb_pct's band (1 - [0.18, 0.30], reordered) -- an algebraic identity of tools/validate_sim.py's own aggregation formula (dreb_pct = acc.dreb / (acc.oreb + acc.dreb) = 1 - oreb_pct exactly), not a property of the engine's rebound model. This entry carries zero information beyond oreb_pct's; see the file-level _note (critic round 23, B23-5)."
+  },
+
+  "pf_per_game": {
+    "group": "fouls",
+    "reference_value": 19.5,
+    "band_low": 15.6,
+    "band_high": 23.4,
+    "band_width_pct": 0.20,
+    "source": "general knowledge, approximate, 2023-24 season -- tighten against a primary source in a later pass if precision matters",
+    "season": 2024,
+    "note": "team personal fouls per game, midpoint of the stated ~19-20 range."
+  },
+  "fta_per_game": {
+    "group": "fouls",
+    "reference_value": 21.5,
+    "band_low": 17.2,
+    "band_high": 25.8,
+    "band_width_pct": 0.20,
+    "source": "general knowledge, approximate, 2023-24 season -- tighten against a primary source in a later pass if precision matters",
+    "season": 2024,
+    "note": "team free-throw attempts per game, midpoint of the stated ~21-22 range."
+  },
+
+  "top_scorer_ppg": {
+    "group": "shape",
+    "reference_value": 32.0,
+    "band_low": 25.6,
+    "band_high": 38.4,
+    "band_width_pct": 0.20,
+    "source": "general knowledge, approximate, 2023-24 season -- tighten against a primary source in a later pass if precision matters",
+    "season": 2024,
+    "note": "league-leading scorer's season PPG, midpoint of the stated ~30-34 range."
+  },
+  "p90_ppg_rotation": {
+    "group": "shape",
+    "reference_value": 24.5,
+    "band_low": 18.375,
+    "band_high": 30.625,
+    "band_width_pct": 0.25,
+    "source": "general knowledge, approximate, 2023-24 season -- tighten against a primary source in a later pass if precision matters",
+    "season": 2024,
+    "note": "REVISED (critic round 23, B23-6): raised from 19.5 to ~24.5. The pool is every rotation player (>=15 mpg) league-wide, roughly 240-270 players; a 90th-percentile cutoff over that pool sits near the near-All-Star tier (~25 players/season score 20+ ppg league-wide), not at ~19-20. Internally consistent with the file's own points_per_game (114.5) and top_scorer_ppg (32.0) references: p90 (~24.5, ~top decile of rotation players) sits meaningfully below top_scorer_ppg (~32.0, the single best scorer in the league)."
+  },
+  "p50_ppg_rotation": {
+    "group": "shape",
+    "reference_value": 11.5,
+    "band_low": 8.05,
+    "band_high": 14.95,
+    "band_width_pct": 0.30,
+    "source": "general knowledge, approximate, 2023-24 season -- tighten against a primary source in a later pass if precision matters",
+    "season": 2024,
+    "note": "REVISED (critic round 23, B23-6): raised from 8.5 to ~11.5. Cross-check against this file's own points_per_game (114.5): the ~8 rotation players (>=15 mpg) per team consume roughly 90% of team scoring, giving a mean rotation PPG of ~0.90 x 114.5 / 8 ~= 12.9; a median of 8.5 implied an implausible 1.5x mean/median skew for a top-8-by-minutes scoring pool. ~11.5 is a more plausible ~1.1-1.2x ratio for a right-skewed but not extreme distribution."
+  },
+  "p10_ppg_rotation": {
+    "group": "shape",
+    "reference_value": 6.0,
+    "band_low": 3.6,
+    "band_high": 8.4,
+    "band_width_pct": 0.40,
+    "source": "general knowledge, approximate, 2023-24 season -- tighten against a primary source in a later pass if precision matters",
+    "season": 2024,
+    "note": "REVISED (critic round 23, B23-6): raised from 2.5 to ~6.0, midpoint of the ~5-7 ppg a real lowest-usage rotation player (right at the 15 mpg cutoff) actually scores -- the prior 2.5 figure implied scoring at ~35% of league per-minute rate for a full 10% of the rotation-player pool, more consistent with an outlier than a 10th percentile. Wide relative band retained because the absolute magnitude is still small relative to normal seed-to-seed noise."
+  },
+  "starter_mpg": {
+    "group": "shape",
+    "reference_value": 30.8,
+    "band_low": 28.5,
+    "band_high": 33.0,
+    "band_width_pct": null,
+    "source": "docs/design/phase-1-step-7-calibration.md §10.1, a closed critic-reviewed decision from step 7 of this same phase -- copied exactly, not re-derived",
+    "season": 2024,
+    "note": "FIXED (critic round 24, B24-2): the prior 32.0/[25.6,38.4] general-knowledge figure was never reconciled with §10.1's already-closed value for this same harness's 14-player roster, and left the 240-team-minutes-per-game identity (5*starter + 3*rotation + 6*deep_bench = 240) violated once deep_bench_mpg was fixed in round 17. §10.1's row: realized 30.74, band [28.5,33.0], reference ~30.8. Mean minutes/game of each team's top-5-by-minutes players (this harness's own rank-based starter definition, matching game.py's own rank-tier rotation model)."
+  },
+  "rotation_bench_mpg": {
+    "group": "shape",
+    "reference_value": 22.0,
+    "band_low": 19.0,
+    "band_high": 24.0,
+    "band_width_pct": null,
+    "source": "docs/design/phase-1-step-7-calibration.md §10.1, a closed critic-reviewed decision from step 7 of this same phase -- copied exactly, not re-derived",
+    "season": 2024,
+    "note": "FIXED (critic round 24, B24-2): the prior 18.5/[12.95,24.05] general-knowledge figure was never reconciled with §10.1's already-closed value, and left the 240-team-minutes-per-game identity violated once deep_bench_mpg was fixed in round 17. §10.1's row: realized 21.82, band [19.0,24.0], reference ~22. Mean minutes/game of each team's ranks 6-8 by minutes."
+  },
+  "deep_bench_mpg": {
+    "group": "shape",
+    "reference_value": 3.3,
+    "band_low": 2.0,
+    "band_high": 6.0,
+    "band_width_pct": null,
+    "source": "docs/design/phase-1-step-7-calibration.md §10.1, a closed critic-reviewed decision from step 7 of this same phase -- copied exactly, not re-derived",
+    "season": 2024,
+    "note": "FIXED (critic round 23, B23-2): the prior 8.5/[5.1,11.9] band contradicted §10.1's already-closed decision and is arithmetically impossible at this harness's 14-player-per-team roster -- a team distributes exactly 240 minutes/game by construction (sim/game.py), so with this file's own starter_mpg/rotation_bench_mpg reference values (30.8/22, matching game.py's 31/22/3.5 tier anchors, realized 30.74/21.82/3.47), the deep-bench tier is `(240 - 5*starter - 3*rotation) / 6`, not an independently free value. §10.1 measured 3.47 (inside [2.0, 6.0]) and recorded that as the deliberately chosen target matching real NBA (~3.3) under a flat 3-tier minutes model, not as a gap. This entry is non-independent of starter_mpg/rotation_bench_mpg at this roster size (see the file-level _note, B23-5) -- kept as a separate row because the harness's report format has no way to mark a row 'derived-but-still-worth-displaying' otherwise."
+  },
+  "share_players_over_30mpg": {
+    "group": "shape",
+    "reference_value": 0.175,
+    "band_low": 0.105,
+    "band_high": 0.245,
+    "band_width_pct": 0.40,
+    "source": "general knowledge, approximate, 2023-24 season -- tighten against a primary source in a later pass if precision matters",
+    "season": 2024,
+    "note": "RESTORED TO GATING (docs/design/per-36-spread-compression.md SC-11 A4, SC-7 Commit 1 step 4): removed from gating in critic round 23 (B23-3) because the then-current flat 3-tier minutes model made this count structurally 5-or-0 per team. `auto-gm-role-construction.md` RC-4 replaced that flat model with a 15-entry per-absolute-rank curve, which the retirement rationale never accounted for -- under the shipped curve this measures a real, non-degenerate ~0.214 (3 of 14 players per team clear 30 mpg), an in-band value at this file's original ~40%-wide band. JSON-only change: `tools.validate_sim.compute_metrics` already computed this metric (`:562-564` at the time of this note); `load_reference()` gates on `band_low`'s presence, so restoring it needed no harness code change. Not redundant with `minutes_leader_mpg_sd` below -- this measures the width of a team's starter block (how many clear a fixed threshold), that measures cross-team variance of a single player (the team's own rank-1 mpg)."
+  },
+  "team_win_total_sd": {
+    "group": "shape",
+    "reference_value": 12.0,
+    "band_low": 9.0,
+    "band_high": 15.0,
+    "band_width_pct": 0.25,
+    "source": "general knowledge, approximate, 2023-24 season -- tighten against a primary source in a later pass if precision matters",
+    "season": 2024,
+    "note": "population standard deviation of 82-game team win totals across the league, midpoint of the stated ~11-13 range."
+  },
+  "blk_per_game": {
+    "group": "defense",
+    "reference_value": 5.0,
+    "band_low": 4.0,
+    "band_high": 6.0,
+    "band_width_pct": 0.20,
+    "source": "general knowledge, approximate, 2023-24 season -- tighten against a primary source in a later pass if precision matters (BDA-8 open question 1, docs/design/block-defender-attribution.md: left at this general-knowledge tier, not web-confirmed, as of this metric's introduction)",
+    "season": 2024,
+    "note": "ADDED (docs/design/block-defender-attribution.md, BDA-6.3): team blocks per game, league-wide. Never read by this harness before this doc -- `blk` exists on both box-line dataclasses (events.py) but `SeasonAccumulator` never accumulated it. A rate check only: this band alone cannot detect the attribution defect BDA-1 through BDA-3 diagnose (a flat per-defender distribution can still average to a correct league total) -- see `top_shot_blocker_bpg` below for the shape check that does."
+  },
+  "top_shot_blocker_bpg": {
+    "group": "shape",
+    "reference_value": 3.0,
+    "band_low": 1.8,
+    "band_high": 4.2,
+    "band_width_pct": 0.40,
+    "source": "general knowledge, approximate, 2023-24 season -- tighten against a primary source in a later pass if precision matters",
+    "season": 2024,
+    "note": "ADDED (docs/design/block-defender-attribution.md, BDA-6.3): the league's single best shot-blocker's season BPG, built the same way top_scorer_ppg is. Deliberately wide band -- a synthetic league's best rim protector is not a real league leader -- because this metric exists to catch a *flat* per-defender block distribution (BDA-1's actual defect: a maxed rim protector capped near ~0.5 bpg pre-fix, which this band's own low end is set to reject), not to certify a value."
+  },
+
+  "reb_per36_sd_rotation": {
+    "group": "spread",
+    "reference_value": 2.77,
+    "band_low": 2.216,
+    "band_high": 3.324,
+    "band_width_pct": 0.20,
+    "source": "docs/design/per-36-spread-compression.md SC-1.1, a league-1894 (real 2025 rosters) investigation dispatch -- ADDED (SC-7 Commit 1)",
+    "season": 2025,
+    "note": "Population SD of reb*36/total_minutes over the rotation pool (mpg >= tools.validate_sim._ROTATION_MPG_THRESHOLD, 15.0), one full season. One of the two primary defect metrics this doc exists to add a band for -- pre-fix (raw ability_score attribution) measures far below this band by construction (SC-1.1: sim SD 1.43-1.50 vs real 2.77, ratio ~0.52-0.54); a red band here on the day this commit lands is the point, not a regression. Two-sided per SC-8.2's own correction (B4): revision 1's floor-only >=2.2 criterion would have passed a since-withdrawn +21% overshoot candidate."
+  },
+  "reb_per36_max": {
+    "group": "spread",
+    "reference_value": 16.28,
+    "band_low": 13.024,
+    "band_high": 19.536,
+    "band_width_pct": 0.20,
+    "source": "docs/design/per-36-spread-compression.md SC-1.1, a league-1894 (real 2025 rosters) investigation dispatch -- ADDED (SC-7 Commit 1)",
+    "season": 2025,
+    "note": "The rotation pool's own max of reb*36/total_minutes (same pool filter as reb_per36_sd_rotation). SC-3.6: no concentration transform changes the engine's normalized right-skew (every exponent variant measured 2.67 +-0.01 vs real 2.77's 3.35), so this band is intentionally reachable-but-not-guaranteed even after the SD band is in range -- see the design's own SC-9 risk 4 before treating a short max here as an under-tuned exponent."
+  },
+  "ast_per36_sd_rotation": {
+    "group": "spread",
+    "reference_value": 2.03,
+    "band_low": 1.624,
+    "band_high": 2.436,
+    "band_width_pct": 0.20,
+    "source": "docs/design/per-36-spread-compression.md SC-1.1, a league-1894 (real 2025 rosters) investigation dispatch -- ADDED (SC-7 Commit 1)",
+    "season": 2025,
+    "note": "Population SD of ast*36/total_minutes over the rotation pool (mpg >= 15.0), one full season. The second primary defect metric. Pre-fix measures far below this band (SC-1.1: sim SD 1.11 vs real 2.03, ratio 0.55) -- this doc's Commit 3 (the assist branch tilt, a separate future dispatch per SC-6) is what this band is waiting on; the rebound-attribution exponent shipped in this build's Commit 2 does not touch the assist mechanism (SC-3.1: exactly one weighted_choice call site draws over raw ability_score, and it is rebound.py's, not rotation.py's)."
+  },
+  "ast_per36_max": {
+    "group": "spread",
+    "reference_value": 11.08,
+    "band_low": 8.864,
+    "band_high": 13.296,
+    "band_width_pct": 0.20,
+    "source": "docs/design/per-36-spread-compression.md SC-1.1, a league-1894 (real 2025 rosters) investigation dispatch -- ADDED (SC-7 Commit 1)",
+    "season": 2025,
+    "note": "The rotation pool's own max of ast*36/total_minutes (same pool as ast_per36_sd_rotation). Expected to stay short of this band until a future assist-mechanism dispatch lands -- see ast_per36_sd_rotation's note."
+  },
+  "blk_per36_sd_rotation": {
+    "group": "spread",
+    "reference_value": 0.61,
+    "band_low": 0.4575,
+    "band_high": 0.7625,
+    "band_width_pct": 0.25,
+    "source": "docs/design/per-36-spread-compression.md SC-1.1, a league-1894 (real 2025 rosters) investigation dispatch -- ADDED (SC-7 Commit 1, Nit 8's SD-only-is-insufficient correction)",
+    "season": 2025,
+    "note": "CONTROL, not a target for this build. Block attribution runs through composites.best_rim_protector, a scale/floor-invariant max, not the proportional weighted_choice draw this doc's rebound fix corrects (SC-3.3) -- this SD should already be close to real (SC-1.1 measured 0.63 sim vs 0.61 real pre-fix) and should stay there through Commit 2 (rebound) unaffected, since no other beat shares the fixed primitive (SC-3.1). Wider +-25% band matches top_shot_blocker_bpg's own precedent (a synthetic league's best rim protector is not a real league leader). If this control moves when only the rebound exponent lands, the exponent has leaked outside rebound.py and that is a real bug, not a calibration finding."
+  },
+  "blk_per36_max": {
+    "group": "spread",
+    "reference_value": 3.78,
+    "band_low": 2.835,
+    "band_high": 4.725,
+    "band_width_pct": 0.25,
+    "source": "docs/design/per-36-spread-compression.md SC-1.1, a league-1894 (real 2025 rosters) investigation dispatch -- ADDED (SC-7 Commit 1, Nit 8)",
+    "season": 2025,
+    "note": "CONTROL and the SC-8.1 measurement-5 discriminator for the block-max shortfall (SC-3.3b, still an OPEN item this doc deliberately does not fix): league 1894 (real 2025 rosters) measured 0.71 of real at the max despite SD/p95 being fine, which could be rating saturation at the [25,99] clamp (real-player-rating-calibration.md's territory) or an engine defect. This build's own synthetic-harness measurement of this exact band (no real-player rosters involved) is the discriminator -- see the design doc's As-built note for the measured value and which side of the split it landed on. **Known to ship failing on league-1894-style real-player leagues regardless of this build's outcome** (SC-8.2, SC-9 risk 8) -- owned by whichever investigation SC-8.1 measurement 5 points to, not fixed here."
+  },
+  "blk_per36_top10_ratio": {
+    "group": "spread",
+    "reference_value": 1.6,
+    "band_low": 1.35,
+    "band_high": 1.8,
+    "band_width_pct": null,
+    "source": "seeds/real_players_raw/2025.json season totals, rotation pool gp >= 20 and mpg >= 15 (n = 345) -- docs/design/block-attribution-v2.md BA-0.1 [DERIVED] -- ADDED (block-attribution-v2 Commit 0)",
+    "season": 2025,
+    "note": "#1 over #10 rotation blk/36. The shape check blk_per36_max and _sd_rotation cannot make on their own: a league of thirty equally-exposed team-best bigs passes both with no tail (BA-0.2 measured 1.23 synthetic / 1.16 real-2025 at edf5633, against a real 1.60). Asymmetric band from BA-4.1: the floor rejects the winner-take-all plateau, the ceiling rejects a single runaway blocker. Expected to FAIL on both leagues until block-attribution-v2 Commit 2 lands."
+  },
+  "blk_per36_p95_rotation": {
+    "group": "spread",
+    "reference_value": 1.9,
+    "band_low": 1.6,
+    "band_high": 2.4,
+    "band_width_pct": 0.25,
+    "source": "seeds/real_players_raw/2025.json season totals, rotation pool gp >= 20 and mpg >= 15 (n = 345) -- docs/design/block-attribution-v2.md BA-0.1 [DERIVED] -- ADDED (block-attribution-v2 Commit 0)",
+    "season": 2025,
+    "note": "95th percentile of rotation blk/36 -- the upper edge of the body, which the real distribution keeps thin (1.90) while its max runs to 3.78. BA-0.2: the engine at edf5633 sat fat here (2.17 synthetic / 2.13 real) while short at the max. +/-25% of real, the same width as blk_per36_max."
+  },
+  "guard_blk_per36": {
+    "group": "spread",
+    "reference_value": 0.44,
+    "band_low": 0.2,
+    "band_high": 1.0,
+    "band_width_pct": null,
+    "source": "seeds/real_players_raw/2025.json season totals, rotation pool gp >= 20 and mpg >= 15 (n = 345) -- docs/design/block-attribution-v2.md BA-0.1 [DERIVED] -- ADDED (block-attribution-v2 Commit 0)",
+    "season": 2025,
+    "note": "CONTROL, a floor alarm and not a target: the mean blk/36 of PG and SG rotation players. Concentrating help blocks on bigs and steepening the curve both drain guards, who are already ~40% short of real on the primary contest (BA-7 risk 2, BA-9 point 3). The 1.0 ceiling is only there so the row has a band; nothing near it is reachable. block-attribution-v2 Commit 3 (primary steepening) is where this is expected to bind."
+  },
+  "pts_per36_sd_rotation": {
+    "group": "spread",
+    "reference_value": 5.5741,
+    "band_low": 4.4593,
+    "band_high": 6.6889,
+    "band_width_pct": 0.20,
+    "source": "self-baseline, this build's own Commit 1 measurement (3-season / 3690-game synthetic run, generate_league players_per_team=14, rng_seed=1, pre-Commit-2, i.e. attribution_concentration_exponent=1.0) -- no real-2025 same-pool points/36 dataset exists in this repo (docs/design/per-36-spread-compression.md Nit 3 deleted the prior mixed-dataset figure)",
+    "season": 2025,
+    "note": "CONTROL, self-referential on purpose -- not a real 2025 figure. SC-11 A1 (OPEN): 'is the engine's scoring concentration above real?' has no answer yet because no common-pool real points/36 reference exists; this is the first same-pool synthetic measurement Commit 1 was built to produce (SC-1.2's deleted points row explanation). Gated at +-20% around this build's own pre-fix baseline so a later commit (the assist tilt, the minutes curve) that unexpectedly moves scoring concentration shows up here -- confirmed unaffected by this build's own rebound-attribution exponent (Commit 2 measured 5.5748, +0.01% from this baseline)."
+  },
+  "pts_per36_max": {
+    "group": "spread",
+    "reference_value": 37.7721,
+    "band_low": 30.2177,
+    "band_high": 45.3265,
+    "band_width_pct": 0.20,
+    "source": "self-baseline, this build's own Commit 1 measurement (3-season / 3690-game synthetic run, generate_league players_per_team=14, rng_seed=1, pre-Commit-2, i.e. attribution_concentration_exponent=1.0) -- no real-2025 same-pool points/36 dataset exists in this repo (docs/design/per-36-spread-compression.md Nit 3 deleted the prior mixed-dataset figure)",
+    "season": 2025,
+    "note": "CONTROL, self-referential on purpose -- not a real 2025 figure. Same status as pts_per36_sd_rotation above; confirmed unaffected by this build's own rebound-attribution exponent (Commit 2 measured 37.7721, unchanged to 4 decimal places from this baseline)."
+  },
+  "minutes_leader_mpg": {
+    "group": "spread",
+    "reference_value": 34.70,
+    "band_low": 32.62,
+    "band_high": 36.78,
+    "band_width_pct": 0.06,
+    "source": "Computed 2026-09-23 (orchestrating session, direct web lookup, not a build dispatch): mean across all 30 NBA teams of each team's own single highest real-2025-26-season (2024-25 regular season) MPG player, sourced from landofbasketball.com's per-team 2024-25 regular-season stats pages (basketball-reference.com and other stat sites returned HTTP 403 to automated fetches). Replaces the prior UNVERIFIED 35.5 working estimate.",
+    "season": 2025,
+    "note": "**Provenance gap closed, with real per-team data -- not a build dispatch's own measurement.** Per-team leaders (MPG): ATL Young 36.0, BOS Tatum 36.4, BKN Schroder 33.6 (23 games -- small sample, flagged), CHA Miller 34.2, CHI LaVine 34.1 (42 games, mid-season trade -- small sample, flagged), CLE Mitchell 31.4, DAL Irving 36.1, DEN Jokic 36.7, DET Cunningham 35.0, GSW Curry 32.2, HOU VanVleet 35.2, IND Haliburton 33.6, LAC Harden 35.3, LAL James 34.9, MEM Bane 32.0, MIA Herro 35.4, MIL Lillard 36.1, MIN Edwards 36.3, NOP Murphy III 35.0, NYK Hart 37.6, OKC Gilgeous-Alexander 34.2, ORL Banchero 34.4, PHI Maxey 37.7, PHX Booker 37.3, POR Simons/Camara 32.7 (tied), SAC Fox 37.0, SAS Wembanyama 33.2, TOR Barnes 32.8, UTA George 31.5, WAS Coulibaly 33.0. Sum 1040.9 / 30 = 34.6967, rounded to 34.70. Two sourcing errors were caught and corrected during lookup (a naive 'top of table' read is not the same as 'sorted by Min' on this source): Utah's true leader is Keyonte George at 31.5, not Kyle Filipowski's 21.1 (a bench/rookie-heavy subset the first read latched onto); Orlando's true leader is Paolo Banchero at 34.4, not Kentavious Caldwell-Pope's 29.6 (same failure mode) -- both re-verified by asking the source directly for the specific higher-minutes starters by name. **This new reference (34.70) falls inside SC-2.4's own pre-registered decision-rule window (34.5-36.5), so no fundamental re-scoping is triggered** -- the 35.5 working estimate was close (+2.3%) but the real anchor is meaningfully lower, which whoever builds SC-7 Commit 4 (the minutes-curve anchor) must use in place of 35.5 when re-deriving M1's rank-1 target, alongside the separate, already-disclosed rank-1 realized-mpg delta finding (-0.70, outside the -0.30...-0.60 precondition window) from the per-36-spread-compression build's own As-built note. Mean across the 30 teams of each team's own rank-1-by-mpg player, not real 2025's league *maximum* (SC-2.3/SC-2.4: a maximum over 30 team leaders is a different, larger number than their mean)."
+  },
+  "minutes_leader_mpg_sd": {
+    "group": "spread",
+    "reference_value": 1.8,
+    "gating": false,
+    "source": "docs/design/per-36-spread-compression.md SC-2.3/SC-8.2 -- estimated real-2025 figure, not independently computed this dispatch (same provenance gap as minutes_leader_mpg above)",
+    "season": 2025,
+    "note": "KNOWN FAILURE, owned by M2 (SC-6, SC-8.2), non-gated on purpose. Cross-team population SD of each team's own rank-1-by-mpg realized value. Under the shipped all-teams-identical minutes curve this measures a real but small ~0.322 (SC-2.3, reconciled against two independent sources to within 0.3 mpg) against an estimated real ~1.8 -- M1 (a mean-preserving anchor retune, SC-7 Commit 4, out of scope for this build) does not change this number; only M2 (a per-team steepness scalar, deferred to its own dispatch, SC-5.1) does. Kept as an informational row per SC-4's own complaint about this repo's history of deleting un-hittable bands instead of naming the owner."
+  }
+}

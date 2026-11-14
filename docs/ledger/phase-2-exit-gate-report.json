@@ -1,0 +1,1487 @@
+{
+  "_provenance": {
+    "note": "Decision P3-29(a)'s committed copy of the Phase 2 with-games exit-gate report (docs/design/phase-3-inter-manager-society.md, Sec.11 Stage A step 2). Regenerated fresh during Phase 3 step 2's own build (python -m tools.validate_gm --seeds 3 --seasons 5), rather than copied from Phase 2's own original run.",
+    "why_regenerated_rather_than_copied": "artifacts/ is gitignored (.gitignore:16) and this agent runs in an isolated git worktree that never had Phase 2's own original artifacts/validation_gm/exit_gate_with_games/report.json on disk -- the design doc's own step-2 instruction ('check it exists; if it doesn't exist on disk anymore, you'll need to regenerate it') was followed as written. The design doc's own citations (e.g. the generated_at timestamp 2026-09-06T00:34:55.296923+00:00 and the 'report.json lines 862-883' reference) describe THAT original run, which is not recoverable from this worktree -- this copy is a new, independently-generated with-games run at the identical CLI invocation, default rng_seed=1, and is deterministic/reproducible under that same invocation.",
+    "this_runs_generated_at": "2026-09-08T03:46:05.436118+00:00",
+    "this_runs_verdict": "GO: all 25 counted metrics pass across 3 seed(s) x 5 season(s). (25/25 counted metrics pass, GO)",
+    "precision_block_disclosure": "CORRECTED after critic round 27's blocking finding 2, which was right: the previous version of this sentence claimed no compared field differs from the design doc's own described original report, which is false and was provable from git history alone. Commit 0eb5549 (verified present via `git log` in this worktree, subject: 'Report which Family-3 metrics are statistically close calls, without gating on it') lands ~6 hours AFTER the design doc's cited original report's generated_at (2026-09-06T00:34:55.296923+00:00) and, per 0eb5549's own commit message, makes 'a --skip-games gate run's M11/M12/M13/M15 status strings gain a (precision: N.NN SE from the band, n=3) suffix.' THIS file's own committed status strings carry that suffix on M11/M12/M13/M15 (M16's margin lands above the 2-SE annotation threshold and is unaffected, matching that same commit message) -- meaning the pre-0eb5549 original's status strings on those four metrics did NOT carry it, so `status` -- a field on Decision P3-29(a)'s own compared-field list -- genuinely differs between this copy and the design doc's described original. This is expected and correct given 0eb5549 is already merged into this codebase, not a discrepancy to paper over. `detail.precision` itself is likewise a real, compared part of `detail` -- `precision` is not a timing key, and tools/gm_harness/metrics.py's own `_strip_timing_keys` is a documented no-op over it, so it is fully inside compare_exit_gate_reports's comparison scope, not excluded by it. What IS true, and is the actual invariant this disclosure exists to state: no metric's `value`, `passed`, or `counted_in_go` differs -- 0eb5549's own commit message says the same thing ('No metric's value, passed, or counted_in_go changes anywhere'). `status` and `detail.precision` are real, expected, disclosed differences, not silent ones.",
+    "value_scoped_comparator": "docs/design/phase-3-inter-manager-society.md's Decision P3-29(a): only top-level go/go_reason/seeds/seasons/skip_games and per-metric id/value/status/passed/counted_in_go/band_low/band_high/detail (minus any timing key) are ever compared against this file -- generated_at, elapsed_seconds, phase_timings_by_seed, and per_season_phase_timings are wall-clock and excluded (tools/gm_harness/metrics.py::EXCLUDED_REPORT_FIELDS). `detail.precision` is NOT excluded by this rule (see precision_block_disclosure above) -- it is a real, compared sub-block.",
+    "reproducibility_verification": "Critic round 27's blocking finding 4, addressed via option (a): a SECOND, fully independent with-games regeneration was actually run (python -m tools.validate_gm --seeds 3 --seasons 5, out-dir artifacts/validation_gm/exit_gate_with_games_rerun, ~42.7 min wall clock) rather than relying on a self-comparison, which the critic correctly identified as a tautology that verifies nothing. The rerun independently produced GO, 25/25 counted metrics pass, and comparing it against THIS committed baseline via the real tools.gm_harness.metrics.compare_exit_gate_reports comparator (not a self-comparison) returned equal=True, 0 mismatches. This is genuine empirical evidence of reproducibility at the with-games granularity (exercising dba2/sim/, which the --skip-games determinism-check built into every validate_gm run never touches) -- not a second copy of the same run, and not a tautological self-diff.",
+    "step4_version_bump_will_produce_an_expected_future_mismatch": "CORRECTED after critic round 28's blocking finding 1, which was right: the previous version of this sentence named only M11/M12/M13/M15 and claimed ZERO real behavioral regression at step 4 -- both wrong, and the wrongness is dangerous rather than cosmetic. Decision P3-30 mandates exactly one GM_TUNING_VERSION bump in the whole phase, at step 4. tools/gm_harness/metrics.py's `precision_stale = precision.get('gm_tuning_version') != gm_tuning_version` (line ~1021) is UNCONDITIONAL -- it fires on every metric carrying a precertified block, which is SIX metrics, not four: M11/M12/M13/M15/M16 via this check, plus M14 via its own separate `precertification_stale` branch (`metrics.py` ~line 1344). M16 gains the harmless ` -- PRECISION SD STALE` status suffix (mutation-verified: 'PASS' -> 'PASS -- PRECISION SD STALE', passed stays True) -- cosmetic, as the other four are. **M14 is not cosmetic.** THIS baseline's own committed detail block already carries `detail.measurability_pass = false` (se_measured 2.0275875100994067 against se_threshold 0.75, required_seeds_if_over_threshold 22) -- meaning M14 currently passes ONLY because its precertified SE is still valid (`extra_pass = precert_valid or measurability_pass`). The instant `precert_valid` goes False at the version bump, `extra_pass` collapses to `measurability_pass = False`, and mutation-testing this baseline's own real detail block through metrics.py's `_finalize` at gm_tuning_version=3 confirms: M14's status flips from 'PASS (SE precertified: 0.6415... at 45 seeds, P2-35)' to 'FAIL (SE PRECERT STALE: measured at gm_tuning_version 2, bands now 3 -- live SE gate re-armed)', and `passed` flips True to False. M14 is `counted_in_go: true`, so **the exit gate itself flips from GO 25/25 to NO-GO 24/25** -- a real, top-level `go`/`go_reason` mismatch against this baseline, not just a `detail` annotation. This is exactly the mechanism HANDOFF.md's own standing note already names ('a bump re-arms M14's live SE gate') -- it is intentional design, not a bug in this codebase, but it is a REAL gate failure requiring step 8's scheduled re-precertification (already on the build order for this reason), not a cosmetic mismatch to wave through. Whoever runs step 4's M29 check should expect a `status`/`detail` mismatch on all SIX of M11/M12/M13/M15/M16/M14, and should expect M14 SPECIFICALLY to flip the top-level `go` verdict to NO-GO until step 8's re-precertification lands -- do NOT treat a NO-GO with M14 failing at this point as an unexplained regression, but also do NOT dismiss it as merely cosmetic the way M11/M12/M13/M15/M16's annotation-only changes are."
+  },
+  "generated_at": "2026-09-08T03:46:05.436118+00:00",
+  "go": true,
+  "go_reason": "GO: all 25 counted metrics pass across 3 seed(s) x 5 season(s).",
+  "seeds": 3,
+  "seasons": 5,
+  "players_per_team": 15,
+  "rng_seed": 1,
+  "skip_games": false,
+  "determinism_check": true,
+  "elapsed_seconds": 2426.1241716999793,
+  "phase_timings_by_seed": [
+    {
+      "seed_index": 0,
+      "rng_seed": 7416152710283060417,
+      "elapsed_seconds": 420.5654286000645,
+      "per_season_phase_timings": [
+        {
+          "PRESEASON": 0.6720000000204891,
+          "REGULAR_SEASON": 5.25,
+          "TRADE_DEADLINE": 7.484000000054948,
+          "GAMES": 72.92199999990407,
+          "DRAFT_LOTTERY": 0.7970000000204891,
+          "DRAFT": 0.14000000001396984,
+          "RESIGN_WINDOW": 0.01600000006146729,
+          "FREE_AGENCY": 0.4369999999180436,
+          "WAIVERS": 0.01600000006146729,
+          "SEASON_BOUNDARY": 0.0470000000204891
+        },
+        {
+          "PRESEASON": 0.9209999999729916,
+          "REGULAR_SEASON": 4.10999999998603,
+          "TRADE_DEADLINE": 5.25,
+          "GAMES": 59.328000000095926,
+          "DRAFT_LOTTERY": 1.0,
+          "DRAFT": 0.10899999993853271,
+          "RESIGN_WINDOW": 0.01600000006146729,
+          "FREE_AGENCY": 0.4839999999385327,
+          "WAIVERS": 0.0,
+          "SEASON_BOUNDARY": 0.06199999991804361
+        },
+        {
+          "PRESEASON": 0.9529999999795109,
+          "REGULAR_SEASON": 4.327999999979511,
+          "TRADE_DEADLINE": 5.172000000020489,
+          "GAMES": 60.76599999994505,
+          "DRAFT_LOTTERY": 1.1560000000754371,
+          "DRAFT": 0.125,
+          "RESIGN_WINDOW": 0.015999999945051968,
+          "FREE_AGENCY": 0.35900000005494803,
+          "WAIVERS": 0.030999999959021807,
+          "SEASON_BOUNDARY": 0.0470000000204891
+        },
+        {
+          "PRESEASON": 1.0310000000754371,
+          "REGULAR_SEASON": 4.015999999945052,
+          "TRADE_DEADLINE": 5.047000000020489,
+          "GAMES": 68.17099999997299,
+          "DRAFT_LOTTERY": 1.4540000000270084,
+          "DRAFT": 0.17099999997299165,
+          "RESIGN_WINDOW": 0.01600000006146729,
+          "FREE_AGENCY": 1.297000000020489,
+          "WAIVERS": 0.030999999959021807,
+          "SEASON_BOUNDARY": 0.07800000009592623
+        },
+        {
+          "PRESEASON": 1.4690000000409782,
+          "REGULAR_SEASON": 6.0,
+          "TRADE_DEADLINE": 7.26500000001397,
+          "GAMES": 87.93799999996554,
+          "DRAFT_LOTTERY": 1.687000000034459,
+          "DRAFT": 0.18799999996554106,
+          "RESIGN_WINDOW": 0.015000000013969839,
+          "FREE_AGENCY": 1.577999999979511,
+          "WAIVERS": 0.015000000013969839,
+          "SEASON_BOUNDARY": 0.10999999998603016
+        }
+      ]
+    },
+    {
+      "seed_index": 1,
+      "rng_seed": 5965454318896803697,
+      "elapsed_seconds": 883.0060835999902,
+      "per_season_phase_timings": [
+        {
+          "PRESEASON": 1.375,
+          "REGULAR_SEASON": 6.342999999993481,
+          "TRADE_DEADLINE": 9.141000000061467,
+          "GAMES": 113.92199999990407,
+          "DRAFT_LOTTERY": 3.109000000054948,
+          "DRAFT": 0.4529999999795109,
+          "RESIGN_WINDOW": 0.0470000000204891,
+          "FREE_AGENCY": 1.5940000000409782,
+          "WAIVERS": 0.015000000013969839,
+          "SEASON_BOUNDARY": 0.15700000000651926
+        },
+        {
+          "PRESEASON": 3.297000000020489,
+          "REGULAR_SEASON": 14.172000000020489,
+          "TRADE_DEADLINE": 16.56299999996554,
+          "GAMES": 132.40599999995902,
+          "DRAFT_LOTTERY": 2.031000000075437,
+          "DRAFT": 0.4059999999590218,
+          "RESIGN_WINDOW": 0.03200000000651926,
+          "FREE_AGENCY": 1.7179999999934807,
+          "WAIVERS": 0.030999999959021807,
+          "SEASON_BOUNDARY": 0.1559999999590218
+        },
+        {
+          "PRESEASON": 2.422000000020489,
+          "REGULAR_SEASON": 8.875,
+          "TRADE_DEADLINE": 13.51500000001397,
+          "GAMES": 156.0,
+          "DRAFT_LOTTERY": 2.875,
+          "DRAFT": 0.3440000000409782,
+          "RESIGN_WINDOW": 0.015999999945051968,
+          "FREE_AGENCY": 1.4690000000409782,
+          "WAIVERS": 0.045999999972991645,
+          "SEASON_BOUNDARY": 0.15700000000651926
+        },
+        {
+          "PRESEASON": 3.1719999999040738,
+          "REGULAR_SEASON": 12.26500000001397,
+          "TRADE_DEADLINE": 16.73499999998603,
+          "GAMES": 159.25,
+          "DRAFT_LOTTERY": 3.2030000000959262,
+          "DRAFT": 0.2809999999590218,
+          "RESIGN_WINDOW": 0.0470000000204891,
+          "FREE_AGENCY": 1.9689999999245629,
+          "WAIVERS": 0.0470000000204891,
+          "SEASON_BOUNDARY": 0.2029999999795109
+        },
+        {
+          "PRESEASON": 2.859000000054948,
+          "REGULAR_SEASON": 13.640999999945052,
+          "TRADE_DEADLINE": 15.172000000020489,
+          "GAMES": 154.2029999999795,
+          "DRAFT_LOTTERY": 2.031000000075437,
+          "DRAFT": 0.21899999992456287,
+          "RESIGN_WINDOW": 0.0470000000204891,
+          "FREE_AGENCY": 3.01500000001397,
+          "WAIVERS": 0.03100000007543713,
+          "SEASON_BOUNDARY": 0.14099999994505197
+        }
+      ]
+    },
+    {
+      "seed_index": 2,
+      "rng_seed": 2636832537024722024,
+      "elapsed_seconds": 686.7741828999715,
+      "per_season_phase_timings": [
+        {
+          "PRESEASON": 1.9690000000409782,
+          "REGULAR_SEASON": 10.905999999959022,
+          "TRADE_DEADLINE": 13.312999999965541,
+          "GAMES": 128.18700000003446,
+          "DRAFT_LOTTERY": 1.9690000000409782,
+          "DRAFT": 0.3279999999795109,
+          "RESIGN_WINDOW": 0.030999999959021807,
+          "FREE_AGENCY": 0.7189999999245629,
+          "WAIVERS": 0.03100000007543713,
+          "SEASON_BOUNDARY": 0.09399999992456287
+        },
+        {
+          "PRESEASON": 2.219000000040978,
+          "REGULAR_SEASON": 8.375,
+          "TRADE_DEADLINE": 10.125,
+          "GAMES": 101.68799999996554,
+          "DRAFT_LOTTERY": 1.375,
+          "DRAFT": 0.18700000003445894,
+          "RESIGN_WINDOW": 0.015999999945051968,
+          "FREE_AGENCY": 1.0790000000270084,
+          "WAIVERS": 0.0470000000204891,
+          "SEASON_BOUNDARY": 0.09399999992456287
+        },
+        {
+          "PRESEASON": 1.3440000000409782,
+          "REGULAR_SEASON": 6.23499999998603,
+          "TRADE_DEADLINE": 7.655999999959022,
+          "GAMES": 86.10900000005495,
+          "DRAFT_LOTTERY": 1.452999999979511,
+          "DRAFT": 0.2190000000409782,
+          "RESIGN_WINDOW": 0.015999999945051968,
+          "FREE_AGENCY": 0.8599999999860302,
+          "WAIVERS": 0.01600000006146729,
+          "SEASON_BOUNDARY": 0.0779999999795109
+        },
+        {
+          "PRESEASON": 1.2349999999860302,
+          "REGULAR_SEASON": 6.25,
+          "TRADE_DEADLINE": 7.547000000020489,
+          "GAMES": 106.75,
+          "DRAFT_LOTTERY": 2.125,
+          "DRAFT": 0.375,
+          "RESIGN_WINDOW": 0.030999999959021807,
+          "FREE_AGENCY": 1.875,
+          "WAIVERS": 0.030999999959021807,
+          "SEASON_BOUNDARY": 0.10999999998603016
+        },
+        {
+          "PRESEASON": 1.8119999999180436,
+          "REGULAR_SEASON": 8.98499999998603,
+          "TRADE_DEADLINE": 10.75,
+          "GAMES": 145.5,
+          "DRAFT_LOTTERY": 2.375,
+          "DRAFT": 0.28100000007543713,
+          "RESIGN_WINDOW": 0.030999999959021807,
+          "FREE_AGENCY": 1.5320000000065193,
+          "WAIVERS": 0.030999999959021807,
+          "SEASON_BOUNDARY": 0.1720000000204891
+        }
+      ]
+    },
+    {
+      "seed_index": "determinism_a",
+      "rng_seed": 7416152710283060417,
+      "elapsed_seconds": 187.97701949998736,
+      "per_season_phase_timings": [
+        {
+          "PRESEASON": 1.8910000000614673,
+          "REGULAR_SEASON": 10.093999999924563,
+          "TRADE_DEADLINE": 14.062000000034459,
+          "GAMES": 0.0,
+          "DRAFT_LOTTERY": 2.5,
+          "DRAFT": 0.4059999999590218,
+          "RESIGN_WINDOW": 0.03200000000651926,
+          "FREE_AGENCY": 1.172000000020489,
+          "WAIVERS": 0.0470000000204891,
+          "SEASON_BOUNDARY": 0.125
+        },
+        {
+          "PRESEASON": 2.422000000020489,
+          "REGULAR_SEASON": 11.64000000001397,
+          "TRADE_DEADLINE": 14.952999999979511,
+          "GAMES": 0.0,
+          "DRAFT_LOTTERY": 2.7660000000614673,
+          "DRAFT": 0.3119999999180436,
+          "RESIGN_WINDOW": 0.03200000000651926,
+          "FREE_AGENCY": 1.2349999999860302,
+          "WAIVERS": 0.03200000000651926,
+          "SEASON_BOUNDARY": 0.14000000001396984
+        },
+        {
+          "PRESEASON": 2.5790000000270084,
+          "REGULAR_SEASON": 9.420999999972992,
+          "TRADE_DEADLINE": 15.547000000020489,
+          "GAMES": 0.0,
+          "DRAFT_LOTTERY": 3.3910000000614673,
+          "DRAFT": 0.640999999945052,
+          "RESIGN_WINDOW": 0.030999999959021807,
+          "FREE_AGENCY": 1.1570000000065193,
+          "WAIVERS": 0.09399999992456287,
+          "SEASON_BOUNDARY": 0.18700000003445894
+        },
+        {
+          "PRESEASON": 3.5790000000270084,
+          "REGULAR_SEASON": 14.405999999959022,
+          "TRADE_DEADLINE": 17.64000000001397,
+          "GAMES": 0.0,
+          "DRAFT_LOTTERY": 4.030999999959022,
+          "DRAFT": 0.4690000000409782,
+          "RESIGN_WINDOW": 0.0470000000204891,
+          "FREE_AGENCY": 3.030999999959022,
+          "WAIVERS": 0.0470000000204891,
+          "SEASON_BOUNDARY": 0.2029999999795109
+        },
+        {
+          "PRESEASON": 3.51500000001397,
+          "REGULAR_SEASON": 13.687999999965541,
+          "TRADE_DEADLINE": 19.234000000054948,
+          "GAMES": 0.0,
+          "DRAFT_LOTTERY": 3.85999999998603,
+          "DRAFT": 0.375,
+          "RESIGN_WINDOW": 0.030999999959021807,
+          "FREE_AGENCY": 3.5320000000065193,
+          "WAIVERS": 0.06299999996554106,
+          "SEASON_BOUNDARY": 0.28100000007543713
+        }
+      ]
+    },
+    {
+      "seed_index": "determinism_b",
+      "rng_seed": 7416152710283060417,
+      "elapsed_seconds": 209.81967520003673,
+      "per_season_phase_timings": [
+        {
+          "PRESEASON": 2.984000000054948,
+          "REGULAR_SEASON": 14.265999999945052,
+          "TRADE_DEADLINE": 19.594000000040978,
+          "GAMES": 0.0,
+          "DRAFT_LOTTERY": 3.780999999959022,
+          "DRAFT": 0.625,
+          "RESIGN_WINDOW": 0.0470000000204891,
+          "FREE_AGENCY": 1.827999999979511,
+          "WAIVERS": 0.0470000000204891,
+          "SEASON_BOUNDARY": 0.1559999999590218
+        },
+        {
+          "PRESEASON": 3.625,
+          "REGULAR_SEASON": 16.141000000061467,
+          "TRADE_DEADLINE": 18.54700000002049,
+          "GAMES": 0.0,
+          "DRAFT_LOTTERY": 3.1089999999385327,
+          "DRAFT": 0.31299999996554106,
+          "RESIGN_WINDOW": 0.015000000013969839,
+          "FREE_AGENCY": 1.3589999999385327,
+          "WAIVERS": 0.0470000000204891,
+          "SEASON_BOUNDARY": 0.17199999990407377
+        },
+        {
+          "PRESEASON": 4.172000000020489,
+          "REGULAR_SEASON": 14.311999999918044,
+          "TRADE_DEADLINE": 17.53200000000652,
+          "GAMES": 0.0,
+          "DRAFT_LOTTERY": 3.327999999979511,
+          "DRAFT": 0.43700000003445894,
+          "RESIGN_WINDOW": 0.03200000000651926,
+          "FREE_AGENCY": 1.0940000000409782,
+          "WAIVERS": 0.0779999999795109,
+          "SEASON_BOUNDARY": 0.15600000007543713
+        },
+        {
+          "PRESEASON": 2.9679999999934807,
+          "REGULAR_SEASON": 12.516000000061467,
+          "TRADE_DEADLINE": 15.827999999979511,
+          "GAMES": 0.0,
+          "DRAFT_LOTTERY": 3.062999999965541,
+          "DRAFT": 0.375,
+          "RESIGN_WINDOW": 0.030999999959021807,
+          "FREE_AGENCY": 2.6410000000614673,
+          "WAIVERS": 0.0470000000204891,
+          "SEASON_BOUNDARY": 0.17099999997299165
+        },
+        {
+          "PRESEASON": 3.484000000054948,
+          "REGULAR_SEASON": 13.547000000020489,
+          "TRADE_DEADLINE": 16.5,
+          "GAMES": 0.0,
+          "DRAFT_LOTTERY": 3.1089999999385327,
+          "DRAFT": 0.3440000000409782,
+          "RESIGN_WINDOW": 0.0470000000204891,
+          "FREE_AGENCY": 2.9209999999729916,
+          "WAIVERS": 0.0470000000204891,
+          "SEASON_BOUNDARY": 0.1559999999590218
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "passed": 25,
+    "failed": 0,
+    "skipped": 0,
+    "excluded_from_go_count": 1,
+    "total": 26
+  },
+  "metrics": [
+    {
+      "id": "M1",
+      "number": 1,
+      "family": 1,
+      "name": "roster_size_bounds",
+      "comparator": "max_violations",
+      "unit": "violation_count",
+      "band_low": null,
+      "band_high": 0,
+      "value": 0.0,
+      "per_season": null,
+      "status": "PASS",
+      "passed": true,
+      "counted_in_go": true,
+      "detail": {
+        "violations_by_boundary": {}
+      }
+    },
+    {
+      "id": "M2",
+      "number": 2,
+      "family": 1,
+      "name": "apron2_budget",
+      "comparator": "max_violations",
+      "unit": "violation_count",
+      "band_low": null,
+      "band_high": 0,
+      "value": 0.0,
+      "per_season": null,
+      "status": "PASS",
+      "passed": true,
+      "counted_in_go": true,
+      "detail": {
+        "violations_by_boundary": {},
+        "known_gap_violations": 0,
+        "known_gap_reason": "dba2/managers/decisions/signing.py and gm_service.py's free-agency legality path never check a post-signing team's used against apron_2 at all (grep-confirmed: apron_2/apron2 appears zero times in signing.py), unlike trade.py::_check_legality's own real apron_2 gate for trades. A team can legally combine several individually-legal free-agency offers (each passing its own room/exception-ceiling check) into a post-signing total that breaches apron_2 -- confirmed on the real harness at rng_seed=1, team 14 (apron2_room=+4,650,523 at free_agency_open, apron2_room=-12,759,862 at season_end, from 3 individually-legal signings). Disclosed and out of scope for this slice (a signing.py/gm_service.py fix, symmetric to trade.py's existing gate) -- reported here, not hidden or silently absorbed into a weaker invariant, and never counted toward GO/NO-GO.",
+        "hold_inclusive_violations": 65,
+        "hold_inclusive_violations_by_boundary": {
+          "PRESEASON": 10,
+          "post_trade_window_1": 8,
+          "post_draft": 19,
+          "free_agency_open": 19,
+          "TRADE_DEADLINE": 9
+        }
+      }
+    },
+    {
+      "id": "M3",
+      "number": 3,
+      "family": 1,
+      "name": "asset_conservation",
+      "comparator": "max_violations",
+      "unit": "violation_count",
+      "band_low": null,
+      "band_high": 0,
+      "value": 0.0,
+      "per_season": null,
+      "status": "PASS",
+      "passed": true,
+      "counted_in_go": true,
+      "detail": {}
+    },
+    {
+      "id": "M4",
+      "number": 4,
+      "family": 1,
+      "name": "no_double_active_contract",
+      "comparator": "max_violations",
+      "unit": "violation_count",
+      "band_low": null,
+      "band_high": 0,
+      "value": 0.0,
+      "per_season": null,
+      "status": "PASS",
+      "passed": true,
+      "counted_in_go": true,
+      "detail": {}
+    },
+    {
+      "id": "M5",
+      "number": 5,
+      "family": 1,
+      "name": "decision_record_reconstruction",
+      "comparator": "max_violations",
+      "unit": "violation_count",
+      "band_low": null,
+      "band_high": 0,
+      "value": 0.0,
+      "per_season": null,
+      "status": "PASS",
+      "passed": true,
+      "counted_in_go": true,
+      "detail": {}
+    },
+    {
+      "id": "M6",
+      "number": 6,
+      "family": 1,
+      "name": "determinism",
+      "comparator": "max_violations",
+      "unit": "violation_count",
+      "band_low": null,
+      "band_high": 0,
+      "value": 0.0,
+      "per_season": null,
+      "status": "PASS",
+      "passed": true,
+      "counted_in_go": true,
+      "detail": {
+        "duplicate_seed_pairs_checked": 1
+      }
+    },
+    {
+      "id": "M7",
+      "number": 7,
+      "family": 2,
+      "name": "capped_out_bare_roster_share",
+      "comparator": "max",
+      "unit": "share",
+      "band_low": null,
+      "band_high": 0.1,
+      "value": 0.011111111111111112,
+      "per_season": null,
+      "status": "PASS",
+      "passed": true,
+      "counted_in_go": true,
+      "detail": {
+        "flagged_team_seasons": 5,
+        "total_team_seasons": 450
+      }
+    },
+    {
+      "id": "M8a",
+      "number": 8,
+      "family": 2,
+      "name": "committed_salary_share_mean",
+      "comparator": "range",
+      "unit": "ratio",
+      "band_low": 0.88,
+      "band_high": 1.12,
+      "value": 1.098746854001836,
+      "per_season": null,
+      "status": "PASS",
+      "passed": true,
+      "counted_in_go": true,
+      "detail": {
+        "n": 450
+      }
+    },
+    {
+      "id": "M8b",
+      "number": 8,
+      "family": 2,
+      "name": "committed_salary_share_floor_count",
+      "comparator": "max",
+      "unit": "count",
+      "band_low": null,
+      "band_high": 6,
+      "value": 2.8,
+      "per_season": [
+        0.0,
+        3.0,
+        3.0,
+        3.0,
+        3.0,
+        1.0,
+        2.0,
+        4.0,
+        4.0,
+        5.0,
+        0.0,
+        1.0,
+        4.0,
+        4.0,
+        5.0
+      ],
+      "status": "PASS",
+      "passed": true,
+      "counted_in_go": true,
+      "detail": {
+        "per_season": [
+          {
+            "rng_seed": 7416152710283060417,
+            "season": 2026,
+            "below_threshold": 0
+          },
+          {
+            "rng_seed": 7416152710283060417,
+            "season": 2027,
+            "below_threshold": 3
+          },
+          {
+            "rng_seed": 7416152710283060417,
+            "season": 2028,
+            "below_threshold": 3
+          },
+          {
+            "rng_seed": 7416152710283060417,
+            "season": 2029,
+            "below_threshold": 3
+          },
+          {
+            "rng_seed": 7416152710283060417,
+            "season": 2030,
+            "below_threshold": 3
+          },
+          {
+            "rng_seed": 5965454318896803697,
+            "season": 2026,
+            "below_threshold": 1
+          },
+          {
+            "rng_seed": 5965454318896803697,
+            "season": 2027,
+            "below_threshold": 2
+          },
+          {
+            "rng_seed": 5965454318896803697,
+            "season": 2028,
+            "below_threshold": 4
+          },
+          {
+            "rng_seed": 5965454318896803697,
+            "season": 2029,
+            "below_threshold": 4
+          },
+          {
+            "rng_seed": 5965454318896803697,
+            "season": 2030,
+            "below_threshold": 5
+          },
+          {
+            "rng_seed": 2636832537024722024,
+            "season": 2026,
+            "below_threshold": 0
+          },
+          {
+            "rng_seed": 2636832537024722024,
+            "season": 2027,
+            "below_threshold": 1
+          },
+          {
+            "rng_seed": 2636832537024722024,
+            "season": 2028,
+            "below_threshold": 4
+          },
+          {
+            "rng_seed": 2636832537024722024,
+            "season": 2029,
+            "below_threshold": 4
+          },
+          {
+            "rng_seed": 2636832537024722024,
+            "season": 2030,
+            "below_threshold": 5
+          }
+        ],
+        "mean": 2.8,
+        "max_over_cells": 5,
+        "n_cells": 15,
+        "histogram": {
+          "0": 2,
+          "1": 2,
+          "2": 1,
+          "3": 4,
+          "4": 4,
+          "5": 2
+        },
+        "cells_above_band_high": 0,
+        "cells_above_band_high_share": 0.0,
+        "se_cell": 0.42761798705987897,
+        "se_seed_cluster": 0.2309401076758504
+      }
+    },
+    {
+      "id": "M9",
+      "number": 9,
+      "family": 2,
+      "name": "dead_cap_share",
+      "comparator": "max",
+      "unit": "share",
+      "band_low": null,
+      "band_high": 0.06,
+      "value": 0.003508181869160122,
+      "per_season": null,
+      "status": "PASS",
+      "passed": true,
+      "counted_in_go": true,
+      "detail": {
+        "total_dead_cap": 283293955,
+        "total_cap_dollars": 80752357080
+      }
+    },
+    {
+      "id": "M10",
+      "number": 10,
+      "family": 2,
+      "name": "room_buyers_count",
+      "comparator": "range",
+      "unit": "count",
+      "band_low": 3,
+      "band_high": 12,
+      "value": 11,
+      "per_season": [
+        6.0,
+        13.0,
+        10.0,
+        11.0,
+        11.0,
+        8.0,
+        10.0,
+        13.0,
+        13.0,
+        15.0,
+        3.0,
+        9.0,
+        13.0,
+        14.0,
+        12.0
+      ],
+      "status": "PASS",
+      "passed": true,
+      "counted_in_go": true,
+      "detail": {
+        "per_season": [
+          {
+            "rng_seed": 7416152710283060417,
+            "season": 2026,
+            "count": 6
+          },
+          {
+            "rng_seed": 7416152710283060417,
+            "season": 2027,
+            "count": 13
+          },
+          {
+            "rng_seed": 7416152710283060417,
+            "season": 2028,
+            "count": 10
+          },
+          {
+            "rng_seed": 7416152710283060417,
+            "season": 2029,
+            "count": 11
+          },
+          {
+            "rng_seed": 7416152710283060417,
+            "season": 2030,
+            "count": 11
+          },
+          {
+            "rng_seed": 5965454318896803697,
+            "season": 2026,
+            "count": 8
+          },
+          {
+            "rng_seed": 5965454318896803697,
+            "season": 2027,
+            "count": 10
+          },
+          {
+            "rng_seed": 5965454318896803697,
+            "season": 2028,
+            "count": 13
+          },
+          {
+            "rng_seed": 5965454318896803697,
+            "season": 2029,
+            "count": 13
+          },
+          {
+            "rng_seed": 5965454318896803697,
+            "season": 2030,
+            "count": 15
+          },
+          {
+            "rng_seed": 2636832537024722024,
+            "season": 2026,
+            "count": 3
+          },
+          {
+            "rng_seed": 2636832537024722024,
+            "season": 2027,
+            "count": 9
+          },
+          {
+            "rng_seed": 2636832537024722024,
+            "season": 2028,
+            "count": 13
+          },
+          {
+            "rng_seed": 2636832537024722024,
+            "season": 2029,
+            "count": 14
+          },
+          {
+            "rng_seed": 2636832537024722024,
+            "season": 2030,
+            "count": 12
+          }
+        ],
+        "holds_basis": "computed",
+        "hold_inclusive_count_per_cell": [
+          {
+            "rng_seed": 7416152710283060417,
+            "season": 2026,
+            "count": 4
+          },
+          {
+            "rng_seed": 7416152710283060417,
+            "season": 2027,
+            "count": 8
+          },
+          {
+            "rng_seed": 7416152710283060417,
+            "season": 2028,
+            "count": 10
+          },
+          {
+            "rng_seed": 7416152710283060417,
+            "season": 2029,
+            "count": 9
+          },
+          {
+            "rng_seed": 7416152710283060417,
+            "season": 2030,
+            "count": 9
+          },
+          {
+            "rng_seed": 5965454318896803697,
+            "season": 2026,
+            "count": 5
+          },
+          {
+            "rng_seed": 5965454318896803697,
+            "season": 2027,
+            "count": 7
+          },
+          {
+            "rng_seed": 5965454318896803697,
+            "season": 2028,
+            "count": 11
+          },
+          {
+            "rng_seed": 5965454318896803697,
+            "season": 2029,
+            "count": 13
+          },
+          {
+            "rng_seed": 5965454318896803697,
+            "season": 2030,
+            "count": 13
+          },
+          {
+            "rng_seed": 2636832537024722024,
+            "season": 2026,
+            "count": 2
+          },
+          {
+            "rng_seed": 2636832537024722024,
+            "season": 2027,
+            "count": 6
+          },
+          {
+            "rng_seed": 2636832537024722024,
+            "season": 2028,
+            "count": 10
+          },
+          {
+            "rng_seed": 2636832537024722024,
+            "season": 2029,
+            "count": 10
+          },
+          {
+            "rng_seed": 2636832537024722024,
+            "season": 2030,
+            "count": 11
+          }
+        ],
+        "hold_inclusive_mean": 8.533333333333333,
+        "hold_inclusive_mean_flat_threshold_v0": 9.4,
+        "pooled_mean_across_runs_seasons": 10.733333333333333,
+        "pooled_mean_across_runs_seasons_flat_threshold_v0": 12.866666666666667,
+        "gated_season_index": 5,
+        "gated_season_labels": [
+          2030,
+          2030,
+          2030
+        ],
+        "gated_cells": [
+          9,
+          13,
+          11
+        ],
+        "n_gated_cells": 3,
+        "se_across_seeds": 1.1547005383792517,
+        "hold_inclusive_steady_state_mean": 11,
+        "hold_inclusive_gated_cells": [
+          9,
+          13,
+          11
+        ]
+      }
+    },
+    {
+      "id": "M11",
+      "number": 11,
+      "family": 3,
+      "name": "star_talent_acquisition_ratio",
+      "comparator": "min",
+      "unit": "ratio",
+      "band_low": 2.0,
+      "band_high": null,
+      "value": 2.2275132275132274,
+      "per_season": null,
+      "status": "PASS (precision: 1.02 SE from the band, n=3)",
+      "passed": true,
+      "counted_in_go": true,
+      "detail": {
+        "num_hi_acquisitions": 421,
+        "num_lo_acquisitions": 108,
+        "team_seasons_hi": 210,
+        "team_seasons_lo": 120,
+        "rate_hi": 2.0047619047619047,
+        "rate_lo": 0.9,
+        "precision": {
+          "sd_source": "precertified",
+          "sd_across_seeds": 0.057434,
+          "sd_across_seeds_this_run": 0.18578217682853257,
+          "n_runs": 3,
+          "se_at_this_n": 0.22244092550607678,
+          "margin_over_band": 0.22751322751322745,
+          "margin_in_se": 1.0228029172042448,
+          "se_at_sd_seeds": 0.057434,
+          "margin_in_se_at_sd_seeds": 3.9612986647844037,
+          "se_threshold_derived": 0.3465736,
+          "precision_stale": false,
+          "sd_precertified": {
+            "null_value": 1.0,
+            "scale": "log",
+            "se_threshold_derived": 0.3465736,
+            "se_threshold_basis": "Sec.10 item 14's own rule generalized: (band_low - null_value) / 2, i.e. the band must sit >= 2 SE above the no-differentiation null. On the log scale for this metric only, since a ratio estimator is right-skewed and its null is 1.0, not 0 (architect round 29 Sec.3.2): (log 2.0 - log 1.0) / 2 = 0.3465736.",
+            "sd_across_seeds": 0.057434,
+            "sd_across_seeds_log": 0.024907,
+            "sd_estimator": "delete_one_jackknife_over_seeds",
+            "sd_seeds": 45,
+            "sd_seasons": 5,
+            "sd_skip_games": true,
+            "gm_tuning_version": 2,
+            "source": "orchestrator round 43, docs/ledger/phase-2.md; measured via delete-one jackknife over artifacts/validation_gm/m14_seeds_v2/'s 45 pickles; value at 45 seeds 2.304328, linear sd_across_seeds 0.057434, log-scale sd_across_seeds_log 0.024907",
+            "note": "REPORTED, NEVER GATED. `sd_across_seeds` is a standard error already measured at sd_seeds (45) seeds, not a per-seed/per-unit SD -- do not read it as per-seed dispersion. This block supplies that stable cross-seed SE so a short gate run can state how far its own verdict sits from the band in SE units. It does not enter `extra_pass` and cannot change `passed`. It goes stale on a gm_tuning_version bump exactly as item 14's se_precertified does, and -- unlike item 14's -- it also silently survives a mechanism change that bumps no version (Slice 26-A was such a change and moved item 16 by ~1.3 points at 3 seeds), which is why it is advisory and never a gate. `margin_in_se` answers whether a run at THIS run's own seed count is a reliable read of this metric; `margin_in_se_at_sd_seeds` (populated only when sd_source is precertified) instead answers how far THIS run's own value sits from the band judged against the metric's best-established large-sample dispersion -- see Decision P2-47 in docs/design/phase-2-manager-minds.md for the actual 45-seed VALUE measurements, which this block does not and cannot reproduce."
+          },
+          "sd_across_seeds_log": 0.024907,
+          "sd_across_seeds_log_this_run": 0.08504379951530046,
+          "se_at_this_n_log": 0.09646439620398813,
+          "margin_over_band_log": 0.10773863806279371,
+          "margin_in_se_log": 1.116874642898967,
+          "measurability_pass": true,
+          "required_seeds_if_over_threshold": null,
+          "precision_available": true
+        }
+      }
+    },
+    {
+      "id": "M12",
+      "number": 12,
+      "family": 3,
+      "name": "net_future_firsts_gap",
+      "comparator": "min",
+      "unit": "picks",
+      "band_low": 1.5,
+      "band_high": null,
+      "value": 1.563888888888889,
+      "per_season": null,
+      "status": "PASS (precision: 0.24 SE from the band, n=3)",
+      "passed": true,
+      "counted_in_go": true,
+      "detail": {
+        "mean_rebuild": 4.108333333333333,
+        "mean_contend": 2.5444444444444443,
+        "n_rebuild": 120,
+        "n_contend": 90,
+        "precision": {
+          "sd_source": "precertified",
+          "sd_across_seeds": 0.069953,
+          "sd_across_seeds_this_run": 0.2727743833235279,
+          "n_runs": 3,
+          "se_at_this_n": 0.27092680401724745,
+          "margin_over_band": 0.0638888888888891,
+          "margin_in_se": 0.23581605046661194,
+          "se_at_sd_seeds": 0.069953,
+          "margin_in_se_at_sd_seeds": 0.9133116362255959,
+          "se_threshold_derived": 0.75,
+          "precision_stale": false,
+          "sd_precertified": {
+            "null_value": 0.0,
+            "scale": "linear",
+            "se_threshold_derived": 0.75,
+            "se_threshold_basis": "Sec.10 item 14's own rule generalized: (band_low - null_value) / 2, i.e. the band must sit >= 2 SE above the no-differentiation null. Reproduces item 14's own shipped 0.75 exactly at band_low 1.5, null 0.",
+            "sd_across_seeds": 0.069953,
+            "sd_estimator": "delete_one_jackknife_over_seeds",
+            "sd_seeds": 45,
+            "sd_seasons": 5,
+            "sd_skip_games": true,
+            "gm_tuning_version": 2,
+            "source": "orchestrator round 43, docs/ledger/phase-2.md; measured via delete-one jackknife over artifacts/validation_gm/m14_seeds_v2/'s 45 pickles; value at 45 seeds 1.562626, sd_across_seeds 0.069953",
+            "note": "REPORTED, NEVER GATED. `sd_across_seeds` is a standard error already measured at sd_seeds (45) seeds, not a per-seed/per-unit SD -- do not read it as per-seed dispersion. This block supplies that stable cross-seed SE so a short gate run can state how far its own verdict sits from the band in SE units. It does not enter `extra_pass` and cannot change `passed`. It goes stale on a gm_tuning_version bump exactly as item 14's se_precertified does, and -- unlike item 14's -- it also silently survives a mechanism change that bumps no version (Slice 26-A was such a change and moved item 16 by ~1.3 points at 3 seeds), which is why it is advisory and never a gate. `margin_in_se` answers whether a run at THIS run's own seed count is a reliable read of this metric; `margin_in_se_at_sd_seeds` (populated only when sd_source is precertified) instead answers how far THIS run's own value sits from the band judged against the metric's best-established large-sample dispersion -- see Decision P2-47 in docs/design/phase-2-manager-minds.md for the actual 45-seed VALUE measurements, which this block does not and cannot reproduce."
+          },
+          "measurability_pass": true,
+          "required_seeds_if_over_threshold": null,
+          "precision_available": true
+        }
+      }
+    },
+    {
+      "id": "M13",
+      "number": 13,
+      "family": 3,
+      "name": "roster_age_gap_season3",
+      "comparator": "min",
+      "unit": "years",
+      "band_low": 1.5,
+      "band_high": null,
+      "value": 2.2205555555555563,
+      "per_season": null,
+      "status": "PASS (precision: 1.79 SE from the band, n=3)",
+      "passed": true,
+      "counted_in_go": true,
+      "detail": {
+        "mean_contend": 27.325555555555557,
+        "mean_rebuild": 25.105,
+        "n_contend": 18,
+        "n_rebuild": 24,
+        "precision": {
+          "sd_source": "precertified",
+          "sd_across_seeds": 0.104133,
+          "sd_across_seeds_this_run": 0.31600317308728687,
+          "n_runs": 3,
+          "se_at_this_n": 0.40330537479061696,
+          "margin_over_band": 0.7205555555555563,
+          "margin_in_se": 1.7866252239500784,
+          "se_at_sd_seeds": 0.104133,
+          "margin_in_se_at_sd_seeds": 6.91956973827275,
+          "se_threshold_derived": 0.75,
+          "precision_stale": false,
+          "sd_precertified": {
+            "null_value": 0.0,
+            "scale": "linear",
+            "se_threshold_derived": 0.75,
+            "se_threshold_basis": "Sec.10 item 14's own rule generalized: (band_low - null_value) / 2, i.e. the band must sit >= 2 SE above the no-differentiation null. Reproduces item 14's own shipped 0.75 exactly at band_low 1.5, null 0.",
+            "sd_across_seeds": 0.104133,
+            "sd_estimator": "delete_one_jackknife_over_seeds",
+            "sd_seeds": 45,
+            "sd_seasons": 5,
+            "sd_skip_games": true,
+            "gm_tuning_version": 2,
+            "source": "orchestrator round 43, docs/ledger/phase-2.md; measured via delete-one jackknife over artifacts/validation_gm/m14_seeds_v2/'s 45 pickles; value at 45 seeds 2.138421, sd_across_seeds 0.104133",
+            "note": "REPORTED, NEVER GATED. `sd_across_seeds` is a standard error already measured at sd_seeds (45) seeds, not a per-seed/per-unit SD -- do not read it as per-seed dispersion. This block supplies that stable cross-seed SE so a short gate run can state how far its own verdict sits from the band in SE units. It does not enter `extra_pass` and cannot change `passed`. It goes stale on a gm_tuning_version bump exactly as item 14's se_precertified does, and -- unlike item 14's -- it also silently survives a mechanism change that bumps no version (Slice 26-A was such a change and moved item 16 by ~1.3 points at 3 seeds), which is why it is advisory and never a gate. `margin_in_se` answers whether a run at THIS run's own seed count is a reliable read of this metric; `margin_in_se_at_sd_seeds` (populated only when sd_source is precertified) instead answers how far THIS run's own value sits from the band judged against the metric's best-established large-sample dispersion -- see Decision P2-47 in docs/design/phase-2-manager-minds.md for the actual 45-seed VALUE measurements, which this block does not and cannot reproduce."
+          },
+          "measurability_pass": true,
+          "required_seeds_if_over_threshold": null,
+          "precision_available": true
+        }
+      }
+    },
+    {
+      "id": "M14",
+      "number": 14,
+      "family": 3,
+      "name": "talent_concentration_paired_delta",
+      "comparator": "min",
+      "unit": "rating_points",
+      "band_low": 1.5,
+      "band_high": null,
+      "value": 13.133333333333333,
+      "per_season": null,
+      "status": "PASS (SE precertified: 0.6415 at 45 seeds, P2-35)",
+      "passed": true,
+      "counted_in_go": true,
+      "detail": {
+        "dropped_observations": 0,
+        "n_star_maxer": 15,
+        "n_egalitarian": 15,
+        "mean_star_maxer": 8.933333333333334,
+        "mean_egalitarian": -4.2,
+        "se_measured": 2.0275875100994067,
+        "se_threshold": 0.75,
+        "measurability_pass": false,
+        "required_seeds_if_over_threshold": 22,
+        "measurability_source": "precertified",
+        "se_precertified": {
+          "se_measured": 0.6415,
+          "se_threshold": 0.75,
+          "seeds": 45,
+          "seasons": 5,
+          "skip_games": true,
+          "gm_tuning_version": 2,
+          "decision": "P2-35",
+          "source": "orchestrator round (docs/ledger/phase-2.md, post-Decision-P2-42 re-precertification); measured by artifacts/scratch_measure_m14_se_v2.py, checkpointed across 2 launches under gm_tuning_version=2 (post the offer_years recalibration); series 2.0276 @ 3 seeds / 0.7164 @ 36 / 0.6415 @ 45. Supersedes the prior gm_tuning_version=1 citation (0.6887, orchestrator round 16), which went stale when Decision P2-42 bumped GM_TUNING_VERSION.",
+          "note": "The measurability conjunct of Sec.10 item 14 is satisfied by this citation, not by the gating run. Valid only while bands.gm_tuning_version equals the gm_tuning_version recorded here -- any constant move under managers/ bumps that version and re-arms the live per-run check."
+        },
+        "precertification_stale": false,
+        "se_extrapolated_at_precert_seeds": 0.5235208439728776,
+        "precertification_consistent": true
+      }
+    },
+    {
+      "id": "M15",
+      "number": 15,
+      "family": 3,
+      "name": "acquired_player_age_gap",
+      "comparator": "min",
+      "unit": "years",
+      "band_low": 2.5,
+      "band_high": null,
+      "value": 2.603926868044514,
+      "per_season": null,
+      "status": "PASS (precision: 0.35 SE from the band, n=3)",
+      "passed": true,
+      "counted_in_go": true,
+      "detail": {
+        "mean_vet_overrater": 25.691764705882353,
+        "mean_youth_developer": 23.08783783783784,
+        "n_vet_overrater": 425,
+        "n_youth_developer": 740,
+        "precision": {
+          "sd_source": "precertified",
+          "sd_across_seeds": 0.076742,
+          "sd_across_seeds_this_run": 0.46497085323639986,
+          "n_runs": 3,
+          "se_at_this_n": 0.2972204879546496,
+          "margin_over_band": 0.10392686804451401,
+          "margin_in_se": 0.349662530869579,
+          "se_at_sd_seeds": 0.076742,
+          "margin_in_se_at_sd_seeds": 1.3542371588506164,
+          "se_threshold_derived": 1.25,
+          "precision_stale": false,
+          "sd_precertified": {
+            "null_value": 0.0,
+            "scale": "linear",
+            "se_threshold_derived": 1.25,
+            "se_threshold_basis": "Sec.10 item 14's own rule generalized: (band_low - null_value) / 2, i.e. the band must sit >= 2 SE above the no-differentiation null. At band_low 2.5, null 0, this gives 1.25.",
+            "sd_across_seeds": 0.076742,
+            "sd_estimator": "delete_one_jackknife_over_seeds",
+            "sd_seeds": 45,
+            "sd_seasons": 5,
+            "sd_skip_games": true,
+            "gm_tuning_version": 2,
+            "source": "orchestrator round 43, docs/ledger/phase-2.md; measured via delete-one jackknife over artifacts/validation_gm/m14_seeds_v2/'s 45 pickles; value at 45 seeds 2.949558, sd_across_seeds 0.076742",
+            "note": "REPORTED, NEVER GATED. `sd_across_seeds` is a standard error already measured at sd_seeds (45) seeds, not a per-seed/per-unit SD -- do not read it as per-seed dispersion. This block supplies that stable cross-seed SE so a short gate run can state how far its own verdict sits from the band in SE units. It does not enter `extra_pass` and cannot change `passed`. It goes stale on a gm_tuning_version bump exactly as item 14's se_precertified does, and -- unlike item 14's -- it also silently survives a mechanism change that bumps no version (Slice 26-A was such a change and moved item 16 by ~1.3 points at 3 seeds), which is why it is advisory and never a gate. `margin_in_se` answers whether a run at THIS run's own seed count is a reliable read of this metric; `margin_in_se_at_sd_seeds` (populated only when sd_source is precertified) instead answers how far THIS run's own value sits from the band judged against the metric's best-established large-sample dispersion -- see Decision P2-47 in docs/design/phase-2-manager-minds.md for the actual 45-seed VALUE measurements, which this block does not and cannot reproduce."
+          },
+          "measurability_pass": true,
+          "required_seeds_if_over_threshold": null,
+          "precision_available": true
+        }
+      }
+    },
+    {
+      "id": "M16",
+      "number": 16,
+      "family": 3,
+      "name": "defense_first_group_mean_gap",
+      "comparator": "min",
+      "unit": "rating_points",
+      "band_low": 1.5,
+      "band_high": null,
+      "value": 3.007213834664171,
+      "per_season": null,
+      "status": "PASS",
+      "passed": true,
+      "counted_in_go": true,
+      "detail": {
+        "cohort_mean": 68.40863147609471,
+        "league_mean": 65.40141764143054,
+        "n_cohort_teams": 12,
+        "n_league_teams": 90,
+        "precision": {
+          "sd_source": "precertified",
+          "sd_across_seeds": 0.15594,
+          "sd_across_seeds_this_run": 0.37800358295505965,
+          "n_runs": 3,
+          "se_at_this_n": 0.6039530230075846,
+          "margin_over_band": 1.5072138346641708,
+          "margin_in_se": 2.495581241001989,
+          "se_at_sd_seeds": 0.15594,
+          "margin_in_se_at_sd_seeds": 9.665344585508342,
+          "se_threshold_derived": 0.75,
+          "precision_stale": false,
+          "sd_precertified": {
+            "null_value": 0.0,
+            "scale": "linear",
+            "se_threshold_derived": 0.75,
+            "se_threshold_basis": "Sec.10 item 14's own rule generalized: (band_low - null_value) / 2, i.e. the band must sit >= 2 SE above the no-differentiation null. Reproduces item 14's own shipped 0.75 exactly at band_low 1.5, null 0.",
+            "sd_across_seeds": 0.15594,
+            "sd_estimator": "delete_one_jackknife_over_seeds",
+            "sd_seeds": 45,
+            "sd_seasons": 5,
+            "sd_skip_games": true,
+            "gm_tuning_version": 2,
+            "source": "orchestrator round 43, docs/ledger/phase-2.md; measured via delete-one jackknife over artifacts/validation_gm/m14_seeds_v2/'s 45 pickles; value at 45 seeds 1.734013, sd_across_seeds 0.155940",
+            "note": "REPORTED, NEVER GATED. `sd_across_seeds` is a standard error already measured at sd_seeds (45) seeds, not a per-seed/per-unit SD -- do not read it as per-seed dispersion. This block supplies that stable cross-seed SE so a short gate run can state how far its own verdict sits from the band in SE units. It does not enter `extra_pass` and cannot change `passed`. It goes stale on a gm_tuning_version bump exactly as item 14's se_precertified does, and -- unlike item 14's -- it also silently survives a mechanism change that bumps no version (Slice 26-A was such a change and moved item 16 by ~1.3 points at 3 seeds), which is why it is advisory and never a gate. `margin_in_se` answers whether a run at THIS run's own seed count is a reliable read of this metric; `margin_in_se_at_sd_seeds` (populated only when sd_source is precertified) instead answers how far THIS run's own value sits from the band judged against the metric's best-established large-sample dispersion -- see Decision P2-47 in docs/design/phase-2-manager-minds.md for the actual 45-seed VALUE measurements, which this block does not and cannot reproduce."
+          },
+          "measurability_pass": true,
+          "required_seeds_if_over_threshold": null,
+          "precision_available": true
+        }
+      }
+    },
+    {
+      "id": "M17",
+      "number": 17,
+      "family": 3,
+      "name": "draft_board_divergence",
+      "comparator": "min",
+      "unit": "share",
+      "band_low": 0.15,
+      "band_high": null,
+      "value": 0.2843333333333333,
+      "per_season": null,
+      "status": "PASS",
+      "passed": true,
+      "counted_in_go": true,
+      "detail": {
+        "rate_star_maxer": 0.7763333333333333,
+        "rate_egalitarian": 0.492,
+        "drafts": 100,
+        "total_picks_star_maxer": 3000,
+        "total_picks_egalitarian": 3000,
+        "precision": {
+          "resampling_unit": "draft_class",
+          "n_classes": 100,
+          "sd_jackknife": 0.009749442414054288,
+          "se": 0.009749442414054288,
+          "margin_over_band": 0.13433333333333333,
+          "margin_in_se": 13.77856575055876,
+          "seed_invariant": true,
+          "note": "This metric takes no `runs` and draws its classes at seed = i for i in range(100); its value is a pure function of code and GmTuning and does not vary with the run's seed count at all. Reported for completeness; RS3's seed-count question does not apply to this item (architect round 29 Sec.3.7)."
+        }
+      }
+    },
+    {
+      "id": "M18",
+      "number": 18,
+      "family": 4,
+      "name": "trades_per_season",
+      "comparator": "range",
+      "unit": "count",
+      "band_low": 12,
+      "band_high": 55,
+      "value": 42.733333333333334,
+      "per_season": [
+        40.0,
+        45.0,
+        44.0,
+        47.0,
+        45.0,
+        48.0,
+        45.0,
+        41.0,
+        41.0,
+        41.0,
+        43.0,
+        42.0,
+        38.0,
+        40.0,
+        41.0
+      ],
+      "status": "PASS",
+      "passed": true,
+      "counted_in_go": true,
+      "detail": {
+        "per_season": [
+          {
+            "rng_seed": 7416152710283060417,
+            "season": 2026,
+            "trades": 40
+          },
+          {
+            "rng_seed": 7416152710283060417,
+            "season": 2027,
+            "trades": 45
+          },
+          {
+            "rng_seed": 7416152710283060417,
+            "season": 2028,
+            "trades": 44
+          },
+          {
+            "rng_seed": 7416152710283060417,
+            "season": 2029,
+            "trades": 47
+          },
+          {
+            "rng_seed": 7416152710283060417,
+            "season": 2030,
+            "trades": 45
+          },
+          {
+            "rng_seed": 5965454318896803697,
+            "season": 2026,
+            "trades": 48
+          },
+          {
+            "rng_seed": 5965454318896803697,
+            "season": 2027,
+            "trades": 45
+          },
+          {
+            "rng_seed": 5965454318896803697,
+            "season": 2028,
+            "trades": 41
+          },
+          {
+            "rng_seed": 5965454318896803697,
+            "season": 2029,
+            "trades": 41
+          },
+          {
+            "rng_seed": 5965454318896803697,
+            "season": 2030,
+            "trades": 41
+          },
+          {
+            "rng_seed": 2636832537024722024,
+            "season": 2026,
+            "trades": 43
+          },
+          {
+            "rng_seed": 2636832537024722024,
+            "season": 2027,
+            "trades": 42
+          },
+          {
+            "rng_seed": 2636832537024722024,
+            "season": 2028,
+            "trades": 38
+          },
+          {
+            "rng_seed": 2636832537024722024,
+            "season": 2029,
+            "trades": 40
+          },
+          {
+            "rng_seed": 2636832537024722024,
+            "season": 2030,
+            "trades": 41
+          }
+        ],
+        "any_season_zero": false
+      }
+    },
+    {
+      "id": "M19",
+      "number": 19,
+      "family": 4,
+      "name": "mutual_accept_share",
+      "comparator": "range",
+      "unit": "share",
+      "band_low": 0.03,
+      "band_high": 0.25,
+      "value": 0.09141962982873819,
+      "per_season": null,
+      "status": "PASS",
+      "passed": true,
+      "counted_in_go": true,
+      "detail": {
+        "total_mutual_accepts": 9523,
+        "total_packages_evaluated": 104168
+      }
+    },
+    {
+      "id": "M20",
+      "number": 20,
+      "family": 4,
+      "name": "max_team_trade_share",
+      "comparator": "max",
+      "unit": "share",
+      "band_low": null,
+      "band_high": 0.25,
+      "value": 0.15789473684210525,
+      "per_season": null,
+      "status": "PASS",
+      "passed": true,
+      "counted_in_go": true,
+      "detail": {
+        "worst": {
+          "rng_seed": 2636832537024722024,
+          "season": 2028,
+          "team_id": 6,
+          "share": 0.15789473684210525
+        }
+      }
+    },
+    {
+      "id": "M21",
+      "number": 21,
+      "family": 4,
+      "name": "retrade_loop",
+      "comparator": "max_violations",
+      "unit": "violation_count",
+      "band_low": null,
+      "band_high": 0,
+      "value": 24.0,
+      "per_season": null,
+      "status": "FAIL (interpreted)",
+      "passed": false,
+      "counted_in_go": false,
+      "detail": {
+        "checked_seasons": 15,
+        "interpretation": "consecutive_trade_windows"
+      }
+    },
+    {
+      "id": "M22",
+      "number": 22,
+      "family": 4,
+      "name": "win_total_sd",
+      "comparator": "range",
+      "unit": "wins",
+      "band_low": 8.0,
+      "band_high": 16.0,
+      "value": 13.654342957210137,
+      "per_season": [
+        13.559744343705994,
+        12.863384728238003,
+        13.081793964641598,
+        13.611269840344312,
+        14.406017261315958,
+        14.189197769195175,
+        12.40698727868024,
+        14.198591479439079,
+        13.633292583476182,
+        14.296852800529212,
+        13.155480480266263,
+        12.675435561221029,
+        14.422205101855956,
+        14.149204924659195,
+        14.165686240583852
+      ],
+      "status": "PASS",
+      "passed": true,
+      "counted_in_go": true,
+      "detail": {
+        "per_season_sd": [
+          13.559744343705994,
+          12.863384728238003,
+          13.081793964641598,
+          13.611269840344312,
+          14.406017261315958,
+          14.189197769195175,
+          12.40698727868024,
+          14.198591479439079,
+          13.633292583476182,
+          14.296852800529212,
+          13.155480480266263,
+          12.675435561221029,
+          14.422205101855956,
+          14.149204924659195,
+          14.165686240583852
+        ]
+      }
+    },
+    {
+      "id": "A1",
+      "number": 0,
+      "family": 0,
+      "name": "value_archetype_golden_table",
+      "comparator": "max_violations",
+      "unit": "violation_count",
+      "band_low": null,
+      "band_high": 0,
+      "value": 0.0,
+      "per_season": null,
+      "status": "PASS",
+      "passed": true,
+      "counted_in_go": true,
+      "detail": {
+        "rows": 12,
+        "golden_path": "C:\\Users\\Owner\\Desktop\\AI\\Projects\\dba2\\.claude\\worktrees\\agent-abc94cc3363b65407\\seeds\\gm_value_archetypes.json"
+      }
+    },
+    {
+      "id": "A2",
+      "number": 0,
+      "family": 0,
+      "name": "pick_archetype_golden_table",
+      "comparator": "max_violations",
+      "unit": "violation_count",
+      "band_low": null,
+      "band_high": 0,
+      "value": 0.0,
+      "per_season": null,
+      "status": "PASS",
+      "passed": true,
+      "counted_in_go": true,
+      "detail": {
+        "rows": 8,
+        "golden_path": "C:\\Users\\Owner\\Desktop\\AI\\Projects\\dba2\\.claude\\worktrees\\agent-abc94cc3363b65407\\seeds\\gm_pick_archetypes.json"
+      }
+    },
+    {
+      "id": "A3",
+      "number": 0,
+      "family": 0,
+      "name": "prospect_archetype_golden_table",
+      "comparator": "max_violations",
+      "unit": "violation_count",
+      "band_low": null,
+      "band_high": 0,
+      "value": 0.0,
+      "per_season": null,
+      "status": "PASS",
+      "passed": true,
+      "counted_in_go": true,
+      "detail": {
+        "rows": 2,
+        "golden_path": "C:\\Users\\Owner\\Desktop\\AI\\Projects\\dba2\\.claude\\worktrees\\agent-abc94cc3363b65407\\seeds\\gm_prospect_archetypes.json"
+      }
+    }
+  ]
+}

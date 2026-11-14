@@ -1,0 +1,1477 @@
+{
+  "_description": "Decision P4-47(/P4-64)'s committed template-for-template phrase-selection golden -- captured BEFORE dba2/managers/voice/engine.py's extraction, over a fixed input corpus (tools/gm_phrase_golden_corpus.py). Regenerate with `python -m tools.generate_gm_phrase_selection_golden`. Two parts: 'shipped_library_replay' (the real, unmodified seeds/gm_phrases.json, dimension-coverage corpus) and 'synthetic_operator_coverage_replay' (a small fixture library declared in tools/gm_phrase_golden_corpus.py, NOT added to seeds/gm_phrases.json per Decision P4-33, covering the two _trigger_holds operators -- gt, in -- the shipped library cannot reach). Compare element-wise, never by hash (a hash proves THAT something moved, not WHICH selection did).",
+  "master_seed": 424242,
+  "shipped_library_replay": {
+    "library_path": "seeds/gm_phrases.json",
+    "template_count": 88,
+    "repeat_penalty": 0.25,
+    "case_count": 282,
+    "cases": [
+      {
+        "label": "cross_star_maxer_open_rebuild",
+        "template_id": "open_star_maxer_headliner",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_star_maxer_open_retool",
+        "template_id": "open_persistent_friction",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_star_maxer_open_win_now",
+        "template_id": "open_star_maxer_headliner",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_star_maxer_open_contend",
+        "template_id": "fallback_open",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_egalitarian_open_rebuild",
+        "template_id": "open_egalitarian_fair_price",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_egalitarian_open_retool",
+        "template_id": "fallback_open",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_egalitarian_open_win_now",
+        "template_id": "open_egalitarian_spread",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_egalitarian_open_contend",
+        "template_id": "open_persistent_friction",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_defense_first_open_rebuild",
+        "template_id": "open_defense_first_locks_it_down",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_defense_first_open_retool",
+        "template_id": "open_persistent_friction",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_defense_first_open_win_now",
+        "template_id": "fallback_open",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_defense_first_open_contend",
+        "template_id": "open_defense_first_locks_it_down",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_tendency_respecter_open_rebuild",
+        "template_id": "open_tendency_respecter_depth",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_tendency_respecter_open_retool",
+        "template_id": "open_tendency_respecter_depth",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_tendency_respecter_open_win_now",
+        "template_id": "open_tendency_respecter_reads_the_board",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_tendency_respecter_open_contend",
+        "template_id": "open_tendency_respecter_depth",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_vet_overrater_open_rebuild",
+        "template_id": "open_vet_overrater_second_chance",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_vet_overrater_open_retool",
+        "template_id": "open_vet_overrater_second_chance",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_vet_overrater_open_win_now",
+        "template_id": "fallback_open",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_vet_overrater_open_contend",
+        "template_id": "open_vet_overrater_second_chance",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_youth_developer_open_rebuild",
+        "template_id": "open_persistent_friction",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_youth_developer_open_retool",
+        "template_id": "open_youth_developer_open_book",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_youth_developer_open_win_now",
+        "template_id": "open_persistent_friction",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_youth_developer_open_contend",
+        "template_id": "fallback_open",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_chaos_open_rebuild",
+        "template_id": "open_chaos_take_the_numbers",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_chaos_open_retool",
+        "template_id": "open_chaos_take_the_numbers",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_chaos_open_win_now",
+        "template_id": "open_persistent_friction",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_chaos_open_contend",
+        "template_id": "fallback_open",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_star_maxer_accept_round0_rebuild",
+        "template_id": "fallback_accept_round0",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_star_maxer_accept_round0_retool",
+        "template_id": "accept_round0_cap_relief",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_star_maxer_accept_round0_win_now",
+        "template_id": "accept_round0_cap_relief",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_star_maxer_accept_round0_contend",
+        "template_id": "accept_round0_cap_relief",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_egalitarian_accept_round0_rebuild",
+        "template_id": "accept_round0_egalitarian_spread",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_egalitarian_accept_round0_retool",
+        "template_id": "fallback_accept_round0",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_egalitarian_accept_round0_win_now",
+        "template_id": "accept_round0_egalitarian_spread",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_egalitarian_accept_round0_contend",
+        "template_id": "accept_round0_generic_good_value",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_defense_first_accept_round0_rebuild",
+        "template_id": "fallback_accept_round0",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_defense_first_accept_round0_retool",
+        "template_id": "accept_round0_generic_good_value",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_defense_first_accept_round0_win_now",
+        "template_id": "accept_round0_defense_first_solid_value",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_defense_first_accept_round0_contend",
+        "template_id": "accept_round0_generic_good_value",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_tendency_respecter_accept_round0_rebuild",
+        "template_id": "accept_round0_generic_good_value",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_tendency_respecter_accept_round0_retool",
+        "template_id": "accept_round0_generic_good_value",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_tendency_respecter_accept_round0_win_now",
+        "template_id": "accept_round0_tendency_respecter_matches_history",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_tendency_respecter_accept_round0_contend",
+        "template_id": "fallback_accept_round0",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_vet_overrater_accept_round0_rebuild",
+        "template_id": "accept_round0_cap_relief",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_vet_overrater_accept_round0_retool",
+        "template_id": "accept_round0_cap_relief",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_vet_overrater_accept_round0_win_now",
+        "template_id": "accept_round0_vet_overrater_worth_it",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_vet_overrater_accept_round0_contend",
+        "template_id": "accept_round0_cap_relief",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_youth_developer_accept_round0_rebuild",
+        "template_id": "accept_round0_cap_relief",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_youth_developer_accept_round0_retool",
+        "template_id": "accept_round0_cap_relief",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_youth_developer_accept_round0_win_now",
+        "template_id": "accept_round0_generic_good_value",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_youth_developer_accept_round0_contend",
+        "template_id": "accept_round0_generic_good_value",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_chaos_accept_round0_rebuild",
+        "template_id": "accept_round0_chaos_why_not",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_chaos_accept_round0_retool",
+        "template_id": "fallback_accept_round0",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_chaos_accept_round0_win_now",
+        "template_id": "fallback_accept_round0",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_chaos_accept_round0_contend",
+        "template_id": "accept_round0_generic_good_value",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_star_maxer_accept_after_counter_rebuild",
+        "template_id": "accept_after_counter_took_a_round",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_star_maxer_accept_after_counter_retool",
+        "template_id": "fallback_accept_after_counter",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_star_maxer_accept_after_counter_win_now",
+        "template_id": "accept_after_counter_took_a_round",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_star_maxer_accept_after_counter_contend",
+        "template_id": "accept_after_counter_star_maxer_closed_the_gap",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_egalitarian_accept_after_counter_rebuild",
+        "template_id": "accept_after_counter_egalitarian_worth_the_wait",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_egalitarian_accept_after_counter_retool",
+        "template_id": "accept_after_counter_egalitarian_worth_the_wait",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_egalitarian_accept_after_counter_win_now",
+        "template_id": "accept_after_counter_egalitarian_worth_the_wait",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_egalitarian_accept_after_counter_contend",
+        "template_id": "accept_after_counter_egalitarian_worth_the_wait",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_defense_first_accept_after_counter_rebuild",
+        "template_id": "accept_after_counter_took_a_round",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_defense_first_accept_after_counter_retool",
+        "template_id": "accept_after_counter_took_a_round",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_defense_first_accept_after_counter_win_now",
+        "template_id": "accept_after_counter_defense_first_gets_there",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_defense_first_accept_after_counter_contend",
+        "template_id": "accept_after_counter_took_a_round",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_tendency_respecter_accept_after_counter_rebuild",
+        "template_id": "fallback_accept_after_counter",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_tendency_respecter_accept_after_counter_retool",
+        "template_id": "accept_after_counter_tendency_respecter_adjustment",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_tendency_respecter_accept_after_counter_win_now",
+        "template_id": "fallback_accept_after_counter",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_tendency_respecter_accept_after_counter_contend",
+        "template_id": "accept_after_counter_took_a_round",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_vet_overrater_accept_after_counter_rebuild",
+        "template_id": "accept_after_counter_vet_overrater_real_offer",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_vet_overrater_accept_after_counter_retool",
+        "template_id": "accept_after_counter_took_a_round",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_vet_overrater_accept_after_counter_win_now",
+        "template_id": "accept_after_counter_vet_overrater_real_offer",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_vet_overrater_accept_after_counter_contend",
+        "template_id": "accept_after_counter_took_a_round",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_youth_developer_accept_after_counter_rebuild",
+        "template_id": "fallback_accept_after_counter",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_youth_developer_accept_after_counter_retool",
+        "template_id": "accept_after_counter_youth_developer_holds_the_line",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_youth_developer_accept_after_counter_win_now",
+        "template_id": "accept_after_counter_youth_developer_holds_the_line",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_youth_developer_accept_after_counter_contend",
+        "template_id": "accept_after_counter_took_a_round",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_chaos_accept_after_counter_rebuild",
+        "template_id": "accept_after_counter_chaos_eventually",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_chaos_accept_after_counter_retool",
+        "template_id": "fallback_accept_after_counter",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_chaos_accept_after_counter_win_now",
+        "template_id": "accept_after_counter_took_a_round",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_chaos_accept_after_counter_contend",
+        "template_id": "accept_after_counter_chaos_eventually",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_star_maxer_counter_ask_more_rebuild",
+        "template_id": "fallback_counter_ask_more",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_star_maxer_counter_ask_more_retool",
+        "template_id": "counter_ask_more_generic_gap",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_star_maxer_counter_ask_more_win_now",
+        "template_id": "counter_ask_more_star_maxer_one_more_piece",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_star_maxer_counter_ask_more_contend",
+        "template_id": "counter_ask_more_generic_gap",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_egalitarian_counter_ask_more_rebuild",
+        "template_id": "counter_ask_more_generic_gap",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_egalitarian_counter_ask_more_retool",
+        "template_id": "counter_ask_more_generic_gap",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_egalitarian_counter_ask_more_win_now",
+        "template_id": "counter_ask_more_generic_gap",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_egalitarian_counter_ask_more_contend",
+        "template_id": "counter_ask_more_egalitarian_more_bodies",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_defense_first_counter_ask_more_rebuild",
+        "template_id": "counter_ask_more_generic_gap",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_defense_first_counter_ask_more_retool",
+        "template_id": "fallback_counter_ask_more",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_defense_first_counter_ask_more_win_now",
+        "template_id": "counter_ask_more_generic_gap",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_defense_first_counter_ask_more_contend",
+        "template_id": "fallback_counter_ask_more",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_tendency_respecter_counter_ask_more_rebuild",
+        "template_id": "counter_ask_more_generic_gap",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_tendency_respecter_counter_ask_more_retool",
+        "template_id": "counter_ask_more_generic_gap",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_tendency_respecter_counter_ask_more_win_now",
+        "template_id": "fallback_counter_ask_more",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_tendency_respecter_counter_ask_more_contend",
+        "template_id": "counter_ask_more_generic_gap",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_vet_overrater_counter_ask_more_rebuild",
+        "template_id": "counter_ask_more_generic_gap",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_vet_overrater_counter_ask_more_retool",
+        "template_id": "counter_ask_more_generic_gap",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_vet_overrater_counter_ask_more_win_now",
+        "template_id": "fallback_counter_ask_more",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_vet_overrater_counter_ask_more_contend",
+        "template_id": "counter_ask_more_generic_gap",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_youth_developer_counter_ask_more_rebuild",
+        "template_id": "counter_ask_more_generic_gap",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_youth_developer_counter_ask_more_retool",
+        "template_id": "counter_ask_more_generic_gap",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_youth_developer_counter_ask_more_win_now",
+        "template_id": "counter_ask_more_generic_gap",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_youth_developer_counter_ask_more_contend",
+        "template_id": "fallback_counter_ask_more",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_chaos_counter_ask_more_rebuild",
+        "template_id": "counter_ask_more_generic_gap",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_chaos_counter_ask_more_retool",
+        "template_id": "counter_ask_more_generic_gap",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_chaos_counter_ask_more_win_now",
+        "template_id": "fallback_counter_ask_more",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_chaos_counter_ask_more_contend",
+        "template_id": "counter_ask_more_generic_gap",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_star_maxer_counter_give_less_rebuild",
+        "template_id": "fallback_counter_give_less",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_star_maxer_counter_give_less_retool",
+        "template_id": "counter_give_less_generic_gap",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_star_maxer_counter_give_less_win_now",
+        "template_id": "counter_give_less_generic_gap",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_star_maxer_counter_give_less_contend",
+        "template_id": "fallback_counter_give_less",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_egalitarian_counter_give_less_rebuild",
+        "template_id": "fallback_counter_give_less",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_egalitarian_counter_give_less_retool",
+        "template_id": "fallback_counter_give_less",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_egalitarian_counter_give_less_win_now",
+        "template_id": "fallback_counter_give_less",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_egalitarian_counter_give_less_contend",
+        "template_id": "fallback_counter_give_less",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_defense_first_counter_give_less_rebuild",
+        "template_id": "counter_give_less_defense_first_less_out",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_defense_first_counter_give_less_retool",
+        "template_id": "counter_give_less_generic_gap",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_defense_first_counter_give_less_win_now",
+        "template_id": "counter_give_less_defense_first_less_out",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_defense_first_counter_give_less_contend",
+        "template_id": "counter_give_less_defense_first_less_out",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_tendency_respecter_counter_give_less_rebuild",
+        "template_id": "counter_give_less_tendency_respecter_less_is_fine",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_tendency_respecter_counter_give_less_retool",
+        "template_id": "counter_give_less_tendency_respecter_less_is_fine",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_tendency_respecter_counter_give_less_win_now",
+        "template_id": "counter_give_less_generic_gap",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_tendency_respecter_counter_give_less_contend",
+        "template_id": "fallback_counter_give_less",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_vet_overrater_counter_give_less_rebuild",
+        "template_id": "counter_give_less_vet_overrater_trim_it",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_vet_overrater_counter_give_less_retool",
+        "template_id": "fallback_counter_give_less",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_vet_overrater_counter_give_less_win_now",
+        "template_id": "fallback_counter_give_less",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_vet_overrater_counter_give_less_contend",
+        "template_id": "counter_give_less_generic_gap",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_youth_developer_counter_give_less_rebuild",
+        "template_id": "counter_give_less_youth_developer_keep_picks",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_youth_developer_counter_give_less_retool",
+        "template_id": "counter_give_less_youth_developer_keep_picks",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_youth_developer_counter_give_less_win_now",
+        "template_id": "counter_give_less_youth_developer_keep_picks",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_youth_developer_counter_give_less_contend",
+        "template_id": "counter_give_less_generic_gap",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_chaos_counter_give_less_rebuild",
+        "template_id": "counter_give_less_chaos_still_a_win",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_chaos_counter_give_less_retool",
+        "template_id": "fallback_counter_give_less",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_chaos_counter_give_less_win_now",
+        "template_id": "counter_give_less_chaos_still_a_win",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_chaos_counter_give_less_contend",
+        "template_id": "counter_give_less_generic_gap",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_star_maxer_reject_too_far_rebuild",
+        "template_id": "reject_too_far_in_band_no_move",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_star_maxer_reject_too_far_retool",
+        "template_id": "reject_too_far_in_band_no_move",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_star_maxer_reject_too_far_win_now",
+        "template_id": "reject_too_far_nowhere_near",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_star_maxer_reject_too_far_contend",
+        "template_id": "reject_too_far_in_band_no_move",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_egalitarian_reject_too_far_rebuild",
+        "template_id": "reject_too_far_nowhere_near",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_egalitarian_reject_too_far_retool",
+        "template_id": "reject_too_far_in_band_no_move",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_egalitarian_reject_too_far_win_now",
+        "template_id": "reject_too_far_egalitarian_in_band_no_move",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_egalitarian_reject_too_far_contend",
+        "template_id": "reject_too_far_in_band_no_move",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_defense_first_reject_too_far_rebuild",
+        "template_id": "reject_too_far_in_band_no_move",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_defense_first_reject_too_far_retool",
+        "template_id": "reject_too_far_in_band_no_move",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_defense_first_reject_too_far_win_now",
+        "template_id": "reject_too_far_in_band_no_move",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_defense_first_reject_too_far_contend",
+        "template_id": "reject_too_far_in_band_no_move",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_tendency_respecter_reject_too_far_rebuild",
+        "template_id": "reject_too_far_in_band_no_move",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_tendency_respecter_reject_too_far_retool",
+        "template_id": "reject_too_far_in_band_no_move",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_tendency_respecter_reject_too_far_win_now",
+        "template_id": "reject_too_far_in_band_no_move",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_tendency_respecter_reject_too_far_contend",
+        "template_id": "reject_too_far_in_band_no_move",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_vet_overrater_reject_too_far_rebuild",
+        "template_id": "reject_too_far_in_band_no_move",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_vet_overrater_reject_too_far_retool",
+        "template_id": "reject_too_far_in_band_no_move",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_vet_overrater_reject_too_far_win_now",
+        "template_id": "reject_too_far_in_band_no_move",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_vet_overrater_reject_too_far_contend",
+        "template_id": "reject_too_far_in_band_no_move",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_youth_developer_reject_too_far_rebuild",
+        "template_id": "reject_too_far_in_band_no_move",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_youth_developer_reject_too_far_retool",
+        "template_id": "reject_too_far_in_band_no_move",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_youth_developer_reject_too_far_win_now",
+        "template_id": "reject_too_far_in_band_no_move",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_youth_developer_reject_too_far_contend",
+        "template_id": "reject_too_far_nowhere_near",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_chaos_reject_too_far_rebuild",
+        "template_id": "reject_too_far_in_band_no_move",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_chaos_reject_too_far_retool",
+        "template_id": "reject_too_far_in_band_no_move",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_chaos_reject_too_far_win_now",
+        "template_id": "fallback_reject_too_far",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_chaos_reject_too_far_contend",
+        "template_id": "reject_too_far_in_band_no_move",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_star_maxer_reject_deadlock_rebuild",
+        "template_id": "reject_deadlock_same_spot",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_star_maxer_reject_deadlock_retool",
+        "template_id": "reject_deadlock_h2h_history",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_star_maxer_reject_deadlock_win_now",
+        "template_id": "fallback_reject_deadlock",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_star_maxer_reject_deadlock_contend",
+        "template_id": "reject_deadlock_h2h_history",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_egalitarian_reject_deadlock_rebuild",
+        "template_id": "reject_deadlock_same_spot",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_egalitarian_reject_deadlock_retool",
+        "template_id": "reject_deadlock_same_spot",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_egalitarian_reject_deadlock_win_now",
+        "template_id": "reject_deadlock_same_spot",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_egalitarian_reject_deadlock_contend",
+        "template_id": "reject_deadlock_h2h_history",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_defense_first_reject_deadlock_rebuild",
+        "template_id": "reject_deadlock_h2h_history",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_defense_first_reject_deadlock_retool",
+        "template_id": "reject_deadlock_same_spot",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_defense_first_reject_deadlock_win_now",
+        "template_id": "reject_deadlock_same_spot",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_defense_first_reject_deadlock_contend",
+        "template_id": "reject_deadlock_h2h_history",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_tendency_respecter_reject_deadlock_rebuild",
+        "template_id": "reject_deadlock_same_spot",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_tendency_respecter_reject_deadlock_retool",
+        "template_id": "reject_deadlock_h2h_history",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_tendency_respecter_reject_deadlock_win_now",
+        "template_id": "reject_deadlock_same_spot",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_tendency_respecter_reject_deadlock_contend",
+        "template_id": "fallback_reject_deadlock",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_vet_overrater_reject_deadlock_rebuild",
+        "template_id": "reject_deadlock_vet_overrater_not_converging",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_vet_overrater_reject_deadlock_retool",
+        "template_id": "reject_deadlock_same_spot",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_vet_overrater_reject_deadlock_win_now",
+        "template_id": "reject_deadlock_h2h_history",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_vet_overrater_reject_deadlock_contend",
+        "template_id": "reject_deadlock_vet_overrater_not_converging",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_youth_developer_reject_deadlock_rebuild",
+        "template_id": "fallback_reject_deadlock",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_youth_developer_reject_deadlock_retool",
+        "template_id": "reject_deadlock_h2h_history",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_youth_developer_reject_deadlock_win_now",
+        "template_id": "reject_deadlock_h2h_history",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_youth_developer_reject_deadlock_contend",
+        "template_id": "reject_deadlock_same_spot",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_chaos_reject_deadlock_rebuild",
+        "template_id": "reject_deadlock_h2h_history",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_chaos_reject_deadlock_retool",
+        "template_id": "reject_deadlock_h2h_history",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_chaos_reject_deadlock_win_now",
+        "template_id": "reject_deadlock_h2h_history",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_chaos_reject_deadlock_contend",
+        "template_id": "reject_deadlock_same_spot",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_star_maxer_reject_illegal_rebuild",
+        "template_id": "reject_illegal_apron_2",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_star_maxer_reject_illegal_retool",
+        "template_id": "reject_illegal_apron_1",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_star_maxer_reject_illegal_win_now",
+        "template_id": "fallback_reject_illegal",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_star_maxer_reject_illegal_contend",
+        "template_id": "reject_illegal_star_maxer_roster_max",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_egalitarian_reject_illegal_rebuild",
+        "template_id": "reject_illegal_roster_min",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_egalitarian_reject_illegal_retool",
+        "template_id": "reject_illegal_apron_2",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_egalitarian_reject_illegal_win_now",
+        "template_id": "reject_illegal_apron_2",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_egalitarian_reject_illegal_contend",
+        "template_id": "reject_illegal_roster_max",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_defense_first_reject_illegal_rebuild",
+        "template_id": "reject_illegal_roster_min",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_defense_first_reject_illegal_retool",
+        "template_id": "fallback_reject_illegal",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_defense_first_reject_illegal_win_now",
+        "template_id": "reject_illegal_apron_1",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_defense_first_reject_illegal_contend",
+        "template_id": "reject_illegal_salary_matching",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_tendency_respecter_reject_illegal_rebuild",
+        "template_id": "reject_illegal_roster_min",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_tendency_respecter_reject_illegal_retool",
+        "template_id": "reject_illegal_salary_matching",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_tendency_respecter_reject_illegal_win_now",
+        "template_id": "reject_illegal_roster_min",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_tendency_respecter_reject_illegal_contend",
+        "template_id": "reject_illegal_roster_max",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_vet_overrater_reject_illegal_rebuild",
+        "template_id": "reject_illegal_apron_2",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_vet_overrater_reject_illegal_retool",
+        "template_id": "reject_illegal_apron_1",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_vet_overrater_reject_illegal_win_now",
+        "template_id": "reject_illegal_roster_max",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_vet_overrater_reject_illegal_contend",
+        "template_id": "reject_illegal_salary_matching",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_youth_developer_reject_illegal_rebuild",
+        "template_id": "reject_illegal_apron_1",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_youth_developer_reject_illegal_retool",
+        "template_id": "reject_illegal_salary_matching",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_youth_developer_reject_illegal_win_now",
+        "template_id": "reject_illegal_roster_max",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_youth_developer_reject_illegal_contend",
+        "template_id": "reject_illegal_salary_matching",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_chaos_reject_illegal_rebuild",
+        "template_id": "reject_illegal_apron_2",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_chaos_reject_illegal_retool",
+        "template_id": "reject_illegal_apron_2",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_chaos_reject_illegal_win_now",
+        "template_id": "reject_illegal_roster_max",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_chaos_reject_illegal_contend",
+        "template_id": "reject_illegal_apron_1",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_star_maxer_expire_stalled_rebuild",
+        "template_id": "expire_stalled_neither_moves",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_star_maxer_expire_stalled_retool",
+        "template_id": "expire_stalled_neither_moves",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_star_maxer_expire_stalled_win_now",
+        "template_id": "expire_stalled_neither_moves",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_star_maxer_expire_stalled_contend",
+        "template_id": "expire_stalled_neither_moves",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_egalitarian_expire_stalled_rebuild",
+        "template_id": "expire_stalled_neither_moves",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_egalitarian_expire_stalled_retool",
+        "template_id": "expire_stalled_neither_moves",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_egalitarian_expire_stalled_win_now",
+        "template_id": "expire_stalled_neither_moves",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_egalitarian_expire_stalled_contend",
+        "template_id": "expire_stalled_neither_moves",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_defense_first_expire_stalled_rebuild",
+        "template_id": "fallback_expire_stalled",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_defense_first_expire_stalled_retool",
+        "template_id": "expire_stalled_neither_moves",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_defense_first_expire_stalled_win_now",
+        "template_id": "fallback_expire_stalled",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_defense_first_expire_stalled_contend",
+        "template_id": "fallback_expire_stalled",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_tendency_respecter_expire_stalled_rebuild",
+        "template_id": "expire_stalled_neither_moves",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_tendency_respecter_expire_stalled_retool",
+        "template_id": "expire_stalled_neither_moves",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_tendency_respecter_expire_stalled_win_now",
+        "template_id": "fallback_expire_stalled",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_tendency_respecter_expire_stalled_contend",
+        "template_id": "expire_stalled_neither_moves",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_vet_overrater_expire_stalled_rebuild",
+        "template_id": "expire_stalled_neither_moves",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_vet_overrater_expire_stalled_retool",
+        "template_id": "fallback_expire_stalled",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_vet_overrater_expire_stalled_win_now",
+        "template_id": "fallback_expire_stalled",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_vet_overrater_expire_stalled_contend",
+        "template_id": "expire_stalled_neither_moves",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_youth_developer_expire_stalled_rebuild",
+        "template_id": "fallback_expire_stalled",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_youth_developer_expire_stalled_retool",
+        "template_id": "expire_stalled_neither_moves",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_youth_developer_expire_stalled_win_now",
+        "template_id": "fallback_expire_stalled",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_youth_developer_expire_stalled_contend",
+        "template_id": "expire_stalled_neither_moves",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_chaos_expire_stalled_rebuild",
+        "template_id": "expire_stalled_neither_moves",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_chaos_expire_stalled_retool",
+        "template_id": "expire_stalled_neither_moves",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_chaos_expire_stalled_win_now",
+        "template_id": "expire_stalled_neither_moves",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_chaos_expire_stalled_contend",
+        "template_id": "fallback_expire_stalled",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_star_maxer_expire_rounds_rebuild",
+        "template_id": "fallback_expire_rounds",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_star_maxer_expire_rounds_retool",
+        "template_id": "expire_rounds_out_of_runway",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_star_maxer_expire_rounds_win_now",
+        "template_id": "fallback_expire_rounds",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_star_maxer_expire_rounds_contend",
+        "template_id": "fallback_expire_rounds",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_egalitarian_expire_rounds_rebuild",
+        "template_id": "expire_rounds_out_of_runway",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_egalitarian_expire_rounds_retool",
+        "template_id": "expire_rounds_egalitarian_ran_out_clock",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_egalitarian_expire_rounds_win_now",
+        "template_id": "expire_rounds_out_of_runway",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_egalitarian_expire_rounds_contend",
+        "template_id": "expire_rounds_out_of_runway",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_defense_first_expire_rounds_rebuild",
+        "template_id": "expire_rounds_out_of_runway",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_defense_first_expire_rounds_retool",
+        "template_id": "expire_rounds_out_of_runway",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_defense_first_expire_rounds_win_now",
+        "template_id": "expire_rounds_out_of_runway",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_defense_first_expire_rounds_contend",
+        "template_id": "expire_rounds_out_of_runway",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_tendency_respecter_expire_rounds_rebuild",
+        "template_id": "expire_rounds_out_of_runway",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_tendency_respecter_expire_rounds_retool",
+        "template_id": "expire_rounds_out_of_runway",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_tendency_respecter_expire_rounds_win_now",
+        "template_id": "expire_rounds_out_of_runway",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_tendency_respecter_expire_rounds_contend",
+        "template_id": "expire_rounds_out_of_runway",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_vet_overrater_expire_rounds_rebuild",
+        "template_id": "expire_rounds_out_of_runway",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_vet_overrater_expire_rounds_retool",
+        "template_id": "expire_rounds_out_of_runway",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_vet_overrater_expire_rounds_win_now",
+        "template_id": "expire_rounds_out_of_runway",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_vet_overrater_expire_rounds_contend",
+        "template_id": "fallback_expire_rounds",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_youth_developer_expire_rounds_rebuild",
+        "template_id": "expire_rounds_out_of_runway",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_youth_developer_expire_rounds_retool",
+        "template_id": "fallback_expire_rounds",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_youth_developer_expire_rounds_win_now",
+        "template_id": "fallback_expire_rounds",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_youth_developer_expire_rounds_contend",
+        "template_id": "fallback_expire_rounds",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_chaos_expire_rounds_rebuild",
+        "template_id": "expire_rounds_out_of_runway",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_chaos_expire_rounds_retool",
+        "template_id": "expire_rounds_out_of_runway",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_chaos_expire_rounds_win_now",
+        "template_id": "expire_rounds_out_of_runway",
+        "slot_bindings": {}
+      },
+      {
+        "label": "cross_chaos_expire_rounds_contend",
+        "template_id": "expire_rounds_out_of_runway",
+        "slot_bindings": {}
+      },
+      {
+        "label": "repeat_penalty_engaged",
+        "template_id": "open_star_maxer_new_partner",
+        "slot_bindings": {}
+      },
+      {
+        "label": "fallback_only_survivor",
+        "template_id": "fallback_open",
+        "slot_bindings": {}
+      }
+    ]
+  },
+  "synthetic_operator_coverage_replay": {
+    "template_count": 7,
+    "operators_covered": [
+      "lt",
+      "lte",
+      "gte",
+      "gt",
+      "eq",
+      "in"
+    ],
+    "repeat_penalty": 0.25,
+    "case_count": 8,
+    "cases": [
+      {
+        "label": "synthetic_none_hold",
+        "template_id": "synthetic_fallback",
+        "slot_bindings": {}
+      },
+      {
+        "label": "synthetic_lt_holds",
+        "template_id": "synthetic_lt",
+        "slot_bindings": {}
+      },
+      {
+        "label": "synthetic_lte_holds",
+        "template_id": "synthetic_lte",
+        "slot_bindings": {}
+      },
+      {
+        "label": "synthetic_gte_holds",
+        "template_id": "synthetic_gte",
+        "slot_bindings": {}
+      },
+      {
+        "label": "synthetic_gt_holds",
+        "template_id": "synthetic_gt",
+        "slot_bindings": {}
+      },
+      {
+        "label": "synthetic_eq_holds",
+        "template_id": "synthetic_eq",
+        "slot_bindings": {}
+      },
+      {
+        "label": "synthetic_in_holds",
+        "template_id": "synthetic_in",
+        "slot_bindings": {}
+      },
+      {
+        "label": "synthetic_gt_boundary_value_does_not_hold",
+        "template_id": "synthetic_fallback",
+        "slot_bindings": {}
+      }
+    ]
+  }
+}

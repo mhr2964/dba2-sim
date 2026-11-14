@@ -1,0 +1,6239 @@
+{
+ "about": "Gates-v2 offline evaluation set (docs/design/media-v2-step8-gates-v2.md G2-9). The 10 recorded stories' packages and briefs are HAND-RECONSTRUCTED from the verbatim S8-21/S8-22 texts (scratch league 1634 was deleted); brief rows a story does not mention hold plausible values chosen so the v1 pool contains the coincidences the stories exploited. Negatives are one-clause mutations in which every number is still in the v1 pool. Direction cases (gates-v2 direction fix): the g2-live-1704 cases are VERBATIM live texts, packages and briefs from scratch league 1704 (the recorded stdin payloads); D-cases are one-clause mutations of them.",
+ "cases": [
+  {
+   "body": "This is a disaster. Anthony Davis has gone ice cold, and the numbers are ugly.\n\nOver his last 5, Davis is scoring 20.216 points per 36. The rest of the season, he was at 29.180. That is a drop of nearly 9 points per 36. Nobody can wave that away.\n\nIt gets worse. His true shooting over the last 5 is 0.517. Before that, he sat at 0.644. That is elite efficiency one week and ordinary efficiency the next.\n\nThink about what that means. He is scoring far less, and he is doing it far less efficiently. That is not a quiet slump. That is a collapse in both volume and quality.\n\nAnd the timing? Brutal. It is the TRADE_DEADLINE phase, and one of the league's best scorers is producing like a role player. Is this a blip or a warning sign? The facts show 5 games of decline against a season of dominance. I know which sample is bigger. I also know which one is happening right now.\n\nA 29.180 scorer does not become a 20.216 scorer by accident. Something is off, and the box score is screaming about it. Davis needs to fix it fast.",
+   "brief": {
+    "other_desks": [],
+    "recent_wire": [],
+    "season_arc": {
+     "cycle_index": 2,
+     "last_season_bottom": [],
+     "last_season_top": [],
+     "league_games_played": 38,
+     "phase": "regular_season",
+     "season": 2026
+    },
+    "standings": [
+     {
+      "losses": 12,
+      "standings_position": 1,
+      "streak_length": 6,
+      "team_id": 1,
+      "team_name": "Minnesota Timberwolves",
+      "wins": 25
+     },
+     {
+      "losses": 12,
+      "standings_position": 2,
+      "streak_length": 3,
+      "team_id": 2,
+      "team_name": "Los Angeles Lakers",
+      "wins": 24
+     },
+     {
+      "losses": 12,
+      "standings_position": 3,
+      "streak_length": -1,
+      "team_id": 3,
+      "team_name": "San Antonio Spurs",
+      "wins": 24
+     },
+     {
+      "losses": 13,
+      "standings_position": 4,
+      "streak_length": 2,
+      "team_id": 4,
+      "team_name": "Denver Nuggets",
+      "wins": 24
+     },
+     {
+      "losses": 14,
+      "standings_position": 5,
+      "streak_length": 1,
+      "team_id": 5,
+      "team_name": "Boston Celtics",
+      "wins": 24
+     },
+     {
+      "losses": 20,
+      "standings_position": 20,
+      "streak_length": -2,
+      "team_id": 6,
+      "team_name": "Toronto Raptors",
+      "wins": 17
+     },
+     {
+      "losses": 26,
+      "standings_position": 28,
+      "streak_length": -9,
+      "team_id": 11,
+      "team_name": "Utah Jazz",
+      "wins": 13
+     },
+     {
+      "losses": 29,
+      "standings_position": 30,
+      "streak_length": -5,
+      "team_id": 7,
+      "team_name": "Milwaukee Bucks",
+      "wins": 9
+     },
+     {
+      "losses": 17,
+      "standings_position": 14,
+      "streak_length": 2,
+      "team_id": 12,
+      "team_name": "Dallas Mavericks",
+      "wins": 20
+     }
+    ],
+    "subject_history": []
+   },
+   "headline": "Anthony Davis has fallen off a cliff: 20.216 points per 36 and a 0.517 true shooting mark",
+   "id": "3290",
+   "label": "derived_true",
+   "note": "'nearly 9' is 29.180-20.216 rounded; passed v1 because 9 is a brief loss count",
+   "package": {
+    "angle": "going_cold",
+    "cycle_index": 2,
+    "facts": [
+     {
+      "key": "player_name",
+      "label": "Player",
+      "value_number": null,
+      "value_text": "Anthony Davis"
+     },
+     {
+      "key": "window_points_per36",
+      "label": "Points per 36, last 5",
+      "value_number": 20.216,
+      "value_text": "20.216"
+     },
+     {
+      "key": "baseline_points_per36",
+      "label": "Points per 36, rest of season",
+      "value_number": 29.18,
+      "value_text": "29.180"
+     },
+     {
+      "key": "window_true_shooting",
+      "label": "True shooting, last 5",
+      "value_number": 0.517,
+      "value_text": "0.517"
+     },
+     {
+      "key": "baseline_true_shooting",
+      "label": "True shooting, rest of season",
+      "value_number": 0.644,
+      "value_text": "0.644"
+     },
+     {
+      "key": "season",
+      "label": "Season",
+      "value_number": 2026.0,
+      "value_text": "2026"
+     },
+     {
+      "key": "phase",
+      "label": "Phase",
+      "value_number": null,
+      "value_text": "TRADE_DEADLINE"
+     }
+    ],
+    "package_version": 1,
+    "phase": "TRADE_DEADLINE",
+    "season": 2026,
+    "story_kind": "cold_stretch",
+    "subject": {
+     "kind": "player",
+     "opponent_team_id": null,
+     "opponent_team_name": null,
+     "player_id": 50,
+     "player_name": "Anthony Davis",
+     "team_id": 12,
+     "team_name": "Dallas Mavericks"
+    }
+   },
+   "source": "s8-21"
+  },
+  {
+   "body": "This is a disaster. The Toronto Raptors have dropped 15 spots in the standings. 15. Not 2. Not 3. Fifteen.\n\nThey now sit at position 20 in the 2026 regular season. That is where contenders go to die.\n\nLet that number sink in. A slide of 15 places does not happen by accident. It happens when a team stops doing everything that wins games. Where is the accountability?\n\nI am not going to soften it. A 15-spot fall is one of the ugliest movements on the board. Toronto is a 17-20 team, and the standings do not care about excuses.\n\nIs this a slump or a real problem? The facts hand us the fall and the current position, and both look terrible. Position 20 is the price of the collapse.\n\nToronto wants to be taken seriously. Then stop sliding. Every night the Raptors lose ground, the pressure grows. Fans should be furious. I am.",
+   "brief": {
+    "other_desks": [],
+    "recent_wire": [],
+    "season_arc": {
+     "cycle_index": 2,
+     "last_season_bottom": [],
+     "last_season_top": [],
+     "league_games_played": 38,
+     "phase": "regular_season",
+     "season": 2026
+    },
+    "standings": [
+     {
+      "losses": 12,
+      "standings_position": 1,
+      "streak_length": 6,
+      "team_id": 1,
+      "team_name": "Minnesota Timberwolves",
+      "wins": 25
+     },
+     {
+      "losses": 12,
+      "standings_position": 2,
+      "streak_length": 3,
+      "team_id": 2,
+      "team_name": "Los Angeles Lakers",
+      "wins": 24
+     },
+     {
+      "losses": 12,
+      "standings_position": 3,
+      "streak_length": -1,
+      "team_id": 3,
+      "team_name": "San Antonio Spurs",
+      "wins": 24
+     },
+     {
+      "losses": 13,
+      "standings_position": 4,
+      "streak_length": 2,
+      "team_id": 4,
+      "team_name": "Denver Nuggets",
+      "wins": 24
+     },
+     {
+      "losses": 14,
+      "standings_position": 5,
+      "streak_length": 1,
+      "team_id": 5,
+      "team_name": "Boston Celtics",
+      "wins": 24
+     },
+     {
+      "losses": 20,
+      "standings_position": 20,
+      "streak_length": -2,
+      "team_id": 6,
+      "team_name": "Toronto Raptors",
+      "wins": 17
+     },
+     {
+      "losses": 26,
+      "standings_position": 28,
+      "streak_length": -9,
+      "team_id": 11,
+      "team_name": "Utah Jazz",
+      "wins": 13
+     },
+     {
+      "losses": 29,
+      "standings_position": 30,
+      "streak_length": -5,
+      "team_id": 7,
+      "team_name": "Milwaukee Bucks",
+      "wins": 9
+     }
+    ],
+    "subject_history": []
+   },
+   "headline": "Toronto Raptors have collapsed 15 spots in the standings and nobody should be calm about it",
+   "id": "3281",
+   "label": "rhetorical",
+   "note": "'Not 2. Not 3.' are rhetorical, true of nothing; 17-20 is the brief's own-subject row",
+   "package": {
+    "angle": "collapse",
+    "cycle_index": 1,
+    "facts": [
+     {
+      "key": "team_name",
+      "label": "Team",
+      "value_number": null,
+      "value_text": "Toronto Raptors"
+     },
+     {
+      "key": "standings_position_delta",
+      "label": "Change since last pulse",
+      "value_number": 15.0,
+      "value_text": "15"
+     },
+     {
+      "key": "standings_position",
+      "label": "Standings position",
+      "value_number": 20.0,
+      "value_text": "20"
+     },
+     {
+      "key": "season",
+      "label": "Season",
+      "value_number": 2026.0,
+      "value_text": "2026"
+     },
+     {
+      "key": "phase",
+      "label": "Phase",
+      "value_number": null,
+      "value_text": "REGULAR_SEASON"
+     }
+    ],
+    "package_version": 1,
+    "phase": "REGULAR_SEASON",
+    "season": 2026,
+    "story_kind": "standings_collapse",
+    "subject": {
+     "kind": "team",
+     "opponent_team_id": null,
+     "opponent_team_name": null,
+     "player_id": null,
+     "player_name": null,
+     "team_id": 6,
+     "team_name": "Toronto Raptors"
+    }
+   },
+   "source": "s8-21"
+  },
+  {
+   "body": "Victor Wembanyama's recent scoring rise is an efficiency change as well as a volume change. Over his last 5 games he is producing 36.674 points per 36 minutes. His mark for the rest of the season is 28.678, so the window is about 8 points per 36 above his baseline.\n\nTrue shooting moved with it. He is at 0.713 over the last 5, against 0.639 for the rest of the season. Scoring more while also shooting more efficiently points to the added points coming from better shot quality or more free throws, not simply from more attempts.\n\nThe facts attribute the shift to free throws. The free-throw-rate shift is listed at 8.200. A higher free-throw rate raises true shooting directly, because made free throws add points without a field-goal attempt. That fits the two numbers rising together: he is scoring more per minute and getting more of those points from the line.\n\nThe data does not say how he is drawing those fouls. It contains no play-type, matchup or lineup information for this stretch, so any claim about scheme or usage would go beyond it. It also does not say whether the rate holds. Five games is a small window, and free-throw rate tends to swing more than shot-making does.\n\nThe sample is what it is. The last 5 games show a scorer whose points per 36 and true shooting are both above his own season baseline, with free throws as the listed cause.",
+   "brief": {
+    "other_desks": [],
+    "recent_wire": [],
+    "season_arc": {
+     "cycle_index": 2,
+     "last_season_bottom": [],
+     "last_season_top": [],
+     "league_games_played": 38,
+     "phase": "regular_season",
+     "season": 2026
+    },
+    "standings": [
+     {
+      "losses": 12,
+      "standings_position": 1,
+      "streak_length": 6,
+      "team_id": 1,
+      "team_name": "Minnesota Timberwolves",
+      "wins": 25
+     },
+     {
+      "losses": 12,
+      "standings_position": 2,
+      "streak_length": 3,
+      "team_id": 2,
+      "team_name": "Los Angeles Lakers",
+      "wins": 24
+     },
+     {
+      "losses": 12,
+      "standings_position": 3,
+      "streak_length": -1,
+      "team_id": 3,
+      "team_name": "San Antonio Spurs",
+      "wins": 24
+     },
+     {
+      "losses": 13,
+      "standings_position": 4,
+      "streak_length": 2,
+      "team_id": 4,
+      "team_name": "Denver Nuggets",
+      "wins": 24
+     },
+     {
+      "losses": 14,
+      "standings_position": 5,
+      "streak_length": 1,
+      "team_id": 5,
+      "team_name": "Boston Celtics",
+      "wins": 24
+     },
+     {
+      "losses": 20,
+      "standings_position": 20,
+      "streak_length": -2,
+      "team_id": 6,
+      "team_name": "Toronto Raptors",
+      "wins": 17
+     },
+     {
+      "losses": 26,
+      "standings_position": 28,
+      "streak_length": -9,
+      "team_id": 11,
+      "team_name": "Utah Jazz",
+      "wins": 13
+     },
+     {
+      "losses": 29,
+      "standings_position": 30,
+      "streak_length": -5,
+      "team_id": 7,
+      "team_name": "Milwaukee Bucks",
+      "wins": 9
+     }
+    ],
+    "subject_history": []
+   },
+   "headline": "Wembanyama's last 5 games: scoring rate up to 36.674 per 36 on a 0.713 true shooting mark",
+   "id": "3297",
+   "label": "derived_true",
+   "note": "'about 8 points' is 36.674-28.678=7.996; passes only because 8.200 renders as 8",
+   "package": {
+    "angle": "heating_up",
+    "cycle_index": 3,
+    "facts": [
+     {
+      "key": "player_name",
+      "label": "Player",
+      "value_number": null,
+      "value_text": "Victor Wembanyama"
+     },
+     {
+      "key": "window_points_per36",
+      "label": "Points per 36, last 5",
+      "value_number": 36.674,
+      "value_text": "36.674"
+     },
+     {
+      "key": "baseline_points_per36",
+      "label": "Points per 36, rest of season",
+      "value_number": 28.678,
+      "value_text": "28.678"
+     },
+     {
+      "key": "window_true_shooting",
+      "label": "True shooting, last 5",
+      "value_number": 0.713,
+      "value_text": "0.713"
+     },
+     {
+      "key": "baseline_true_shooting",
+      "label": "True shooting, rest of season",
+      "value_number": 0.639,
+      "value_text": "0.639"
+     },
+     {
+      "key": "attribution_free_throws",
+      "label": "Free-throw-rate shift",
+      "value_number": 8.2,
+      "value_text": "8.200"
+     },
+     {
+      "key": "season",
+      "label": "Season",
+      "value_number": 2026.0,
+      "value_text": "2026"
+     },
+     {
+      "key": "phase",
+      "label": "Phase",
+      "value_number": null,
+      "value_text": "REGULAR_SEASON"
+     }
+    ],
+    "package_version": 1,
+    "phase": "REGULAR_SEASON",
+    "season": 2026,
+    "story_kind": "hot_streak",
+    "subject": {
+     "kind": "player",
+     "opponent_team_id": null,
+     "opponent_team_name": null,
+     "player_id": 51,
+     "player_name": "Victor Wembanyama",
+     "team_id": 3,
+     "team_name": "San Antonio Spurs"
+    }
+   },
+   "source": "s8-21"
+  },
+  {
+   "body": "Minnesota Timberwolves: 25-12, winners of 6 straight.\n\nThe Timberwolves hold first place in the standings at position 1 in the 2026 regular season. The standings-position change on record is -16, and the team now sits atop the league.\n\nThe race behind them is tight. The Los Angeles Lakers are 24-12 in second, and the San Antonio Spurs are also 24-12 in third. The Denver Nuggets (24-13) and Boston Celtics (24-14) follow in fourth and fifth. Minnesota's 25 wins are the most of any team listed, and its 12 losses match the Lakers and Spurs.\n\nThe league has played 38 games in the regular season. The facts on file do not include Minnesota's next opponent, its schedule or its roster. The next thing to watch is whether the streak holds against a field of four teams within 1 win of the lead.",
+   "brief": {
+    "other_desks": [],
+    "recent_wire": [],
+    "season_arc": {
+     "cycle_index": 2,
+     "last_season_bottom": [],
+     "last_season_top": [],
+     "league_games_played": 38,
+     "phase": "regular_season",
+     "season": 2026
+    },
+    "standings": [
+     {
+      "losses": 12,
+      "standings_position": 1,
+      "streak_length": 6,
+      "team_id": 1,
+      "team_name": "Minnesota Timberwolves",
+      "wins": 25
+     },
+     {
+      "losses": 12,
+      "standings_position": 2,
+      "streak_length": 3,
+      "team_id": 2,
+      "team_name": "Los Angeles Lakers",
+      "wins": 24
+     },
+     {
+      "losses": 12,
+      "standings_position": 3,
+      "streak_length": -1,
+      "team_id": 3,
+      "team_name": "San Antonio Spurs",
+      "wins": 24
+     },
+     {
+      "losses": 13,
+      "standings_position": 4,
+      "streak_length": 2,
+      "team_id": 4,
+      "team_name": "Denver Nuggets",
+      "wins": 24
+     },
+     {
+      "losses": 14,
+      "standings_position": 5,
+      "streak_length": 1,
+      "team_id": 5,
+      "team_name": "Boston Celtics",
+      "wins": 24
+     },
+     {
+      "losses": 20,
+      "standings_position": 20,
+      "streak_length": -2,
+      "team_id": 6,
+      "team_name": "Toronto Raptors",
+      "wins": 17
+     },
+     {
+      "losses": 26,
+      "standings_position": 28,
+      "streak_length": -9,
+      "team_id": 11,
+      "team_name": "Utah Jazz",
+      "wins": 13
+     },
+     {
+      "losses": 29,
+      "standings_position": 30,
+      "streak_length": -5,
+      "team_id": 7,
+      "team_name": "Milwaukee Bucks",
+      "wins": 9
+     }
+    ],
+    "subject_history": []
+   },
+   "headline": "Timberwolves take over No. 1 at 25-12, riding a 6-game win streak",
+   "id": "3278",
+   "label": "derived_true",
+   "note": "the legitimate multi-team recap; 'within 1 win' is 25-24 derived",
+   "package": {
+    "angle": "surge",
+    "cycle_index": 1,
+    "facts": [
+     {
+      "key": "team_name",
+      "label": "Team",
+      "value_number": null,
+      "value_text": "Minnesota Timberwolves"
+     },
+     {
+      "key": "standings_position_delta",
+      "label": "Change since last pulse",
+      "value_number": -16.0,
+      "value_text": "-16"
+     },
+     {
+      "key": "standings_position",
+      "label": "Standings position",
+      "value_number": 1.0,
+      "value_text": "1"
+     },
+     {
+      "key": "season",
+      "label": "Season",
+      "value_number": 2026.0,
+      "value_text": "2026"
+     },
+     {
+      "key": "phase",
+      "label": "Phase",
+      "value_number": null,
+      "value_text": "REGULAR_SEASON"
+     }
+    ],
+    "package_version": 1,
+    "phase": "REGULAR_SEASON",
+    "season": 2026,
+    "story_kind": "standings_surge",
+    "subject": {
+     "kind": "team",
+     "opponent_team_id": null,
+     "opponent_team_name": null,
+     "player_id": null,
+     "player_name": null,
+     "team_id": 1,
+     "team_name": "Minnesota Timberwolves"
+    }
+   },
+   "source": "s8-21"
+  },
+  {
+   "body": "The Indiana Pacers are 0-0 with no active streak (streak length 0) in the 2026 preseason, sitting 9th in the standings. No games have been played league-wide, so the position reflects the opening order rather than results.\n\nThe roster numbers are the only evidence available. The Pacers' top 8 players average 26.0 years old. The roster's biggest need is at center, with a need value of 0.833. Its biggest glut is at power forward, with a glut value of 1.000.\n\nThose two figures describe the same imbalance: the roster has more power forwards than it can use and too few centers. The facts do not state a strategy or a timeline, and no trades, signings or lineup decisions are on record.\n\nWhat comes next is the start of the regular season, when the first results will set the record and streak. The center spot is the need to watch, and the surplus at power forward is the obvious place to look for a way to fill it. The facts contain no schedule, so no opening opponent or date can be given.",
+   "brief": {
+    "other_desks": [],
+    "recent_wire": [],
+    "season_arc": {
+     "cycle_index": 0,
+     "last_season_bottom": [],
+     "last_season_top": [],
+     "league_games_played": 0,
+     "phase": "preseason",
+     "season": 2026
+    },
+    "standings": [
+     {
+      "losses": 0,
+      "standings_position": 1,
+      "streak_length": 0,
+      "team_id": 1,
+      "team_name": "Minnesota Timberwolves",
+      "wins": 0
+     },
+     {
+      "losses": 0,
+      "standings_position": 2,
+      "streak_length": 0,
+      "team_id": 2,
+      "team_name": "Los Angeles Lakers",
+      "wins": 0
+     },
+     {
+      "losses": 0,
+      "standings_position": 3,
+      "streak_length": 0,
+      "team_id": 3,
+      "team_name": "San Antonio Spurs",
+      "wins": 0
+     },
+     {
+      "losses": 0,
+      "standings_position": 4,
+      "streak_length": 0,
+      "team_id": 4,
+      "team_name": "Denver Nuggets",
+      "wins": 0
+     },
+     {
+      "losses": 0,
+      "standings_position": 5,
+      "streak_length": 0,
+      "team_id": 5,
+      "team_name": "Boston Celtics",
+      "wins": 0
+     },
+     {
+      "losses": 0,
+      "standings_position": 9,
+      "streak_length": 0,
+      "team_id": 10,
+      "team_name": "Indiana Pacers",
+      "wins": 0
+     },
+     {
+      "losses": 0,
+      "standings_position": 29,
+      "streak_length": 0,
+      "team_id": 11,
+      "team_name": "Utah Jazz",
+      "wins": 0
+     },
+     {
+      "losses": 0,
+      "standings_position": 30,
+      "streak_length": 0,
+      "team_id": 7,
+      "team_name": "Milwaukee Bucks",
+      "wins": 0
+     }
+    ],
+    "subject_history": []
+   },
+   "headline": "Pacers open 2026 preseason at 0-0 with no streak, ranked 9th, needing a center",
+   "id": "3276",
+   "label": "clean",
+   "note": "",
+   "package": {
+    "angle": "full_picture",
+    "cycle_index": 0,
+    "facts": [
+     {
+      "key": "team_name",
+      "label": "Team",
+      "value_number": null,
+      "value_text": "Indiana Pacers"
+     },
+     {
+      "key": "wins",
+      "label": "Wins",
+      "value_number": 0.0,
+      "value_text": "0"
+     },
+     {
+      "key": "losses",
+      "label": "Losses",
+      "value_number": 0.0,
+      "value_text": "0"
+     },
+     {
+      "key": "standings_position",
+      "label": "Standings position",
+      "value_number": 9.0,
+      "value_text": "9"
+     },
+     {
+      "key": "streak_length",
+      "label": "Streak",
+      "value_number": 0.0,
+      "value_text": "0"
+     },
+     {
+      "key": "mean_age_top8",
+      "label": "Mean age, top 8",
+      "value_number": 26.0,
+      "value_text": "26.0"
+     },
+     {
+      "key": "biggest_need_position",
+      "label": "Biggest need",
+      "value_number": null,
+      "value_text": "center"
+     },
+     {
+      "key": "biggest_need_value",
+      "label": "Need value",
+      "value_number": 0.833,
+      "value_text": "0.833"
+     },
+     {
+      "key": "biggest_glut_position",
+      "label": "Biggest glut",
+      "value_number": null,
+      "value_text": "power forward"
+     },
+     {
+      "key": "biggest_glut_value",
+      "label": "Glut value",
+      "value_number": 1.0,
+      "value_text": "1.000"
+     },
+     {
+      "key": "season",
+      "label": "Season",
+      "value_number": 2026.0,
+      "value_text": "2026"
+     },
+     {
+      "key": "phase",
+      "label": "Phase",
+      "value_number": null,
+      "value_text": "PRESEASON"
+     }
+    ],
+    "package_version": 1,
+    "phase": "PRESEASON",
+    "season": 2026,
+    "story_kind": "team_profile",
+    "subject": {
+     "kind": "team",
+     "opponent_team_id": null,
+     "opponent_team_name": null,
+     "player_id": null,
+     "player_name": null,
+     "team_id": 10,
+     "team_name": "Indiana Pacers"
+    }
+   },
+   "source": "s8-21"
+  },
+  {
+   "body": "Phoenix runs a motion offense paired with a drop defense, and the measured numbers push past what the settings declare. The declared pace target is 61, which ranks 7th in the league. The measured pace is 101.265 possessions per game, the most of any team among 30. The team plays faster than its stated target suggests.\n\nThe same pattern shows up from the perimeter. The declared three-point bias is 63, and the measured three-point rate is 0.509, also 1st in the league. Motion offense creates its shots through cutting and passing rather than a single ball handler, and here that movement is producing more possessions and more threes than any other roster.\n\nNo person chose this scheme, so it is the setup the team was given rather than a coaching decision. Declared and measured figures show no flagged tension, since the ranks run in the same direction as the settings. The gap is one of degree: a 7th-ranked pace target is producing the league's top possession count.\n\nPhoenix sits 10th in the standings at 27-22 as the trade deadline arrives.",
+   "brief": {
+    "other_desks": [],
+    "recent_wire": [],
+    "season_arc": {
+     "cycle_index": 3,
+     "last_season_bottom": [],
+     "last_season_top": [],
+     "league_games_played": 49,
+     "phase": "regular_season",
+     "season": 2026
+    },
+    "standings": [
+     {
+      "losses": 16,
+      "standings_position": 1,
+      "streak_length": 2,
+      "team_id": 1,
+      "team_name": "Minnesota Timberwolves",
+      "wins": 33
+     },
+     {
+      "losses": 18,
+      "standings_position": 2,
+      "streak_length": 1,
+      "team_id": 2,
+      "team_name": "Los Angeles Lakers",
+      "wins": 31
+     },
+     {
+      "losses": 18,
+      "standings_position": 3,
+      "streak_length": -3,
+      "team_id": 3,
+      "team_name": "San Antonio Spurs",
+      "wins": 30
+     },
+     {
+      "losses": 19,
+      "standings_position": 4,
+      "streak_length": 4,
+      "team_id": 4,
+      "team_name": "Denver Nuggets",
+      "wins": 30
+     },
+     {
+      "losses": 20,
+      "standings_position": 5,
+      "streak_length": 1,
+      "team_id": 5,
+      "team_name": "Boston Celtics",
+      "wins": 29
+     },
+     {
+      "losses": 22,
+      "standings_position": 10,
+      "streak_length": 1,
+      "team_id": 8,
+      "team_name": "Phoenix Suns",
+      "wins": 27
+     },
+     {
+      "losses": 24,
+      "standings_position": 16,
+      "streak_length": 3,
+      "team_id": 9,
+      "team_name": "Los Angeles Clippers",
+      "wins": 25
+     },
+     {
+      "losses": 36,
+      "standings_position": 28,
+      "streak_length": -9,
+      "team_id": 11,
+      "team_name": "Utah Jazz",
+      "wins": 13
+     },
+     {
+      "losses": 37,
+      "standings_position": 30,
+      "streak_length": -5,
+      "team_id": 7,
+      "team_name": "Milwaukee Bucks",
+      "wins": 12
+     }
+    ],
+    "subject_history": []
+   },
+   "headline": "Phoenix Suns run motion and drop, and lead the league in possessions and three-point rate",
+   "id": "3287",
+   "label": "clean",
+   "note": "",
+   "package": {
+    "angle": "scheme_identity",
+    "cycle_index": 3,
+    "facts": [
+     {
+      "key": "team_name",
+      "label": "Team",
+      "value_number": null,
+      "value_text": "Phoenix Suns"
+     },
+     {
+      "key": "offensive_scheme",
+      "label": "Offensive scheme",
+      "value_number": null,
+      "value_text": "motion"
+     },
+     {
+      "key": "defensive_scheme",
+      "label": "Defensive scheme",
+      "value_number": null,
+      "value_text": "drop"
+     },
+     {
+      "key": "pace_target",
+      "label": "Declared pace target",
+      "value_number": 61.0,
+      "value_text": "61"
+     },
+     {
+      "key": "pace_rank",
+      "label": "League pace rank",
+      "value_number": 7.0,
+      "value_text": "7"
+     },
+     {
+      "key": "avg_possessions",
+      "label": "Measured possessions/game",
+      "value_number": 101.265,
+      "value_text": "101.265"
+     },
+     {
+      "key": "avg_possessions_rank",
+      "label": "League possessions rank",
+      "value_number": 1.0,
+      "value_text": "1"
+     },
+     {
+      "key": "three_point_bias",
+      "label": "Declared three-point bias",
+      "value_number": 63.0,
+      "value_text": "63"
+     },
+     {
+      "key": "three_share",
+      "label": "Measured three-point rate",
+      "value_number": 0.509,
+      "value_text": "0.509"
+     },
+     {
+      "key": "three_share_rank",
+      "label": "League three-point rate rank",
+      "value_number": 1.0,
+      "value_text": "1"
+     },
+     {
+      "key": "set_by_a_person",
+      "label": "Set by a person",
+      "value_number": 0.0,
+      "value_text": "0"
+     },
+     {
+      "key": "tension",
+      "label": "Declared-vs-measured tension",
+      "value_number": null,
+      "value_text": "none"
+     },
+     {
+      "key": "league_size",
+      "label": "Teams in the league",
+      "value_number": 30.0,
+      "value_text": "30"
+     },
+     {
+      "key": "season",
+      "label": "Season",
+      "value_number": 2026.0,
+      "value_text": "2026"
+     },
+     {
+      "key": "phase",
+      "label": "Phase",
+      "value_number": null,
+      "value_text": "TRADE_DEADLINE"
+     }
+    ],
+    "package_version": 1,
+    "phase": "TRADE_DEADLINE",
+    "season": 2026,
+    "story_kind": "scheme_identity",
+    "subject": {
+     "kind": "team",
+     "opponent_team_id": null,
+     "opponent_team_name": null,
+     "player_id": null,
+     "player_name": null,
+     "team_id": 8,
+     "team_name": "Phoenix Suns"
+    }
+   },
+   "source": "s8-22"
+  },
+  {
+   "body": "The Los Angeles Lakers are 44-38 and have lost 4 straight, sitting 10th in the standings as the draft lottery arrives. The position is up 3 spots since the last pulse, even with the skid.\n\nThe roster is not young. The mean age of the top 8 is 29.625.\n\nPoint guard is the clear pressure point. It is the team's biggest need, at a value of 0.833, while the biggest glut is also listed at point guard, at 0.000, so no surplus sits anywhere to trade from.\n\nWhat's next is the draft lottery, where the Lakers' point guard need is the open question.",
+   "brief": {
+    "other_desks": [],
+    "recent_wire": [],
+    "season_arc": {
+     "cycle_index": 4,
+     "last_season_bottom": [],
+     "last_season_top": [],
+     "league_games_played": 82,
+     "phase": "draft_lottery",
+     "season": 2026
+    },
+    "standings": [
+     {
+      "losses": 27,
+      "standings_position": 1,
+      "streak_length": 2,
+      "team_id": 1,
+      "team_name": "Minnesota Timberwolves",
+      "wins": 55
+     },
+     {
+      "losses": 30,
+      "standings_position": 2,
+      "streak_length": 3,
+      "team_id": 3,
+      "team_name": "San Antonio Spurs",
+      "wins": 52
+     },
+     {
+      "losses": 32,
+      "standings_position": 3,
+      "streak_length": 1,
+      "team_id": 4,
+      "team_name": "Denver Nuggets",
+      "wins": 50
+     },
+     {
+      "losses": 33,
+      "standings_position": 4,
+      "streak_length": -1,
+      "team_id": 5,
+      "team_name": "Boston Celtics",
+      "wins": 49
+     },
+     {
+      "losses": 35,
+      "standings_position": 5,
+      "streak_length": 2,
+      "team_id": 8,
+      "team_name": "Phoenix Suns",
+      "wins": 47
+     },
+     {
+      "losses": 38,
+      "standings_position": 10,
+      "streak_length": -4,
+      "team_id": 2,
+      "team_name": "Los Angeles Lakers",
+      "wins": 44
+     },
+     {
+      "losses": 60,
+      "standings_position": 28,
+      "streak_length": -3,
+      "team_id": 11,
+      "team_name": "Utah Jazz",
+      "wins": 22
+     },
+     {
+      "losses": 63,
+      "standings_position": 30,
+      "streak_length": -7,
+      "team_id": 7,
+      "team_name": "Milwaukee Bucks",
+      "wins": 19
+     }
+    ],
+    "subject_history": []
+   },
+   "headline": "Lakers finish 44-38 on a 4-game losing streak, up 3 spots to 10th",
+   "id": "3303",
+   "label": "clean",
+   "note": "'4' and '3' cite NEGATIVE facts (-4, -3) as magnitudes",
+   "package": {
+    "angle": "full_picture",
+    "cycle_index": 4,
+    "facts": [
+     {
+      "key": "team_name",
+      "label": "Team",
+      "value_number": null,
+      "value_text": "Los Angeles Lakers"
+     },
+     {
+      "key": "wins",
+      "label": "Wins",
+      "value_number": 44.0,
+      "value_text": "44"
+     },
+     {
+      "key": "losses",
+      "label": "Losses",
+      "value_number": 38.0,
+      "value_text": "38"
+     },
+     {
+      "key": "standings_position",
+      "label": "Standings position",
+      "value_number": 10.0,
+      "value_text": "10"
+     },
+     {
+      "key": "streak_length",
+      "label": "Streak",
+      "value_number": -4.0,
+      "value_text": "-4"
+     },
+     {
+      "key": "standings_position_delta",
+      "label": "Change since last pulse",
+      "value_number": -3.0,
+      "value_text": "-3"
+     },
+     {
+      "key": "mean_age_top8",
+      "label": "Mean age, top 8",
+      "value_number": 29.625,
+      "value_text": "29.625"
+     },
+     {
+      "key": "biggest_need_position",
+      "label": "Biggest need",
+      "value_number": null,
+      "value_text": "point guard"
+     },
+     {
+      "key": "biggest_need_value",
+      "label": "Need value",
+      "value_number": 0.833,
+      "value_text": "0.833"
+     },
+     {
+      "key": "biggest_glut_position",
+      "label": "Biggest glut",
+      "value_number": null,
+      "value_text": "point guard"
+     },
+     {
+      "key": "biggest_glut_value",
+      "label": "Glut value",
+      "value_number": 0.0,
+      "value_text": "0.000"
+     },
+     {
+      "key": "season",
+      "label": "Season",
+      "value_number": 2026.0,
+      "value_text": "2026"
+     },
+     {
+      "key": "phase",
+      "label": "Phase",
+      "value_number": null,
+      "value_text": "DRAFT_LOTTERY"
+     }
+    ],
+    "package_version": 1,
+    "phase": "DRAFT_LOTTERY",
+    "season": 2026,
+    "story_kind": "team_profile",
+    "subject": {
+     "kind": "team",
+     "opponent_team_id": null,
+     "opponent_team_name": null,
+     "player_id": null,
+     "player_name": null,
+     "team_id": 2,
+     "team_name": "Los Angeles Lakers"
+    }
+   },
+   "source": "s8-22"
+  },
+  {
+   "body": "Anthony Edwards is slumping, and the efficiency tells the story. Over the last 5 games he is scoring 27.376 points per 36. The rest of his season sits at 35.631. That is a massive drop.\n\nThe shooting is worse. His true shooting over the last 5 is 0.621. Before that it was 0.719. That earlier number was elite. Nobody sustains it forever, but nobody loses this much of it by accident either.\n\nIs 0.621 bad? No. It is still solid. That is the point. He fell from historic to merely good, and the scoring fell right alongside it.\n\nFewer points. Fewer clean looks. A star who was carrying an absurd load is now just another high-volume scorer. The trade deadline is here, and the question is whether this stretch is a blip or a warning.",
+   "brief": {
+    "other_desks": [],
+    "recent_wire": [],
+    "season_arc": {
+     "cycle_index": 3,
+     "last_season_bottom": [],
+     "last_season_top": [],
+     "league_games_played": 49,
+     "phase": "regular_season",
+     "season": 2026
+    },
+    "standings": [
+     {
+      "losses": 16,
+      "standings_position": 1,
+      "streak_length": 2,
+      "team_id": 1,
+      "team_name": "Minnesota Timberwolves",
+      "wins": 33
+     },
+     {
+      "losses": 18,
+      "standings_position": 2,
+      "streak_length": 1,
+      "team_id": 2,
+      "team_name": "Los Angeles Lakers",
+      "wins": 31
+     },
+     {
+      "losses": 18,
+      "standings_position": 3,
+      "streak_length": -3,
+      "team_id": 3,
+      "team_name": "San Antonio Spurs",
+      "wins": 30
+     },
+     {
+      "losses": 19,
+      "standings_position": 4,
+      "streak_length": 4,
+      "team_id": 4,
+      "team_name": "Denver Nuggets",
+      "wins": 30
+     },
+     {
+      "losses": 20,
+      "standings_position": 5,
+      "streak_length": 1,
+      "team_id": 5,
+      "team_name": "Boston Celtics",
+      "wins": 29
+     },
+     {
+      "losses": 22,
+      "standings_position": 10,
+      "streak_length": 1,
+      "team_id": 8,
+      "team_name": "Phoenix Suns",
+      "wins": 27
+     },
+     {
+      "losses": 24,
+      "standings_position": 16,
+      "streak_length": 3,
+      "team_id": 9,
+      "team_name": "Los Angeles Clippers",
+      "wins": 25
+     },
+     {
+      "losses": 36,
+      "standings_position": 28,
+      "streak_length": -9,
+      "team_id": 11,
+      "team_name": "Utah Jazz",
+      "wins": 13
+     },
+     {
+      "losses": 37,
+      "standings_position": 30,
+      "streak_length": -5,
+      "team_id": 7,
+      "team_name": "Milwaukee Bucks",
+      "wins": 12
+     }
+    ],
+    "subject_history": []
+   },
+   "headline": "Anthony Edwards has cooled hard: 27.376 points per 36 and a true shooting drop to 0.621",
+   "id": "3289",
+   "label": "clean",
+   "note": "",
+   "package": {
+    "angle": "going_cold",
+    "cycle_index": 3,
+    "facts": [
+     {
+      "key": "player_name",
+      "label": "Player",
+      "value_number": null,
+      "value_text": "Anthony Edwards"
+     },
+     {
+      "key": "window_points_per36",
+      "label": "Points per 36, last 5",
+      "value_number": 27.376,
+      "value_text": "27.376"
+     },
+     {
+      "key": "baseline_points_per36",
+      "label": "Points per 36, rest of season",
+      "value_number": 35.631,
+      "value_text": "35.631"
+     },
+     {
+      "key": "window_true_shooting",
+      "label": "True shooting, last 5",
+      "value_number": 0.621,
+      "value_text": "0.621"
+     },
+     {
+      "key": "baseline_true_shooting",
+      "label": "True shooting, rest of season",
+      "value_number": 0.719,
+      "value_text": "0.719"
+     },
+     {
+      "key": "season",
+      "label": "Season",
+      "value_number": 2026.0,
+      "value_text": "2026"
+     },
+     {
+      "key": "phase",
+      "label": "Phase",
+      "value_number": null,
+      "value_text": "TRADE_DEADLINE"
+     }
+    ],
+    "package_version": 1,
+    "phase": "TRADE_DEADLINE",
+    "season": 2026,
+    "story_kind": "cold_stretch",
+    "subject": {
+     "kind": "player",
+     "opponent_team_id": null,
+     "opponent_team_name": null,
+     "player_id": 52,
+     "player_name": "Anthony Edwards",
+     "team_id": 1,
+     "team_name": "Minnesota Timberwolves"
+    }
+   },
+   "source": "s8-22"
+  },
+  {
+   "body": "The closest game between the Los Angeles Clippers and the Phoenix Suns this season came down to a single point, and it is the kind of margin that keeps a series honest. The Clippers have won 2 of the 3 meetings so far. The Suns have taken 1.\n\nThe standings tell a different story than the series does. Phoenix sits 10th, while the Clippers are 16th at 25 wins, on a 3-game streak as the trade deadline arrives. The Suns, in the Clippers' way of things, are the team with the better position and the worse head-to-head record.\n\nBoth sides bring familiar names into the next meeting, set for 2027-02-08. Kawhi Leonard and James Harden headline the Clippers. Devin Booker and Mark Williams do the same for Phoenix. The Clippers play an iso-star offense, and the Suns run motion, so the two teams have built their offenses on different ideas about who should take the shot.\n\nThe rivalry score stands at 6. With the series tilted toward Los Angeles, the Clippers get another chance to turn a narrow lead into a firmer one.",
+   "brief": {
+    "other_desks": [
+     {
+      "angle": "scheme_identity",
+      "headline_fact": "Phoenix Suns run motion; Clippers run iso_star",
+      "link": "opponent",
+      "salience_band": "main",
+      "story_kind": "scheme_identity",
+      "subject_name": "Phoenix Suns"
+     }
+    ],
+    "recent_wire": [],
+    "season_arc": {
+     "cycle_index": 3,
+     "last_season_bottom": [],
+     "last_season_top": [],
+     "league_games_played": 49,
+     "phase": "regular_season",
+     "season": 2026
+    },
+    "standings": [
+     {
+      "losses": 16,
+      "standings_position": 1,
+      "streak_length": 2,
+      "team_id": 1,
+      "team_name": "Minnesota Timberwolves",
+      "wins": 33
+     },
+     {
+      "losses": 18,
+      "standings_position": 2,
+      "streak_length": 1,
+      "team_id": 2,
+      "team_name": "Los Angeles Lakers",
+      "wins": 31
+     },
+     {
+      "losses": 18,
+      "standings_position": 3,
+      "streak_length": -3,
+      "team_id": 3,
+      "team_name": "San Antonio Spurs",
+      "wins": 30
+     },
+     {
+      "losses": 19,
+      "standings_position": 4,
+      "streak_length": 4,
+      "team_id": 4,
+      "team_name": "Denver Nuggets",
+      "wins": 30
+     },
+     {
+      "losses": 20,
+      "standings_position": 5,
+      "streak_length": 1,
+      "team_id": 5,
+      "team_name": "Boston Celtics",
+      "wins": 29
+     },
+     {
+      "losses": 22,
+      "standings_position": 10,
+      "streak_length": 1,
+      "team_id": 8,
+      "team_name": "Phoenix Suns",
+      "wins": 27
+     },
+     {
+      "losses": 24,
+      "standings_position": 16,
+      "streak_length": 3,
+      "team_id": 9,
+      "team_name": "Los Angeles Clippers",
+      "wins": 25
+     },
+     {
+      "losses": 36,
+      "standings_position": 28,
+      "streak_length": -9,
+      "team_id": 11,
+      "team_name": "Utah Jazz",
+      "wins": 13
+     },
+     {
+      "losses": 37,
+      "standings_position": 30,
+      "streak_length": -5,
+      "team_id": 7,
+      "team_name": "Milwaukee Bucks",
+      "wins": 12
+     }
+    ],
+    "subject_history": []
+   },
+   "headline": "Clippers hold a 2-1 edge on Suns in the season series, with 1 game left to settle it",
+   "id": "3291",
+   "label": "false_claim",
+   "note": "'1 game left' has no supporting fact; '3 meetings' is 2+1 derived",
+   "package": {
+    "angle": "rivalry",
+    "cycle_index": 3,
+    "facts": [
+     {
+      "key": "team_name",
+      "label": "Team",
+      "value_number": null,
+      "value_text": "Los Angeles Clippers"
+     },
+     {
+      "key": "opponent_team_name",
+      "label": "Opponent",
+      "value_number": null,
+      "value_text": "Phoenix Suns"
+     },
+     {
+      "key": "rivalry_score",
+      "label": "Rivalry score",
+      "value_number": 6.0,
+      "value_text": "6"
+     },
+     {
+      "key": "team_wins_this_series",
+      "label": "Season series wins",
+      "value_number": 2.0,
+      "value_text": "2"
+     },
+     {
+      "key": "opponent_wins_this_series",
+      "label": "Season series losses",
+      "value_number": 1.0,
+      "value_text": "1"
+     },
+     {
+      "key": "closest_margin",
+      "label": "Closest margin so far",
+      "value_number": 1.0,
+      "value_text": "1"
+     },
+     {
+      "key": "team_standings_position",
+      "label": "Standings position",
+      "value_number": 16.0,
+      "value_text": "16"
+     },
+     {
+      "key": "opponent_standings_position",
+      "label": "Opponent standings position",
+      "value_number": 10.0,
+      "value_text": "10"
+     },
+     {
+      "key": "scheduled_game_date",
+      "label": "Next meeting",
+      "value_number": null,
+      "value_text": "2027-02-08"
+     },
+     {
+      "key": "team_named_players",
+      "label": "Team's headline names",
+      "value_number": null,
+      "value_text": "Kawhi Leonard, James Harden"
+     },
+     {
+      "key": "opponent_named_players",
+      "label": "Opponent's headline names",
+      "value_number": null,
+      "value_text": "Devin Booker, Mark Williams"
+     },
+     {
+      "key": "season",
+      "label": "Season",
+      "value_number": 2026.0,
+      "value_text": "2026"
+     },
+     {
+      "key": "phase",
+      "label": "Phase",
+      "value_number": null,
+      "value_text": "TRADE_DEADLINE"
+     }
+    ],
+    "package_version": 1,
+    "phase": "TRADE_DEADLINE",
+    "season": 2026,
+    "story_kind": "rivalry_matchup",
+    "subject": {
+     "kind": "matchup",
+     "opponent_team_id": 8,
+     "opponent_team_name": "Phoenix Suns",
+     "player_id": null,
+     "player_name": null,
+     "team_id": 9,
+     "team_name": "Los Angeles Clippers"
+    }
+   },
+   "source": "s8-22"
+  },
+  {
+   "body": "Milwaukee is 27th. That is a free fall. The Bucks have dropped 17 spots in the standings, and that number should be ugly to everyone who sees it. Seventeen places is not a slump. It is a collapse, plain and simple. A team does not slide that far by accident. What happened to this roster? Whatever it was, the standings now put the Bucks in the bottom handful of the league in the 2026 regular season. Nobody gets to call this a blip. Seventeen spots is a plunge, and 27th is where it landed.",
+   "brief": {
+    "other_desks": [],
+    "recent_wire": [],
+    "season_arc": {
+     "cycle_index": 2,
+     "last_season_bottom": [],
+     "last_season_top": [],
+     "league_games_played": 38,
+     "phase": "regular_season",
+     "season": 2026
+    },
+    "standings": [
+     {
+      "losses": 12,
+      "standings_position": 1,
+      "streak_length": 6,
+      "team_id": 1,
+      "team_name": "Minnesota Timberwolves",
+      "wins": 25
+     },
+     {
+      "losses": 12,
+      "standings_position": 2,
+      "streak_length": 3,
+      "team_id": 2,
+      "team_name": "Los Angeles Lakers",
+      "wins": 24
+     },
+     {
+      "losses": 12,
+      "standings_position": 3,
+      "streak_length": -1,
+      "team_id": 3,
+      "team_name": "San Antonio Spurs",
+      "wins": 24
+     },
+     {
+      "losses": 13,
+      "standings_position": 4,
+      "streak_length": 2,
+      "team_id": 4,
+      "team_name": "Denver Nuggets",
+      "wins": 24
+     },
+     {
+      "losses": 14,
+      "standings_position": 5,
+      "streak_length": 1,
+      "team_id": 5,
+      "team_name": "Boston Celtics",
+      "wins": 24
+     },
+     {
+      "losses": 20,
+      "standings_position": 20,
+      "streak_length": -2,
+      "team_id": 6,
+      "team_name": "Toronto Raptors",
+      "wins": 17
+     },
+     {
+      "losses": 26,
+      "standings_position": 28,
+      "streak_length": -9,
+      "team_id": 11,
+      "team_name": "Utah Jazz",
+      "wins": 13
+     },
+     {
+      "losses": 29,
+      "standings_position": 27,
+      "streak_length": -5,
+      "team_id": 7,
+      "team_name": "Milwaukee Bucks",
+      "wins": 9
+     }
+    ],
+    "subject_history": []
+   },
+   "headline": "Milwaukee Bucks tumble 17 spots to 27th in the standings",
+   "id": "3282",
+   "label": "clean",
+   "note": "",
+   "package": {
+    "angle": "collapse",
+    "cycle_index": 2,
+    "facts": [
+     {
+      "key": "team_name",
+      "label": "Team",
+      "value_number": null,
+      "value_text": "Milwaukee Bucks"
+     },
+     {
+      "key": "standings_position_delta",
+      "label": "Change since last pulse",
+      "value_number": 17.0,
+      "value_text": "17"
+     },
+     {
+      "key": "standings_position",
+      "label": "Standings position",
+      "value_number": 27.0,
+      "value_text": "27"
+     },
+     {
+      "key": "season",
+      "label": "Season",
+      "value_number": 2026.0,
+      "value_text": "2026"
+     },
+     {
+      "key": "phase",
+      "label": "Phase",
+      "value_number": null,
+      "value_text": "REGULAR_SEASON"
+     }
+    ],
+    "package_version": 1,
+    "phase": "REGULAR_SEASON",
+    "season": 2026,
+    "story_kind": "standings_collapse",
+    "subject": {
+     "kind": "team",
+     "opponent_team_id": null,
+     "opponent_team_name": null,
+     "player_id": null,
+     "player_name": null,
+     "team_id": 7,
+     "team_name": "Milwaukee Bucks"
+    }
+   },
+   "source": "s8-22"
+  },
+  {
+   "base": "3278",
+   "body": "The Los Angeles Lakers are 24-13 in second.",
+   "headline": "Headline",
+   "id": "N01",
+   "label": "negative",
+   "note": "13 is Denver's loss count (brief), not the Lakers'",
+   "source": "synthetic"
+  },
+  {
+   "base": "3278",
+   "body": "The Denver Nuggets are 24-12 in fourth.",
+   "headline": "Headline",
+   "id": "N02",
+   "label": "negative",
+   "note": "24-12 is the Lakers/Spurs record",
+   "source": "synthetic"
+  },
+  {
+   "base": "3278",
+   "body": "Minnesota is riding a 9-game win streak.",
+   "headline": "Headline",
+   "id": "N03",
+   "label": "negative",
+   "note": "9 is Milwaukee's win count; MIN streak is 6",
+   "source": "synthetic"
+  },
+  {
+   "base": "3303",
+   "body": "The Los Angeles Lakers have won 4 straight.",
+   "headline": "Headline",
+   "id": "N04",
+   "label": "negative",
+   "note": "streak is -4: sign flipped, number true",
+   "source": "synthetic"
+  },
+  {
+   "base": "3287",
+   "body": "Phoenix sits 7th in the standings at 27-22.",
+   "headline": "Headline",
+   "id": "N05",
+   "label": "negative",
+   "note": "7 is the pace rank; standings position is 10",
+   "source": "synthetic"
+  },
+  {
+   "base": "3291",
+   "body": "Clippers hold a 3-1 edge on Suns in the season series.",
+   "headline": "Headline",
+   "id": "N06",
+   "label": "negative",
+   "note": "3 is the Clippers' streak, series is 2-1",
+   "source": "synthetic"
+  },
+  {
+   "base": "3281",
+   "body": "Toronto is a 20-17 team.",
+   "headline": "Headline",
+   "id": "N07",
+   "label": "negative",
+   "note": "record reversed",
+   "source": "synthetic"
+  },
+  {
+   "base": "3276",
+   "body": "The Pacers' top 8 players average 29.0 years old.",
+   "headline": "Headline",
+   "id": "N08",
+   "label": "negative",
+   "note": "29 exists in the brief (a loss count)",
+   "source": "synthetic"
+  },
+  {
+   "base": "3297",
+   "body": "Over his last 5 games he is producing 38.674 points per 36.",
+   "headline": "Headline",
+   "id": "N09",
+   "label": "negative",
+   "note": "invented decimal: sanity, v1 rejects too",
+   "source": "synthetic"
+  },
+  {
+   "base": "3282",
+   "body": "Milwaukee is 17th in the standings.",
+   "headline": "Headline",
+   "id": "N10",
+   "label": "negative",
+   "note": "17 is the delta; position is 27",
+   "source": "synthetic"
+  },
+  {
+   "base": "3291",
+   "body": "Clippers lead the series with 3 games left.",
+   "headline": "Headline",
+   "id": "N11",
+   "label": "negative",
+   "note": "games-left claim with no fact",
+   "source": "synthetic"
+  },
+  {
+   "base": "3303",
+   "body": "The Lakers are sitting 4th in the standings.",
+   "headline": "Headline",
+   "id": "N12",
+   "label": "negative",
+   "note": "4 is the streak magnitude",
+   "source": "synthetic"
+  },
+  {
+   "base": "3278",
+   "body": "Minnesota has played 38 games.",
+   "headline": "Headline",
+   "id": "N13",
+   "label": "negative",
+   "note": "38 is LEAGUE games played, attributed to a team (documented blind spot)",
+   "source": "synthetic"
+  },
+  {
+   "base": "3287",
+   "body": "The declared pace target is 63.",
+   "headline": "Headline",
+   "id": "N14",
+   "label": "negative",
+   "note": "63 is the same team's three-point bias (documented blind spot)",
+   "source": "synthetic"
+  },
+  {
+   "base": "3278",
+   "body": "The Boston Celtics are 25-12 in fifth.",
+   "headline": "Headline",
+   "id": "N15",
+   "label": "negative",
+   "note": "25-12 is Minnesota's record",
+   "source": "synthetic"
+  },
+  {
+   "base": "3290",
+   "body": "Over his last 5, Davis is scoring 20.216 points per 36, down from 29 last season.",
+   "headline": "Headline",
+   "id": "N16",
+   "label": "negative",
+   "note": "29 is a loss count in the brief, 'last season' claim is invented (documented blind spot: a true number under a false qualifier, G2-14)",
+   "source": "synthetic"
+  },
+  {
+   "base": "3291",
+   "body": "Phoenix sits 16th, while the Clippers are 10th.",
+   "headline": "Headline",
+   "id": "N17",
+   "label": "negative",
+   "note": "positions swapped between the two teams",
+   "source": "synthetic"
+  },
+  {
+   "base": "3278",
+   "body": "The Denver Nuggets are 24-13 in fourth, riding a 6-game win streak.",
+   "headline": "Headline",
+   "id": "N18",
+   "label": "negative",
+   "note": "6 is Minnesota's streak; Denver's is 2",
+   "source": "synthetic"
+  },
+  {
+   "base": "3303",
+   "body": "The Los Angeles Lakers are 44-38, up 10 spots since the last pulse.",
+   "headline": "Headline",
+   "id": "N19",
+   "label": "negative",
+   "note": "10 is the position; delta is 3",
+   "source": "synthetic"
+  },
+  {
+   "base": "3289",
+   "body": "Anthony Edwards is scoring 27.376 points per 36 over the last 5, and his team is 25-24.",
+   "headline": "Headline",
+   "id": "N20",
+   "label": "negative",
+   "note": "25-24 is the Clippers' record, not Minnesota's (33-16)",
+   "source": "synthetic"
+  },
+  {
+   "base": "3290",
+   "body": "Anthony Davis has gone cold. He is at 0.517 over his last 5, down from 0.644.",
+   "headline": "Headline",
+   "id": "P01",
+   "label": "clean",
+   "note": "pronoun attribution to the subject player",
+   "source": "synthetic"
+  },
+  {
+   "base": "3278",
+   "body": "Minnesota is 25-12, one game ahead of the Lakers at 24-12 and the Spurs at 24-12.",
+   "headline": "Headline",
+   "id": "P02",
+   "label": "clean",
+   "note": "comparative sentence, three teams, three records",
+   "source": "synthetic"
+  },
+  {
+   "base": "3290",
+   "body": "Davis is scoring 20.2 points per 36 on 0.52 true shooting.",
+   "headline": "Headline",
+   "id": "P03",
+   "label": "clean",
+   "note": "honest rounding of the subject's own facts",
+   "source": "synthetic"
+  },
+  {
+   "base": "3303",
+   "body": "The Lakers have lost 4 straight and moved up 3 spots.",
+   "headline": "Headline",
+   "id": "P04",
+   "label": "clean",
+   "note": "negative facts cited as magnitudes with the right direction",
+   "source": "synthetic"
+  },
+  {
+   "base": "3291",
+   "body": "The Clippers have won 2 of the series games. The Suns have taken 1.",
+   "headline": "Headline",
+   "id": "P05",
+   "label": "clean",
+   "note": "two-team package: each side's series count in its own sentence",
+   "source": "synthetic"
+  },
+  {
+   "base": "3278",
+   "body": "Minnesota Timberwolves: 25-12, winners of 6 straight.",
+   "headline": "Headline",
+   "id": "P06",
+   "label": "clean",
+   "note": "headline-style fragment, no verb",
+   "source": "synthetic"
+  },
+  {
+   "base": "3287",
+   "body": "The Suns rank 1st in possessions and 1st in three-point rate, and 10th in the standings.",
+   "headline": "Headline",
+   "id": "P07",
+   "label": "clean",
+   "note": "rank facts and a standings position in one sentence",
+   "source": "synthetic"
+  },
+  {
+   "base": "3278",
+   "body": "The Denver Nuggets (24-13) and Boston Celtics (24-14) follow in fourth and fifth.",
+   "headline": "Headline",
+   "id": "P08",
+   "label": "clean",
+   "note": "parenthetical records",
+   "source": "synthetic"
+  },
+  {
+   "base": "3303",
+   "body": "The mean age of the top 8 is 29.625, and point guard is the need at 0.833.",
+   "headline": "Headline",
+   "id": "P09",
+   "label": "clean",
+   "note": "label digits ('top 8') and two facts",
+   "source": "synthetic"
+  },
+  {
+   "base": "3281",
+   "body": "The Raptors have dropped 15 spots to position 20, and Toronto is 17-20.",
+   "headline": "Headline",
+   "id": "P10",
+   "label": "clean",
+   "note": "package facts plus the subject's own brief row",
+   "source": "synthetic"
+  },
+  {
+   "base": "3291",
+   "body": "The next meeting is set for 2027-02-08.",
+   "headline": "Headline",
+   "id": "P11",
+   "label": "clean",
+   "note": "date tokens from a TEXT fact",
+   "source": "synthetic"
+  },
+  {
+   "base": "3278",
+   "body": "Minnesota's 25 wins are the most of any team listed, and its 12 losses match the Lakers and Spurs.",
+   "headline": "Headline",
+   "id": "P12",
+   "label": "clean",
+   "note": "possessive plus 'its' pronoun, shared loss count",
+   "source": "synthetic"
+  },
+  {
+   "base": "3297",
+   "body": "Wembanyama is at 0.713 true shooting over the last 5 games, against 0.639 for the rest of the season.",
+   "headline": "Headline",
+   "id": "P13",
+   "label": "clean",
+   "note": "last-name-only mention",
+   "source": "synthetic"
+  },
+  {
+   "base": "3287",
+   "body": "Phoenix plays at 101.265 possessions per game, the most among 30 teams.",
+   "headline": "Headline",
+   "id": "P14",
+   "label": "clean",
+   "note": "league_size fact in the subject's sentence",
+   "source": "synthetic"
+  },
+  {
+   "base": "3282",
+   "body": "Milwaukee is 27th. The Bucks have dropped 17 spots.",
+   "headline": "Headline",
+   "id": "P15",
+   "label": "clean",
+   "note": "ordinal position typed against standings_position",
+   "source": "synthetic"
+  },
+  {
+   "base": "3278",
+   "body": "The league has played 38 games so far in the 2026 regular season.",
+   "headline": "Headline",
+   "id": "P16",
+   "label": "clean",
+   "note": "league-scoped numbers with no entity",
+   "source": "synthetic"
+  },
+  {
+   "base": "3303",
+   "body": "In 2026 the Lakers finished 44-38.",
+   "headline": "Headline",
+   "id": "P17",
+   "label": "clean",
+   "note": "season plus record",
+   "source": "synthetic"
+  },
+  {
+   "base": "3291",
+   "body": "The rivalry score stands at 6 and the closest margin so far is 1.",
+   "headline": "Headline",
+   "id": "P18",
+   "label": "clean",
+   "note": "two-sided facts with no team named in the sentence",
+   "source": "synthetic"
+  },
+  {
+   "base": "3290",
+   "body": "Nearly 9 points per 36 separate Davis's last 5 from the rest of his season.",
+   "headline": "Headline",
+   "id": "P19",
+   "label": "derived_true",
+   "note": "a derived difference, true",
+   "source": "synthetic"
+  },
+  {
+   "base": "3291",
+   "body": "The Clippers have won 2 of the 3 meetings so far.",
+   "headline": "Headline",
+   "id": "P20",
+   "label": "derived_true",
+   "note": "derived sum, true",
+   "source": "synthetic"
+  },
+  {
+   "body": "The Golden State Warriors are 27-34 and have won 2 straight, which puts them 23rd in the standings, up 4 places since the last pulse. They sit 19.5 games behind first place with a win percentage of 0.443.\n\nThe roster's top 8 averages 28.125 years old. The biggest need is at center, with a need value of 0.833. The biggest glut is at shooting guard, at 1.000.\n\nThe season is in the stretch after the trade deadline, so the roster is set as it stands. The center spot is the open question for the rest of the schedule.",
+   "brief": {
+    "other_desks": [
+     {
+      "angle": "full_picture",
+      "headline_fact": "Wins: 28",
+      "link": "none",
+      "salience_band": "profile",
+      "story_kind": "team_profile",
+      "subject_name": "Oklahoma City Thunder"
+     },
+     {
+      "angle": "full_picture",
+      "headline_fact": "Wins: 33",
+      "link": "none",
+      "salience_band": "profile",
+      "story_kind": "team_profile",
+      "subject_name": "Detroit Pistons"
+     },
+     {
+      "angle": "heating_up",
+      "headline_fact": "Points per 36, last 5: 35.599",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "hot_streak",
+      "subject_name": "Brandon Miller"
+     },
+     {
+      "angle": "scheme_identity",
+      "headline_fact": "Offensive scheme: five_out",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "scheme_identity",
+      "subject_name": "Miami Heat"
+     },
+     {
+      "angle": "heating_up",
+      "headline_fact": "Points per 36, last 5: 42.594",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "hot_streak",
+      "subject_name": "Shai Gilgeous-Alexander"
+     },
+     {
+      "angle": "heating_up",
+      "headline_fact": "Points per 36, last 5: 29.208",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "hot_streak",
+      "subject_name": "De'Anthony Melton"
+     },
+     {
+      "angle": "scheme_identity",
+      "headline_fact": "Offensive scheme: five_out",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "scheme_identity",
+      "subject_name": "Atlanta Hawks"
+     },
+     {
+      "angle": "scheme_identity",
+      "headline_fact": "Offensive scheme: motion",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "scheme_identity",
+      "subject_name": "Detroit Pistons"
+     }
+    ],
+    "recent_wire": [
+     {
+      "cycle_index": 2,
+      "headline": "Golden State Warriors: scheme",
+      "link": "same_team",
+      "persona_column": "Film Room",
+      "story_kind": "scheme_identity",
+      "subject_name": "Golden State Warriors"
+     },
+     {
+      "cycle_index": 2,
+      "headline": "Brooklyn Nets: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Brooklyn Nets"
+     },
+     {
+      "cycle_index": 2,
+      "headline": "Sacramento Kings: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Sacramento Kings"
+     },
+     {
+      "cycle_index": 2,
+      "headline": "New Orleans Pelicans: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "New Orleans Pelicans"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Los Angeles Clippers: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Los Angeles Clippers"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Minnesota Timberwolves: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Minnesota Timberwolves"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Washington Wizards: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Washington Wizards"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Cleveland Cavaliers: collapse",
+      "link": "none",
+      "persona_column": "No Filter",
+      "story_kind": "standings_collapse",
+      "subject_name": "Cleveland Cavaliers"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Toronto Raptors: collapse",
+      "link": "none",
+      "persona_column": "No Filter",
+      "story_kind": "standings_collapse",
+      "subject_name": "Toronto Raptors"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Los Angeles Lakers: surge",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "standings_surge",
+      "subject_name": "Los Angeles Lakers"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "San Antonio Spurs: surge",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "standings_surge",
+      "subject_name": "San Antonio Spurs"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Phoenix Suns: surge",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "standings_surge",
+      "subject_name": "Phoenix Suns"
+     }
+    ],
+    "season_arc": {
+     "cycle_index": 3,
+     "last_season_bottom": [],
+     "last_season_top": [],
+     "league_games_played": 62,
+     "phase": "POST_DEADLINE",
+     "season": 2026
+    },
+    "standings": [
+     {
+      "losses": 15,
+      "standings_position": 1,
+      "streak_length": 6,
+      "team_id": 12113,
+      "team_name": "Philadelphia 76ers",
+      "wins": 47
+     },
+     {
+      "losses": 19,
+      "standings_position": 2,
+      "streak_length": 4,
+      "team_id": 12125,
+      "team_name": "Denver Nuggets",
+      "wins": 42
+     },
+     {
+      "losses": 21,
+      "standings_position": 3,
+      "streak_length": 2,
+      "team_id": 12126,
+      "team_name": "Minnesota Timberwolves",
+      "wins": 40
+     },
+     {
+      "losses": 23,
+      "standings_position": 4,
+      "streak_length": 3,
+      "team_id": 12120,
+      "team_name": "Atlanta Hawks",
+      "wins": 39
+     },
+     {
+      "losses": 24,
+      "standings_position": 5,
+      "streak_length": -3,
+      "team_id": 12110,
+      "team_name": "Boston Celtics",
+      "wins": 38
+     },
+     {
+      "losses": 37,
+      "standings_position": 28,
+      "streak_length": 1,
+      "team_id": 12137,
+      "team_name": "Memphis Grizzlies",
+      "wins": 25
+     },
+     {
+      "losses": 45,
+      "standings_position": 29,
+      "streak_length": -7,
+      "team_id": 12124,
+      "team_name": "Washington Wizards",
+      "wins": 17
+     },
+     {
+      "losses": 46,
+      "standings_position": 30,
+      "streak_length": 1,
+      "team_id": 12111,
+      "team_name": "Brooklyn Nets",
+      "wins": 16
+     },
+     {
+      "losses": 34,
+      "standings_position": 23,
+      "streak_length": 2,
+      "team_id": 12130,
+      "team_name": "Golden State Warriors",
+      "wins": 27
+     }
+    ],
+    "subject_history": [
+     {
+      "cycle_index": 2,
+      "headline": "Golden State Warriors: scheme",
+      "story_kind": "scheme_identity"
+     }
+    ]
+   },
+   "headline": "Warriors are 27-34, winners of 2, and up 4 spots to 23rd",
+   "id": "3605",
+   "label": "false_claim",
+   "league": "1704",
+   "note": "delta +4 (19th -> 23rd): 'up 4 places', 'up 4 spots' state a fall as a climb",
+   "package": {
+    "angle": "full_picture",
+    "cycle_index": 3,
+    "facts": [
+     {
+      "key": "team_name",
+      "label": "Team",
+      "value_number": null,
+      "value_text": "Golden State Warriors"
+     },
+     {
+      "key": "season",
+      "label": "Season",
+      "value_number": 2026.0,
+      "value_text": "2026"
+     },
+     {
+      "key": "phase",
+      "label": "Phase",
+      "value_number": null,
+      "value_text": "POST_DEADLINE"
+     },
+     {
+      "key": "wins",
+      "label": "Wins",
+      "value_number": 27.0,
+      "value_text": "27"
+     },
+     {
+      "key": "losses",
+      "label": "Losses",
+      "value_number": 34.0,
+      "value_text": "34"
+     },
+     {
+      "key": "standings_position",
+      "label": "Standings position",
+      "value_number": 23.0,
+      "value_text": "23"
+     },
+     {
+      "key": "streak_length",
+      "label": "Streak",
+      "value_number": 2.0,
+      "value_text": "2"
+     },
+     {
+      "key": "standings_position_delta",
+      "label": "Change since last pulse",
+      "value_number": 4.0,
+      "value_text": "4"
+     },
+     {
+      "key": "mean_age_top8",
+      "label": "Mean age, top 8",
+      "value_number": 28.125,
+      "value_text": "28.125"
+     },
+     {
+      "key": "biggest_need_position",
+      "label": "Biggest need",
+      "value_number": null,
+      "value_text": "C"
+     },
+     {
+      "key": "biggest_need_value",
+      "label": "Need value",
+      "value_number": 0.8333333333333334,
+      "value_text": "0.833"
+     },
+     {
+      "key": "biggest_glut_position",
+      "label": "Biggest glut",
+      "value_number": null,
+      "value_text": "SG"
+     },
+     {
+      "key": "biggest_glut_value",
+      "label": "Glut value",
+      "value_number": 1.0,
+      "value_text": "1.000"
+     }
+    ],
+    "package_version": 1,
+    "phase": "POST_DEADLINE",
+    "season": 2026,
+    "story_kind": "team_profile",
+    "subject": {
+     "kind": "team",
+     "opponent_team_id": null,
+     "opponent_team_name": null,
+     "player_id": null,
+     "player_name": null,
+     "team_id": 12130,
+     "team_name": "Golden State Warriors"
+    }
+   },
+   "source": "g2-live-1704"
+  },
+  {
+   "body": "New Orleans is 25-24, on a 1-game losing streak, and holds 13th place in the standings. That is a drop of 9 places since the last pulse. The Pelicans have played 49 games and carry a 0.510 win percentage, which leaves them 12.5 games behind first-place Philadelphia.\n\nThe roster is young. The mean age of the top 8 is 26.125. By position, the biggest need is center, with a need value of 1.000. The biggest glut is small forward, at 0.200.\n\nThe league has reached the trade deadline, so the roster can still change. The need at center is the decision point for New Orleans.",
+   "brief": {
+    "other_desks": [
+     {
+      "angle": "full_picture",
+      "headline_fact": "Wins: 23",
+      "link": "none",
+      "salience_band": "profile",
+      "story_kind": "team_profile",
+      "subject_name": "Sacramento Kings"
+     },
+     {
+      "angle": "full_picture",
+      "headline_fact": "Wins: 14",
+      "link": "none",
+      "salience_band": "profile",
+      "story_kind": "team_profile",
+      "subject_name": "Brooklyn Nets"
+     },
+     {
+      "angle": "going_cold",
+      "headline_fact": "Points per 36, last 5: 25.212",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "cold_stretch",
+      "subject_name": "Nikola Jokic"
+     },
+     {
+      "angle": "heating_up",
+      "headline_fact": "Points per 36, last 5: 38.125",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "hot_streak",
+      "subject_name": "Victor Wembanyama"
+     },
+     {
+      "angle": "going_cold",
+      "headline_fact": "Points per 36, last 5: 18.774",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "cold_stretch",
+      "subject_name": "Anthony Davis"
+     },
+     {
+      "angle": "scheme_identity",
+      "headline_fact": "Offensive scheme: motion",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "scheme_identity",
+      "subject_name": "Golden State Warriors"
+     },
+     {
+      "angle": "scheme_identity",
+      "headline_fact": "Offensive scheme: pnr_heavy",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "scheme_identity",
+      "subject_name": "Sacramento Kings"
+     },
+     {
+      "angle": "scheme_identity",
+      "headline_fact": "Offensive scheme: five_out",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "scheme_identity",
+      "subject_name": "Miami Heat"
+     }
+    ],
+    "recent_wire": [
+     {
+      "cycle_index": 1,
+      "headline": "Los Angeles Clippers: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Los Angeles Clippers"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Minnesota Timberwolves: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Minnesota Timberwolves"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Washington Wizards: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Washington Wizards"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Cleveland Cavaliers: collapse",
+      "link": "none",
+      "persona_column": "No Filter",
+      "story_kind": "standings_collapse",
+      "subject_name": "Cleveland Cavaliers"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Toronto Raptors: collapse",
+      "link": "none",
+      "persona_column": "No Filter",
+      "story_kind": "standings_collapse",
+      "subject_name": "Toronto Raptors"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Los Angeles Lakers: surge",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "standings_surge",
+      "subject_name": "Los Angeles Lakers"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "San Antonio Spurs: surge",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "standings_surge",
+      "subject_name": "San Antonio Spurs"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Phoenix Suns: surge",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "standings_surge",
+      "subject_name": "Phoenix Suns"
+     },
+     {
+      "cycle_index": 0,
+      "headline": "Charlotte Hornets: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Charlotte Hornets"
+     },
+     {
+      "cycle_index": 0,
+      "headline": "Indiana Pacers: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Indiana Pacers"
+     },
+     {
+      "cycle_index": 0,
+      "headline": "Philadelphia 76ers: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Philadelphia 76ers"
+     },
+     {
+      "cycle_index": 0,
+      "headline": "Denver Nuggets: roster construction",
+      "link": "none",
+      "persona_column": "Film Room",
+      "story_kind": "roster_construction",
+      "subject_name": "Denver Nuggets"
+     }
+    ],
+    "season_arc": {
+     "cycle_index": 2,
+     "last_season_bottom": [],
+     "last_season_top": [],
+     "league_games_played": 50,
+     "phase": "TRADE_DEADLINE",
+     "season": 2026
+    },
+    "standings": [
+     {
+      "losses": 12,
+      "standings_position": 1,
+      "streak_length": -2,
+      "team_id": 12113,
+      "team_name": "Philadelphia 76ers",
+      "wins": 38
+     },
+     {
+      "losses": 16,
+      "standings_position": 2,
+      "streak_length": -1,
+      "team_id": 12110,
+      "team_name": "Boston Celtics",
+      "wins": 33
+     },
+     {
+      "losses": 16,
+      "standings_position": 3,
+      "streak_length": 1,
+      "team_id": 12125,
+      "team_name": "Denver Nuggets",
+      "wins": 33
+     },
+     {
+      "losses": 18,
+      "standings_position": 4,
+      "streak_length": 2,
+      "team_id": 12126,
+      "team_name": "Minnesota Timberwolves",
+      "wins": 31
+     },
+     {
+      "losses": 18,
+      "standings_position": 5,
+      "streak_length": 1,
+      "team_id": 12139,
+      "team_name": "San Antonio Spurs",
+      "wins": 30
+     },
+     {
+      "losses": 30,
+      "standings_position": 28,
+      "streak_length": 1,
+      "team_id": 12129,
+      "team_name": "Utah Jazz",
+      "wins": 20
+     },
+     {
+      "losses": 33,
+      "standings_position": 29,
+      "streak_length": -5,
+      "team_id": 12124,
+      "team_name": "Washington Wizards",
+      "wins": 16
+     },
+     {
+      "losses": 36,
+      "standings_position": 30,
+      "streak_length": -5,
+      "team_id": 12111,
+      "team_name": "Brooklyn Nets",
+      "wins": 14
+     },
+     {
+      "losses": 24,
+      "standings_position": 13,
+      "streak_length": -1,
+      "team_id": 12138,
+      "team_name": "New Orleans Pelicans",
+      "wins": 25
+     }
+    ],
+    "subject_history": []
+   },
+   "headline": "Pelicans sit 13th at 25-24, down 9 spots, with center the biggest need at the deadline",
+   "id": "3597",
+   "label": "false_claim",
+   "league": "1704",
+   "note": "delta -9 (22nd -> 13th): 'a drop of 9 places', 'down 9 spots' state a climb as a fall",
+   "package": {
+    "angle": "full_picture",
+    "cycle_index": 2,
+    "facts": [
+     {
+      "key": "team_name",
+      "label": "Team",
+      "value_number": null,
+      "value_text": "New Orleans Pelicans"
+     },
+     {
+      "key": "season",
+      "label": "Season",
+      "value_number": 2026.0,
+      "value_text": "2026"
+     },
+     {
+      "key": "phase",
+      "label": "Phase",
+      "value_number": null,
+      "value_text": "TRADE_DEADLINE"
+     },
+     {
+      "key": "wins",
+      "label": "Wins",
+      "value_number": 25.0,
+      "value_text": "25"
+     },
+     {
+      "key": "losses",
+      "label": "Losses",
+      "value_number": 24.0,
+      "value_text": "24"
+     },
+     {
+      "key": "standings_position",
+      "label": "Standings position",
+      "value_number": 13.0,
+      "value_text": "13"
+     },
+     {
+      "key": "streak_length",
+      "label": "Streak",
+      "value_number": -1.0,
+      "value_text": "-1"
+     },
+     {
+      "key": "standings_position_delta",
+      "label": "Change since last pulse",
+      "value_number": -9.0,
+      "value_text": "-9"
+     },
+     {
+      "key": "mean_age_top8",
+      "label": "Mean age, top 8",
+      "value_number": 26.125,
+      "value_text": "26.125"
+     },
+     {
+      "key": "biggest_need_position",
+      "label": "Biggest need",
+      "value_number": null,
+      "value_text": "C"
+     },
+     {
+      "key": "biggest_need_value",
+      "label": "Need value",
+      "value_number": 1.0,
+      "value_text": "1.000"
+     },
+     {
+      "key": "biggest_glut_position",
+      "label": "Biggest glut",
+      "value_number": null,
+      "value_text": "SF"
+     },
+     {
+      "key": "biggest_glut_value",
+      "label": "Glut value",
+      "value_number": 0.19999999999999987,
+      "value_text": "0.200"
+     }
+    ],
+    "package_version": 1,
+    "phase": "TRADE_DEADLINE",
+    "season": 2026,
+    "story_kind": "team_profile",
+    "subject": {
+     "kind": "team",
+     "opponent_team_id": null,
+     "opponent_team_name": null,
+     "player_id": null,
+     "player_name": null,
+     "team_id": 12138,
+     "team_name": "New Orleans Pelicans"
+    }
+   },
+   "source": "g2-live-1704"
+  },
+  {
+   "body": "The Brooklyn Nets are 14-36 and have lost 5 straight, which leaves them 30th in the standings at the trade deadline. They have moved up 1 spot since the last pulse, though the streak is still running. Ahead of them, the Washington Wizards are 29th at 16-33 and also on a 5-game skid. The Utah Jazz are 28th at 20-30.\n\nThe roster is young. The mean age of the top 8 is 25.375. The biggest need is at point guard, with a need value of 0.833. The biggest glut is at power forward, but its value is only 0.022, so it barely registers next to the point guard gap.\n\nWith the trade deadline here, the point guard hole is the item to watch on Brooklyn's board.",
+   "brief": {
+    "other_desks": [
+     {
+      "angle": "full_picture",
+      "headline_fact": "Wins: 25",
+      "link": "none",
+      "salience_band": "profile",
+      "story_kind": "team_profile",
+      "subject_name": "New Orleans Pelicans"
+     },
+     {
+      "angle": "full_picture",
+      "headline_fact": "Wins: 23",
+      "link": "none",
+      "salience_band": "profile",
+      "story_kind": "team_profile",
+      "subject_name": "Sacramento Kings"
+     },
+     {
+      "angle": "going_cold",
+      "headline_fact": "Points per 36, last 5: 25.212",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "cold_stretch",
+      "subject_name": "Nikola Jokic"
+     },
+     {
+      "angle": "heating_up",
+      "headline_fact": "Points per 36, last 5: 38.125",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "hot_streak",
+      "subject_name": "Victor Wembanyama"
+     },
+     {
+      "angle": "going_cold",
+      "headline_fact": "Points per 36, last 5: 18.774",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "cold_stretch",
+      "subject_name": "Anthony Davis"
+     },
+     {
+      "angle": "scheme_identity",
+      "headline_fact": "Offensive scheme: motion",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "scheme_identity",
+      "subject_name": "Golden State Warriors"
+     },
+     {
+      "angle": "scheme_identity",
+      "headline_fact": "Offensive scheme: pnr_heavy",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "scheme_identity",
+      "subject_name": "Sacramento Kings"
+     },
+     {
+      "angle": "scheme_identity",
+      "headline_fact": "Offensive scheme: five_out",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "scheme_identity",
+      "subject_name": "Miami Heat"
+     }
+    ],
+    "recent_wire": [
+     {
+      "cycle_index": 0,
+      "headline": "Brooklyn Nets: roster construction",
+      "link": "same_team",
+      "persona_column": "No Filter",
+      "story_kind": "roster_construction",
+      "subject_name": "Brooklyn Nets"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Los Angeles Clippers: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Los Angeles Clippers"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Minnesota Timberwolves: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Minnesota Timberwolves"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Washington Wizards: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Washington Wizards"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Cleveland Cavaliers: collapse",
+      "link": "none",
+      "persona_column": "No Filter",
+      "story_kind": "standings_collapse",
+      "subject_name": "Cleveland Cavaliers"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Toronto Raptors: collapse",
+      "link": "none",
+      "persona_column": "No Filter",
+      "story_kind": "standings_collapse",
+      "subject_name": "Toronto Raptors"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Los Angeles Lakers: surge",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "standings_surge",
+      "subject_name": "Los Angeles Lakers"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "San Antonio Spurs: surge",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "standings_surge",
+      "subject_name": "San Antonio Spurs"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Phoenix Suns: surge",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "standings_surge",
+      "subject_name": "Phoenix Suns"
+     },
+     {
+      "cycle_index": 0,
+      "headline": "Charlotte Hornets: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Charlotte Hornets"
+     },
+     {
+      "cycle_index": 0,
+      "headline": "Indiana Pacers: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Indiana Pacers"
+     },
+     {
+      "cycle_index": 0,
+      "headline": "Philadelphia 76ers: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Philadelphia 76ers"
+     }
+    ],
+    "season_arc": {
+     "cycle_index": 2,
+     "last_season_bottom": [],
+     "last_season_top": [],
+     "league_games_played": 50,
+     "phase": "TRADE_DEADLINE",
+     "season": 2026
+    },
+    "standings": [
+     {
+      "losses": 12,
+      "standings_position": 1,
+      "streak_length": -2,
+      "team_id": 12113,
+      "team_name": "Philadelphia 76ers",
+      "wins": 38
+     },
+     {
+      "losses": 16,
+      "standings_position": 2,
+      "streak_length": -1,
+      "team_id": 12110,
+      "team_name": "Boston Celtics",
+      "wins": 33
+     },
+     {
+      "losses": 16,
+      "standings_position": 3,
+      "streak_length": 1,
+      "team_id": 12125,
+      "team_name": "Denver Nuggets",
+      "wins": 33
+     },
+     {
+      "losses": 18,
+      "standings_position": 4,
+      "streak_length": 2,
+      "team_id": 12126,
+      "team_name": "Minnesota Timberwolves",
+      "wins": 31
+     },
+     {
+      "losses": 18,
+      "standings_position": 5,
+      "streak_length": 1,
+      "team_id": 12139,
+      "team_name": "San Antonio Spurs",
+      "wins": 30
+     },
+     {
+      "losses": 30,
+      "standings_position": 28,
+      "streak_length": 1,
+      "team_id": 12129,
+      "team_name": "Utah Jazz",
+      "wins": 20
+     },
+     {
+      "losses": 33,
+      "standings_position": 29,
+      "streak_length": -5,
+      "team_id": 12124,
+      "team_name": "Washington Wizards",
+      "wins": 16
+     },
+     {
+      "losses": 36,
+      "standings_position": 30,
+      "streak_length": -5,
+      "team_id": 12111,
+      "team_name": "Brooklyn Nets",
+      "wins": 14
+     }
+    ],
+    "subject_history": [
+     {
+      "cycle_index": 0,
+      "headline": "Brooklyn Nets: roster construction",
+      "story_kind": "roster_construction"
+     }
+    ]
+   },
+   "headline": "Brooklyn Nets sit 30th at 14-36 with a 5-game losing streak at the trade deadline",
+   "id": "3599",
+   "label": "false_claim",
+   "league": "1704",
+   "note": "delta +1 (29th -> 30th): 'moved up 1 spot' states a fall as a climb",
+   "package": {
+    "angle": "full_picture",
+    "cycle_index": 2,
+    "facts": [
+     {
+      "key": "team_name",
+      "label": "Team",
+      "value_number": null,
+      "value_text": "Brooklyn Nets"
+     },
+     {
+      "key": "season",
+      "label": "Season",
+      "value_number": 2026.0,
+      "value_text": "2026"
+     },
+     {
+      "key": "phase",
+      "label": "Phase",
+      "value_number": null,
+      "value_text": "TRADE_DEADLINE"
+     },
+     {
+      "key": "wins",
+      "label": "Wins",
+      "value_number": 14.0,
+      "value_text": "14"
+     },
+     {
+      "key": "losses",
+      "label": "Losses",
+      "value_number": 36.0,
+      "value_text": "36"
+     },
+     {
+      "key": "standings_position",
+      "label": "Standings position",
+      "value_number": 30.0,
+      "value_text": "30"
+     },
+     {
+      "key": "streak_length",
+      "label": "Streak",
+      "value_number": -5.0,
+      "value_text": "-5"
+     },
+     {
+      "key": "standings_position_delta",
+      "label": "Change since last pulse",
+      "value_number": 1.0,
+      "value_text": "1"
+     },
+     {
+      "key": "mean_age_top8",
+      "label": "Mean age, top 8",
+      "value_number": 25.375,
+      "value_text": "25.375"
+     },
+     {
+      "key": "biggest_need_position",
+      "label": "Biggest need",
+      "value_number": null,
+      "value_text": "PG"
+     },
+     {
+      "key": "biggest_need_value",
+      "label": "Need value",
+      "value_number": 0.8333333333333334,
+      "value_text": "0.833"
+     },
+     {
+      "key": "biggest_glut_position",
+      "label": "Biggest glut",
+      "value_number": null,
+      "value_text": "PF"
+     },
+     {
+      "key": "biggest_glut_value",
+      "label": "Glut value",
+      "value_number": 0.022222222222222143,
+      "value_text": "0.022"
+     }
+    ],
+    "package_version": 1,
+    "phase": "TRADE_DEADLINE",
+    "season": 2026,
+    "story_kind": "team_profile",
+    "subject": {
+     "kind": "team",
+     "opponent_team_id": null,
+     "opponent_team_name": null,
+     "player_id": null,
+     "player_name": null,
+     "team_id": 12111,
+     "team_name": "Brooklyn Nets"
+    }
+   },
+   "source": "g2-live-1704"
+  },
+  {
+   "body": "The Detroit Pistons are 33-28 and have won 2 straight, good for 9th in the standings. That is a drop of 5 places since the last pulse, even with the current run.\n\nThe team's offensive scheme is motion. The top 8 in the rotation average 26.375 years old.\n\nThe roster's biggest need is at point guard, with a need value of 0.833. Its biggest glut is at shooting guard, where the value is just 0.022, so the imbalance runs almost entirely one way.\n\nThe season is in the stretch after the trade deadline, so the roster is what it is. Detroit holds 9th, and the next results decide whether the 5-spot slide continues or the Pistons start climbing back.",
+   "brief": {
+    "other_desks": [
+     {
+      "angle": "scheme_identity",
+      "headline_fact": "Offensive scheme: motion",
+      "link": "same_team",
+      "salience_band": "main",
+      "story_kind": "scheme_identity",
+      "subject_name": "Detroit Pistons"
+     },
+     {
+      "angle": "full_picture",
+      "headline_fact": "Wins: 28",
+      "link": "none",
+      "salience_band": "profile",
+      "story_kind": "team_profile",
+      "subject_name": "Oklahoma City Thunder"
+     },
+     {
+      "angle": "full_picture",
+      "headline_fact": "Wins: 27",
+      "link": "none",
+      "salience_band": "profile",
+      "story_kind": "team_profile",
+      "subject_name": "Golden State Warriors"
+     },
+     {
+      "angle": "heating_up",
+      "headline_fact": "Points per 36, last 5: 35.599",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "hot_streak",
+      "subject_name": "Brandon Miller"
+     },
+     {
+      "angle": "scheme_identity",
+      "headline_fact": "Offensive scheme: five_out",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "scheme_identity",
+      "subject_name": "Miami Heat"
+     },
+     {
+      "angle": "heating_up",
+      "headline_fact": "Points per 36, last 5: 42.594",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "hot_streak",
+      "subject_name": "Shai Gilgeous-Alexander"
+     },
+     {
+      "angle": "heating_up",
+      "headline_fact": "Points per 36, last 5: 29.208",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "hot_streak",
+      "subject_name": "De'Anthony Melton"
+     },
+     {
+      "angle": "scheme_identity",
+      "headline_fact": "Offensive scheme: five_out",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "scheme_identity",
+      "subject_name": "Atlanta Hawks"
+     }
+    ],
+    "recent_wire": [
+     {
+      "cycle_index": 2,
+      "headline": "Brooklyn Nets: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Brooklyn Nets"
+     },
+     {
+      "cycle_index": 2,
+      "headline": "Sacramento Kings: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Sacramento Kings"
+     },
+     {
+      "cycle_index": 2,
+      "headline": "New Orleans Pelicans: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "New Orleans Pelicans"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Los Angeles Clippers: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Los Angeles Clippers"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Minnesota Timberwolves: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Minnesota Timberwolves"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Washington Wizards: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Washington Wizards"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Cleveland Cavaliers: collapse",
+      "link": "none",
+      "persona_column": "No Filter",
+      "story_kind": "standings_collapse",
+      "subject_name": "Cleveland Cavaliers"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Toronto Raptors: collapse",
+      "link": "none",
+      "persona_column": "No Filter",
+      "story_kind": "standings_collapse",
+      "subject_name": "Toronto Raptors"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Los Angeles Lakers: surge",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "standings_surge",
+      "subject_name": "Los Angeles Lakers"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "San Antonio Spurs: surge",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "standings_surge",
+      "subject_name": "San Antonio Spurs"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Phoenix Suns: surge",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "standings_surge",
+      "subject_name": "Phoenix Suns"
+     },
+     {
+      "cycle_index": 0,
+      "headline": "Charlotte Hornets: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Charlotte Hornets"
+     }
+    ],
+    "season_arc": {
+     "cycle_index": 3,
+     "last_season_bottom": [],
+     "last_season_top": [],
+     "league_games_played": 62,
+     "phase": "POST_DEADLINE",
+     "season": 2026
+    },
+    "standings": [
+     {
+      "losses": 15,
+      "standings_position": 1,
+      "streak_length": 6,
+      "team_id": 12113,
+      "team_name": "Philadelphia 76ers",
+      "wins": 47
+     },
+     {
+      "losses": 19,
+      "standings_position": 2,
+      "streak_length": 4,
+      "team_id": 12125,
+      "team_name": "Denver Nuggets",
+      "wins": 42
+     },
+     {
+      "losses": 21,
+      "standings_position": 3,
+      "streak_length": 2,
+      "team_id": 12126,
+      "team_name": "Minnesota Timberwolves",
+      "wins": 40
+     },
+     {
+      "losses": 23,
+      "standings_position": 4,
+      "streak_length": 3,
+      "team_id": 12120,
+      "team_name": "Atlanta Hawks",
+      "wins": 39
+     },
+     {
+      "losses": 24,
+      "standings_position": 5,
+      "streak_length": -3,
+      "team_id": 12110,
+      "team_name": "Boston Celtics",
+      "wins": 38
+     },
+     {
+      "losses": 37,
+      "standings_position": 28,
+      "streak_length": 1,
+      "team_id": 12137,
+      "team_name": "Memphis Grizzlies",
+      "wins": 25
+     },
+     {
+      "losses": 45,
+      "standings_position": 29,
+      "streak_length": -7,
+      "team_id": 12124,
+      "team_name": "Washington Wizards",
+      "wins": 17
+     },
+     {
+      "losses": 46,
+      "standings_position": 30,
+      "streak_length": 1,
+      "team_id": 12111,
+      "team_name": "Brooklyn Nets",
+      "wins": 16
+     },
+     {
+      "losses": 28,
+      "standings_position": 9,
+      "streak_length": 2,
+      "team_id": 12117,
+      "team_name": "Detroit Pistons",
+      "wins": 33
+     }
+    ],
+    "subject_history": []
+   },
+   "headline": "Pistons at 33-28 and winners of 2, but down 5 spots to 9th",
+   "id": "3606",
+   "label": "false_claim",
+   "league": "1704",
+   "note": "delta -5 (14th -> 9th): 'a drop of 5 places', 'down 5 spots', '5-spot slide' state a climb as a fall",
+   "package": {
+    "angle": "full_picture",
+    "cycle_index": 3,
+    "facts": [
+     {
+      "key": "team_name",
+      "label": "Team",
+      "value_number": null,
+      "value_text": "Detroit Pistons"
+     },
+     {
+      "key": "season",
+      "label": "Season",
+      "value_number": 2026.0,
+      "value_text": "2026"
+     },
+     {
+      "key": "phase",
+      "label": "Phase",
+      "value_number": null,
+      "value_text": "POST_DEADLINE"
+     },
+     {
+      "key": "wins",
+      "label": "Wins",
+      "value_number": 33.0,
+      "value_text": "33"
+     },
+     {
+      "key": "losses",
+      "label": "Losses",
+      "value_number": 28.0,
+      "value_text": "28"
+     },
+     {
+      "key": "standings_position",
+      "label": "Standings position",
+      "value_number": 9.0,
+      "value_text": "9"
+     },
+     {
+      "key": "streak_length",
+      "label": "Streak",
+      "value_number": 2.0,
+      "value_text": "2"
+     },
+     {
+      "key": "standings_position_delta",
+      "label": "Change since last pulse",
+      "value_number": -5.0,
+      "value_text": "-5"
+     },
+     {
+      "key": "mean_age_top8",
+      "label": "Mean age, top 8",
+      "value_number": 26.375,
+      "value_text": "26.375"
+     },
+     {
+      "key": "biggest_need_position",
+      "label": "Biggest need",
+      "value_number": null,
+      "value_text": "PG"
+     },
+     {
+      "key": "biggest_need_value",
+      "label": "Need value",
+      "value_number": 0.8333333333333334,
+      "value_text": "0.833"
+     },
+     {
+      "key": "biggest_glut_position",
+      "label": "Biggest glut",
+      "value_number": null,
+      "value_text": "SG"
+     },
+     {
+      "key": "biggest_glut_value",
+      "label": "Glut value",
+      "value_number": 0.022222222222222143,
+      "value_text": "0.022"
+     }
+    ],
+    "package_version": 1,
+    "phase": "POST_DEADLINE",
+    "season": 2026,
+    "story_kind": "team_profile",
+    "subject": {
+     "kind": "team",
+     "opponent_team_id": null,
+     "opponent_team_name": null,
+     "player_id": null,
+     "player_name": null,
+     "team_id": 12117,
+     "team_name": "Detroit Pistons"
+    }
+   },
+   "source": "g2-live-1704"
+  },
+  {
+   "body": "The New York Knicks are 38-44 and on a 4-game winning streak, sitting 18th in the standings with the regular season complete and the draft lottery next. They finished with a win percentage of 0.463 and 23.0 games behind first place. Their position has dropped 8 spots since the last pulse, so the streak came too late to change the standing.\n\nThere is no stated strategy to report for New York. The roster numbers describe a veteran group: the mean age of the top 8 is 29.750.\n\nThe biggest need is at power forward, with a need value of 0.467. The biggest glut is at point guard, at 0.000.\n\nDenver finished first at 61-21, and Philadelphia was second at 59-23. New York's next decision point is the draft lottery, and power forward is the position to watch.",
+   "brief": {
+    "other_desks": [
+     {
+      "angle": "full_picture",
+      "headline_fact": "Wins: 40",
+      "link": "none",
+      "salience_band": "profile",
+      "story_kind": "team_profile",
+      "subject_name": "Los Angeles Lakers"
+     },
+     {
+      "angle": "full_picture",
+      "headline_fact": "Wins: 44",
+      "link": "none",
+      "salience_band": "profile",
+      "story_kind": "team_profile",
+      "subject_name": "San Antonio Spurs"
+     },
+     {
+      "angle": "heating_up",
+      "headline_fact": "Points per 36, last 5: 38.897",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "hot_streak",
+      "subject_name": "Donovan Mitchell"
+     },
+     {
+      "angle": "heating_up",
+      "headline_fact": "Points per 36, last 5: 31.326",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "hot_streak",
+      "subject_name": "Collin Sexton"
+     },
+     {
+      "angle": "going_cold",
+      "headline_fact": "Points per 36, last 5: 15.706",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "cold_stretch",
+      "subject_name": "Ja Morant"
+     },
+     {
+      "angle": "heating_up",
+      "headline_fact": "Points per 36, last 5: 37.341",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "hot_streak",
+      "subject_name": "Jalen Brunson"
+     },
+     {
+      "angle": "going_cold",
+      "headline_fact": "Points per 36, last 5: 25.390",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "cold_stretch",
+      "subject_name": "Giannis Antetokounmpo"
+     }
+    ],
+    "recent_wire": [
+     {
+      "cycle_index": 3,
+      "headline": "Detroit Pistons: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Detroit Pistons"
+     },
+     {
+      "cycle_index": 3,
+      "headline": "Golden State Warriors: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Golden State Warriors"
+     },
+     {
+      "cycle_index": 3,
+      "headline": "Oklahoma City Thunder: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Oklahoma City Thunder"
+     },
+     {
+      "cycle_index": 2,
+      "headline": "Brooklyn Nets: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Brooklyn Nets"
+     },
+     {
+      "cycle_index": 2,
+      "headline": "Sacramento Kings: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Sacramento Kings"
+     },
+     {
+      "cycle_index": 2,
+      "headline": "New Orleans Pelicans: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "New Orleans Pelicans"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Los Angeles Clippers: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Los Angeles Clippers"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Minnesota Timberwolves: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Minnesota Timberwolves"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Washington Wizards: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Washington Wizards"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Cleveland Cavaliers: collapse",
+      "link": "none",
+      "persona_column": "No Filter",
+      "story_kind": "standings_collapse",
+      "subject_name": "Cleveland Cavaliers"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Toronto Raptors: collapse",
+      "link": "none",
+      "persona_column": "No Filter",
+      "story_kind": "standings_collapse",
+      "subject_name": "Toronto Raptors"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Los Angeles Lakers: surge",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "standings_surge",
+      "subject_name": "Los Angeles Lakers"
+     }
+    ],
+    "season_arc": {
+     "cycle_index": 4,
+     "last_season_bottom": [],
+     "last_season_top": [],
+     "league_games_played": 82,
+     "phase": "DRAFT_LOTTERY",
+     "season": 2026
+    },
+    "standings": [
+     {
+      "losses": 21,
+      "standings_position": 1,
+      "streak_length": 3,
+      "team_id": 12125,
+      "team_name": "Denver Nuggets",
+      "wins": 61
+     },
+     {
+      "losses": 23,
+      "standings_position": 2,
+      "streak_length": -1,
+      "team_id": 12113,
+      "team_name": "Philadelphia 76ers",
+      "wins": 59
+     },
+     {
+      "losses": 27,
+      "standings_position": 3,
+      "streak_length": 2,
+      "team_id": 12126,
+      "team_name": "Minnesota Timberwolves",
+      "wins": 55
+     },
+     {
+      "losses": 30,
+      "standings_position": 4,
+      "streak_length": -1,
+      "team_id": 12120,
+      "team_name": "Atlanta Hawks",
+      "wins": 52
+     },
+     {
+      "losses": 32,
+      "standings_position": 5,
+      "streak_length": 4,
+      "team_id": 12110,
+      "team_name": "Boston Celtics",
+      "wins": 50
+     },
+     {
+      "losses": 51,
+      "standings_position": 28,
+      "streak_length": 1,
+      "team_id": 12118,
+      "team_name": "Indiana Pacers",
+      "wins": 31
+     },
+     {
+      "losses": 56,
+      "standings_position": 29,
+      "streak_length": -1,
+      "team_id": 12111,
+      "team_name": "Brooklyn Nets",
+      "wins": 26
+     },
+     {
+      "losses": 60,
+      "standings_position": 30,
+      "streak_length": -2,
+      "team_id": 12124,
+      "team_name": "Washington Wizards",
+      "wins": 22
+     },
+     {
+      "losses": 44,
+      "standings_position": 18,
+      "streak_length": 4,
+      "team_id": 12112,
+      "team_name": "New York Knicks",
+      "wins": 38
+     }
+    ],
+    "subject_history": []
+   },
+   "headline": "Knicks finish 38-44 on a 4-game winning streak, 18th in the standings",
+   "id": "3610",
+   "label": "false_claim",
+   "league": "1704",
+   "note": "delta -8 (26th -> 18th): 'dropped 8 spots' states a climb as a fall",
+   "package": {
+    "angle": "full_picture",
+    "cycle_index": 4,
+    "facts": [
+     {
+      "key": "team_name",
+      "label": "Team",
+      "value_number": null,
+      "value_text": "New York Knicks"
+     },
+     {
+      "key": "season",
+      "label": "Season",
+      "value_number": 2026.0,
+      "value_text": "2026"
+     },
+     {
+      "key": "phase",
+      "label": "Phase",
+      "value_number": null,
+      "value_text": "DRAFT_LOTTERY"
+     },
+     {
+      "key": "wins",
+      "label": "Wins",
+      "value_number": 38.0,
+      "value_text": "38"
+     },
+     {
+      "key": "losses",
+      "label": "Losses",
+      "value_number": 44.0,
+      "value_text": "44"
+     },
+     {
+      "key": "standings_position",
+      "label": "Standings position",
+      "value_number": 18.0,
+      "value_text": "18"
+     },
+     {
+      "key": "streak_length",
+      "label": "Streak",
+      "value_number": 4.0,
+      "value_text": "4"
+     },
+     {
+      "key": "standings_position_delta",
+      "label": "Change since last pulse",
+      "value_number": -8.0,
+      "value_text": "-8"
+     },
+     {
+      "key": "mean_age_top8",
+      "label": "Mean age, top 8",
+      "value_number": 29.75,
+      "value_text": "29.750"
+     },
+     {
+      "key": "biggest_need_position",
+      "label": "Biggest need",
+      "value_number": null,
+      "value_text": "PF"
+     },
+     {
+      "key": "biggest_need_value",
+      "label": "Need value",
+      "value_number": 0.4666666666666667,
+      "value_text": "0.467"
+     },
+     {
+      "key": "biggest_glut_position",
+      "label": "Biggest glut",
+      "value_number": null,
+      "value_text": "PG"
+     },
+     {
+      "key": "biggest_glut_value",
+      "label": "Glut value",
+      "value_number": 0.0,
+      "value_text": "0.000"
+     }
+    ],
+    "package_version": 1,
+    "phase": "DRAFT_LOTTERY",
+    "season": 2026,
+    "story_kind": "team_profile",
+    "subject": {
+     "kind": "team",
+     "opponent_team_id": null,
+     "opponent_team_name": null,
+     "player_id": null,
+     "player_name": null,
+     "team_id": 12112,
+     "team_name": "New York Knicks"
+    }
+   },
+   "source": "g2-live-1704"
+  },
+  {
+   "body": "The San Antonio Spurs are 44-38 and have won 1 straight, sitting 11th in the standings after 82 games. That is a move up of 5 places since the last pulse, and their win percentage is 0.537, which leaves them 17.0 games behind first-place Denver.\n\nThe roster is young. The top 8 average 24.500 years of age, so the rotation is built on youth rather than veterans.\n\nThe need is at center, with a need value of 0.833, the largest gap on the roster. The surplus is at point guard, with a glut value of 0.289.\n\nWith the regular season complete and the draft lottery next on the calendar, the Spurs' open question is how they address center.",
+   "brief": {
+    "other_desks": [
+     {
+      "angle": "full_picture",
+      "headline_fact": "Wins: 40",
+      "link": "none",
+      "salience_band": "profile",
+      "story_kind": "team_profile",
+      "subject_name": "Los Angeles Lakers"
+     },
+     {
+      "angle": "full_picture",
+      "headline_fact": "Wins: 38",
+      "link": "none",
+      "salience_band": "profile",
+      "story_kind": "team_profile",
+      "subject_name": "New York Knicks"
+     },
+     {
+      "angle": "heating_up",
+      "headline_fact": "Points per 36, last 5: 38.897",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "hot_streak",
+      "subject_name": "Donovan Mitchell"
+     },
+     {
+      "angle": "heating_up",
+      "headline_fact": "Points per 36, last 5: 31.326",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "hot_streak",
+      "subject_name": "Collin Sexton"
+     },
+     {
+      "angle": "going_cold",
+      "headline_fact": "Points per 36, last 5: 15.706",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "cold_stretch",
+      "subject_name": "Ja Morant"
+     },
+     {
+      "angle": "heating_up",
+      "headline_fact": "Points per 36, last 5: 37.341",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "hot_streak",
+      "subject_name": "Jalen Brunson"
+     },
+     {
+      "angle": "going_cold",
+      "headline_fact": "Points per 36, last 5: 25.390",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "cold_stretch",
+      "subject_name": "Giannis Antetokounmpo"
+     }
+    ],
+    "recent_wire": [
+     {
+      "cycle_index": 1,
+      "headline": "San Antonio Spurs: surge",
+      "link": "same_team",
+      "persona_column": "The Beat",
+      "story_kind": "standings_surge",
+      "subject_name": "San Antonio Spurs"
+     },
+     {
+      "cycle_index": 3,
+      "headline": "Detroit Pistons: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Detroit Pistons"
+     },
+     {
+      "cycle_index": 3,
+      "headline": "Golden State Warriors: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Golden State Warriors"
+     },
+     {
+      "cycle_index": 3,
+      "headline": "Oklahoma City Thunder: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Oklahoma City Thunder"
+     },
+     {
+      "cycle_index": 2,
+      "headline": "Brooklyn Nets: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Brooklyn Nets"
+     },
+     {
+      "cycle_index": 2,
+      "headline": "Sacramento Kings: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Sacramento Kings"
+     },
+     {
+      "cycle_index": 2,
+      "headline": "New Orleans Pelicans: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "New Orleans Pelicans"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Los Angeles Clippers: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Los Angeles Clippers"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Minnesota Timberwolves: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Minnesota Timberwolves"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Washington Wizards: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Washington Wizards"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Cleveland Cavaliers: collapse",
+      "link": "none",
+      "persona_column": "No Filter",
+      "story_kind": "standings_collapse",
+      "subject_name": "Cleveland Cavaliers"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Toronto Raptors: collapse",
+      "link": "none",
+      "persona_column": "No Filter",
+      "story_kind": "standings_collapse",
+      "subject_name": "Toronto Raptors"
+     }
+    ],
+    "season_arc": {
+     "cycle_index": 4,
+     "last_season_bottom": [],
+     "last_season_top": [],
+     "league_games_played": 82,
+     "phase": "DRAFT_LOTTERY",
+     "season": 2026
+    },
+    "standings": [
+     {
+      "losses": 21,
+      "standings_position": 1,
+      "streak_length": 3,
+      "team_id": 12125,
+      "team_name": "Denver Nuggets",
+      "wins": 61
+     },
+     {
+      "losses": 23,
+      "standings_position": 2,
+      "streak_length": -1,
+      "team_id": 12113,
+      "team_name": "Philadelphia 76ers",
+      "wins": 59
+     },
+     {
+      "losses": 27,
+      "standings_position": 3,
+      "streak_length": 2,
+      "team_id": 12126,
+      "team_name": "Minnesota Timberwolves",
+      "wins": 55
+     },
+     {
+      "losses": 30,
+      "standings_position": 4,
+      "streak_length": -1,
+      "team_id": 12120,
+      "team_name": "Atlanta Hawks",
+      "wins": 52
+     },
+     {
+      "losses": 32,
+      "standings_position": 5,
+      "streak_length": 4,
+      "team_id": 12110,
+      "team_name": "Boston Celtics",
+      "wins": 50
+     },
+     {
+      "losses": 51,
+      "standings_position": 28,
+      "streak_length": 1,
+      "team_id": 12118,
+      "team_name": "Indiana Pacers",
+      "wins": 31
+     },
+     {
+      "losses": 56,
+      "standings_position": 29,
+      "streak_length": -1,
+      "team_id": 12111,
+      "team_name": "Brooklyn Nets",
+      "wins": 26
+     },
+     {
+      "losses": 60,
+      "standings_position": 30,
+      "streak_length": -2,
+      "team_id": 12124,
+      "team_name": "Washington Wizards",
+      "wins": 22
+     },
+     {
+      "losses": 38,
+      "standings_position": 11,
+      "streak_length": 1,
+      "team_id": 12139,
+      "team_name": "San Antonio Spurs",
+      "wins": 44
+     }
+    ],
+    "subject_history": [
+     {
+      "cycle_index": 1,
+      "headline": "San Antonio Spurs: surge",
+      "story_kind": "standings_surge"
+     }
+    ]
+   },
+   "headline": "Spurs finish 44-38 in 11th, up 5 spots, with center the biggest need",
+   "id": "3611",
+   "label": "false_claim",
+   "league": "1704",
+   "note": "delta +5 (6th -> 11th): 'a move up of 5 places', 'up 5 spots' state a fall as a climb",
+   "package": {
+    "angle": "full_picture",
+    "cycle_index": 4,
+    "facts": [
+     {
+      "key": "team_name",
+      "label": "Team",
+      "value_number": null,
+      "value_text": "San Antonio Spurs"
+     },
+     {
+      "key": "season",
+      "label": "Season",
+      "value_number": 2026.0,
+      "value_text": "2026"
+     },
+     {
+      "key": "phase",
+      "label": "Phase",
+      "value_number": null,
+      "value_text": "DRAFT_LOTTERY"
+     },
+     {
+      "key": "wins",
+      "label": "Wins",
+      "value_number": 44.0,
+      "value_text": "44"
+     },
+     {
+      "key": "losses",
+      "label": "Losses",
+      "value_number": 38.0,
+      "value_text": "38"
+     },
+     {
+      "key": "standings_position",
+      "label": "Standings position",
+      "value_number": 11.0,
+      "value_text": "11"
+     },
+     {
+      "key": "streak_length",
+      "label": "Streak",
+      "value_number": 1.0,
+      "value_text": "1"
+     },
+     {
+      "key": "standings_position_delta",
+      "label": "Change since last pulse",
+      "value_number": 5.0,
+      "value_text": "5"
+     },
+     {
+      "key": "mean_age_top8",
+      "label": "Mean age, top 8",
+      "value_number": 24.5,
+      "value_text": "24.500"
+     },
+     {
+      "key": "biggest_need_position",
+      "label": "Biggest need",
+      "value_number": null,
+      "value_text": "C"
+     },
+     {
+      "key": "biggest_need_value",
+      "label": "Need value",
+      "value_number": 0.8333333333333334,
+      "value_text": "0.833"
+     },
+     {
+      "key": "biggest_glut_position",
+      "label": "Biggest glut",
+      "value_number": null,
+      "value_text": "PG"
+     },
+     {
+      "key": "biggest_glut_value",
+      "label": "Glut value",
+      "value_number": 0.28888888888888903,
+      "value_text": "0.289"
+     }
+    ],
+    "package_version": 1,
+    "phase": "DRAFT_LOTTERY",
+    "season": 2026,
+    "story_kind": "team_profile",
+    "subject": {
+     "kind": "team",
+     "opponent_team_id": null,
+     "opponent_team_name": null,
+     "player_id": null,
+     "player_name": null,
+     "team_id": 12139,
+     "team_name": "San Antonio Spurs"
+    }
+   },
+   "source": "g2-live-1704"
+  },
+  {
+   "body": "The Sacramento Kings are 23-26 and have lost 2 in a row, which leaves them 17th in the standings at the trade deadline. The position is a change of 6 since the last pulse.\n\nThe league brief lists the Kings' offensive scheme as pnr_heavy, a pick-and-roll-heavy approach. The roster is veteran: the mean age of the top 8 is 30.625.\n\nThe roster's shape is lopsided. The biggest need is at small forward, with a need value of 0.500. The biggest glut is at shooting guard, at 1.000. With the deadline here, that imbalance is the plain decision point: the Kings have surplus on the wing at one spot and a gap at the next.\n\nThe Kings trail the top of the standings by a wide margin. Philadelphia leads at 38-12, and Boston and Denver sit at 33-16.",
+   "brief": {
+    "other_desks": [
+     {
+      "angle": "scheme_identity",
+      "headline_fact": "Offensive scheme: pnr_heavy",
+      "link": "same_team",
+      "salience_band": "main",
+      "story_kind": "scheme_identity",
+      "subject_name": "Sacramento Kings"
+     },
+     {
+      "angle": "full_picture",
+      "headline_fact": "Wins: 25",
+      "link": "none",
+      "salience_band": "profile",
+      "story_kind": "team_profile",
+      "subject_name": "New Orleans Pelicans"
+     },
+     {
+      "angle": "full_picture",
+      "headline_fact": "Wins: 14",
+      "link": "none",
+      "salience_band": "profile",
+      "story_kind": "team_profile",
+      "subject_name": "Brooklyn Nets"
+     },
+     {
+      "angle": "going_cold",
+      "headline_fact": "Points per 36, last 5: 25.212",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "cold_stretch",
+      "subject_name": "Nikola Jokic"
+     },
+     {
+      "angle": "heating_up",
+      "headline_fact": "Points per 36, last 5: 38.125",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "hot_streak",
+      "subject_name": "Victor Wembanyama"
+     },
+     {
+      "angle": "going_cold",
+      "headline_fact": "Points per 36, last 5: 18.774",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "cold_stretch",
+      "subject_name": "Anthony Davis"
+     },
+     {
+      "angle": "scheme_identity",
+      "headline_fact": "Offensive scheme: motion",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "scheme_identity",
+      "subject_name": "Golden State Warriors"
+     },
+     {
+      "angle": "scheme_identity",
+      "headline_fact": "Offensive scheme: five_out",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "scheme_identity",
+      "subject_name": "Miami Heat"
+     }
+    ],
+    "recent_wire": [
+     {
+      "cycle_index": 1,
+      "headline": "Los Angeles Clippers: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Los Angeles Clippers"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Minnesota Timberwolves: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Minnesota Timberwolves"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Washington Wizards: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Washington Wizards"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Cleveland Cavaliers: collapse",
+      "link": "none",
+      "persona_column": "No Filter",
+      "story_kind": "standings_collapse",
+      "subject_name": "Cleveland Cavaliers"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Toronto Raptors: collapse",
+      "link": "none",
+      "persona_column": "No Filter",
+      "story_kind": "standings_collapse",
+      "subject_name": "Toronto Raptors"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Los Angeles Lakers: surge",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "standings_surge",
+      "subject_name": "Los Angeles Lakers"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "San Antonio Spurs: surge",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "standings_surge",
+      "subject_name": "San Antonio Spurs"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Phoenix Suns: surge",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "standings_surge",
+      "subject_name": "Phoenix Suns"
+     },
+     {
+      "cycle_index": 0,
+      "headline": "Charlotte Hornets: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Charlotte Hornets"
+     },
+     {
+      "cycle_index": 0,
+      "headline": "Indiana Pacers: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Indiana Pacers"
+     },
+     {
+      "cycle_index": 0,
+      "headline": "Philadelphia 76ers: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Philadelphia 76ers"
+     },
+     {
+      "cycle_index": 0,
+      "headline": "Denver Nuggets: roster construction",
+      "link": "none",
+      "persona_column": "Film Room",
+      "story_kind": "roster_construction",
+      "subject_name": "Denver Nuggets"
+     }
+    ],
+    "season_arc": {
+     "cycle_index": 2,
+     "last_season_bottom": [],
+     "last_season_top": [],
+     "league_games_played": 50,
+     "phase": "TRADE_DEADLINE",
+     "season": 2026
+    },
+    "standings": [
+     {
+      "losses": 12,
+      "standings_position": 1,
+      "streak_length": -2,
+      "team_id": 12113,
+      "team_name": "Philadelphia 76ers",
+      "wins": 38
+     },
+     {
+      "losses": 16,
+      "standings_position": 2,
+      "streak_length": -1,
+      "team_id": 12110,
+      "team_name": "Boston Celtics",
+      "wins": 33
+     },
+     {
+      "losses": 16,
+      "standings_position": 3,
+      "streak_length": 1,
+      "team_id": 12125,
+      "team_name": "Denver Nuggets",
+      "wins": 33
+     },
+     {
+      "losses": 18,
+      "standings_position": 4,
+      "streak_length": 2,
+      "team_id": 12126,
+      "team_name": "Minnesota Timberwolves",
+      "wins": 31
+     },
+     {
+      "losses": 18,
+      "standings_position": 5,
+      "streak_length": 1,
+      "team_id": 12139,
+      "team_name": "San Antonio Spurs",
+      "wins": 30
+     },
+     {
+      "losses": 30,
+      "standings_position": 28,
+      "streak_length": 1,
+      "team_id": 12129,
+      "team_name": "Utah Jazz",
+      "wins": 20
+     },
+     {
+      "losses": 33,
+      "standings_position": 29,
+      "streak_length": -5,
+      "team_id": 12124,
+      "team_name": "Washington Wizards",
+      "wins": 16
+     },
+     {
+      "losses": 36,
+      "standings_position": 30,
+      "streak_length": -5,
+      "team_id": 12111,
+      "team_name": "Brooklyn Nets",
+      "wins": 14
+     },
+     {
+      "losses": 26,
+      "standings_position": 17,
+      "streak_length": -2,
+      "team_id": 12134,
+      "team_name": "Sacramento Kings",
+      "wins": 23
+     }
+    ],
+    "subject_history": []
+   },
+   "headline": "Kings sit 17th at 23-26, down 2 straight, with a need at small forward",
+   "id": "3598",
+   "label": "clean",
+   "league": "1704",
+   "note": "delta +6 stated as 'a change of 6': no direction claimed",
+   "package": {
+    "angle": "full_picture",
+    "cycle_index": 2,
+    "facts": [
+     {
+      "key": "team_name",
+      "label": "Team",
+      "value_number": null,
+      "value_text": "Sacramento Kings"
+     },
+     {
+      "key": "season",
+      "label": "Season",
+      "value_number": 2026.0,
+      "value_text": "2026"
+     },
+     {
+      "key": "phase",
+      "label": "Phase",
+      "value_number": null,
+      "value_text": "TRADE_DEADLINE"
+     },
+     {
+      "key": "wins",
+      "label": "Wins",
+      "value_number": 23.0,
+      "value_text": "23"
+     },
+     {
+      "key": "losses",
+      "label": "Losses",
+      "value_number": 26.0,
+      "value_text": "26"
+     },
+     {
+      "key": "standings_position",
+      "label": "Standings position",
+      "value_number": 17.0,
+      "value_text": "17"
+     },
+     {
+      "key": "streak_length",
+      "label": "Streak",
+      "value_number": -2.0,
+      "value_text": "-2"
+     },
+     {
+      "key": "standings_position_delta",
+      "label": "Change since last pulse",
+      "value_number": 6.0,
+      "value_text": "6"
+     },
+     {
+      "key": "mean_age_top8",
+      "label": "Mean age, top 8",
+      "value_number": 30.625,
+      "value_text": "30.625"
+     },
+     {
+      "key": "biggest_need_position",
+      "label": "Biggest need",
+      "value_number": null,
+      "value_text": "SF"
+     },
+     {
+      "key": "biggest_need_value",
+      "label": "Need value",
+      "value_number": 0.5,
+      "value_text": "0.500"
+     },
+     {
+      "key": "biggest_glut_position",
+      "label": "Biggest glut",
+      "value_number": null,
+      "value_text": "SG"
+     },
+     {
+      "key": "biggest_glut_value",
+      "label": "Glut value",
+      "value_number": 1.0,
+      "value_text": "1.000"
+     }
+    ],
+    "package_version": 1,
+    "phase": "TRADE_DEADLINE",
+    "season": 2026,
+    "story_kind": "team_profile",
+    "subject": {
+     "kind": "team",
+     "opponent_team_id": null,
+     "opponent_team_name": null,
+     "player_id": null,
+     "player_name": null,
+     "team_id": 12134,
+     "team_name": "Sacramento Kings"
+    }
+   },
+   "source": "g2-live-1704"
+  },
+  {
+   "body": "The Los Angeles Lakers are 40-42 and on a 4-game losing streak, 14th in the standings as the draft lottery arrives. The position is a change of 4 since the last pulse.\n\nThe Lakers played all 82 games. The top 8 in the rotation average 29.625 years old.\n\nThe roster's biggest need is at point guard, with a need value of 0.833. The glut value at the same position is 0.000, so nothing in the rotation offsets the gap there.\n\nNext up is the draft lottery, followed by the draft. Point guard is the position to watch.",
+   "brief": {
+    "other_desks": [
+     {
+      "angle": "full_picture",
+      "headline_fact": "Wins: 38",
+      "link": "none",
+      "salience_band": "profile",
+      "story_kind": "team_profile",
+      "subject_name": "New York Knicks"
+     },
+     {
+      "angle": "full_picture",
+      "headline_fact": "Wins: 44",
+      "link": "none",
+      "salience_band": "profile",
+      "story_kind": "team_profile",
+      "subject_name": "San Antonio Spurs"
+     },
+     {
+      "angle": "heating_up",
+      "headline_fact": "Points per 36, last 5: 38.897",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "hot_streak",
+      "subject_name": "Donovan Mitchell"
+     },
+     {
+      "angle": "heating_up",
+      "headline_fact": "Points per 36, last 5: 31.326",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "hot_streak",
+      "subject_name": "Collin Sexton"
+     },
+     {
+      "angle": "going_cold",
+      "headline_fact": "Points per 36, last 5: 15.706",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "cold_stretch",
+      "subject_name": "Ja Morant"
+     },
+     {
+      "angle": "heating_up",
+      "headline_fact": "Points per 36, last 5: 37.341",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "hot_streak",
+      "subject_name": "Jalen Brunson"
+     },
+     {
+      "angle": "going_cold",
+      "headline_fact": "Points per 36, last 5: 25.390",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "cold_stretch",
+      "subject_name": "Giannis Antetokounmpo"
+     }
+    ],
+    "recent_wire": [
+     {
+      "cycle_index": 1,
+      "headline": "Los Angeles Lakers: surge",
+      "link": "same_team",
+      "persona_column": "The Beat",
+      "story_kind": "standings_surge",
+      "subject_name": "Los Angeles Lakers"
+     },
+     {
+      "cycle_index": 3,
+      "headline": "Detroit Pistons: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Detroit Pistons"
+     },
+     {
+      "cycle_index": 3,
+      "headline": "Golden State Warriors: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Golden State Warriors"
+     },
+     {
+      "cycle_index": 3,
+      "headline": "Oklahoma City Thunder: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Oklahoma City Thunder"
+     },
+     {
+      "cycle_index": 2,
+      "headline": "Brooklyn Nets: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Brooklyn Nets"
+     },
+     {
+      "cycle_index": 2,
+      "headline": "Sacramento Kings: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Sacramento Kings"
+     },
+     {
+      "cycle_index": 2,
+      "headline": "New Orleans Pelicans: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "New Orleans Pelicans"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Los Angeles Clippers: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Los Angeles Clippers"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Minnesota Timberwolves: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Minnesota Timberwolves"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Washington Wizards: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Washington Wizards"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Cleveland Cavaliers: collapse",
+      "link": "none",
+      "persona_column": "No Filter",
+      "story_kind": "standings_collapse",
+      "subject_name": "Cleveland Cavaliers"
+     },
+     {
+      "cycle_index": 1,
+      "headline": "Toronto Raptors: collapse",
+      "link": "none",
+      "persona_column": "No Filter",
+      "story_kind": "standings_collapse",
+      "subject_name": "Toronto Raptors"
+     }
+    ],
+    "season_arc": {
+     "cycle_index": 4,
+     "last_season_bottom": [],
+     "last_season_top": [],
+     "league_games_played": 82,
+     "phase": "DRAFT_LOTTERY",
+     "season": 2026
+    },
+    "standings": [
+     {
+      "losses": 21,
+      "standings_position": 1,
+      "streak_length": 3,
+      "team_id": 12125,
+      "team_name": "Denver Nuggets",
+      "wins": 61
+     },
+     {
+      "losses": 23,
+      "standings_position": 2,
+      "streak_length": -1,
+      "team_id": 12113,
+      "team_name": "Philadelphia 76ers",
+      "wins": 59
+     },
+     {
+      "losses": 27,
+      "standings_position": 3,
+      "streak_length": 2,
+      "team_id": 12126,
+      "team_name": "Minnesota Timberwolves",
+      "wins": 55
+     },
+     {
+      "losses": 30,
+      "standings_position": 4,
+      "streak_length": -1,
+      "team_id": 12120,
+      "team_name": "Atlanta Hawks",
+      "wins": 52
+     },
+     {
+      "losses": 32,
+      "standings_position": 5,
+      "streak_length": 4,
+      "team_id": 12110,
+      "team_name": "Boston Celtics",
+      "wins": 50
+     },
+     {
+      "losses": 51,
+      "standings_position": 28,
+      "streak_length": 1,
+      "team_id": 12118,
+      "team_name": "Indiana Pacers",
+      "wins": 31
+     },
+     {
+      "losses": 56,
+      "standings_position": 29,
+      "streak_length": -1,
+      "team_id": 12111,
+      "team_name": "Brooklyn Nets",
+      "wins": 26
+     },
+     {
+      "losses": 60,
+      "standings_position": 30,
+      "streak_length": -2,
+      "team_id": 12124,
+      "team_name": "Washington Wizards",
+      "wins": 22
+     },
+     {
+      "losses": 42,
+      "standings_position": 14,
+      "streak_length": -4,
+      "team_id": 12132,
+      "team_name": "Los Angeles Lakers",
+      "wins": 40
+     }
+    ],
+    "subject_history": [
+     {
+      "cycle_index": 1,
+      "headline": "Los Angeles Lakers: surge",
+      "story_kind": "standings_surge"
+     }
+    ]
+   },
+   "headline": "Lakers finish 40-42, lose 4 straight and sit 14th at the draft lottery",
+   "id": "3609",
+   "label": "clean",
+   "league": "1704",
+   "note": "delta +4 stated as 'a change of 4': no direction claimed",
+   "package": {
+    "angle": "full_picture",
+    "cycle_index": 4,
+    "facts": [
+     {
+      "key": "team_name",
+      "label": "Team",
+      "value_number": null,
+      "value_text": "Los Angeles Lakers"
+     },
+     {
+      "key": "season",
+      "label": "Season",
+      "value_number": 2026.0,
+      "value_text": "2026"
+     },
+     {
+      "key": "phase",
+      "label": "Phase",
+      "value_number": null,
+      "value_text": "DRAFT_LOTTERY"
+     },
+     {
+      "key": "wins",
+      "label": "Wins",
+      "value_number": 40.0,
+      "value_text": "40"
+     },
+     {
+      "key": "losses",
+      "label": "Losses",
+      "value_number": 42.0,
+      "value_text": "42"
+     },
+     {
+      "key": "standings_position",
+      "label": "Standings position",
+      "value_number": 14.0,
+      "value_text": "14"
+     },
+     {
+      "key": "streak_length",
+      "label": "Streak",
+      "value_number": -4.0,
+      "value_text": "-4"
+     },
+     {
+      "key": "standings_position_delta",
+      "label": "Change since last pulse",
+      "value_number": 4.0,
+      "value_text": "4"
+     },
+     {
+      "key": "mean_age_top8",
+      "label": "Mean age, top 8",
+      "value_number": 29.625,
+      "value_text": "29.625"
+     },
+     {
+      "key": "biggest_need_position",
+      "label": "Biggest need",
+      "value_number": null,
+      "value_text": "PG"
+     },
+     {
+      "key": "biggest_need_value",
+      "label": "Need value",
+      "value_number": 0.8333333333333334,
+      "value_text": "0.833"
+     },
+     {
+      "key": "biggest_glut_position",
+      "label": "Biggest glut",
+      "value_number": null,
+      "value_text": "PG"
+     },
+     {
+      "key": "biggest_glut_value",
+      "label": "Glut value",
+      "value_number": 0.0,
+      "value_text": "0.000"
+     }
+    ],
+    "package_version": 1,
+    "phase": "DRAFT_LOTTERY",
+    "season": 2026,
+    "story_kind": "team_profile",
+    "subject": {
+     "kind": "team",
+     "opponent_team_id": null,
+     "opponent_team_name": null,
+     "player_id": null,
+     "player_name": null,
+     "team_id": 12132,
+     "team_name": "Los Angeles Lakers"
+    }
+   },
+   "source": "g2-live-1704"
+  },
+  {
+   "body": "Seventeen spots. Gone. The Cleveland Cavaliers now sit 24th in the standings, and that is a free fall.\n\nThey are 16-22 after 38 games, with a 0.421 win percentage. That puts them 14.0 games behind first place. Fourteen. Nobody should call that a rough patch.\n\nThey do have a win streak of 1 game. Big deal. One win does not undo a slide of 17 places.\n\nLook at who is above them. Philadelphia leads at 30-8, and Denver is 26-11. The Cavaliers are playing a different sport than those two.\n\nThe Indiana Pacers and Brooklyn Nets are at 13 wins each, and the Washington Wizards are down at 10. Cleveland is closer to that neighborhood than anyone in this building should want to admit. Is this a team in trouble, or a team that has already fallen apart? The standings say the second one.",
+   "brief": {
+    "other_desks": [
+     {
+      "angle": "collapse",
+      "headline_fact": "Standings position change: 18",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "standings_collapse",
+      "subject_name": "Toronto Raptors"
+     },
+     {
+      "angle": "collapse",
+      "headline_fact": "Standings position change: 24",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "standings_collapse",
+      "subject_name": "New York Knicks"
+     },
+     {
+      "angle": "collapse",
+      "headline_fact": "Standings position change: 15",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "standings_collapse",
+      "subject_name": "Washington Wizards"
+     },
+     {
+      "angle": "surge",
+      "headline_fact": "Standings position change: -20",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "standings_surge",
+      "subject_name": "Phoenix Suns"
+     },
+     {
+      "angle": "surge",
+      "headline_fact": "Standings position change: -24",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "standings_surge",
+      "subject_name": "San Antonio Spurs"
+     },
+     {
+      "angle": "surge",
+      "headline_fact": "Standings position change: -15",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "standings_surge",
+      "subject_name": "Los Angeles Lakers"
+     },
+     {
+      "angle": "surge",
+      "headline_fact": "Standings position change: -14",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "standings_surge",
+      "subject_name": "Minnesota Timberwolves"
+     },
+     {
+      "angle": "full_picture",
+      "headline_fact": "Wins: 10",
+      "link": "none",
+      "salience_band": "profile",
+      "story_kind": "team_profile",
+      "subject_name": "Washington Wizards"
+     }
+    ],
+    "recent_wire": [
+     {
+      "cycle_index": 0,
+      "headline": "Denver Nuggets: roster construction",
+      "link": "none",
+      "persona_column": "Film Room",
+      "story_kind": "roster_construction",
+      "subject_name": "Denver Nuggets"
+     },
+     {
+      "cycle_index": 0,
+      "headline": "Dallas Mavericks: roster construction",
+      "link": "none",
+      "persona_column": "Film Room",
+      "story_kind": "roster_construction",
+      "subject_name": "Dallas Mavericks"
+     },
+     {
+      "cycle_index": 0,
+      "headline": "Charlotte Hornets: roster construction",
+      "link": "none",
+      "persona_column": "Film Room",
+      "story_kind": "roster_construction",
+      "subject_name": "Charlotte Hornets"
+     },
+     {
+      "cycle_index": 0,
+      "headline": "Brooklyn Nets: roster construction",
+      "link": "none",
+      "persona_column": "No Filter",
+      "story_kind": "roster_construction",
+      "subject_name": "Brooklyn Nets"
+     },
+     {
+      "cycle_index": 0,
+      "headline": "Charlotte Hornets: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Charlotte Hornets"
+     },
+     {
+      "cycle_index": 0,
+      "headline": "Indiana Pacers: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Indiana Pacers"
+     },
+     {
+      "cycle_index": 0,
+      "headline": "Philadelphia 76ers: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Philadelphia 76ers"
+     }
+    ],
+    "season_arc": {
+     "cycle_index": 1,
+     "last_season_bottom": [],
+     "last_season_top": [],
+     "league_games_played": 38,
+     "phase": "REGULAR_SEASON",
+     "season": 2026
+    },
+    "standings": [
+     {
+      "losses": 8,
+      "standings_position": 1,
+      "streak_length": 2,
+      "team_id": 12113,
+      "team_name": "Philadelphia 76ers",
+      "wins": 30
+     },
+     {
+      "losses": 11,
+      "standings_position": 2,
+      "streak_length": 5,
+      "team_id": 12125,
+      "team_name": "Denver Nuggets",
+      "wins": 26
+     },
+     {
+      "losses": 13,
+      "standings_position": 3,
+      "streak_length": 7,
+      "team_id": 12126,
+      "team_name": "Minnesota Timberwolves",
+      "wins": 24
+     },
+     {
+      "losses": 13,
+      "standings_position": 4,
+      "streak_length": 2,
+      "team_id": 12133,
+      "team_name": "Phoenix Suns",
+      "wins": 23
+     },
+     {
+      "losses": 14,
+      "standings_position": 5,
+      "streak_length": -1,
+      "team_id": 12110,
+      "team_name": "Boston Celtics",
+      "wins": 24
+     },
+     {
+      "losses": 24,
+      "standings_position": 28,
+      "streak_length": -2,
+      "team_id": 12118,
+      "team_name": "Indiana Pacers",
+      "wins": 13
+     },
+     {
+      "losses": 25,
+      "standings_position": 29,
+      "streak_length": -1,
+      "team_id": 12111,
+      "team_name": "Brooklyn Nets",
+      "wins": 13
+     },
+     {
+      "losses": 27,
+      "standings_position": 30,
+      "streak_length": -7,
+      "team_id": 12124,
+      "team_name": "Washington Wizards",
+      "wins": 10
+     },
+     {
+      "losses": 22,
+      "standings_position": 24,
+      "streak_length": 1,
+      "team_id": 12116,
+      "team_name": "Cleveland Cavaliers",
+      "wins": 16
+     }
+    ],
+    "subject_history": []
+   },
+   "headline": "Cleveland Cavaliers plunge 17 spots to 24th in the standings",
+   "id": "3589",
+   "label": "derived_true",
+   "league": "1704",
+   "note": "collapse, delta +17: 'plunge 17 spots', 'a slide of 17 places', true direction",
+   "package": {
+    "angle": "collapse",
+    "cycle_index": 1,
+    "facts": [
+     {
+      "key": "team_name",
+      "label": "Team",
+      "value_number": null,
+      "value_text": "Cleveland Cavaliers"
+     },
+     {
+      "key": "season",
+      "label": "Season",
+      "value_number": 2026.0,
+      "value_text": "2026"
+     },
+     {
+      "key": "phase",
+      "label": "Phase",
+      "value_number": null,
+      "value_text": "REGULAR_SEASON"
+     },
+     {
+      "key": "standings_position_delta",
+      "label": "Standings position change",
+      "value_number": 17.0,
+      "value_text": "17"
+     },
+     {
+      "key": "standings_position",
+      "label": "Standings position",
+      "value_number": 24.0,
+      "value_text": "24"
+     }
+    ],
+    "package_version": 1,
+    "phase": "REGULAR_SEASON",
+    "season": 2026,
+    "story_kind": "standings_collapse",
+    "subject": {
+     "kind": "team",
+     "opponent_team_id": null,
+     "opponent_team_name": null,
+     "player_id": null,
+     "player_name": null,
+     "team_id": 12116,
+     "team_name": "Cleveland Cavaliers"
+    }
+   },
+   "source": "g2-live-1704"
+  },
+  {
+   "body": "The Los Angeles Lakers are 20-16 and hold 8th place in the standings, a climb of 15 positions. They lost their most recent game, a streak of 1 defeat.\n\nThey have played 36 games and sit at a 0.556 win percentage, 9.0 games behind first-place Philadelphia. The 76ers are 30-8 and have won 2 straight. Phoenix, in 4th, is 23-13 and 6.0 games behind the leader, so the Lakers trail that group by wins.\n\nThe climb is the point of this report. Los Angeles has moved well up the table this season, and it now sits inside the top 8. The facts show no plan or timeline beyond that.\n\nNext for the Lakers is holding the 8th spot after the loss.",
+   "brief": {
+    "other_desks": [
+     {
+      "angle": "surge",
+      "headline_fact": "Standings position change: -20",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "standings_surge",
+      "subject_name": "Phoenix Suns"
+     },
+     {
+      "angle": "surge",
+      "headline_fact": "Standings position change: -24",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "standings_surge",
+      "subject_name": "San Antonio Spurs"
+     },
+     {
+      "angle": "collapse",
+      "headline_fact": "Standings position change: 18",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "standings_collapse",
+      "subject_name": "Toronto Raptors"
+     },
+     {
+      "angle": "collapse",
+      "headline_fact": "Standings position change: 17",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "standings_collapse",
+      "subject_name": "Cleveland Cavaliers"
+     },
+     {
+      "angle": "collapse",
+      "headline_fact": "Standings position change: 24",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "standings_collapse",
+      "subject_name": "New York Knicks"
+     },
+     {
+      "angle": "collapse",
+      "headline_fact": "Standings position change: 15",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "standings_collapse",
+      "subject_name": "Washington Wizards"
+     },
+     {
+      "angle": "surge",
+      "headline_fact": "Standings position change: -14",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "standings_surge",
+      "subject_name": "Minnesota Timberwolves"
+     },
+     {
+      "angle": "full_picture",
+      "headline_fact": "Wins: 10",
+      "link": "none",
+      "salience_band": "profile",
+      "story_kind": "team_profile",
+      "subject_name": "Washington Wizards"
+     }
+    ],
+    "recent_wire": [
+     {
+      "cycle_index": 0,
+      "headline": "Charlotte Hornets: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Charlotte Hornets"
+     },
+     {
+      "cycle_index": 0,
+      "headline": "Indiana Pacers: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Indiana Pacers"
+     },
+     {
+      "cycle_index": 0,
+      "headline": "Philadelphia 76ers: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Philadelphia 76ers"
+     },
+     {
+      "cycle_index": 0,
+      "headline": "Denver Nuggets: roster construction",
+      "link": "none",
+      "persona_column": "Film Room",
+      "story_kind": "roster_construction",
+      "subject_name": "Denver Nuggets"
+     },
+     {
+      "cycle_index": 0,
+      "headline": "Dallas Mavericks: roster construction",
+      "link": "none",
+      "persona_column": "Film Room",
+      "story_kind": "roster_construction",
+      "subject_name": "Dallas Mavericks"
+     },
+     {
+      "cycle_index": 0,
+      "headline": "Charlotte Hornets: roster construction",
+      "link": "none",
+      "persona_column": "Film Room",
+      "story_kind": "roster_construction",
+      "subject_name": "Charlotte Hornets"
+     },
+     {
+      "cycle_index": 0,
+      "headline": "Brooklyn Nets: roster construction",
+      "link": "none",
+      "persona_column": "No Filter",
+      "story_kind": "roster_construction",
+      "subject_name": "Brooklyn Nets"
+     }
+    ],
+    "season_arc": {
+     "cycle_index": 1,
+     "last_season_bottom": [],
+     "last_season_top": [],
+     "league_games_played": 38,
+     "phase": "REGULAR_SEASON",
+     "season": 2026
+    },
+    "standings": [
+     {
+      "losses": 8,
+      "standings_position": 1,
+      "streak_length": 2,
+      "team_id": 12113,
+      "team_name": "Philadelphia 76ers",
+      "wins": 30
+     },
+     {
+      "losses": 11,
+      "standings_position": 2,
+      "streak_length": 5,
+      "team_id": 12125,
+      "team_name": "Denver Nuggets",
+      "wins": 26
+     },
+     {
+      "losses": 13,
+      "standings_position": 3,
+      "streak_length": 7,
+      "team_id": 12126,
+      "team_name": "Minnesota Timberwolves",
+      "wins": 24
+     },
+     {
+      "losses": 13,
+      "standings_position": 4,
+      "streak_length": 2,
+      "team_id": 12133,
+      "team_name": "Phoenix Suns",
+      "wins": 23
+     },
+     {
+      "losses": 14,
+      "standings_position": 5,
+      "streak_length": -1,
+      "team_id": 12110,
+      "team_name": "Boston Celtics",
+      "wins": 24
+     },
+     {
+      "losses": 24,
+      "standings_position": 28,
+      "streak_length": -2,
+      "team_id": 12118,
+      "team_name": "Indiana Pacers",
+      "wins": 13
+     },
+     {
+      "losses": 25,
+      "standings_position": 29,
+      "streak_length": -1,
+      "team_id": 12111,
+      "team_name": "Brooklyn Nets",
+      "wins": 13
+     },
+     {
+      "losses": 27,
+      "standings_position": 30,
+      "streak_length": -7,
+      "team_id": 12124,
+      "team_name": "Washington Wizards",
+      "wins": 10
+     },
+     {
+      "losses": 16,
+      "standings_position": 8,
+      "streak_length": -1,
+      "team_id": 12132,
+      "team_name": "Los Angeles Lakers",
+      "wins": 20
+     }
+    ],
+    "subject_history": []
+   },
+   "headline": "Lakers climb to 8th in the standings, up 15 spots",
+   "id": "3587",
+   "label": "derived_true",
+   "league": "1704",
+   "note": "surge, delta -15: 'up 15 spots', 'a climb of 15 positions', true direction",
+   "package": {
+    "angle": "surge",
+    "cycle_index": 1,
+    "facts": [
+     {
+      "key": "team_name",
+      "label": "Team",
+      "value_number": null,
+      "value_text": "Los Angeles Lakers"
+     },
+     {
+      "key": "season",
+      "label": "Season",
+      "value_number": 2026.0,
+      "value_text": "2026"
+     },
+     {
+      "key": "phase",
+      "label": "Phase",
+      "value_number": null,
+      "value_text": "REGULAR_SEASON"
+     },
+     {
+      "key": "standings_position_delta",
+      "label": "Standings position change",
+      "value_number": -15.0,
+      "value_text": "-15"
+     },
+     {
+      "key": "standings_position",
+      "label": "Standings position",
+      "value_number": 8.0,
+      "value_text": "8"
+     }
+    ],
+    "package_version": 1,
+    "phase": "REGULAR_SEASON",
+    "season": 2026,
+    "story_kind": "standings_surge",
+    "subject": {
+     "kind": "team",
+     "opponent_team_id": null,
+     "opponent_team_name": null,
+     "player_id": null,
+     "player_name": null,
+     "team_id": 12132,
+     "team_name": "Los Angeles Lakers"
+    }
+   },
+   "source": "g2-live-1704"
+  },
+  {
+   "body": "Toronto fell 18 places in the standings. That is a freefall. The Raptors now sit 23rd in the regular season, and there is no dressing that up.\n\nEighteen spots. Who does that? A team that lost its grip on everything. The record is 16 wins against a 0.432 win percentage through 37 games, and it trails first place by 13.5 games.\n\nThat gap is enormous. Philadelphia leads at 0.789. Toronto is nowhere near the conversation. The last two weeks have been a slide, and the standings show every inch of it.\n\nIs anyone in Toronto going to stop the bleeding? Because 23rd is where the drop landed, and the drop is still the story.",
+   "brief": {
+    "other_desks": [
+     {
+      "angle": "collapse",
+      "headline_fact": "Standings position change: 17",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "standings_collapse",
+      "subject_name": "Cleveland Cavaliers"
+     },
+     {
+      "angle": "collapse",
+      "headline_fact": "Standings position change: 24",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "standings_collapse",
+      "subject_name": "New York Knicks"
+     },
+     {
+      "angle": "collapse",
+      "headline_fact": "Standings position change: 15",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "standings_collapse",
+      "subject_name": "Washington Wizards"
+     },
+     {
+      "angle": "surge",
+      "headline_fact": "Standings position change: -20",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "standings_surge",
+      "subject_name": "Phoenix Suns"
+     },
+     {
+      "angle": "surge",
+      "headline_fact": "Standings position change: -24",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "standings_surge",
+      "subject_name": "San Antonio Spurs"
+     },
+     {
+      "angle": "surge",
+      "headline_fact": "Standings position change: -15",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "standings_surge",
+      "subject_name": "Los Angeles Lakers"
+     },
+     {
+      "angle": "surge",
+      "headline_fact": "Standings position change: -14",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "standings_surge",
+      "subject_name": "Minnesota Timberwolves"
+     },
+     {
+      "angle": "full_picture",
+      "headline_fact": "Wins: 10",
+      "link": "none",
+      "salience_band": "profile",
+      "story_kind": "team_profile",
+      "subject_name": "Washington Wizards"
+     }
+    ],
+    "recent_wire": [
+     {
+      "cycle_index": 0,
+      "headline": "Denver Nuggets: roster construction",
+      "link": "none",
+      "persona_column": "Film Room",
+      "story_kind": "roster_construction",
+      "subject_name": "Denver Nuggets"
+     },
+     {
+      "cycle_index": 0,
+      "headline": "Dallas Mavericks: roster construction",
+      "link": "none",
+      "persona_column": "Film Room",
+      "story_kind": "roster_construction",
+      "subject_name": "Dallas Mavericks"
+     },
+     {
+      "cycle_index": 0,
+      "headline": "Charlotte Hornets: roster construction",
+      "link": "none",
+      "persona_column": "Film Room",
+      "story_kind": "roster_construction",
+      "subject_name": "Charlotte Hornets"
+     },
+     {
+      "cycle_index": 0,
+      "headline": "Brooklyn Nets: roster construction",
+      "link": "none",
+      "persona_column": "No Filter",
+      "story_kind": "roster_construction",
+      "subject_name": "Brooklyn Nets"
+     },
+     {
+      "cycle_index": 0,
+      "headline": "Charlotte Hornets: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Charlotte Hornets"
+     },
+     {
+      "cycle_index": 0,
+      "headline": "Indiana Pacers: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Indiana Pacers"
+     },
+     {
+      "cycle_index": 0,
+      "headline": "Philadelphia 76ers: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Philadelphia 76ers"
+     }
+    ],
+    "season_arc": {
+     "cycle_index": 1,
+     "last_season_bottom": [],
+     "last_season_top": [],
+     "league_games_played": 38,
+     "phase": "REGULAR_SEASON",
+     "season": 2026
+    },
+    "standings": [
+     {
+      "losses": 8,
+      "standings_position": 1,
+      "streak_length": 2,
+      "team_id": 12113,
+      "team_name": "Philadelphia 76ers",
+      "wins": 30
+     },
+     {
+      "losses": 11,
+      "standings_position": 2,
+      "streak_length": 5,
+      "team_id": 12125,
+      "team_name": "Denver Nuggets",
+      "wins": 26
+     },
+     {
+      "losses": 13,
+      "standings_position": 3,
+      "streak_length": 7,
+      "team_id": 12126,
+      "team_name": "Minnesota Timberwolves",
+      "wins": 24
+     },
+     {
+      "losses": 13,
+      "standings_position": 4,
+      "streak_length": 2,
+      "team_id": 12133,
+      "team_name": "Phoenix Suns",
+      "wins": 23
+     },
+     {
+      "losses": 14,
+      "standings_position": 5,
+      "streak_length": -1,
+      "team_id": 12110,
+      "team_name": "Boston Celtics",
+      "wins": 24
+     },
+     {
+      "losses": 24,
+      "standings_position": 28,
+      "streak_length": -2,
+      "team_id": 12118,
+      "team_name": "Indiana Pacers",
+      "wins": 13
+     },
+     {
+      "losses": 25,
+      "standings_position": 29,
+      "streak_length": -1,
+      "team_id": 12111,
+      "team_name": "Brooklyn Nets",
+      "wins": 13
+     },
+     {
+      "losses": 27,
+      "standings_position": 30,
+      "streak_length": -7,
+      "team_id": 12124,
+      "team_name": "Washington Wizards",
+      "wins": 10
+     },
+     {
+      "losses": 21,
+      "standings_position": 23,
+      "streak_length": -1,
+      "team_id": 12114,
+      "team_name": "Toronto Raptors",
+      "wins": 16
+     }
+    ],
+    "subject_history": []
+   },
+   "headline": "Toronto Raptors have cratered 18 spots and sit 23rd",
+   "id": "3588",
+   "label": "derived_true",
+   "league": "1704",
+   "note": "collapse, delta +18: 'fell 18 places', 'cratered 18 spots', true direction",
+   "package": {
+    "angle": "collapse",
+    "cycle_index": 1,
+    "facts": [
+     {
+      "key": "team_name",
+      "label": "Team",
+      "value_number": null,
+      "value_text": "Toronto Raptors"
+     },
+     {
+      "key": "season",
+      "label": "Season",
+      "value_number": 2026.0,
+      "value_text": "2026"
+     },
+     {
+      "key": "phase",
+      "label": "Phase",
+      "value_number": null,
+      "value_text": "REGULAR_SEASON"
+     },
+     {
+      "key": "standings_position_delta",
+      "label": "Standings position change",
+      "value_number": 18.0,
+      "value_text": "18"
+     },
+     {
+      "key": "standings_position",
+      "label": "Standings position",
+      "value_number": 23.0,
+      "value_text": "23"
+     }
+    ],
+    "package_version": 1,
+    "phase": "REGULAR_SEASON",
+    "season": 2026,
+    "story_kind": "standings_collapse",
+    "subject": {
+     "kind": "team",
+     "opponent_team_id": null,
+     "opponent_team_name": null,
+     "player_id": null,
+     "player_name": null,
+     "team_id": 12114,
+     "team_name": "Toronto Raptors"
+    }
+   },
+   "source": "g2-live-1704"
+  },
+  {
+   "body": "The San Antonio Spurs are 22-14 and have won 3 straight, good for 6th in the standings. They have played 36 games and hold a win percentage of 0.611, 7.0 games behind first-place Philadelphia.\n\nThe move up the table is the story: San Antonio's standings position has changed by -24, the largest climb in this report's numbers, and the Spurs now sit just below Boston, which has 24 wins but is on a 1-game losing streak.\n\nThe Spurs are in the pack chasing Philadelphia, which is 30-8 and has won 2 in a row. Denver, 2nd at 26-11, is on a 5-game winning streak, and Minnesota, 3rd at 24-13, has won 7 straight. Phoenix is 4th at 23-13.\n\nThe next test is whether San Antonio can hold its spot in the 2026 regular season while the teams around it keep winning. The Spurs have 36 games played, fewer than Philadelphia and Boston, which have each played 38.",
+   "brief": {
+    "other_desks": [
+     {
+      "angle": "surge",
+      "headline_fact": "Standings position change: -20",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "standings_surge",
+      "subject_name": "Phoenix Suns"
+     },
+     {
+      "angle": "surge",
+      "headline_fact": "Standings position change: -15",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "standings_surge",
+      "subject_name": "Los Angeles Lakers"
+     },
+     {
+      "angle": "collapse",
+      "headline_fact": "Standings position change: 18",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "standings_collapse",
+      "subject_name": "Toronto Raptors"
+     },
+     {
+      "angle": "collapse",
+      "headline_fact": "Standings position change: 17",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "standings_collapse",
+      "subject_name": "Cleveland Cavaliers"
+     },
+     {
+      "angle": "collapse",
+      "headline_fact": "Standings position change: 24",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "standings_collapse",
+      "subject_name": "New York Knicks"
+     },
+     {
+      "angle": "collapse",
+      "headline_fact": "Standings position change: 15",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "standings_collapse",
+      "subject_name": "Washington Wizards"
+     },
+     {
+      "angle": "surge",
+      "headline_fact": "Standings position change: -14",
+      "link": "none",
+      "salience_band": "main",
+      "story_kind": "standings_surge",
+      "subject_name": "Minnesota Timberwolves"
+     },
+     {
+      "angle": "full_picture",
+      "headline_fact": "Wins: 10",
+      "link": "none",
+      "salience_band": "profile",
+      "story_kind": "team_profile",
+      "subject_name": "Washington Wizards"
+     }
+    ],
+    "recent_wire": [
+     {
+      "cycle_index": 0,
+      "headline": "Charlotte Hornets: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Charlotte Hornets"
+     },
+     {
+      "cycle_index": 0,
+      "headline": "Indiana Pacers: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Indiana Pacers"
+     },
+     {
+      "cycle_index": 0,
+      "headline": "Philadelphia 76ers: team profile",
+      "link": "none",
+      "persona_column": "The Beat",
+      "story_kind": "team_profile",
+      "subject_name": "Philadelphia 76ers"
+     },
+     {
+      "cycle_index": 0,
+      "headline": "Denver Nuggets: roster construction",
+      "link": "none",
+      "persona_column": "Film Room",
+      "story_kind": "roster_construction",
+      "subject_name": "Denver Nuggets"
+     },
+     {
+      "cycle_index": 0,
+      "headline": "Dallas Mavericks: roster construction",
+      "link": "none",
+      "persona_column": "Film Room",
+      "story_kind": "roster_construction",
+      "subject_name": "Dallas Mavericks"
+     },
+     {
+      "cycle_index": 0,
+      "headline": "Charlotte Hornets: roster construction",
+      "link": "none",
+      "persona_column": "Film Room",
+      "story_kind": "roster_construction",
+      "subject_name": "Charlotte Hornets"
+     },
+     {
+      "cycle_index": 0,
+      "headline": "Brooklyn Nets: roster construction",
+      "link": "none",
+      "persona_column": "No Filter",
+      "story_kind": "roster_construction",
+      "subject_name": "Brooklyn Nets"
+     }
+    ],
+    "season_arc": {
+     "cycle_index": 1,
+     "last_season_bottom": [],
+     "last_season_top": [],
+     "league_games_played": 38,
+     "phase": "REGULAR_SEASON",
+     "season": 2026
+    },
+    "standings": [
+     {
+      "losses": 8,
+      "standings_position": 1,
+      "streak_length": 2,
+      "team_id": 12113,
+      "team_name": "Philadelphia 76ers",
+      "wins": 30
+     },
+     {
+      "losses": 11,
+      "standings_position": 2,
+      "streak_length": 5,
+      "team_id": 12125,
+      "team_name": "Denver Nuggets",
+      "wins": 26
+     },
+     {
+      "losses": 13,
+      "standings_position": 3,
+      "streak_length": 7,
+      "team_id": 12126,
+      "team_name": "Minnesota Timberwolves",
+      "wins": 24
+     },
+     {
+      "losses": 13,
+      "standings_position": 4,
+      "streak_length": 2,
+      "team_id": 12133,
+      "team_name": "Phoenix Suns",
+      "wins": 23
+     },
+     {
+      "losses": 14,
+      "standings_position": 5,
+      "streak_length": -1,
+      "team_id": 12110,
+      "team_name": "Boston Celtics",
+      "wins": 24
+     },
+     {
+      "losses": 24,
+      "standings_position": 28,
+      "streak_length": -2,
+      "team_id": 12118,
+      "team_name": "Indiana Pacers",
+      "wins": 13
+     },
+     {
+      "losses": 25,
+      "standings_position": 29,
+      "streak_length": -1,
+      "team_id": 12111,
+      "team_name": "Brooklyn Nets",
+      "wins": 13
+     },
+     {
+      "losses": 27,
+      "standings_position": 30,
+      "streak_length": -7,
+      "team_id": 12124,
+      "team_name": "Washington Wizards",
+      "wins": 10
+     },
+     {
+      "losses": 14,
+      "standings_position": 6,
+      "streak_length": 3,
+      "team_id": 12139,
+      "team_name": "San Antonio Spurs",
+      "wins": 22
+     }
+    ],
+    "subject_history": []
+   },
+   "headline": "Spurs, 22-14 and winners of 3 straight, sit 6th after a 24-place climb",
+   "id": "3586",
+   "label": "derived_true",
+   "league": "1704",
+   "note": "surge, delta -24: 'a 24-place climb', true direction; 'changed by -24' quotes the raw value",
+   "package": {
+    "angle": "surge",
+    "cycle_index": 1,
+    "facts": [
+     {
+      "key": "team_name",
+      "label": "Team",
+      "value_number": null,
+      "value_text": "San Antonio Spurs"
+     },
+     {
+      "key": "season",
+      "label": "Season",
+      "value_number": 2026.0,
+      "value_text": "2026"
+     },
+     {
+      "key": "phase",
+      "label": "Phase",
+      "value_number": null,
+      "value_text": "REGULAR_SEASON"
+     },
+     {
+      "key": "standings_position_delta",
+      "label": "Standings position change",
+      "value_number": -24.0,
+      "value_text": "-24"
+     },
+     {
+      "key": "standings_position",
+      "label": "Standings position",
+      "value_number": 6.0,
+      "value_text": "6"
+     }
+    ],
+    "package_version": 1,
+    "phase": "REGULAR_SEASON",
+    "season": 2026,
+    "story_kind": "standings_surge",
+    "subject": {
+     "kind": "team",
+     "opponent_team_id": null,
+     "opponent_team_name": null,
+     "player_id": null,
+     "player_name": null,
+     "team_id": 12139,
+     "team_name": "San Antonio Spurs"
+    }
+   },
+   "source": "g2-live-1704"
+  },
+  {
+   "base": "3605",
+   "body": "The Golden State Warriors fell 4 spots, from 19th to 23rd.",
+   "headline": "Headline",
+   "id": "D01",
+   "label": "derived_true",
+   "note": "true direction and the prior position (19th) the move phrase states",
+   "source": "synthetic"
+  },
+  {
+   "base": "3597",
+   "body": "New Orleans climbed 9 places, from 22nd to 13th.",
+   "headline": "Headline",
+   "id": "D02",
+   "label": "derived_true",
+   "note": "true direction and the prior position (22nd) the move phrase states",
+   "source": "synthetic"
+  },
+  {
+   "base": "3611",
+   "body": "The Spurs slid 5 spots to 11th since the last pulse.",
+   "headline": "Headline",
+   "id": "D03",
+   "label": "clean",
+   "note": "true direction, delta +5",
+   "source": "synthetic"
+  },
+  {
+   "base": "3599",
+   "body": "Brooklyn slipped 1 spot to 30th.",
+   "headline": "Headline",
+   "id": "D04",
+   "label": "clean",
+   "note": "true direction, delta +1",
+   "source": "synthetic"
+  },
+  {
+   "base": "3610",
+   "body": "The Knicks rose 8 spots to 18th on a 4-game winning streak.",
+   "headline": "Headline",
+   "id": "D05",
+   "label": "clean",
+   "note": "true direction, delta -8",
+   "source": "synthetic"
+  },
+  {
+   "base": "3606",
+   "body": "Detroit, up 5 places since the last pulse, sits 9th.",
+   "headline": "Headline",
+   "id": "D06",
+   "label": "clean",
+   "note": "true direction, delta -5",
+   "source": "synthetic"
+  },
+  {
+   "base": "3589",
+   "body": "The Cleveland Cavaliers climbed 17 spots to 24th.",
+   "headline": "Headline",
+   "id": "D07",
+   "label": "negative",
+   "note": "collapse told as a climb: delta +17",
+   "source": "synthetic"
+  },
+  {
+   "base": "3587",
+   "body": "The Los Angeles Lakers fell 15 spots to 8th.",
+   "headline": "Headline",
+   "id": "D08",
+   "label": "negative",
+   "note": "surge told as a fall: delta -15",
+   "source": "synthetic"
+  },
+  {
+   "base": "3588",
+   "body": "Toronto jumped 18 places, and it sits 23rd.",
+   "headline": "Headline",
+   "id": "D09",
+   "label": "negative",
+   "note": "collapse told as a jump: delta +18",
+   "source": "synthetic"
+  },
+  {
+   "base": "3586",
+   "body": "The Spurs sit 6th after a 24-spot drop.",
+   "headline": "Headline",
+   "id": "D10",
+   "label": "negative",
+   "note": "surge told as a drop (noun after the count): delta -24",
+   "source": "synthetic"
+  },
+  {
+   "base": "3598",
+   "body": "The Sacramento Kings moved up 6 spots to 17th.",
+   "headline": "Headline",
+   "id": "D11",
+   "label": "negative",
+   "note": "a fall told as a climb: delta +6",
+   "source": "synthetic"
+  },
+  {
+   "base": "3609",
+   "body": "The Lakers surged 4 places to 14th.",
+   "headline": "Headline",
+   "id": "D12",
+   "label": "negative",
+   "note": "a fall told as a surge: delta +4",
+   "source": "synthetic"
+  },
+  {
+   "base": "3605",
+   "body": "The Golden State Warriors fell 4 spots to 23rd, well behind the Philadelphia 76ers.",
+   "headline": "Headline",
+   "id": "D13",
+   "label": "clean",
+   "note": "digits inside a team name (76ers) are part of the name, not a number; second live pass story 3858's false reject, on a base whose brief does not carry the name",
+   "source": "synthetic"
+  }
+ ],
+ "league_team_aliases": {
+  "1704": {
+   "12110": {
+    "city": "Boston",
+    "full": "Boston Celtics",
+    "nickname": "Celtics"
+   },
+   "12111": {
+    "city": "Brooklyn",
+    "full": "Brooklyn Nets",
+    "nickname": "Nets"
+   },
+   "12112": {
+    "city": "New York",
+    "full": "New York Knicks",
+    "nickname": "Knicks"
+   },
+   "12113": {
+    "city": "Philadelphia",
+    "full": "Philadelphia 76ers",
+    "nickname": "76ers"
+   },
+   "12114": {
+    "city": "Toronto",
+    "full": "Toronto Raptors",
+    "nickname": "Raptors"
+   },
+   "12115": {
+    "city": "Chicago",
+    "full": "Chicago Bulls",
+    "nickname": "Bulls"
+   },
+   "12116": {
+    "city": "Cleveland",
+    "full": "Cleveland Cavaliers",
+    "nickname": "Cavaliers"
+   },
+   "12117": {
+    "city": "Detroit",
+    "full": "Detroit Pistons",
+    "nickname": "Pistons"
+   },
+   "12118": {
+    "city": "Indiana",
+    "full": "Indiana Pacers",
+    "nickname": "Pacers"
+   },
+   "12119": {
+    "city": "Milwaukee",
+    "full": "Milwaukee Bucks",
+    "nickname": "Bucks"
+   },
+   "12120": {
+    "city": "Atlanta",
+    "full": "Atlanta Hawks",
+    "nickname": "Hawks"
+   },
+   "12121": {
+    "city": "Charlotte",
+    "full": "Charlotte Hornets",
+    "nickname": "Hornets"
+   },
+   "12122": {
+    "city": "Miami",
+    "full": "Miami Heat",
+    "nickname": "Heat"
+   },
+   "12123": {
+    "city": "Orlando",
+    "full": "Orlando Magic",
+    "nickname": "Magic"
+   },
+   "12124": {
+    "city": "Washington",
+    "full": "Washington Wizards",
+    "nickname": "Wizards"
+   },
+   "12125": {
+    "city": "Denver",
+    "full": "Denver Nuggets",
+    "nickname": "Nuggets"
+   },
+   "12126": {
+    "city": "Minnesota",
+    "full": "Minnesota Timberwolves",
+    "nickname": "Timberwolves"
+   },
+   "12127": {
+    "city": "Oklahoma City",
+    "full": "Oklahoma City Thunder",
+    "nickname": "Thunder"
+   },
+   "12128": {
+    "city": "Portland",
+    "full": "Portland Trail Blazers",
+    "nickname": "Trail Blazers"
+   },
+   "12129": {
+    "city": "Utah",
+    "full": "Utah Jazz",
+    "nickname": "Jazz"
+   },
+   "12130": {
+    "city": "Golden State",
+    "full": "Golden State Warriors",
+    "nickname": "Warriors"
+   },
+   "12131": {
+    "city": "Los Angeles",
+    "full": "Los Angeles Clippers",
+    "nickname": "Clippers"
+   },
+   "12132": {
+    "city": "Los Angeles",
+    "full": "Los Angeles Lakers",
+    "nickname": "Lakers"
+   },
+   "12133": {
+    "city": "Phoenix",
+    "full": "Phoenix Suns",
+    "nickname": "Suns"
+   },
+   "12134": {
+    "city": "Sacramento",
+    "full": "Sacramento Kings",
+    "nickname": "Kings"
+   },
+   "12135": {
+    "city": "Dallas",
+    "full": "Dallas Mavericks",
+    "nickname": "Mavericks"
+   },
+   "12136": {
+    "city": "Houston",
+    "full": "Houston Rockets",
+    "nickname": "Rockets"
+   },
+   "12137": {
+    "city": "Memphis",
+    "full": "Memphis Grizzlies",
+    "nickname": "Grizzlies"
+   },
+   "12138": {
+    "city": "New Orleans",
+    "full": "New Orleans Pelicans",
+    "nickname": "Pelicans"
+   },
+   "12139": {
+    "city": "San Antonio",
+    "full": "San Antonio Spurs",
+    "nickname": "Spurs"
+   }
+  }
+ },
+ "team_aliases": {
+  "1": {
+   "city": "Minnesota",
+   "full": "Minnesota Timberwolves",
+   "nickname": "Timberwolves"
+  },
+  "10": {
+   "city": "Indiana",
+   "full": "Indiana Pacers",
+   "nickname": "Pacers"
+  },
+  "11": {
+   "city": "Utah",
+   "full": "Utah Jazz",
+   "nickname": "Jazz"
+  },
+  "12": {
+   "city": "Dallas",
+   "full": "Dallas Mavericks",
+   "nickname": "Mavericks"
+  },
+  "2": {
+   "city": "Los Angeles",
+   "full": "Los Angeles Lakers",
+   "nickname": "Lakers"
+  },
+  "3": {
+   "city": "San Antonio",
+   "full": "San Antonio Spurs",
+   "nickname": "Spurs"
+  },
+  "4": {
+   "city": "Denver",
+   "full": "Denver Nuggets",
+   "nickname": "Nuggets"
+  },
+  "5": {
+   "city": "Boston",
+   "full": "Boston Celtics",
+   "nickname": "Celtics"
+  },
+  "6": {
+   "city": "Toronto",
+   "full": "Toronto Raptors",
+   "nickname": "Raptors"
+  },
+  "7": {
+   "city": "Milwaukee",
+   "full": "Milwaukee Bucks",
+   "nickname": "Bucks"
+  },
+  "8": {
+   "city": "Phoenix",
+   "full": "Phoenix Suns",
+   "nickname": "Suns"
+  },
+  "9": {
+   "city": "Los Angeles",
+   "full": "Los Angeles Clippers",
+   "nickname": "Clippers"
+  }
+ }
+}

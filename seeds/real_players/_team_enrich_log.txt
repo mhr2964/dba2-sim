@@ -1,0 +1,59 @@
+[2026-09-16 09:55:16] team enrichment starting: seasons 2016-2016
+[2026-09-16 09:55:16] season=2016: FAILED -- HTTPError: HTTP Error 401: Unauthorized
+[2026-09-16 09:55:16] team enrichment done: 0 ok, failed=[2016]
+[2026-09-16 10:03:46] team enrichment starting: seasons 2016-2016
+[2026-09-16 10:04:22] season=2016: FAILED -- HTTPError: HTTP Error 429: Too Many Requests
+[2026-09-16 10:04:22] team enrichment done: 0 ok, failed=[2016]
+[2026-09-16 10:04:48] team enrichment starting: seasons 2016-2016
+[2026-09-16 10:05:25] season=2016: FAILED -- HTTPError: HTTP Error 429: Too Many Requests
+[2026-09-16 10:05:25] team enrichment done: 0 ok, failed=[2016]
+[2026-09-16 10:09:06] team enrichment starting: seasons 2016-2016
+[2026-09-16 10:09:56] season=2016: FAILED -- HTTPError: HTTP Error 429: Too Many Requests
+[2026-09-16 10:09:56] team enrichment done: 0 ok, failed=[2016]
+[2026-09-16 10:10:33] team enrichment starting: seasons 2016-2016
+[2026-09-16 10:11:19] season=2016: FAILED -- HTTPError: HTTP Error 429: Too Many Requests
+[2026-09-16 10:11:19] team enrichment done: 0 ok, failed=[2016]
+[2026-09-16 10:12:38] team enrichment starting: seasons 2016-2016
+[2026-09-16 10:13:23] season=2016: FAILED -- HTTPError: HTTP Error 429: Too Many Requests
+[2026-09-16 10:13:23] team enrichment done: 0 ok, failed=[2016]
+[2026-09-16 10:39:27] team enrichment starting: seasons 2016-2016
+[2026-09-16 10:40:13] season=2016: FAILED -- HTTPError: HTTP Error 429: Too Many Requests
+[2026-09-16 10:40:13] team enrichment done: 0 ok, failed=[2016]
+[2026-09-16 10:43:21] team enrichment starting: seasons 2016-2016
+[2026-09-16 10:50:21] season=2016: FAILED -- URLError: <urlopen error [Errno 11001] getaddrinfo failed>
+[2026-09-16 10:50:22] team enrichment done: 0 ok, failed=[2016]
+[2026-09-16 11:15:20] team enrichment starting: seasons 2016-2016
+[2026-09-16 11:22:35] season=2016: OK, 486 enriched, 0 missing a team
+[2026-09-16 11:22:35] team enrichment done: 1 ok, failed=[]
+[2026-09-16 11:23:05] team enrichment starting: seasons 1996-2025
+[2026-09-16 11:29:28] season=1996: OK, 441 enriched, 0 missing a team
+[2026-09-16 11:35:59] season=1997: OK, 439 enriched, 0 missing a team
+[2026-09-16 11:40:00] season=1998: OK, 440 enriched, 0 missing a team
+[2026-09-16 11:46:28] season=1999: OK, 439 enriched, 0 missing a team
+[2026-09-16 11:52:51] season=2000: OK, 441 enriched, 0 missing a team
+[2026-09-16 11:59:16] season=2001: OK, 440 enriched, 0 missing a team
+[2026-09-16 12:05:50] season=2002: OK, 428 enriched, 0 missing a team
+[2026-09-16 12:12:12] season=2003: OK, 442 enriched, 0 missing a team
+[2026-09-16 12:18:53] season=2004: OK, 464 enriched, 0 missing a team
+[2026-09-16 12:25:34] season=2005: OK, 458 enriched, 0 missing a team
+[2026-09-16 12:32:15] season=2006: OK, 458 enriched, 0 missing a team
+[2026-09-16 12:38:55] season=2007: OK, 451 enriched, 0 missing a team
+[2026-09-16 12:45:35] season=2008: OK, 445 enriched, 0 missing a team
+[2026-09-16 12:52:12] season=2009: OK, 441 enriched, 0 missing a team
+[2026-09-16 12:58:47] season=2010: OK, 452 enriched, 0 missing a team
+[2026-09-16 13:04:36] season=2011: OK, 478 enriched, 0 missing a team
+[2026-09-16 13:11:43] season=2012: OK, 468 enriched, 0 missing a team
+[2026-09-16 13:18:49] season=2013: OK, 482 enriched, 0 missing a team
+[2026-09-16 13:25:57] season=2014: OK, 492 enriched, 0 missing a team
+[2026-09-16 13:33:10] season=2015: OK, 476 enriched, 0 missing a team
+[2026-09-16 13:40:16] season=2016: OK, 486 enriched, 0 missing a team
+[2026-09-16 13:47:19] season=2017: OK, 540 enriched, 0 missing a team
+[2026-09-16 13:54:17] season=2018: OK, 530 enriched, 0 missing a team
+[2026-09-16 14:00:22] season=2019: OK, 529 enriched, 0 missing a team
+[2026-09-16 14:06:58] season=2020: OK, 540 enriched, 0 missing a team
+[2026-09-16 14:14:05] season=2021: OK, 605 enriched, 0 missing a team
+[2026-09-16 14:23:26] season=2022: OK, 539 enriched, 0 missing a team
+[2026-09-16 14:33:21] season=2023: OK, 572 enriched, 0 missing a team
+[2026-09-16 14:43:09] season=2024: OK, 569 enriched, 0 missing a team
+[2026-09-16 14:52:59] season=2025: OK, 582 enriched, 0 missing a team
+[2026-09-16 14:52:59] team enrichment done: 30 ok, failed=[]

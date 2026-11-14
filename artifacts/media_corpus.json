@@ -1,0 +1,1806 @@
+{
+  "control": {
+    "by_kind": {
+      "milestone": {
+        "fallback_stories": 6,
+        "stories": 54
+      },
+      "player_unrest": {
+        "fallback_stories": 80,
+        "stories": 80
+      },
+      "rookie_watch": {
+        "fallback_stories": 1,
+        "stories": 7
+      },
+      "standings_collapse": {
+        "fallback_stories": 14,
+        "stories": 46
+      },
+      "standings_surge": {
+        "fallback_stories": 12,
+        "stories": 35
+      },
+      "streak": {
+        "fallback_stories": 2,
+        "stories": 21
+      },
+      "team_profile": {
+        "fallback_stories": 67,
+        "stories": 162
+      }
+    },
+    "by_pair_depth": {
+      "-1": {
+        "fallback_selections": 25,
+        "selections": 46,
+        "trigger_held_fallback_selections": 6,
+        "trigger_held_selections": 27,
+        "ungated_kind_fallback_selections": 5,
+        "ungated_kind_selections": 18
+      },
+      "-2": {
+        "fallback_selections": 11,
+        "selections": 16,
+        "trigger_held_fallback_selections": 0,
+        "trigger_held_selections": 5,
+        "ungated_kind_fallback_selections": 0,
+        "ungated_kind_selections": 5
+      },
+      "-3": {
+        "fallback_selections": 7,
+        "selections": 7,
+        "trigger_held_fallback_selections": 0,
+        "trigger_held_selections": 0,
+        "ungated_kind_fallback_selections": 0,
+        "ungated_kind_selections": 0
+      },
+      "-4": {
+        "fallback_selections": 7,
+        "selections": 7,
+        "trigger_held_fallback_selections": 0,
+        "trigger_held_selections": 0,
+        "ungated_kind_fallback_selections": 0,
+        "ungated_kind_selections": 0
+      },
+      "0": {
+        "fallback_selections": 93,
+        "selections": 269,
+        "trigger_held_fallback_selections": 56,
+        "trigger_held_selections": 230,
+        "ungated_kind_fallback_selections": 35,
+        "ungated_kind_selections": 150
+      },
+      "1": {
+        "fallback_selections": 28,
+        "selections": 47,
+        "trigger_held_fallback_selections": 28,
+        "trigger_held_selections": 47,
+        "ungated_kind_fallback_selections": 24,
+        "ungated_kind_selections": 38
+      },
+      "2": {
+        "fallback_selections": 11,
+        "selections": 13,
+        "trigger_held_fallback_selections": 11,
+        "trigger_held_selections": 13,
+        "ungated_kind_fallback_selections": 10,
+        "ungated_kind_selections": 12
+      }
+    },
+    "by_voice": {
+      "analyst": {
+        "fallback_stories": 2,
+        "stories": 31
+      },
+      "beat_writer": {
+        "fallback_stories": 82,
+        "stories": 210
+      },
+      "historian": {
+        "fallback_stories": 7,
+        "stories": 45
+      },
+      "hot_take": {
+        "fallback_stories": 30,
+        "stories": 58
+      },
+      "insider": {
+        "fallback_stories": 61,
+        "stories": 61
+      }
+    },
+    "by_voice_kind_template": {
+      "analyst": {
+        "milestone": {
+          "analyst_milestone": 10,
+          "fallback_milestone": 2,
+          "historian_milestone": 10
+        },
+        "rookie_watch": {
+          "historian_rookie_watch": 2
+        },
+        "streak": {
+          "analyst_streak_slide": 1,
+          "analyst_streak_surge": 2,
+          "beat_writer_streak_loss": 2,
+          "historian_streak_infamous": 1,
+          "historian_streak_notable": 1
+        }
+      },
+      "beat_writer": {
+        "standings_collapse": {
+          "fallback_standings_collapse": 3,
+          "hot_take_standings_collapse_freefall": 4
+        },
+        "standings_surge": {
+          "beat_writer_standings_surge_big": 23,
+          "fallback_standings_surge": 12
+        },
+        "streak": {
+          "analyst_streak_slide": 2,
+          "beat_writer_streak_loss": 1,
+          "beat_writer_streak_win": 2,
+          "historian_streak_notable": 1
+        },
+        "team_profile": {
+          "dedicated_beat_writer_team_profile": 95,
+          "fallback_team_profile": 67
+        }
+      },
+      "historian": {
+        "milestone": {
+          "analyst_milestone": 12,
+          "fallback_milestone": 4,
+          "historian_milestone": 16
+        },
+        "rookie_watch": {
+          "analyst_rookie_watch": 2,
+          "fallback_rookie_watch": 1,
+          "historian_rookie_watch": 2
+        },
+        "streak": {
+          "analyst_streak_slide": 1,
+          "analyst_streak_surge": 1,
+          "beat_writer_streak_win": 2,
+          "fallback_streak": 2,
+          "historian_streak_infamous": 2
+        }
+      },
+      "hot_take": {
+        "player_unrest": {
+          "fallback_player_unrest": 19
+        },
+        "standings_collapse": {
+          "beat_writer_standings_collapse_big": 15,
+          "fallback_standings_collapse": 11,
+          "hot_take_standings_collapse_freefall": 13
+        }
+      },
+      "insider": {
+        "player_unrest": {
+          "fallback_player_unrest": 61
+        }
+      }
+    },
+    "cycles": [
+      {
+        "band_published": 0,
+        "candidates_above_floor": 0,
+        "candidates_scored": 0,
+        "candidates_submitted": 3,
+        "capped_out": 0,
+        "cycle_index": 0,
+        "league_id": 1451,
+        "phase": "PRESEASON",
+        "profiles_published": 3,
+        "season": 2026,
+        "stories_persisted": 3
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 29,
+        "candidates_scored": 29,
+        "candidates_submitted": 11,
+        "capped_out": 3,
+        "cycle_index": 1,
+        "league_id": 1451,
+        "phase": "REGULAR_SEASON",
+        "profiles_published": 3,
+        "season": 2026,
+        "stories_persisted": 8
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 12,
+        "candidates_scored": 12,
+        "candidates_submitted": 15,
+        "capped_out": 7,
+        "cycle_index": 2,
+        "league_id": 1451,
+        "phase": "TRADE_DEADLINE",
+        "profiles_published": 3,
+        "season": 2026,
+        "stories_persisted": 8
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 7,
+        "candidates_scored": 7,
+        "candidates_submitted": 10,
+        "capped_out": 2,
+        "cycle_index": 3,
+        "league_id": 1451,
+        "phase": "TRADE_DEADLINE",
+        "profiles_published": 3,
+        "season": 2026,
+        "stories_persisted": 8
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 12,
+        "candidates_scored": 12,
+        "candidates_submitted": 8,
+        "capped_out": 1,
+        "cycle_index": 4,
+        "league_id": 1451,
+        "phase": "DRAFT_LOTTERY",
+        "profiles_published": 3,
+        "season": 2026,
+        "stories_persisted": 7
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 0,
+        "candidates_scored": 0,
+        "candidates_submitted": 3,
+        "capped_out": 0,
+        "cycle_index": 5,
+        "league_id": 1451,
+        "phase": "DRAFT",
+        "profiles_published": 3,
+        "season": 2026,
+        "stories_persisted": 3
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 0,
+        "candidates_scored": 0,
+        "candidates_submitted": 3,
+        "capped_out": 0,
+        "cycle_index": 6,
+        "league_id": 1451,
+        "phase": "RESIGN_WINDOW",
+        "profiles_published": 3,
+        "season": 2026,
+        "stories_persisted": 3
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 0,
+        "candidates_scored": 0,
+        "candidates_submitted": 3,
+        "capped_out": 0,
+        "cycle_index": 7,
+        "league_id": 1451,
+        "phase": "FREE_AGENCY",
+        "profiles_published": 3,
+        "season": 2026,
+        "stories_persisted": 3
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 0,
+        "candidates_scored": 0,
+        "candidates_submitted": 3,
+        "capped_out": 0,
+        "cycle_index": 8,
+        "league_id": 1451,
+        "phase": "WAIVERS",
+        "profiles_published": 3,
+        "season": 2026,
+        "stories_persisted": 3
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 0,
+        "candidates_scored": 0,
+        "candidates_submitted": 3,
+        "capped_out": 0,
+        "cycle_index": 0,
+        "league_id": 1451,
+        "phase": "PRESEASON",
+        "profiles_published": 3,
+        "season": 2027,
+        "stories_persisted": 3
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 27,
+        "candidates_scored": 27,
+        "candidates_submitted": 11,
+        "capped_out": 3,
+        "cycle_index": 1,
+        "league_id": 1451,
+        "phase": "REGULAR_SEASON",
+        "profiles_published": 3,
+        "season": 2027,
+        "stories_persisted": 8
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 11,
+        "candidates_scored": 11,
+        "candidates_submitted": 14,
+        "capped_out": 6,
+        "cycle_index": 2,
+        "league_id": 1451,
+        "phase": "TRADE_DEADLINE",
+        "profiles_published": 3,
+        "season": 2027,
+        "stories_persisted": 8
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 10,
+        "candidates_scored": 10,
+        "candidates_submitted": 13,
+        "capped_out": 6,
+        "cycle_index": 3,
+        "league_id": 1451,
+        "phase": "TRADE_DEADLINE",
+        "profiles_published": 3,
+        "season": 2027,
+        "stories_persisted": 7
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 77,
+        "candidates_scored": 77,
+        "candidates_submitted": 8,
+        "capped_out": 0,
+        "cycle_index": 4,
+        "league_id": 1451,
+        "phase": "DRAFT_LOTTERY",
+        "profiles_published": 3,
+        "season": 2027,
+        "stories_persisted": 8
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 63,
+        "candidates_scored": 63,
+        "candidates_submitted": 11,
+        "capped_out": 5,
+        "cycle_index": 5,
+        "league_id": 1451,
+        "phase": "DRAFT",
+        "profiles_published": 3,
+        "season": 2027,
+        "stories_persisted": 6
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 63,
+        "candidates_scored": 63,
+        "candidates_submitted": 9,
+        "capped_out": 4,
+        "cycle_index": 6,
+        "league_id": 1451,
+        "phase": "RESIGN_WINDOW",
+        "profiles_published": 3,
+        "season": 2027,
+        "stories_persisted": 5
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 63,
+        "candidates_scored": 63,
+        "candidates_submitted": 15,
+        "capped_out": 9,
+        "cycle_index": 7,
+        "league_id": 1451,
+        "phase": "FREE_AGENCY",
+        "profiles_published": 3,
+        "season": 2027,
+        "stories_persisted": 6
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 63,
+        "candidates_scored": 63,
+        "candidates_submitted": 8,
+        "capped_out": 3,
+        "cycle_index": 8,
+        "league_id": 1451,
+        "phase": "WAIVERS",
+        "profiles_published": 3,
+        "season": 2027,
+        "stories_persisted": 5
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 0,
+        "candidates_scored": 0,
+        "candidates_submitted": 3,
+        "capped_out": 0,
+        "cycle_index": 0,
+        "league_id": 1451,
+        "phase": "PRESEASON",
+        "profiles_published": 3,
+        "season": 2028,
+        "stories_persisted": 3
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 31,
+        "candidates_scored": 31,
+        "candidates_submitted": 11,
+        "capped_out": 3,
+        "cycle_index": 1,
+        "league_id": 1451,
+        "phase": "REGULAR_SEASON",
+        "profiles_published": 3,
+        "season": 2028,
+        "stories_persisted": 8
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 22,
+        "candidates_scored": 22,
+        "candidates_submitted": 15,
+        "capped_out": 6,
+        "cycle_index": 2,
+        "league_id": 1451,
+        "phase": "TRADE_DEADLINE",
+        "profiles_published": 3,
+        "season": 2028,
+        "stories_persisted": 9
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 20,
+        "candidates_scored": 20,
+        "candidates_submitted": 15,
+        "capped_out": 5,
+        "cycle_index": 3,
+        "league_id": 1451,
+        "phase": "TRADE_DEADLINE",
+        "profiles_published": 3,
+        "season": 2028,
+        "stories_persisted": 10
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 82,
+        "candidates_scored": 82,
+        "candidates_submitted": 8,
+        "capped_out": 0,
+        "cycle_index": 4,
+        "league_id": 1451,
+        "phase": "DRAFT_LOTTERY",
+        "profiles_published": 3,
+        "season": 2028,
+        "stories_persisted": 8
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 72,
+        "candidates_scored": 72,
+        "candidates_submitted": 11,
+        "capped_out": 5,
+        "cycle_index": 5,
+        "league_id": 1451,
+        "phase": "DRAFT",
+        "profiles_published": 3,
+        "season": 2028,
+        "stories_persisted": 6
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 72,
+        "candidates_scored": 72,
+        "candidates_submitted": 9,
+        "capped_out": 3,
+        "cycle_index": 6,
+        "league_id": 1451,
+        "phase": "RESIGN_WINDOW",
+        "profiles_published": 3,
+        "season": 2028,
+        "stories_persisted": 6
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 72,
+        "candidates_scored": 72,
+        "candidates_submitted": 15,
+        "capped_out": 7,
+        "cycle_index": 7,
+        "league_id": 1451,
+        "phase": "FREE_AGENCY",
+        "profiles_published": 3,
+        "season": 2028,
+        "stories_persisted": 8
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 72,
+        "candidates_scored": 72,
+        "candidates_submitted": 8,
+        "capped_out": 3,
+        "cycle_index": 8,
+        "league_id": 1451,
+        "phase": "WAIVERS",
+        "profiles_published": 3,
+        "season": 2028,
+        "stories_persisted": 5
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 0,
+        "candidates_scored": 0,
+        "candidates_submitted": 3,
+        "capped_out": 0,
+        "cycle_index": 0,
+        "league_id": 1451,
+        "phase": "PRESEASON",
+        "profiles_published": 3,
+        "season": 2029,
+        "stories_persisted": 3
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 28,
+        "candidates_scored": 28,
+        "candidates_submitted": 11,
+        "capped_out": 3,
+        "cycle_index": 1,
+        "league_id": 1451,
+        "phase": "REGULAR_SEASON",
+        "profiles_published": 3,
+        "season": 2029,
+        "stories_persisted": 8
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 47,
+        "candidates_scored": 47,
+        "candidates_submitted": 15,
+        "capped_out": 4,
+        "cycle_index": 2,
+        "league_id": 1451,
+        "phase": "TRADE_DEADLINE",
+        "profiles_published": 3,
+        "season": 2029,
+        "stories_persisted": 11
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 36,
+        "candidates_scored": 36,
+        "candidates_submitted": 15,
+        "capped_out": 3,
+        "cycle_index": 3,
+        "league_id": 1451,
+        "phase": "TRADE_DEADLINE",
+        "profiles_published": 3,
+        "season": 2029,
+        "stories_persisted": 12
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 100,
+        "candidates_scored": 100,
+        "candidates_submitted": 8,
+        "capped_out": 1,
+        "cycle_index": 4,
+        "league_id": 1451,
+        "phase": "DRAFT_LOTTERY",
+        "profiles_published": 3,
+        "season": 2029,
+        "stories_persisted": 7
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 93,
+        "candidates_scored": 93,
+        "candidates_submitted": 11,
+        "capped_out": 3,
+        "cycle_index": 5,
+        "league_id": 1451,
+        "phase": "DRAFT",
+        "profiles_published": 3,
+        "season": 2029,
+        "stories_persisted": 8
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 93,
+        "candidates_scored": 93,
+        "candidates_submitted": 9,
+        "capped_out": 3,
+        "cycle_index": 6,
+        "league_id": 1451,
+        "phase": "RESIGN_WINDOW",
+        "profiles_published": 3,
+        "season": 2029,
+        "stories_persisted": 6
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 93,
+        "candidates_scored": 93,
+        "candidates_submitted": 15,
+        "capped_out": 2,
+        "cycle_index": 7,
+        "league_id": 1451,
+        "phase": "FREE_AGENCY",
+        "profiles_published": 3,
+        "season": 2029,
+        "stories_persisted": 13
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 93,
+        "candidates_scored": 93,
+        "candidates_submitted": 8,
+        "capped_out": 2,
+        "cycle_index": 8,
+        "league_id": 1451,
+        "phase": "WAIVERS",
+        "profiles_published": 3,
+        "season": 2029,
+        "stories_persisted": 6
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 0,
+        "candidates_scored": 0,
+        "candidates_submitted": 3,
+        "capped_out": 0,
+        "cycle_index": 0,
+        "league_id": 1451,
+        "phase": "PRESEASON",
+        "profiles_published": 3,
+        "season": 2030,
+        "stories_persisted": 3
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 28,
+        "candidates_scored": 28,
+        "candidates_submitted": 11,
+        "capped_out": 3,
+        "cycle_index": 1,
+        "league_id": 1451,
+        "phase": "REGULAR_SEASON",
+        "profiles_published": 3,
+        "season": 2030,
+        "stories_persisted": 8
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 64,
+        "candidates_scored": 64,
+        "candidates_submitted": 15,
+        "capped_out": 2,
+        "cycle_index": 2,
+        "league_id": 1451,
+        "phase": "TRADE_DEADLINE",
+        "profiles_published": 3,
+        "season": 2030,
+        "stories_persisted": 13
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 64,
+        "candidates_scored": 64,
+        "candidates_submitted": 15,
+        "capped_out": 2,
+        "cycle_index": 3,
+        "league_id": 1451,
+        "phase": "TRADE_DEADLINE",
+        "profiles_published": 3,
+        "season": 2030,
+        "stories_persisted": 13
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 126,
+        "candidates_scored": 126,
+        "candidates_submitted": 8,
+        "capped_out": 0,
+        "cycle_index": 4,
+        "league_id": 1451,
+        "phase": "DRAFT_LOTTERY",
+        "profiles_published": 3,
+        "season": 2030,
+        "stories_persisted": 8
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 115,
+        "candidates_scored": 115,
+        "candidates_submitted": 11,
+        "capped_out": 2,
+        "cycle_index": 5,
+        "league_id": 1451,
+        "phase": "DRAFT",
+        "profiles_published": 3,
+        "season": 2030,
+        "stories_persisted": 9
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 115,
+        "candidates_scored": 115,
+        "candidates_submitted": 9,
+        "capped_out": 1,
+        "cycle_index": 6,
+        "league_id": 1451,
+        "phase": "RESIGN_WINDOW",
+        "profiles_published": 3,
+        "season": 2030,
+        "stories_persisted": 8
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 115,
+        "candidates_scored": 115,
+        "candidates_submitted": 15,
+        "capped_out": 2,
+        "cycle_index": 7,
+        "league_id": 1451,
+        "phase": "FREE_AGENCY",
+        "profiles_published": 3,
+        "season": 2030,
+        "stories_persisted": 13
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 115,
+        "candidates_scored": 115,
+        "candidates_submitted": 8,
+        "capped_out": 0,
+        "cycle_index": 8,
+        "league_id": 1451,
+        "phase": "WAIVERS",
+        "profiles_published": 3,
+        "season": 2030,
+        "stories_persisted": 8
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 0,
+        "candidates_scored": 0,
+        "candidates_submitted": 3,
+        "capped_out": 0,
+        "cycle_index": 0,
+        "league_id": 1451,
+        "phase": "PRESEASON",
+        "profiles_published": 3,
+        "season": 2031,
+        "stories_persisted": 3
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 26,
+        "candidates_scored": 26,
+        "candidates_submitted": 11,
+        "capped_out": 3,
+        "cycle_index": 1,
+        "league_id": 1451,
+        "phase": "REGULAR_SEASON",
+        "profiles_published": 3,
+        "season": 2031,
+        "stories_persisted": 8
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 56,
+        "candidates_scored": 56,
+        "candidates_submitted": 15,
+        "capped_out": 1,
+        "cycle_index": 2,
+        "league_id": 1451,
+        "phase": "TRADE_DEADLINE",
+        "profiles_published": 3,
+        "season": 2031,
+        "stories_persisted": 14
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 54,
+        "candidates_scored": 54,
+        "candidates_submitted": 15,
+        "capped_out": 4,
+        "cycle_index": 3,
+        "league_id": 1451,
+        "phase": "TRADE_DEADLINE",
+        "profiles_published": 3,
+        "season": 2031,
+        "stories_persisted": 11
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 111,
+        "candidates_scored": 111,
+        "candidates_submitted": 8,
+        "capped_out": 1,
+        "cycle_index": 4,
+        "league_id": 1451,
+        "phase": "DRAFT_LOTTERY",
+        "profiles_published": 3,
+        "season": 2031,
+        "stories_persisted": 7
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 102,
+        "candidates_scored": 102,
+        "candidates_submitted": 11,
+        "capped_out": 1,
+        "cycle_index": 5,
+        "league_id": 1451,
+        "phase": "DRAFT",
+        "profiles_published": 3,
+        "season": 2031,
+        "stories_persisted": 10
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 102,
+        "candidates_scored": 102,
+        "candidates_submitted": 9,
+        "capped_out": 0,
+        "cycle_index": 6,
+        "league_id": 1451,
+        "phase": "RESIGN_WINDOW",
+        "profiles_published": 3,
+        "season": 2031,
+        "stories_persisted": 9
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 102,
+        "candidates_scored": 102,
+        "candidates_submitted": 15,
+        "capped_out": 2,
+        "cycle_index": 7,
+        "league_id": 1451,
+        "phase": "FREE_AGENCY",
+        "profiles_published": 3,
+        "season": 2031,
+        "stories_persisted": 13
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 102,
+        "candidates_scored": 102,
+        "candidates_submitted": 8,
+        "capped_out": 0,
+        "cycle_index": 8,
+        "league_id": 1451,
+        "phase": "WAIVERS",
+        "profiles_published": 3,
+        "season": 2031,
+        "stories_persisted": 8
+      }
+    ],
+    "fallback_stories": 182,
+    "stories_total": 405
+  },
+  "declared_fallback_weight_share": 0.3333333333333333,
+  "generated_at": "2026-09-23T17:21:57.016289+00:00",
+  "league_rng_seed": 424242,
+  "leagues": 1,
+  "library_path": "seeds\\media_phrases.json",
+  "library_sha": "ed502b4d5590e87b4f468ffef7ab84ce37b5ea18112be6e1184c1c5aca511796",
+  "live": {
+    "by_kind": {
+      "milestone": {
+        "fallback_stories": 21,
+        "stories": 54
+      },
+      "player_unrest": {
+        "fallback_stories": 80,
+        "stories": 80
+      },
+      "rookie_watch": {
+        "fallback_stories": 4,
+        "stories": 7
+      },
+      "standings_collapse": {
+        "fallback_stories": 20,
+        "stories": 46
+      },
+      "standings_surge": {
+        "fallback_stories": 12,
+        "stories": 35
+      },
+      "streak": {
+        "fallback_stories": 8,
+        "stories": 21
+      },
+      "team_profile": {
+        "fallback_stories": 67,
+        "stories": 162
+      }
+    },
+    "by_pair_depth": {
+      "-1": {
+        "fallback_selections": 24,
+        "selections": 54,
+        "trigger_held_fallback_selections": 5,
+        "trigger_held_selections": 35,
+        "ungated_kind_fallback_selections": 5,
+        "ungated_kind_selections": 24
+      },
+      "-2": {
+        "fallback_selections": 11,
+        "selections": 16,
+        "trigger_held_fallback_selections": 0,
+        "trigger_held_selections": 5,
+        "ungated_kind_fallback_selections": 0,
+        "ungated_kind_selections": 5
+      },
+      "-3": {
+        "fallback_selections": 7,
+        "selections": 7,
+        "trigger_held_fallback_selections": 0,
+        "trigger_held_selections": 0,
+        "ungated_kind_fallback_selections": 0,
+        "ungated_kind_selections": 0
+      },
+      "-4": {
+        "fallback_selections": 7,
+        "selections": 7,
+        "trigger_held_fallback_selections": 0,
+        "trigger_held_selections": 0,
+        "ungated_kind_fallback_selections": 0,
+        "ungated_kind_selections": 0
+      },
+      "0": {
+        "fallback_selections": 117,
+        "selections": 256,
+        "trigger_held_fallback_selections": 78,
+        "trigger_held_selections": 217,
+        "ungated_kind_fallback_selections": 53,
+        "ungated_kind_selections": 144
+      },
+      "1": {
+        "fallback_selections": 35,
+        "selections": 52,
+        "trigger_held_fallback_selections": 35,
+        "trigger_held_selections": 52,
+        "ungated_kind_fallback_selections": 24,
+        "ungated_kind_selections": 38
+      },
+      "2": {
+        "fallback_selections": 11,
+        "selections": 13,
+        "trigger_held_fallback_selections": 11,
+        "trigger_held_selections": 13,
+        "ungated_kind_fallback_selections": 10,
+        "ungated_kind_selections": 12
+      }
+    },
+    "by_voice": {
+      "analyst": {
+        "fallback_stories": 15,
+        "stories": 31
+      },
+      "beat_writer": {
+        "fallback_stories": 84,
+        "stories": 210
+      },
+      "historian": {
+        "fallback_stories": 17,
+        "stories": 45
+      },
+      "hot_take": {
+        "fallback_stories": 35,
+        "stories": 58
+      },
+      "insider": {
+        "fallback_stories": 61,
+        "stories": 61
+      }
+    },
+    "by_voice_kind_template": {
+      "analyst": {
+        "milestone": {
+          "analyst_milestone": 12,
+          "fallback_milestone": 10
+        },
+        "rookie_watch": {
+          "fallback_rookie_watch": 2
+        },
+        "streak": {
+          "analyst_streak_slide": 2,
+          "analyst_streak_surge": 2,
+          "fallback_streak": 3
+        }
+      },
+      "beat_writer": {
+        "standings_collapse": {
+          "beat_writer_standings_collapse_big": 3,
+          "fallback_standings_collapse": 4
+        },
+        "standings_surge": {
+          "beat_writer_standings_surge_big": 23,
+          "fallback_standings_surge": 12
+        },
+        "streak": {
+          "beat_writer_streak_loss": 3,
+          "beat_writer_streak_win": 2,
+          "fallback_streak": 1
+        },
+        "team_profile": {
+          "dedicated_beat_writer_team_profile": 95,
+          "fallback_team_profile": 67
+        }
+      },
+      "historian": {
+        "milestone": {
+          "fallback_milestone": 11,
+          "historian_milestone": 21
+        },
+        "rookie_watch": {
+          "fallback_rookie_watch": 2,
+          "historian_rookie_watch": 3
+        },
+        "streak": {
+          "fallback_streak": 4,
+          "historian_streak_infamous": 3,
+          "historian_streak_notable": 1
+        }
+      },
+      "hot_take": {
+        "player_unrest": {
+          "fallback_player_unrest": 19
+        },
+        "standings_collapse": {
+          "fallback_standings_collapse": 16,
+          "hot_take_standings_collapse_freefall": 23
+        }
+      },
+      "insider": {
+        "player_unrest": {
+          "fallback_player_unrest": 61
+        }
+      }
+    },
+    "cycles": [
+      {
+        "band_published": 0,
+        "candidates_above_floor": 0,
+        "candidates_scored": 0,
+        "candidates_submitted": 3,
+        "capped_out": 0,
+        "cycle_index": 0,
+        "league_id": 1451,
+        "phase": "PRESEASON",
+        "profiles_published": 3,
+        "season": 2026,
+        "stories_persisted": 3
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 29,
+        "candidates_scored": 29,
+        "candidates_submitted": 11,
+        "capped_out": 3,
+        "cycle_index": 1,
+        "league_id": 1451,
+        "phase": "REGULAR_SEASON",
+        "profiles_published": 3,
+        "season": 2026,
+        "stories_persisted": 8
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 12,
+        "candidates_scored": 12,
+        "candidates_submitted": 15,
+        "capped_out": 7,
+        "cycle_index": 2,
+        "league_id": 1451,
+        "phase": "TRADE_DEADLINE",
+        "profiles_published": 3,
+        "season": 2026,
+        "stories_persisted": 8
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 7,
+        "candidates_scored": 7,
+        "candidates_submitted": 10,
+        "capped_out": 2,
+        "cycle_index": 3,
+        "league_id": 1451,
+        "phase": "TRADE_DEADLINE",
+        "profiles_published": 3,
+        "season": 2026,
+        "stories_persisted": 8
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 12,
+        "candidates_scored": 12,
+        "candidates_submitted": 8,
+        "capped_out": 1,
+        "cycle_index": 4,
+        "league_id": 1451,
+        "phase": "DRAFT_LOTTERY",
+        "profiles_published": 3,
+        "season": 2026,
+        "stories_persisted": 7
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 0,
+        "candidates_scored": 0,
+        "candidates_submitted": 3,
+        "capped_out": 0,
+        "cycle_index": 5,
+        "league_id": 1451,
+        "phase": "DRAFT",
+        "profiles_published": 3,
+        "season": 2026,
+        "stories_persisted": 3
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 0,
+        "candidates_scored": 0,
+        "candidates_submitted": 3,
+        "capped_out": 0,
+        "cycle_index": 6,
+        "league_id": 1451,
+        "phase": "RESIGN_WINDOW",
+        "profiles_published": 3,
+        "season": 2026,
+        "stories_persisted": 3
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 0,
+        "candidates_scored": 0,
+        "candidates_submitted": 3,
+        "capped_out": 0,
+        "cycle_index": 7,
+        "league_id": 1451,
+        "phase": "FREE_AGENCY",
+        "profiles_published": 3,
+        "season": 2026,
+        "stories_persisted": 3
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 0,
+        "candidates_scored": 0,
+        "candidates_submitted": 3,
+        "capped_out": 0,
+        "cycle_index": 8,
+        "league_id": 1451,
+        "phase": "WAIVERS",
+        "profiles_published": 3,
+        "season": 2026,
+        "stories_persisted": 3
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 0,
+        "candidates_scored": 0,
+        "candidates_submitted": 3,
+        "capped_out": 0,
+        "cycle_index": 0,
+        "league_id": 1451,
+        "phase": "PRESEASON",
+        "profiles_published": 3,
+        "season": 2027,
+        "stories_persisted": 3
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 27,
+        "candidates_scored": 27,
+        "candidates_submitted": 11,
+        "capped_out": 3,
+        "cycle_index": 1,
+        "league_id": 1451,
+        "phase": "REGULAR_SEASON",
+        "profiles_published": 3,
+        "season": 2027,
+        "stories_persisted": 8
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 11,
+        "candidates_scored": 11,
+        "candidates_submitted": 14,
+        "capped_out": 6,
+        "cycle_index": 2,
+        "league_id": 1451,
+        "phase": "TRADE_DEADLINE",
+        "profiles_published": 3,
+        "season": 2027,
+        "stories_persisted": 8
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 10,
+        "candidates_scored": 10,
+        "candidates_submitted": 13,
+        "capped_out": 6,
+        "cycle_index": 3,
+        "league_id": 1451,
+        "phase": "TRADE_DEADLINE",
+        "profiles_published": 3,
+        "season": 2027,
+        "stories_persisted": 7
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 77,
+        "candidates_scored": 77,
+        "candidates_submitted": 8,
+        "capped_out": 0,
+        "cycle_index": 4,
+        "league_id": 1451,
+        "phase": "DRAFT_LOTTERY",
+        "profiles_published": 3,
+        "season": 2027,
+        "stories_persisted": 8
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 63,
+        "candidates_scored": 63,
+        "candidates_submitted": 11,
+        "capped_out": 5,
+        "cycle_index": 5,
+        "league_id": 1451,
+        "phase": "DRAFT",
+        "profiles_published": 3,
+        "season": 2027,
+        "stories_persisted": 6
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 63,
+        "candidates_scored": 63,
+        "candidates_submitted": 9,
+        "capped_out": 4,
+        "cycle_index": 6,
+        "league_id": 1451,
+        "phase": "RESIGN_WINDOW",
+        "profiles_published": 3,
+        "season": 2027,
+        "stories_persisted": 5
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 63,
+        "candidates_scored": 63,
+        "candidates_submitted": 15,
+        "capped_out": 9,
+        "cycle_index": 7,
+        "league_id": 1451,
+        "phase": "FREE_AGENCY",
+        "profiles_published": 3,
+        "season": 2027,
+        "stories_persisted": 6
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 63,
+        "candidates_scored": 63,
+        "candidates_submitted": 8,
+        "capped_out": 3,
+        "cycle_index": 8,
+        "league_id": 1451,
+        "phase": "WAIVERS",
+        "profiles_published": 3,
+        "season": 2027,
+        "stories_persisted": 5
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 0,
+        "candidates_scored": 0,
+        "candidates_submitted": 3,
+        "capped_out": 0,
+        "cycle_index": 0,
+        "league_id": 1451,
+        "phase": "PRESEASON",
+        "profiles_published": 3,
+        "season": 2028,
+        "stories_persisted": 3
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 31,
+        "candidates_scored": 31,
+        "candidates_submitted": 11,
+        "capped_out": 3,
+        "cycle_index": 1,
+        "league_id": 1451,
+        "phase": "REGULAR_SEASON",
+        "profiles_published": 3,
+        "season": 2028,
+        "stories_persisted": 8
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 22,
+        "candidates_scored": 22,
+        "candidates_submitted": 15,
+        "capped_out": 6,
+        "cycle_index": 2,
+        "league_id": 1451,
+        "phase": "TRADE_DEADLINE",
+        "profiles_published": 3,
+        "season": 2028,
+        "stories_persisted": 9
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 20,
+        "candidates_scored": 20,
+        "candidates_submitted": 15,
+        "capped_out": 5,
+        "cycle_index": 3,
+        "league_id": 1451,
+        "phase": "TRADE_DEADLINE",
+        "profiles_published": 3,
+        "season": 2028,
+        "stories_persisted": 10
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 82,
+        "candidates_scored": 82,
+        "candidates_submitted": 8,
+        "capped_out": 0,
+        "cycle_index": 4,
+        "league_id": 1451,
+        "phase": "DRAFT_LOTTERY",
+        "profiles_published": 3,
+        "season": 2028,
+        "stories_persisted": 8
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 72,
+        "candidates_scored": 72,
+        "candidates_submitted": 11,
+        "capped_out": 5,
+        "cycle_index": 5,
+        "league_id": 1451,
+        "phase": "DRAFT",
+        "profiles_published": 3,
+        "season": 2028,
+        "stories_persisted": 6
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 72,
+        "candidates_scored": 72,
+        "candidates_submitted": 9,
+        "capped_out": 3,
+        "cycle_index": 6,
+        "league_id": 1451,
+        "phase": "RESIGN_WINDOW",
+        "profiles_published": 3,
+        "season": 2028,
+        "stories_persisted": 6
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 72,
+        "candidates_scored": 72,
+        "candidates_submitted": 15,
+        "capped_out": 7,
+        "cycle_index": 7,
+        "league_id": 1451,
+        "phase": "FREE_AGENCY",
+        "profiles_published": 3,
+        "season": 2028,
+        "stories_persisted": 8
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 72,
+        "candidates_scored": 72,
+        "candidates_submitted": 8,
+        "capped_out": 3,
+        "cycle_index": 8,
+        "league_id": 1451,
+        "phase": "WAIVERS",
+        "profiles_published": 3,
+        "season": 2028,
+        "stories_persisted": 5
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 0,
+        "candidates_scored": 0,
+        "candidates_submitted": 3,
+        "capped_out": 0,
+        "cycle_index": 0,
+        "league_id": 1451,
+        "phase": "PRESEASON",
+        "profiles_published": 3,
+        "season": 2029,
+        "stories_persisted": 3
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 28,
+        "candidates_scored": 28,
+        "candidates_submitted": 11,
+        "capped_out": 3,
+        "cycle_index": 1,
+        "league_id": 1451,
+        "phase": "REGULAR_SEASON",
+        "profiles_published": 3,
+        "season": 2029,
+        "stories_persisted": 8
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 47,
+        "candidates_scored": 47,
+        "candidates_submitted": 15,
+        "capped_out": 4,
+        "cycle_index": 2,
+        "league_id": 1451,
+        "phase": "TRADE_DEADLINE",
+        "profiles_published": 3,
+        "season": 2029,
+        "stories_persisted": 11
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 36,
+        "candidates_scored": 36,
+        "candidates_submitted": 15,
+        "capped_out": 3,
+        "cycle_index": 3,
+        "league_id": 1451,
+        "phase": "TRADE_DEADLINE",
+        "profiles_published": 3,
+        "season": 2029,
+        "stories_persisted": 12
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 100,
+        "candidates_scored": 100,
+        "candidates_submitted": 8,
+        "capped_out": 1,
+        "cycle_index": 4,
+        "league_id": 1451,
+        "phase": "DRAFT_LOTTERY",
+        "profiles_published": 3,
+        "season": 2029,
+        "stories_persisted": 7
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 93,
+        "candidates_scored": 93,
+        "candidates_submitted": 11,
+        "capped_out": 3,
+        "cycle_index": 5,
+        "league_id": 1451,
+        "phase": "DRAFT",
+        "profiles_published": 3,
+        "season": 2029,
+        "stories_persisted": 8
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 93,
+        "candidates_scored": 93,
+        "candidates_submitted": 9,
+        "capped_out": 3,
+        "cycle_index": 6,
+        "league_id": 1451,
+        "phase": "RESIGN_WINDOW",
+        "profiles_published": 3,
+        "season": 2029,
+        "stories_persisted": 6
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 93,
+        "candidates_scored": 93,
+        "candidates_submitted": 15,
+        "capped_out": 2,
+        "cycle_index": 7,
+        "league_id": 1451,
+        "phase": "FREE_AGENCY",
+        "profiles_published": 3,
+        "season": 2029,
+        "stories_persisted": 13
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 93,
+        "candidates_scored": 93,
+        "candidates_submitted": 8,
+        "capped_out": 2,
+        "cycle_index": 8,
+        "league_id": 1451,
+        "phase": "WAIVERS",
+        "profiles_published": 3,
+        "season": 2029,
+        "stories_persisted": 6
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 0,
+        "candidates_scored": 0,
+        "candidates_submitted": 3,
+        "capped_out": 0,
+        "cycle_index": 0,
+        "league_id": 1451,
+        "phase": "PRESEASON",
+        "profiles_published": 3,
+        "season": 2030,
+        "stories_persisted": 3
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 28,
+        "candidates_scored": 28,
+        "candidates_submitted": 11,
+        "capped_out": 3,
+        "cycle_index": 1,
+        "league_id": 1451,
+        "phase": "REGULAR_SEASON",
+        "profiles_published": 3,
+        "season": 2030,
+        "stories_persisted": 8
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 64,
+        "candidates_scored": 64,
+        "candidates_submitted": 15,
+        "capped_out": 2,
+        "cycle_index": 2,
+        "league_id": 1451,
+        "phase": "TRADE_DEADLINE",
+        "profiles_published": 3,
+        "season": 2030,
+        "stories_persisted": 13
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 64,
+        "candidates_scored": 64,
+        "candidates_submitted": 15,
+        "capped_out": 2,
+        "cycle_index": 3,
+        "league_id": 1451,
+        "phase": "TRADE_DEADLINE",
+        "profiles_published": 3,
+        "season": 2030,
+        "stories_persisted": 13
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 126,
+        "candidates_scored": 126,
+        "candidates_submitted": 8,
+        "capped_out": 0,
+        "cycle_index": 4,
+        "league_id": 1451,
+        "phase": "DRAFT_LOTTERY",
+        "profiles_published": 3,
+        "season": 2030,
+        "stories_persisted": 8
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 115,
+        "candidates_scored": 115,
+        "candidates_submitted": 11,
+        "capped_out": 2,
+        "cycle_index": 5,
+        "league_id": 1451,
+        "phase": "DRAFT",
+        "profiles_published": 3,
+        "season": 2030,
+        "stories_persisted": 9
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 115,
+        "candidates_scored": 115,
+        "candidates_submitted": 9,
+        "capped_out": 1,
+        "cycle_index": 6,
+        "league_id": 1451,
+        "phase": "RESIGN_WINDOW",
+        "profiles_published": 3,
+        "season": 2030,
+        "stories_persisted": 8
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 115,
+        "candidates_scored": 115,
+        "candidates_submitted": 15,
+        "capped_out": 2,
+        "cycle_index": 7,
+        "league_id": 1451,
+        "phase": "FREE_AGENCY",
+        "profiles_published": 3,
+        "season": 2030,
+        "stories_persisted": 13
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 115,
+        "candidates_scored": 115,
+        "candidates_submitted": 8,
+        "capped_out": 0,
+        "cycle_index": 8,
+        "league_id": 1451,
+        "phase": "WAIVERS",
+        "profiles_published": 3,
+        "season": 2030,
+        "stories_persisted": 8
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 0,
+        "candidates_scored": 0,
+        "candidates_submitted": 3,
+        "capped_out": 0,
+        "cycle_index": 0,
+        "league_id": 1451,
+        "phase": "PRESEASON",
+        "profiles_published": 3,
+        "season": 2031,
+        "stories_persisted": 3
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 26,
+        "candidates_scored": 26,
+        "candidates_submitted": 11,
+        "capped_out": 3,
+        "cycle_index": 1,
+        "league_id": 1451,
+        "phase": "REGULAR_SEASON",
+        "profiles_published": 3,
+        "season": 2031,
+        "stories_persisted": 8
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 56,
+        "candidates_scored": 56,
+        "candidates_submitted": 15,
+        "capped_out": 1,
+        "cycle_index": 2,
+        "league_id": 1451,
+        "phase": "TRADE_DEADLINE",
+        "profiles_published": 3,
+        "season": 2031,
+        "stories_persisted": 14
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 54,
+        "candidates_scored": 54,
+        "candidates_submitted": 15,
+        "capped_out": 4,
+        "cycle_index": 3,
+        "league_id": 1451,
+        "phase": "TRADE_DEADLINE",
+        "profiles_published": 3,
+        "season": 2031,
+        "stories_persisted": 11
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 111,
+        "candidates_scored": 111,
+        "candidates_submitted": 8,
+        "capped_out": 1,
+        "cycle_index": 4,
+        "league_id": 1451,
+        "phase": "DRAFT_LOTTERY",
+        "profiles_published": 3,
+        "season": 2031,
+        "stories_persisted": 7
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 102,
+        "candidates_scored": 102,
+        "candidates_submitted": 11,
+        "capped_out": 1,
+        "cycle_index": 5,
+        "league_id": 1451,
+        "phase": "DRAFT",
+        "profiles_published": 3,
+        "season": 2031,
+        "stories_persisted": 10
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 102,
+        "candidates_scored": 102,
+        "candidates_submitted": 9,
+        "capped_out": 0,
+        "cycle_index": 6,
+        "league_id": 1451,
+        "phase": "RESIGN_WINDOW",
+        "profiles_published": 3,
+        "season": 2031,
+        "stories_persisted": 9
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 102,
+        "candidates_scored": 102,
+        "candidates_submitted": 15,
+        "capped_out": 2,
+        "cycle_index": 7,
+        "league_id": 1451,
+        "phase": "FREE_AGENCY",
+        "profiles_published": 3,
+        "season": 2031,
+        "stories_persisted": 13
+      },
+      {
+        "band_published": 0,
+        "candidates_above_floor": 102,
+        "candidates_scored": 102,
+        "candidates_submitted": 8,
+        "capped_out": 0,
+        "cycle_index": 8,
+        "league_id": 1451,
+        "phase": "WAIVERS",
+        "profiles_published": 3,
+        "season": 2031,
+        "stories_persisted": 8
+      }
+    ],
+    "fallback_stories": 212,
+    "stories_total": 405
+  },
+  "persona_exclusivity_floor": 0.5,
+  "repeat_penalty": 0.3,
+  "salience_floor": 0.3,
+  "schema_version": 1,
+  "seasons": 6,
+  "seed_root": "generate_media_corpus:424242",
+  "top_k_per_cycle": 12,
+  "ungated_kinds": [
+    "award_race",
+    "cold_stretch",
+    "defensive_standout",
+    "holdout_watch",
+    "hot_streak",
+    "milestone",
+    "revenge_game",
+    "rivalry_matchup",
+    "rookie_watch",
+    "roster_construction",
+    "scheme_identity",
+    "signing_reaction",
+    "team_profile",
+    "trade_broken_promise",
+    "trade_fallout",
+    "trade_market_watch"
+  ]
+}

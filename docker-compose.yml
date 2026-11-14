@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: dba2
+      POSTGRES_PASSWORD: dba2
+      POSTGRES_DB: dba2
+    ports:
+      # Different host port than v1's 5434 so both can run at once.
+      - "5435:5432"
+    volumes:
+      - dba2_pgdata:/var/lib/postgresql/data
+
+volumes:
+  dba2_pgdata:

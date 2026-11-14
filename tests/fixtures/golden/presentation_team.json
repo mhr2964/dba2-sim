@@ -1,0 +1,29 @@
+{
+  "title": "Boston Celtics",
+  "description": "```\nPos  OVR  Player\nC     91  First2 Last2\nPG    85  First1 Last1\nSF    78  First3 Last3\n```",
+  "fields": [
+    {
+      "name": "Record",
+      "value": "50-20 (W3), #2",
+      "inline": true
+    },
+    {
+      "name": "Conference / Division",
+      "value": "East / Atlantic",
+      "inline": true
+    },
+    {
+      "name": "Cap Room",
+      "value": "Used: 132,000,000 / Cap: 140,000,000\nRoom: 8,000,000",
+      "inline": true
+    },
+    {
+      "name": "Timeline",
+      "value": "win_now (auto)",
+      "inline": true
+    }
+  ],
+  "color": 5793266,
+  "footer": "",
+  "author": ""
+}

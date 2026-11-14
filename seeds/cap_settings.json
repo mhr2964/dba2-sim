@@ -1,0 +1,21 @@
+{
+  "_note": "League-independent seed data for league_service.create_league (phase-0-foundation.md §7.2, Decision 8). Real 2025-26 NBA CBA figures, sourced 2026-08-23 from Hoops Rumors' 2025-26 cap/tax/apron reporting and official NBA PR salary-cap memos. This block is loaded once per league_service.create_league call and written as that league's league_cap_settings row for current_season -- it is a single 'current' constants block, not a multi-year history table; a league created next year picks up an updated file, not a migration (§7.2). max_pct_*/supermax_pct and raise_pct_bird/raise_pct_non_bird are stable CBA rules (not season-specific), included here anyway since league_cap_settings is a per-season row and every column is NOT NULL. min_salary is the approximate 2025-26 rookie/0-years-of-service minimum -- a single scalar can't express the real sliding veteran-minimum scale by years of service, consistent with rookie_scale's own '2024-25 approximation' framing (migration 003) elsewhere in this simplified-but-real model (§10 open question 2). mle_amount is the non-taxpayer MLE.",
+
+  "cap_settings": {
+    "salary_cap": 154647000,
+    "luxury_tax": 187895000,
+    "apron_1": 195945000,
+    "apron_2": 207824000,
+    "max_pct_0_6": 25,
+    "max_pct_7_9": 30,
+    "max_pct_10_plus": 35,
+    "supermax_pct": 35,
+    "min_salary": 1272870,
+    "mle_amount": 14104000,
+    "bi_annual_amount": 5130000,
+    "raise_pct_bird": 8,
+    "raise_pct_non_bird": 5,
+    "roster_min": 14,
+    "roster_max": 15
+  }
+}

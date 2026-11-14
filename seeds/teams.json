@@ -1,0 +1,41 @@
+{
+  "_note": "League-independent seed data for league_service.create_league (phase-0-foundation.md §7.2). Real 2025-26 NBA teams/conferences/divisions per the vision doc's open question 3, resolved 2026-08-22: seed data reflects the real league, not fictional placeholders. `league_id` is NOT included here -- it's assigned by team_repo.create_team at league-creation time. home_market_size scale: SMALLINT, 1 (smallest) to 5 (largest) media-market tier, a simple placeholder scale invented for Phase 0 since §4.2 names the column but not a scale -- a rough media-market-size read (metro population + national NBA following), not a design input anything downstream depends on yet: 5 = LAL/NYK/BOS/CHI/GSW; 4 = other big-market/second teams (BRK, LAC) plus PHI/TOR/MIA/DAL/HOU; 3 = mid-size markets; 2 = smaller markets; 1 = smallest (OKC/MEM/NOP). gm_philosophy/timeline: both placeholders -- §4.2 references 'the seven v1 philosophy keys' without enumerating them, and neither has a real-world answer at league-creation time. Every team defaults to team_repo.create_team's own established defaults ('tendency_respecter' / 'retool') rather than inventing a new value, so Phase 1+ gameplay is what gives these fields real meaning, not this seed file.",
+
+  "teams": [
+    { "code": "BOS", "name": "Celtics", "city": "Boston", "conference": "East", "division": "Atlantic", "home_market_size": 5, "gm_philosophy": "tendency_respecter", "timeline": "retool" },
+    { "code": "BRK", "name": "Nets", "city": "Brooklyn", "conference": "East", "division": "Atlantic", "home_market_size": 4, "gm_philosophy": "tendency_respecter", "timeline": "retool" },
+    { "code": "NYK", "name": "Knicks", "city": "New York", "conference": "East", "division": "Atlantic", "home_market_size": 5, "gm_philosophy": "tendency_respecter", "timeline": "retool" },
+    { "code": "PHI", "name": "76ers", "city": "Philadelphia", "conference": "East", "division": "Atlantic", "home_market_size": 4, "gm_philosophy": "tendency_respecter", "timeline": "retool" },
+    { "code": "TOR", "name": "Raptors", "city": "Toronto", "conference": "East", "division": "Atlantic", "home_market_size": 4, "gm_philosophy": "tendency_respecter", "timeline": "retool" },
+
+    { "code": "CHI", "name": "Bulls", "city": "Chicago", "conference": "East", "division": "Central", "home_market_size": 5, "gm_philosophy": "tendency_respecter", "timeline": "retool" },
+    { "code": "CLE", "name": "Cavaliers", "city": "Cleveland", "conference": "East", "division": "Central", "home_market_size": 3, "gm_philosophy": "tendency_respecter", "timeline": "retool" },
+    { "code": "DET", "name": "Pistons", "city": "Detroit", "conference": "East", "division": "Central", "home_market_size": 3, "gm_philosophy": "tendency_respecter", "timeline": "retool" },
+    { "code": "IND", "name": "Pacers", "city": "Indiana", "conference": "East", "division": "Central", "home_market_size": 2, "gm_philosophy": "tendency_respecter", "timeline": "retool" },
+    { "code": "MIL", "name": "Bucks", "city": "Milwaukee", "conference": "East", "division": "Central", "home_market_size": 2, "gm_philosophy": "tendency_respecter", "timeline": "retool" },
+
+    { "code": "ATL", "name": "Hawks", "city": "Atlanta", "conference": "East", "division": "Southeast", "home_market_size": 3, "gm_philosophy": "tendency_respecter", "timeline": "retool" },
+    { "code": "CHA", "name": "Hornets", "city": "Charlotte", "conference": "East", "division": "Southeast", "home_market_size": 2, "gm_philosophy": "tendency_respecter", "timeline": "retool" },
+    { "code": "MIA", "name": "Heat", "city": "Miami", "conference": "East", "division": "Southeast", "home_market_size": 4, "gm_philosophy": "tendency_respecter", "timeline": "retool" },
+    { "code": "ORL", "name": "Magic", "city": "Orlando", "conference": "East", "division": "Southeast", "home_market_size": 2, "gm_philosophy": "tendency_respecter", "timeline": "retool" },
+    { "code": "WAS", "name": "Wizards", "city": "Washington", "conference": "East", "division": "Southeast", "home_market_size": 3, "gm_philosophy": "tendency_respecter", "timeline": "retool" },
+
+    { "code": "DEN", "name": "Nuggets", "city": "Denver", "conference": "West", "division": "Northwest", "home_market_size": 3, "gm_philosophy": "tendency_respecter", "timeline": "retool" },
+    { "code": "MIN", "name": "Timberwolves", "city": "Minnesota", "conference": "West", "division": "Northwest", "home_market_size": 2, "gm_philosophy": "tendency_respecter", "timeline": "retool" },
+    { "code": "OKC", "name": "Thunder", "city": "Oklahoma City", "conference": "West", "division": "Northwest", "home_market_size": 1, "gm_philosophy": "tendency_respecter", "timeline": "retool" },
+    { "code": "POR", "name": "Trail Blazers", "city": "Portland", "conference": "West", "division": "Northwest", "home_market_size": 3, "gm_philosophy": "tendency_respecter", "timeline": "retool" },
+    { "code": "UTA", "name": "Jazz", "city": "Utah", "conference": "West", "division": "Northwest", "home_market_size": 2, "gm_philosophy": "tendency_respecter", "timeline": "retool" },
+
+    { "code": "GSW", "name": "Warriors", "city": "Golden State", "conference": "West", "division": "Pacific", "home_market_size": 5, "gm_philosophy": "tendency_respecter", "timeline": "retool" },
+    { "code": "LAC", "name": "Clippers", "city": "Los Angeles", "conference": "West", "division": "Pacific", "home_market_size": 4, "gm_philosophy": "tendency_respecter", "timeline": "retool" },
+    { "code": "LAL", "name": "Lakers", "city": "Los Angeles", "conference": "West", "division": "Pacific", "home_market_size": 5, "gm_philosophy": "tendency_respecter", "timeline": "retool" },
+    { "code": "PHX", "name": "Suns", "city": "Phoenix", "conference": "West", "division": "Pacific", "home_market_size": 3, "gm_philosophy": "tendency_respecter", "timeline": "retool" },
+    { "code": "SAC", "name": "Kings", "city": "Sacramento", "conference": "West", "division": "Pacific", "home_market_size": 3, "gm_philosophy": "tendency_respecter", "timeline": "retool" },
+
+    { "code": "DAL", "name": "Mavericks", "city": "Dallas", "conference": "West", "division": "Southwest", "home_market_size": 4, "gm_philosophy": "tendency_respecter", "timeline": "retool" },
+    { "code": "HOU", "name": "Rockets", "city": "Houston", "conference": "West", "division": "Southwest", "home_market_size": 4, "gm_philosophy": "tendency_respecter", "timeline": "retool" },
+    { "code": "MEM", "name": "Grizzlies", "city": "Memphis", "conference": "West", "division": "Southwest", "home_market_size": 1, "gm_philosophy": "tendency_respecter", "timeline": "retool" },
+    { "code": "NOP", "name": "Pelicans", "city": "New Orleans", "conference": "West", "division": "Southwest", "home_market_size": 1, "gm_philosophy": "tendency_respecter", "timeline": "retool" },
+    { "code": "SAS", "name": "Spurs", "city": "San Antonio", "conference": "West", "division": "Southwest", "home_market_size": 3, "gm_philosophy": "tendency_respecter", "timeline": "retool" }
+  ]
+}

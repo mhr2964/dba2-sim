@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dba2"
+version = "0.1.0"
+description = "Discord Basketball Association v2 — simulated NBA league bot"
+requires-python = ">=3.12"
+dependencies = [
+    "discord.py==2.7.1",
+    "asyncpg==0.31.0",
+    "alembic==1.19.1",
+    "python-dotenv==1.2.4",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==9.1.1",
+    "pytest-asyncio==1.4.0",
+    "ruff==0.16.4",
+]
+
+[tool.setuptools.packages.find]
+include = ["dba2*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+addopts = "-m 'not slow'"
+markers = [
+    "slow: full-season/expensive tests excluded from the default run (phase-1-simulation-engine.md §10) -- run explicitly with `pytest -m slow`.",
+    "xdist_group(name): pytest-xdist's own marker, registered here so it is known without xdist installed. Files that write scratch files into dba2/ or scan it carry xdist_group('source-tree') and must run under `--dist loadgroup` (tests/conftest.py refuses -n without it).",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

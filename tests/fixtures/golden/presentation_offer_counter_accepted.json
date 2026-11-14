@@ -1,0 +1,19 @@
+{
+  "title": "Trade offer #9: BOS to NYK",
+  "description": "**Boston Celtics** offered this to **New York Knicks**.\nProposed by <@555>.\nCounters offer #7.\nMade during TRADE_DEADLINE (season 2026). It expires when the league moves to a new phase.\nStatus: accepted.",
+  "fields": [
+    {
+      "name": "BOS sends",
+      "value": "Marcus Webb (SF, 74 OVR)\nJalen Hart (PG, 69 OVR)\n2027 round 1 pick (BOS)",
+      "inline": true
+    },
+    {
+      "name": "NYK sends",
+      "value": "Devin Ortiz (C, 81 OVR)",
+      "inline": true
+    }
+  ],
+  "color": 3066993,
+  "footer": "",
+  "author": ""
+}

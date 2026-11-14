@@ -1,0 +1,37 @@
+[2026-09-11 18:09:20] backfill starting: seasons 1997-1998
+[2026-09-11 18:10:30] season=1997: OK, 439 players -> 1997.json
+[2026-09-11 18:11:18] season=1998: OK, 440 players -> 1998.json
+[2026-09-11 18:11:18] backfill done: 2 ok, failed=[]
+[2026-09-11 18:11:35] backfill starting: seasons 1996-2025
+[2026-09-11 18:12:44] season=1996: OK, 441 players -> 1996.json
+[2026-09-11 18:13:52] season=1997: OK, 439 players -> 1997.json
+[2026-09-11 18:14:35] season=1998: OK, 440 players -> 1998.json
+[2026-09-11 18:15:56] season=1999: OK, 439 players -> 1999.json
+[2026-09-11 18:17:11] season=2000: OK, 441 players -> 2000.json
+[2026-09-11 18:18:20] season=2001: OK, 440 players -> 2001.json
+[2026-09-11 18:19:28] season=2002: OK, 428 players -> 2002.json
+[2026-09-11 18:20:38] season=2003: OK, 442 players -> 2003.json
+[2026-09-11 18:21:50] season=2004: OK, 464 players -> 2004.json
+[2026-09-11 18:23:04] season=2005: OK, 458 players -> 2005.json
+[2026-09-11 18:24:18] season=2006: OK, 458 players -> 2006.json
+[2026-09-11 18:25:31] season=2007: OK, 451 players -> 2007.json
+[2026-09-11 18:26:44] season=2008: OK, 445 players -> 2008.json
+[2026-09-11 18:27:56] season=2009: OK, 441 players -> 2009.json
+[2026-09-11 18:29:09] season=2010: OK, 452 players -> 2010.json
+[2026-09-11 18:30:19] season=2011: OK, 478 players -> 2011.json
+[2026-09-11 18:36:22] season=2012: OK, 468 players -> 2012.json
+[2026-09-11 18:44:06] season=2013: OK, 482 players -> 2013.json
+[2026-09-11 18:52:00] season=2014: OK, 492 players -> 2014.json
+[2026-09-11 18:59:41] season=2015: OK, 476 players -> 2015.json
+[2026-09-11 19:07:46] season=2016: OK, 486 players -> 2016.json
+[2026-09-11 19:15:53] season=2017: OK, 540 players -> 2017.json
+[2026-09-11 19:23:45] season=2018: FAILED -- TimeoutError: The read operation timed out
+[2026-09-11 19:30:42] season=2019: OK, 529 players -> 2019.json
+[2026-09-11 19:37:48] season=2020: OK, 540 players -> 2020.json
+[2026-09-11 19:44:21] resume: seasons [2018, 2021, 2023, 2024, 2025]
+[2026-09-11 19:52:13] season=2018: OK, 530 players -> 2018.json
+[2026-09-11 19:59:43] season=2021: OK, 605 players -> 2021.json
+[2026-09-11 20:08:22] season=2023: OK, 572 players -> 2023.json
+[2026-09-11 20:16:45] season=2024: OK, 569 players -> 2024.json
+[2026-09-11 20:25:02] season=2025: OK, 582 players -> 2025.json
+[2026-09-11 20:25:03] resume done: 5 ok, failed=[]

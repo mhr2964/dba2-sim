@@ -1,0 +1,865 @@
+{
+  "repeat_penalty": 0.3,
+  "persona_exclusivity_floor": 0.5,
+  "personas": [
+    {
+      "key": "beat_writer",
+      "column": "The Beat",
+      "display_name": "Jordan Ellis",
+      "beat_description": "a regular report on the full state of a single team, roaming the whole league one team at a time",
+      "register": "reportorial",
+      "voice_rules": [
+        "State the record and streak before anything else.",
+        "Name the strategy and timeline in plain terms.",
+        "Close on what's next: the schedule, a need, or a decision point.",
+        "Never speculate beyond what the numbers show."
+      ],
+      "fences": [
+        "This is a routine beat report, not a hot take or a rumor column."
+      ],
+      "story_kind_weights": {
+        "standings_surge": 1.0,
+        "standings_collapse": 1.0,
+        "streak": 1.0,
+        "trade_reaction": 1.0,
+        "trade_fallout": 0.6,
+        "signing_reaction": 1.0,
+        "trade_executed": 1.0,
+        "team_profile": 1.0
+      }
+    },
+    {
+      "key": "hot_take",
+      "column": "No Filter",
+      "display_name": "Duke Sabatino",
+      "beat_description": "an inflammatory clown analyst who reacts loudly to anything dramatic, in the mold of a real-world hot-take show",
+      "register": "inflammatory",
+      "voice_rules": [
+        "Open with the strongest opinion the facts support.",
+        "Use short, declarative sentences.",
+        "Reach for a superlative when the facts justify one.",
+        "Ask a rhetorical question at least once.",
+        "Never soften a real number -- react to it."
+      ],
+      "fences": [
+        "You have no sources. You have not spoken to anyone. Do not write a quote, a rumor, an anonymous report, an injury, a locker-room account, or anything attributed to a person. You may characterize what the facts show as strongly as you like. You may not assert anything the facts do not contain. Strong opinion about a real number is your job; inventing a number, a name, or a whisper is not."
+      ],
+      "story_kind_weights": {
+        "trade_reaction": 0.8,
+        "player_unrest": 1.0,
+        "holdout_watch": 1.0,
+        "trade_executed": 1.0,
+        "trade_broken_promise": 1.0,
+        "trade_fallout": 0.6,
+        "trade_market_watch": 1.0,
+        "revenge_game": 1.0,
+        "cold_stretch": 1.0,
+        "standings_collapse": 1.0,
+        "rivalry_matchup": 1.0,
+        "roster_construction": 1.0
+      }
+    },
+    {
+      "key": "analyst",
+      "column": "Film Room",
+      "beat_description": "the x's and o's -- scheme, strategy, roster construction, and how a team is actually built",
+      "register": "measured",
+      "voice_rules": [
+        "Lead with the scheme or roster fact, not the record.",
+        "Explain the mechanism, not just the outcome.",
+        "Compare the declared plan to the measured numbers when they disagree.",
+        "Stay dispassionate -- this is analysis, not reaction."
+      ],
+      "fences": [
+        "This league records no opponent-shooting, on/off, or matchup data -- never claim what opponents shot."
+      ],
+      "story_kind_weights": {
+        "streak": 0.6,
+        "milestone": 1.0,
+        "award_race": 1.0,
+        "rookie_watch": 0.6,
+        "hot_streak": 1.0,
+        "cold_stretch": 1.0,
+        "defensive_standout": 1.0,
+        "roster_construction": 1.0,
+        "scheme_identity": 1.0
+      }
+    },
+    {
+      "key": "insider",
+      "column": "The Trade Desk",
+      "beat_description": "the trade market -- who's available, who's asking, and what a team's roster shape says about its next move",
+      "register": "reportorial",
+      "voice_rules": [
+        "Every claim traces to a real transaction or a real roster gap.",
+        "Name the asset, not just the transaction.",
+        "Connect a player's market status to a real team need when one exists.",
+        "Never write 'sources say' -- there are no sources, only facts."
+      ],
+      "fences": [
+        "You have no sources -- every claim must trace to a real transaction, contract, or roster fact already in the package."
+      ],
+      "story_kind_weights": {
+        "trade_reaction": 1.0,
+        "trade_fallout": 1.0,
+        "signing_reaction": 0.8,
+        "player_unrest": 0.6,
+        "holdout_watch": 0.6,
+        "trade_executed": 1.0,
+        "trade_broken_promise": 1.0,
+        "trade_market_watch": 1.0
+      }
+    },
+    {
+      "key": "historian",
+      "column": "The Long View",
+      "beat_description": "the narratives that stretch across a season or a career -- rivalries, revenge games, milestones, and rookies finding their footing",
+      "register": "narrative",
+      "voice_rules": [
+        "Frame the moment in the arc of a season or a career.",
+        "Name what came before, when the facts carry it.",
+        "Favor scene over statistic, without inventing either.",
+        "Let the moment breathe -- this is a feature, not a wire blurb."
+      ],
+      "fences": [
+        "Every narrative beat must trace to a real fact in the package -- no invented history."
+      ],
+      "story_kind_weights": {
+        "streak": 0.5,
+        "milestone": 0.8,
+        "rookie_watch": 1.0,
+        "revenge_game": 1.0,
+        "rivalry_matchup": 1.0,
+        "trade_broken_promise": 1.0
+      }
+    }
+  ],
+  "team_profile_quota": 3,
+  "phase_cadence": {
+    "insider": {
+      "PRESEASON": [0.6, 1],
+      "REGULAR_SEASON": [0.8, 2],
+      "TRADE_DEADLINE": [2.5, 5],
+      "POST_DEADLINE": [0.7, 2],
+      "DRAFT_LOTTERY": [0.8, 1],
+      "DRAFT": [1.8, 3],
+      "RESIGN_WINDOW": [1.6, 3],
+      "FREE_AGENCY": [2.5, 5],
+      "WAIVERS": [1.2, 2]
+    },
+    "analyst": {
+      "PRESEASON": [1.4, 3],
+      "REGULAR_SEASON": [1.5, 3],
+      "TRADE_DEADLINE": [1.0, 2],
+      "POST_DEADLINE": [1.5, 3],
+      "DRAFT_LOTTERY": [0.6, 1],
+      "DRAFT": [0.6, 1],
+      "RESIGN_WINDOW": [0.5, 1],
+      "FREE_AGENCY": [0.5, 1],
+      "WAIVERS": [0.5, 1]
+    },
+    "historian": {
+      "PRESEASON": [1.0, 2],
+      "REGULAR_SEASON": [1.2, 2],
+      "TRADE_DEADLINE": [1.0, 2],
+      "POST_DEADLINE": [1.2, 2],
+      "DRAFT_LOTTERY": [1.0, 2],
+      "DRAFT": [1.2, 2],
+      "RESIGN_WINDOW": [0.8, 1],
+      "FREE_AGENCY": [0.8, 2],
+      "WAIVERS": [0.8, 1]
+    },
+    "hot_take": {
+      "PRESEASON": [1.2, 1],
+      "REGULAR_SEASON": [1.4, 2],
+      "TRADE_DEADLINE": [1.6, 2],
+      "POST_DEADLINE": [1.4, 2],
+      "DRAFT_LOTTERY": [1.3, 1],
+      "DRAFT": [1.3, 1],
+      "RESIGN_WINDOW": [1.3, 1],
+      "FREE_AGENCY": [1.6, 2],
+      "WAIVERS": [1.3, 1]
+    },
+    "beat_writer": {
+      "PRESEASON": [1.0, 2],
+      "REGULAR_SEASON": [1.4, 3],
+      "TRADE_DEADLINE": [1.0, 2],
+      "POST_DEADLINE": [1.3, 3],
+      "DRAFT_LOTTERY": [0.5, 1],
+      "DRAFT": [0.6, 1],
+      "RESIGN_WINDOW": [0.6, 1],
+      "FREE_AGENCY": [0.8, 2],
+      "WAIVERS": [0.6, 1]
+    }
+  },
+  "templates": [
+    {
+      "id": "beat_writer_standings_surge_big",
+      "kinds": ["standings_surge"],
+      "voices": ["beat_writer"],
+      "triggers": [{"feature": "standings_position_delta", "op": "lte", "value": -3}],
+      "weight": 2.0,
+      "text": "{team_name} have surged all the way to {standings_position} in the standings during their hot stretch.",
+      "slots": ["team_name", "standings_position"]
+    },
+    {
+      "id": "beat_writer_standings_collapse_big",
+      "kinds": ["standings_collapse"],
+      "voices": ["beat_writer"],
+      "triggers": [{"feature": "standings_position_delta", "op": "gte", "value": 3}],
+      "weight": 2.0,
+      "text": "{team_name} have tumbled to {standings_position} in the standings after a rough stretch.",
+      "slots": ["team_name", "standings_position"]
+    },
+    {
+      "id": "beat_writer_streak_win",
+      "kinds": ["streak"],
+      "voices": ["beat_writer"],
+      "triggers": [{"feature": "streak_length", "op": "gte", "value": 5}],
+      "weight": 2.0,
+      "text": "{team_name} have won {streak_length} in a row.",
+      "slots": ["team_name", "streak_length"]
+    },
+    {
+      "id": "beat_writer_streak_loss",
+      "kinds": ["streak"],
+      "voices": ["beat_writer"],
+      "triggers": [{"feature": "streak_length", "op": "lte", "value": -5}],
+      "weight": 2.0,
+      "text": "{team_name} have lost {streak_length} in a row.",
+      "slots": ["team_name", "streak_length"]
+    },
+    {
+      "id": "beat_writer_trade_reaction_multiplayer",
+      "kinds": ["trade_reaction"],
+      "voices": ["beat_writer"],
+      "triggers": [
+        {"feature": "trade_in_players", "op": "gte", "value": 2},
+        {"feature": "trade_out_players", "op": "gte", "value": 2}
+      ],
+      "weight": 2.0,
+      "text": "{team_name} pulled off a multi-player trade, adding {trade_in_players} and moving {trade_out_players}.",
+      "slots": ["team_name", "trade_in_players", "trade_out_players"]
+    },
+    {
+      "id": "beat_writer_trade_fallout",
+      "kinds": ["trade_fallout"],
+      "voices": ["beat_writer"],
+      "triggers": [],
+      "weight": 2.0,
+      "text": "The dust is still settling in {team_name}'s locker room after the trade.",
+      "slots": ["team_name"]
+    },
+    {
+      "id": "beat_writer_signing_reaction",
+      "kinds": ["signing_reaction"],
+      "voices": ["beat_writer"],
+      "triggers": [],
+      "weight": 2.0,
+      "text": "{team_name} have added {player_name} to the roster.",
+      "slots": ["team_name", "player_name"]
+    },
+    {
+      "id": "hot_take_trade_reaction_gave_up_too_much",
+      "kinds": ["trade_reaction"],
+      "voices": ["hot_take"],
+      "triggers": [{"feature": "trade_out_players", "op": "gte", "value": 3}],
+      "weight": 2.0,
+      "text": "Did {team_name} really just give up that much in one trade?",
+      "slots": ["team_name"]
+    },
+    {
+      "id": "hot_take_player_unrest_loud",
+      "kinds": ["player_unrest"],
+      "voices": ["hot_take"],
+      "triggers": [{"feature": "motivation_magnitude", "op": "gte", "value": 40}],
+      "weight": 2.0,
+      "text": "{player_name} sounds like he's had enough -- and he isn't being quiet about it.",
+      "slots": ["player_name"]
+    },
+    {
+      "id": "hot_take_holdout_watch",
+      "kinds": ["holdout_watch"],
+      "voices": ["hot_take"],
+      "triggers": [],
+      "weight": 2.0,
+      "text": "{player_name}'s holdout is turning into the story of the week.",
+      "slots": ["player_name"]
+    },
+    {
+      "id": "analyst_streak_slide",
+      "kinds": ["streak"],
+      "voices": ["analyst"],
+      "triggers": [{"feature": "streak_length", "op": "lte", "value": -5}],
+      "weight": 2.0,
+      "text": "{team_name} have dropped {streak_length} straight, and the underlying numbers back up the slide.",
+      "slots": ["team_name", "streak_length"]
+    },
+    {
+      "id": "analyst_streak_surge",
+      "kinds": ["streak"],
+      "voices": ["analyst"],
+      "triggers": [{"feature": "streak_length", "op": "gte", "value": 5}],
+      "weight": 2.0,
+      "text": "{team_name} have won {streak_length} in a row, and the underlying numbers back up the surge.",
+      "slots": ["team_name", "streak_length"]
+    },
+    {
+      "id": "analyst_milestone",
+      "kinds": ["milestone"],
+      "voices": ["analyst"],
+      "triggers": [],
+      "weight": 2.0,
+      "text": "{player_name} is closing in on a career milestone.",
+      "slots": ["player_name"]
+    },
+    {
+      "id": "analyst_award_race",
+      "kinds": ["award_race"],
+      "voices": ["analyst"],
+      "triggers": [],
+      "weight": 2.0,
+      "text": "{player_name}'s numbers put him squarely in the award conversation.",
+      "slots": ["player_name"]
+    },
+    {
+      "id": "analyst_rookie_watch",
+      "kinds": ["rookie_watch"],
+      "voices": ["analyst"],
+      "triggers": [],
+      "weight": 2.0,
+      "text": "{player_name}'s per-game numbers are starting to stand out for a rookie.",
+      "slots": ["player_name"]
+    },
+    {
+      "id": "insider_trade_reaction_picks",
+      "kinds": ["trade_reaction"],
+      "voices": ["insider"],
+      "triggers": [{"feature": "trade_in_picks", "op": "gte", "value": 1}],
+      "weight": 2.0,
+      "text": "Sources say {team_name} view this trade as a step toward next year's board, not just this one.",
+      "slots": ["team_name"]
+    },
+    {
+      "id": "insider_trade_fallout",
+      "kinds": ["trade_fallout"],
+      "voices": ["insider"],
+      "triggers": [],
+      "weight": 2.0,
+      "text": "Word is {team_name} isn't done making moves after that trade.",
+      "slots": ["team_name"]
+    },
+    {
+      "id": "insider_signing_reaction",
+      "kinds": ["signing_reaction"],
+      "voices": ["insider"],
+      "triggers": [],
+      "weight": 2.0,
+      "text": "League sources say {team_name}'s deal for {player_name} came together fast.",
+      "slots": ["team_name", "player_name"]
+    },
+    {
+      "id": "insider_player_unrest_trade_request",
+      "kinds": ["player_unrest"],
+      "voices": ["insider"],
+      "triggers": [{"feature": "request_state", "op": "eq", "value": "trade_requested"}],
+      "weight": 2.0,
+      "text": "{player_name} has requested a trade, according to sources close to the team.",
+      "slots": ["player_name"]
+    },
+    {
+      "id": "insider_holdout_watch",
+      "kinds": ["holdout_watch"],
+      "voices": ["insider"],
+      "triggers": [],
+      "weight": 2.0,
+      "text": "{player_name}'s holdout has front-office fingerprints all over it, per sources.",
+      "slots": ["player_name"]
+    },
+    {
+      "id": "historian_streak_notable",
+      "kinds": ["streak"],
+      "voices": ["historian"],
+      "triggers": [{"feature": "streak_length", "op": "gte", "value": 7}],
+      "weight": 2.0,
+      "text": "{team_name}'s {streak_length}-game run is one for the record books.",
+      "slots": ["team_name", "streak_length"]
+    },
+    {
+      "id": "historian_streak_infamous",
+      "kinds": ["streak"],
+      "voices": ["historian"],
+      "triggers": [{"feature": "streak_length", "op": "lte", "value": -7}],
+      "weight": 2.0,
+      "text": "{team_name}'s {streak_length}-game skid is the kind of streak that gets remembered too -- the record books don't only keep the good ones.",
+      "slots": ["team_name", "streak_length"]
+    },
+    {
+      "id": "historian_milestone",
+      "kinds": ["milestone"],
+      "voices": ["historian"],
+      "triggers": [],
+      "weight": 2.0,
+      "text": "{player_name} is writing another chapter in a career that already stands out.",
+      "slots": ["player_name"]
+    },
+    {
+      "id": "historian_rookie_watch",
+      "kinds": ["rookie_watch"],
+      "voices": ["historian"],
+      "triggers": [],
+      "weight": 2.0,
+      "text": "{player_name}'s rookie season is drawing comparisons to seasons past.",
+      "slots": ["player_name"]
+    },
+    {
+      "id": "fallback_standings_surge",
+      "kinds": ["standings_surge"],
+      "voices": [],
+      "triggers": [],
+      "weight": 1.0,
+      "text": "{team_name} are trending up in the standings.",
+      "slots": ["team_name"]
+    },
+    {
+      "id": "fallback_standings_collapse",
+      "kinds": ["standings_collapse"],
+      "voices": [],
+      "triggers": [],
+      "weight": 1.0,
+      "text": "{team_name} are trending down in the standings.",
+      "slots": ["team_name"]
+    },
+    {
+      "id": "fallback_streak",
+      "kinds": ["streak"],
+      "voices": [],
+      "triggers": [],
+      "weight": 1.0,
+      "text": "{team_name} are on a notable run right now.",
+      "slots": ["team_name"]
+    },
+    {
+      "id": "fallback_trade_reaction",
+      "kinds": ["trade_reaction"],
+      "voices": [],
+      "triggers": [],
+      "weight": 1.0,
+      "text": "{team_name} made a trade, and the reaction is still coming in.",
+      "slots": ["team_name"]
+    },
+    {
+      "id": "fallback_trade_fallout",
+      "kinds": ["trade_fallout"],
+      "voices": [],
+      "triggers": [],
+      "weight": 1.0,
+      "text": "The fallout from {team_name}'s trade is still being sorted out.",
+      "slots": ["team_name"]
+    },
+    {
+      "id": "fallback_signing_reaction",
+      "kinds": ["signing_reaction"],
+      "voices": [],
+      "triggers": [],
+      "weight": 1.0,
+      "text": "{team_name} have signed {player_name}.",
+      "slots": ["team_name", "player_name"]
+    },
+    {
+      "id": "fallback_milestone",
+      "kinds": ["milestone"],
+      "voices": [],
+      "triggers": [],
+      "weight": 1.0,
+      "text": "{player_name} is nearing a milestone.",
+      "slots": ["player_name"]
+    },
+    {
+      "id": "fallback_award_race",
+      "kinds": ["award_race"],
+      "voices": [],
+      "triggers": [],
+      "weight": 1.0,
+      "text": "{player_name} is in the mix for postseason honors.",
+      "slots": ["player_name"]
+    },
+    {
+      "id": "fallback_player_unrest",
+      "kinds": ["player_unrest"],
+      "voices": [],
+      "triggers": [],
+      "weight": 1.0,
+      "text": "There is some unrest surrounding {player_name}.",
+      "slots": ["player_name"]
+    },
+    {
+      "id": "fallback_holdout_watch",
+      "kinds": ["holdout_watch"],
+      "voices": [],
+      "triggers": [],
+      "weight": 1.0,
+      "text": "{player_name} remains away from the team.",
+      "slots": ["player_name"]
+    },
+    {
+      "id": "fallback_rookie_watch",
+      "kinds": ["rookie_watch"],
+      "voices": [],
+      "triggers": [],
+      "weight": 1.0,
+      "text": "{player_name} continues to develop as a rookie.",
+      "slots": ["player_name"]
+    },
+    {
+      "id": "fallback_trade_executed",
+      "kinds": ["trade_executed"],
+      "voices": [],
+      "triggers": [],
+      "weight": 1.0,
+      "text": "There is a notable development around the league.",
+      "slots": []
+    },
+    {
+      "id": "dedicated_insider_trade_executed",
+      "kinds": ["trade_executed"],
+      "voices": ["insider"],
+      "triggers": [{"feature": "human_negotiated", "op": "eq", "value": 0}],
+      "weight": 2.0,
+      "text": "{team_name} and {opponent_team_name} have a trade on the books, executed without a human GM at the table.",
+      "slots": ["team_name", "opponent_team_name"]
+    },
+    {
+      "id": "fallback_trade_broken_promise",
+      "kinds": ["trade_broken_promise"],
+      "voices": [],
+      "triggers": [],
+      "weight": 1.0,
+      "text": "There is a notable development around the league.",
+      "slots": []
+    },
+    {
+      "id": "fallback_revenge_game",
+      "kinds": ["revenge_game"],
+      "voices": [],
+      "triggers": [],
+      "weight": 1.0,
+      "text": "There is a notable development around the league.",
+      "slots": []
+    },
+    {
+      "id": "fallback_hot_streak",
+      "kinds": ["hot_streak"],
+      "voices": [],
+      "triggers": [],
+      "weight": 1.0,
+      "text": "There is a notable development around the league.",
+      "slots": []
+    },
+    {
+      "id": "fallback_cold_stretch",
+      "kinds": ["cold_stretch"],
+      "voices": [],
+      "triggers": [],
+      "weight": 1.0,
+      "text": "There is a notable development around the league.",
+      "slots": []
+    },
+    {
+      "id": "fallback_defensive_standout",
+      "kinds": ["defensive_standout"],
+      "voices": [],
+      "triggers": [],
+      "weight": 1.0,
+      "text": "There is a notable development around the league.",
+      "slots": []
+    },
+    {
+      "id": "fallback_roster_construction",
+      "kinds": ["roster_construction"],
+      "voices": [],
+      "triggers": [],
+      "weight": 1.0,
+      "text": "There is a notable development around the league.",
+      "slots": []
+    },
+    {
+      "id": "fallback_scheme_identity",
+      "kinds": ["scheme_identity"],
+      "voices": [],
+      "triggers": [],
+      "weight": 1.0,
+      "text": "There is a notable development around the league.",
+      "slots": []
+    },
+    {
+      "id": "fallback_rivalry_matchup",
+      "kinds": ["rivalry_matchup"],
+      "voices": [],
+      "triggers": [],
+      "weight": 1.0,
+      "text": "There is a notable development around the league.",
+      "slots": []
+    },
+    {
+      "id": "fallback_trade_market_watch",
+      "kinds": ["trade_market_watch"],
+      "voices": [],
+      "triggers": [],
+      "weight": 1.0,
+      "text": "There is a notable development around the league.",
+      "slots": []
+    },
+    {
+      "id": "fallback_team_profile",
+      "kinds": ["team_profile"],
+      "voices": [],
+      "triggers": [],
+      "weight": 1.0,
+      "text": "There is a notable development around the league.",
+      "slots": []
+    },
+    {
+      "id": "dedicated_beat_writer_trade_executed",
+      "kinds": ["trade_executed"],
+      "voices": ["beat_writer"],
+      "triggers": [{"feature": "human_negotiated", "op": "eq", "value": 1}],
+      "weight": 2.0,
+      "text": "{team_name} and {opponent_team_name} have completed a trade.",
+      "slots": ["team_name", "opponent_team_name"]
+    },
+    {
+      "id": "dedicated_insider_trade_broken_promise_promise_broken",
+      "kinds": ["trade_broken_promise"],
+      "voices": ["insider"],
+      "angles": ["promise_broken"],
+      "triggers": [],
+      "weight": 2.0,
+      "text": "{player_name} said loyalty mattered to him at {opponent_team_name}. It did not stop the trade to {team_name}.",
+      "slots": ["player_name", "opponent_team_name", "team_name"]
+    },
+    {
+      "id": "dedicated_insider_trade_broken_promise_trade_made",
+      "kinds": ["trade_broken_promise"],
+      "voices": ["insider"],
+      "angles": ["trade_made"],
+      "triggers": [],
+      "weight": 2.0,
+      "text": "{player_name} asked {opponent_team_name} for a trade. He is now with {team_name}.",
+      "slots": ["player_name", "opponent_team_name", "team_name"]
+    },
+    {
+      "id": "dedicated_historian_trade_broken_promise_promise_broken",
+      "kinds": ["trade_broken_promise"],
+      "voices": ["historian"],
+      "angles": ["promise_broken"],
+      "triggers": [],
+      "weight": 2.0,
+      "text": "{player_name} bought all the way in at {opponent_team_name}. The trade to {team_name} came anyway.",
+      "slots": ["player_name", "opponent_team_name", "team_name"]
+    },
+    {
+      "id": "dedicated_historian_trade_broken_promise_trade_made",
+      "kinds": ["trade_broken_promise"],
+      "voices": ["historian"],
+      "angles": ["trade_made"],
+      "triggers": [],
+      "weight": 2.0,
+      "text": "{player_name} wanted out of {opponent_team_name} for a while now. {team_name} is where that story ends up.",
+      "slots": ["player_name", "opponent_team_name", "team_name"]
+    },
+    {
+      "id": "dedicated_historian_revenge_game",
+      "kinds": ["revenge_game"],
+      "voices": ["historian"],
+      "triggers": [],
+      "weight": 2.0,
+      "text": "A closer look at this developing story.",
+      "slots": []
+    },
+    {
+      "id": "dedicated_analyst_hot_streak",
+      "kinds": ["hot_streak"],
+      "voices": ["analyst"],
+      "triggers": [],
+      "weight": 2.0,
+      "text": "A closer look at this developing story.",
+      "slots": []
+    },
+    {
+      "id": "dedicated_analyst_cold_stretch",
+      "kinds": ["cold_stretch"],
+      "voices": ["analyst"],
+      "triggers": [],
+      "weight": 2.0,
+      "text": "A closer look at this developing story.",
+      "slots": []
+    },
+    {
+      "id": "dedicated_analyst_defensive_standout",
+      "kinds": ["defensive_standout"],
+      "voices": ["analyst"],
+      "triggers": [],
+      "weight": 2.0,
+      "text": "A closer look at this developing story.",
+      "slots": []
+    },
+    {
+      "id": "dedicated_analyst_roster_construction",
+      "kinds": ["roster_construction"],
+      "voices": ["analyst"],
+      "triggers": [],
+      "weight": 2.0,
+      "text": "A closer look at this developing story.",
+      "slots": []
+    },
+    {
+      "id": "dedicated_analyst_scheme_identity_identity",
+      "kinds": ["scheme_identity"],
+      "voices": ["analyst"],
+      "angles": ["scheme_identity"],
+      "triggers": [],
+      "weight": 2.0,
+      "text": "{team_name} rank {pace_rank} in pace and {three_share_rank} in three-point rate this season -- no daylight between the plan and the box score.",
+      "slots": ["team_name", "pace_rank", "three_share_rank"]
+    },
+    {
+      "id": "dedicated_analyst_scheme_identity_tension",
+      "kinds": ["scheme_identity"],
+      "voices": ["analyst"],
+      "angles": ["scheme_tension"],
+      "triggers": [],
+      "weight": 2.0,
+      "text": "{team_name} talk pace and space, but they rank {avg_possessions_rank} in tempo and {three_share_rank} in three-point rate this season -- the roster is not running what the front office is selling.",
+      "slots": ["team_name", "avg_possessions_rank", "three_share_rank"]
+    },
+    {
+      "id": "dedicated_historian_rivalry_matchup",
+      "kinds": ["rivalry_matchup"],
+      "voices": ["historian"],
+      "triggers": [],
+      "weight": 2.0,
+      "text": "A closer look at this developing story.",
+      "slots": []
+    },
+    {
+      "id": "dedicated_insider_trade_market_watch",
+      "kinds": ["trade_market_watch"],
+      "voices": ["insider"],
+      "triggers": [],
+      "weight": 2.0,
+      "text": "A closer look at this developing story.",
+      "slots": []
+    },
+    {
+      "id": "dedicated_beat_writer_team_profile",
+      "kinds": ["team_profile"],
+      "voices": ["beat_writer"],
+      "triggers": [],
+      "weight": 2.0,
+      "text": "A closer look at this developing story.",
+      "slots": []
+    },
+    {
+      "id": "hot_take_trade_executed_fleeced",
+      "kinds": ["trade_executed"],
+      "voices": ["hot_take"],
+      "triggers": [{"feature": "asset_count_edge", "op": "gt", "value": 0}],
+      "weight": 2.0,
+      "text": "{team_name} just fleeced {opponent_team_name} and everyone is pretending this is a normal trade.",
+      "slots": ["team_name", "opponent_team_name"]
+    },
+    {
+      "id": "hot_take_trade_executed_fleeced_reverse",
+      "kinds": ["trade_executed"],
+      "voices": ["hot_take"],
+      "triggers": [{"feature": "asset_count_edge", "op": "lt", "value": 0}],
+      "weight": 2.0,
+      "text": "{opponent_team_name} just fleeced {team_name} and everyone is pretending this is a normal trade.",
+      "slots": ["team_name", "opponent_team_name"]
+    },
+    {
+      "id": "hot_take_trade_broken_promise_betrayal",
+      "kinds": ["trade_broken_promise"],
+      "voices": ["hot_take"],
+      "angles": ["promise_broken"],
+      "triggers": [],
+      "weight": 2.0,
+      "text": "{player_name} said all the right things about loyalty at {opponent_team_name}. They traded him to {team_name} anyway.",
+      "slots": ["player_name", "opponent_team_name", "team_name"]
+    },
+    {
+      "id": "hot_take_trade_broken_promise_got_his_wish",
+      "kinds": ["trade_broken_promise"],
+      "voices": ["hot_take"],
+      "angles": ["trade_made"],
+      "triggers": [],
+      "weight": 2.0,
+      "text": "{player_name} wanted out of {opponent_team_name} and got exactly what he asked for. Must be nice.",
+      "slots": ["player_name", "opponent_team_name"]
+    },
+    {
+      "id": "hot_take_trade_fallout_deserved",
+      "kinds": ["trade_fallout"],
+      "voices": ["hot_take"],
+      "triggers": [],
+      "weight": 2.0,
+      "text": "The fallout from that trade is exactly what {team_name} deserves.",
+      "slots": ["team_name"]
+    },
+    {
+      "id": "hot_take_trade_market_watch_who_could_blame_him",
+      "kinds": ["trade_market_watch"],
+      "voices": ["hot_take"],
+      "triggers": [],
+      "weight": 2.0,
+      "text": "{player_name} wants out and frankly, who could blame him.",
+      "slots": ["player_name"]
+    },
+    {
+      "id": "hot_take_revenge_game_remind_them",
+      "kinds": ["revenge_game"],
+      "voices": ["hot_take"],
+      "triggers": [],
+      "weight": 2.0,
+      "text": "{player_name} gets to go back and remind {opponent_team_name} exactly what they gave up.",
+      "slots": ["player_name", "opponent_team_name"]
+    },
+    {
+      "id": "hot_take_cold_stretch_ice_water",
+      "kinds": ["cold_stretch"],
+      "voices": ["hot_take"],
+      "triggers": [],
+      "weight": 2.0,
+      "text": "{player_name} has ice water in his veins right now, and not in a good way.",
+      "slots": ["player_name"]
+    },
+    {
+      "id": "hot_take_standings_collapse_freefall",
+      "kinds": ["standings_collapse"],
+      "voices": ["hot_take"],
+      "triggers": [{"feature": "standings_position_delta", "op": "gte", "value": 3}],
+      "weight": 2.0,
+      "text": "{team_name} are in freefall and nobody in that building has a plan.",
+      "slots": ["team_name"]
+    },
+    {
+      "id": "hot_take_rivalry_matchup_means_something",
+      "kinds": ["rivalry_matchup"],
+      "voices": ["hot_take"],
+      "triggers": [],
+      "weight": 2.0,
+      "text": "{team_name} and {opponent_team_name} again -- this is the only matchup on the schedule that actually means something.",
+      "slots": ["team_name", "opponent_team_name"]
+    },
+    {
+      "id": "hot_take_roster_construction_makes_no_sense",
+      "kinds": ["roster_construction"],
+      "voices": ["hot_take"],
+      "triggers": [],
+      "weight": 2.0,
+      "text": "{team_name}'s roster makes no sense and it is not close.",
+      "slots": ["team_name"]
+    }
+  ]
+}

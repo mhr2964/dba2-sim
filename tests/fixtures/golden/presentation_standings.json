@@ -1,0 +1,19 @@
+{
+  "title": "Test League Standings \u2014 Season 2026",
+  "description": "",
+  "fields": [
+    {
+      "name": "East",
+      "value": "```\nPos  Pct    GB     W -  L   Team\n  1   .786      -  55 - 15  Boston Celtics\n  2   .686    7.0  48 - 22  New York Knicks\n```",
+      "inline": true
+    },
+    {
+      "name": "West",
+      "value": "```\nPos  Pct    GB     W -  L   Team\n  1   .629      -  44 - 26  Los Angeles Lakers\n  2   .571    4.0  40 - 30  Golden State Warriors\n```",
+      "inline": true
+    }
+  ],
+  "color": 5793266,
+  "footer": "",
+  "author": ""
+}

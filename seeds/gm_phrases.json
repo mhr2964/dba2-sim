@@ -1,0 +1,1044 @@
+{
+  "repeat_penalty": 0.25,
+  "exclusive_mass_share": 0.25,
+  "templates": [
+    {
+      "id": "fallback_open",
+      "philosophies": [],
+      "situations": ["open"],
+      "windows": [],
+      "triggers": [],
+      "weight": 0.15,
+      "text": "Let's see if there's something here for both of us.",
+      "slots": []
+    },
+    {
+      "id": "fallback_accept_round0",
+      "philosophies": [],
+      "situations": ["accept_round0"],
+      "windows": [],
+      "triggers": [],
+      "weight": 0.15,
+      "text": "This works for us as it stands. Let's get it done.",
+      "slots": []
+    },
+    {
+      "id": "fallback_accept_after_counter",
+      "philosophies": [],
+      "situations": ["accept_after_counter"],
+      "windows": [],
+      "triggers": [],
+      "weight": 0.15,
+      "text": "Alright, we can live with that. We're in.",
+      "slots": []
+    },
+    {
+      "id": "fallback_counter_ask_more",
+      "philosophies": [],
+      "situations": ["counter_ask_more"],
+      "windows": [],
+      "triggers": [],
+      "weight": 0.15,
+      "text": "We need a bit more to make this work on our end.",
+      "slots": []
+    },
+    {
+      "id": "fallback_counter_give_less",
+      "philosophies": [],
+      "situations": ["counter_give_less"],
+      "windows": [],
+      "triggers": [],
+      "weight": 0.15,
+      "text": "We can get there, just not at that price.",
+      "slots": []
+    },
+    {
+      "id": "fallback_reject_too_far",
+      "philosophies": [],
+      "situations": ["reject_too_far"],
+      "windows": [],
+      "triggers": [],
+      "weight": 0.15,
+      "text": "This one isn't close enough for us to keep working.",
+      "slots": []
+    },
+    {
+      "id": "fallback_reject_deadlock",
+      "philosophies": [],
+      "situations": ["reject_deadlock"],
+      "windows": [],
+      "triggers": [],
+      "weight": 0.15,
+      "text": "We're just going in circles. Let's call it here.",
+      "slots": []
+    },
+    {
+      "id": "fallback_reject_illegal",
+      "philosophies": [],
+      "situations": ["reject_illegal"],
+      "windows": [],
+      "triggers": [],
+      "weight": 0.15,
+      "text": "That deal doesn't clear our books as structured. Sorry.",
+      "slots": []
+    },
+    {
+      "id": "fallback_expire_stalled",
+      "philosophies": [],
+      "situations": ["expire_stalled"],
+      "windows": [],
+      "triggers": [],
+      "weight": 0.15,
+      "text": "We've said our piece and nothing's moving. Shelving this.",
+      "slots": []
+    },
+    {
+      "id": "fallback_expire_rounds",
+      "philosophies": [],
+      "situations": ["expire_rounds"],
+      "windows": [],
+      "triggers": [],
+      "weight": 0.15,
+      "text": "We're out of time on this one. Maybe another window.",
+      "slots": []
+    },
+    {
+      "id": "open_star_maxer_headliner",
+      "philosophies": ["star_maxer"],
+      "situations": ["open"],
+      "windows": [],
+      "triggers": [
+        {"feature": "top_in_share", "op": "gte", "value": 0.5}
+      ],
+      "weight": 3.0,
+      "text": "This is about one player for us. Build the package around him and we'll talk.",
+      "slots": []
+    },
+    {
+      "id": "open_star_maxer_new_partner",
+      "philosophies": ["star_maxer"],
+      "situations": ["open"],
+      "windows": [],
+      "triggers": [
+        {"feature": "h2h_opened", "op": "eq", "value": 0.0}
+      ],
+      "weight": 2.0,
+      "text": "We haven't dealt with you before, so lead with your best swing.",
+      "slots": []
+    },
+    {
+      "id": "open_star_maxer_contend_window",
+      "philosophies": ["star_maxer"],
+      "situations": ["open"],
+      "windows": ["contend"],
+      "triggers": [
+        {"feature": "top_in_share", "op": "gte", "value": 0.5}
+      ],
+      "weight": 2.0,
+      "text": "We're all-in this year. A real difference-maker is the only thing that moves us.",
+      "slots": []
+    },
+    {
+      "id": "open_egalitarian_spread",
+      "philosophies": ["egalitarian"],
+      "situations": ["open"],
+      "windows": [],
+      "triggers": [
+        {"feature": "in_players", "op": "gte", "value": 3}
+      ],
+      "weight": 2.5,
+      "text": "We like that this touches several roster spots instead of just one.",
+      "slots": []
+    },
+    {
+      "id": "open_egalitarian_pick_swap",
+      "philosophies": ["egalitarian"],
+      "situations": ["open"],
+      "windows": [],
+      "triggers": [
+        {"feature": "in_players", "op": "eq", "value": 0},
+        {"feature": "in_picks", "op": "gte", "value": 1}
+      ],
+      "weight": 2.0,
+      "text": "Picks-for-picks keeps this simple, and simple is good with us.",
+      "slots": []
+    },
+    {
+      "id": "open_egalitarian_rebuild_picks",
+      "philosophies": ["egalitarian"],
+      "situations": ["open"],
+      "windows": ["rebuild"],
+      "triggers": [
+        {"feature": "in_picks", "op": "gte", "value": 1}
+      ],
+      "weight": 2.0,
+      "text": "Picks are currency for us right now. Glad to see them in the packet.",
+      "slots": []
+    },
+    {
+      "id": "open_egalitarian_fair_price",
+      "philosophies": ["egalitarian"],
+      "situations": ["open"],
+      "windows": [],
+      "triggers": [
+        {"feature": "top_in_share", "op": "gte", "value": 0.5}
+      ],
+      "weight": 3.0,
+      "text": "As long as the value's fair, we don't need it spread across five names.",
+      "slots": []
+    },
+    {
+      "id": "open_defense_first_absorbs_salary",
+      "philosophies": ["defense_first"],
+      "situations": ["open"],
+      "windows": [],
+      "triggers": [
+        {"feature": "cap_relief_share", "op": "lte", "value": -0.5}
+      ],
+      "weight": 2.0,
+      "text": "We're comfortable carrying money if it upgrades the defense.",
+      "slots": []
+    },
+    {
+      "id": "open_defense_first_locks_it_down",
+      "philosophies": ["defense_first"],
+      "situations": ["open"],
+      "windows": [],
+      "triggers": [
+        {"feature": "top_in_share", "op": "gte", "value": 0.5}
+      ],
+      "weight": 3.0,
+      "text": "Give us the anchor piece and we'll make the rest of this roster work on that end.",
+      "slots": []
+    },
+    {
+      "id": "open_youth_developer_sheds_salary",
+      "philosophies": ["youth_developer"],
+      "situations": ["open"],
+      "windows": [],
+      "triggers": [
+        {"feature": "cap_relief_share", "op": "gte", "value": 0.5}
+      ],
+      "weight": 2.0,
+      "text": "This clears money for our young core. That's the whole point for us.",
+      "slots": []
+    },
+    {
+      "id": "open_youth_developer_open_book",
+      "philosophies": ["youth_developer"],
+      "situations": ["open"],
+      "windows": [],
+      "triggers": [
+        {"feature": "top_in_share", "op": "gte", "value": 0.5}
+      ],
+      "weight": 3.0,
+      "text": "We're listening, especially if it centers on one real building block long-term.",
+      "slots": []
+    },
+    {
+      "id": "open_vet_overrater_second_chance",
+      "philosophies": ["vet_overrater"],
+      "situations": ["open"],
+      "windows": [],
+      "triggers": [
+        {"feature": "h2h_far_reject_streak", "op": "gte", "value": 1.0}
+      ],
+      "weight": 2.0,
+      "text": "We've butted heads before, but we're willing to try again for the right vet.",
+      "slots": []
+    },
+    {
+      "id": "open_vet_overrater_believes_in_him",
+      "philosophies": ["vet_overrater"],
+      "situations": ["open"],
+      "windows": [],
+      "triggers": [
+        {"feature": "top_in_share", "op": "gte", "value": 0.5}
+      ],
+      "weight": 3.0,
+      "text": "We still believe in what he can give us on a good roster. Let's talk.",
+      "slots": []
+    },
+    {
+      "id": "open_tendency_respecter_depth",
+      "philosophies": ["tendency_respecter"],
+      "situations": ["open"],
+      "windows": [],
+      "triggers": [
+        {"feature": "out_players", "op": "gte", "value": 2}
+      ],
+      "weight": 2.0,
+      "text": "We're fine parting with depth if the fit is right for both sides.",
+      "slots": []
+    },
+    {
+      "id": "open_tendency_respecter_reads_the_board",
+      "philosophies": ["tendency_respecter"],
+      "situations": ["open"],
+      "windows": [],
+      "triggers": [
+        {"feature": "top_in_share", "op": "gte", "value": 0.5}
+      ],
+      "weight": 3.0,
+      "text": "We trust the value on the headline piece here. That's what we're weighing.",
+      "slots": []
+    },
+    {
+      "id": "open_chaos_take_the_numbers",
+      "philosophies": ["chaos"],
+      "situations": ["open"],
+      "windows": [],
+      "triggers": [
+        {"feature": "gap_rel", "op": "gte", "value": 0.0}
+      ],
+      "weight": 2.0,
+      "text": "The numbers already work for us, so let's stop overthinking it and swap.",
+      "slots": []
+    },
+    {
+      "id": "open_chaos_reads_the_numbers_fast",
+      "philosophies": ["chaos"],
+      "situations": ["open"],
+      "windows": [],
+      "triggers": [
+        {"feature": "top_in_share", "op": "gte", "value": 0.5}
+      ],
+      "weight": 3.0,
+      "text": "Send the best piece and we'll figure the rest out live. No point overthinking it.",
+      "slots": []
+    },
+    {
+      "id": "open_persistent_friction",
+      "philosophies": [],
+      "situations": ["open"],
+      "windows": [],
+      "triggers": [
+        {"feature": "h2h_far_reject_streak", "op": "gte", "value": 2.0}
+      ],
+      "weight": 1.5,
+      "text": "Every offer keeps dying with you. Let's actually close one this time.",
+      "slots": []
+    },
+    {
+      "id": "reject_illegal_roster_max",
+      "philosophies": [],
+      "situations": ["reject_illegal"],
+      "windows": [],
+      "triggers": [
+        {"feature": "illegal_token", "op": "eq", "value": "roster_max"}
+      ],
+      "weight": 3.0,
+      "text": "We're full up. Somebody would have to come off our roster first.",
+      "slots": []
+    },
+    {
+      "id": "reject_illegal_roster_min",
+      "philosophies": [],
+      "situations": ["reject_illegal"],
+      "windows": [],
+      "triggers": [
+        {"feature": "illegal_token", "op": "eq", "value": "roster_min"}
+      ],
+      "weight": 3.0,
+      "text": "That leaves us short-handed. We can't dip below our roster minimum.",
+      "slots": []
+    },
+    {
+      "id": "reject_illegal_apron_2",
+      "philosophies": [],
+      "situations": ["reject_illegal"],
+      "windows": [],
+      "triggers": [
+        {"feature": "illegal_token", "op": "eq", "value": "apron_2"}
+      ],
+      "weight": 3.0,
+      "text": "That sends us over the second apron. Hard no.",
+      "slots": []
+    },
+    {
+      "id": "reject_illegal_apron_1",
+      "philosophies": [],
+      "situations": ["reject_illegal"],
+      "windows": [],
+      "triggers": [
+        {"feature": "illegal_token", "op": "eq", "value": "apron_1"}
+      ],
+      "weight": 3.0,
+      "text": "We'd be pinned against the first apron. Can't do it as structured.",
+      "slots": []
+    },
+    {
+      "id": "reject_illegal_salary_matching",
+      "philosophies": [],
+      "situations": ["reject_illegal"],
+      "windows": [],
+      "triggers": [
+        {"feature": "illegal_token", "op": "eq", "value": "salary_matching"}
+      ],
+      "weight": 3.0,
+      "text": "The money doesn't match up under the cap rules. Fix the numbers and call us back.",
+      "slots": []
+    },
+    {
+      "id": "reject_illegal_star_maxer_roster_max",
+      "philosophies": ["star_maxer"],
+      "situations": ["reject_illegal"],
+      "windows": [],
+      "triggers": [
+        {"feature": "illegal_token", "op": "eq", "value": "roster_max"}
+      ],
+      "weight": 2.5,
+      "text": "We'd have to cut someone loose before we even get to talk about your guy.",
+      "slots": []
+    },
+    {
+      "id": "reject_illegal_egalitarian_roster_min",
+      "philosophies": ["egalitarian"],
+      "situations": ["reject_illegal"],
+      "windows": [],
+      "triggers": [
+        {"feature": "illegal_token", "op": "eq", "value": "roster_min"}
+      ],
+      "weight": 2.5,
+      "text": "We spread minutes across the whole roster -- we can't afford to go under minimum.",
+      "slots": []
+    },
+    {
+      "id": "reject_illegal_defense_first_apron_2",
+      "philosophies": ["defense_first"],
+      "situations": ["reject_illegal"],
+      "windows": [],
+      "triggers": [
+        {"feature": "illegal_token", "op": "eq", "value": "apron_2"}
+      ],
+      "weight": 2.5,
+      "text": "Second apron locks our whole defensive rotation in place. Can't touch it.",
+      "slots": []
+    },
+    {
+      "id": "reject_illegal_tendency_respecter_apron_1",
+      "philosophies": ["tendency_respecter"],
+      "situations": ["reject_illegal"],
+      "windows": [],
+      "triggers": [
+        {"feature": "illegal_token", "op": "eq", "value": "apron_1"}
+      ],
+      "weight": 2.5,
+      "text": "That's how we've always managed the books, and this trips the first apron.",
+      "slots": []
+    },
+    {
+      "id": "reject_illegal_vet_overrater_salary_matching",
+      "philosophies": ["vet_overrater"],
+      "situations": ["reject_illegal"],
+      "windows": [],
+      "triggers": [
+        {"feature": "illegal_token", "op": "eq", "value": "salary_matching"}
+      ],
+      "weight": 2.5,
+      "text": "We'd love to get him, but the salaries just don't line up under the rules.",
+      "slots": []
+    },
+    {
+      "id": "reject_illegal_defense_first_apron_1",
+      "philosophies": ["defense_first"],
+      "situations": ["reject_illegal"],
+      "windows": [],
+      "triggers": [
+        {"feature": "illegal_token", "op": "eq", "value": "apron_1"}
+      ],
+      "weight": 2.0,
+      "text": "First apron rules box us in on this one -- our defense stays as built.",
+      "slots": []
+    },
+    {
+      "id": "reject_illegal_tendency_respecter_apron_2",
+      "philosophies": ["tendency_respecter"],
+      "situations": ["reject_illegal"],
+      "windows": [],
+      "triggers": [
+        {"feature": "illegal_token", "op": "eq", "value": "apron_2"}
+      ],
+      "weight": 2.0,
+      "text": "We've never run this close to the second apron, and we're not starting now.",
+      "slots": []
+    },
+    {
+      "id": "reject_illegal_youth_developer_roster_max",
+      "philosophies": ["youth_developer"],
+      "situations": ["reject_illegal"],
+      "windows": [],
+      "triggers": [
+        {"feature": "illegal_token", "op": "eq", "value": "roster_max"}
+      ],
+      "weight": 2.0,
+      "text": "We're carrying every roster spot we've got developing our young guys. No room.",
+      "slots": []
+    },
+    {
+      "id": "reject_illegal_chaos_roster_min",
+      "philosophies": ["chaos"],
+      "situations": ["reject_illegal"],
+      "windows": [],
+      "triggers": [
+        {"feature": "illegal_token", "op": "eq", "value": "roster_min"}
+      ],
+      "weight": 2.5,
+      "text": "Love the chaos, but even we can't run a roster below the legal minimum.",
+      "slots": []
+    },
+    {
+      "id": "reject_too_far_nowhere_near",
+      "philosophies": [],
+      "situations": ["reject_too_far"],
+      "windows": [],
+      "triggers": [
+        {"feature": "gap_over_band", "op": "lt", "value": -1.0}
+      ],
+      "weight": 3.0,
+      "text": "You're not in the neighborhood. Come back when it's realistic.",
+      "slots": []
+    },
+    {
+      "id": "reject_too_far_star_maxer_nowhere_near",
+      "philosophies": ["star_maxer"],
+      "situations": ["reject_too_far"],
+      "windows": [],
+      "triggers": [
+        {"feature": "gap_over_band", "op": "lt", "value": -1.0}
+      ],
+      "weight": 2.0,
+      "text": "Not remotely enough value coming back for our guy.",
+      "slots": []
+    },
+    {
+      "id": "reject_too_far_vet_overrater_no_faith",
+      "philosophies": ["vet_overrater"],
+      "situations": ["reject_too_far"],
+      "windows": [],
+      "triggers": [
+        {"feature": "gap_over_band", "op": "lt", "value": -1.0}
+      ],
+      "weight": 2.0,
+      "text": "We've lost faith this partner can get anywhere close on him.",
+      "slots": []
+    },
+    {
+      "id": "reject_too_far_youth_developer_not_worth_wait",
+      "philosophies": ["youth_developer"],
+      "situations": ["reject_too_far"],
+      "windows": [],
+      "triggers": [
+        {"feature": "gap_over_band", "op": "lt", "value": -1.0}
+      ],
+      "weight": 2.0,
+      "text": "That's not worth the wait on our development timeline. Not close.",
+      "slots": []
+    },
+    {
+      "id": "reject_too_far_chaos_not_even_close",
+      "philosophies": ["chaos"],
+      "situations": ["reject_too_far"],
+      "windows": [],
+      "triggers": [
+        {"feature": "gap_over_band", "op": "lt", "value": -1.0}
+      ],
+      "weight": 2.0,
+      "text": "Not even in the building. Swing back with something wild instead.",
+      "slots": []
+    },
+    {
+      "id": "reject_too_far_tendency_respecter_reads_it_wrong",
+      "philosophies": ["tendency_respecter"],
+      "situations": ["reject_too_far"],
+      "windows": [],
+      "triggers": [
+        {"feature": "gap_over_band", "op": "lt", "value": -1.0}
+      ],
+      "weight": 2.0,
+      "text": "That read on value isn't close to ours. We'd need a whole different package.",
+      "slots": []
+    },
+    {
+      "id": "reject_too_far_in_band_no_move",
+      "philosophies": [],
+      "situations": ["reject_too_far"],
+      "windows": [],
+      "triggers": [
+        {"feature": "gap_over_band", "op": "gte", "value": -1.0}
+      ],
+      "weight": 3.0,
+      "text": "We're close, but there's no way to restructure this that clears our board.",
+      "slots": []
+    },
+    {
+      "id": "reject_too_far_egalitarian_in_band_no_move",
+      "philosophies": ["egalitarian"],
+      "situations": ["reject_too_far"],
+      "windows": [],
+      "triggers": [
+        {"feature": "gap_over_band", "op": "gte", "value": -1.0}
+      ],
+      "weight": 2.0,
+      "text": "The shape's fine, we just can't find the last piece to make it legal.",
+      "slots": []
+    },
+    {
+      "id": "reject_too_far_defense_first_cant_bridge",
+      "philosophies": ["defense_first"],
+      "situations": ["reject_too_far"],
+      "windows": [],
+      "triggers": [
+        {"feature": "gap_over_band", "op": "gte", "value": -1.0}
+      ],
+      "weight": 2.0,
+      "text": "We're one piece away and it just isn't there on our roster right now.",
+      "slots": []
+    },
+    {
+      "id": "accept_round0_generic_good_value",
+      "philosophies": [],
+      "situations": ["accept_round0"],
+      "windows": [],
+      "triggers": [
+        {"feature": "gap_rel", "op": "gte", "value": 0.0}
+      ],
+      "weight": 2.0,
+      "text": "The value clears our bar. We're glad to take it as offered.",
+      "slots": []
+    },
+    {
+      "id": "accept_round0_star_maxer_centerpiece",
+      "philosophies": ["star_maxer"],
+      "situations": ["accept_round0"],
+      "windows": [],
+      "triggers": [
+        {"feature": "top_in_share", "op": "gte", "value": 0.6}
+      ],
+      "weight": 2.0,
+      "text": "That's the centerpiece we wanted. Deal.",
+      "slots": []
+    },
+    {
+      "id": "accept_round0_egalitarian_spread",
+      "philosophies": ["egalitarian"],
+      "situations": ["accept_round0"],
+      "windows": [],
+      "triggers": [
+        {"feature": "in_players", "op": "gte", "value": 2}
+      ],
+      "weight": 2.0,
+      "text": "Good value spread across the roster. We're in.",
+      "slots": []
+    },
+    {
+      "id": "accept_round0_cap_relief",
+      "philosophies": [],
+      "situations": ["accept_round0"],
+      "windows": [],
+      "triggers": [
+        {"feature": "cap_relief_share", "op": "gte", "value": 0.5}
+      ],
+      "weight": 1.5,
+      "text": "This helps our books immediately. Easy yes.",
+      "slots": []
+    },
+    {
+      "id": "accept_round0_chaos_why_not",
+      "philosophies": ["chaos"],
+      "situations": ["accept_round0"],
+      "windows": [],
+      "triggers": [
+        {"feature": "gap_rel", "op": "gte", "value": 0.0}
+      ],
+      "weight": 2.0,
+      "text": "Why not. Let's do it right now.",
+      "slots": []
+    },
+    {
+      "id": "accept_round0_defense_first_solid_value",
+      "philosophies": ["defense_first"],
+      "situations": ["accept_round0"],
+      "windows": [],
+      "triggers": [
+        {"feature": "gap_rel", "op": "gte", "value": 0.0}
+      ],
+      "weight": 2.0,
+      "text": "Solid value and it upgrades the roster we're trying to build. We're in.",
+      "slots": []
+    },
+    {
+      "id": "accept_round0_tendency_respecter_matches_history",
+      "philosophies": ["tendency_respecter"],
+      "situations": ["accept_round0"],
+      "windows": [],
+      "triggers": [
+        {"feature": "gap_rel", "op": "gte", "value": 0.0}
+      ],
+      "weight": 2.0,
+      "text": "That's consistent with how we've valued this before. We'll take it.",
+      "slots": []
+    },
+    {
+      "id": "accept_round0_vet_overrater_worth_it",
+      "philosophies": ["vet_overrater"],
+      "situations": ["accept_round0"],
+      "windows": [],
+      "triggers": [
+        {"feature": "gap_rel", "op": "gte", "value": 0.0}
+      ],
+      "weight": 2.0,
+      "text": "We think he's still worth this, and the numbers back us up. Deal.",
+      "slots": []
+    },
+    {
+      "id": "accept_round0_youth_developer_building_block",
+      "philosophies": ["youth_developer"],
+      "situations": ["accept_round0"],
+      "windows": [],
+      "triggers": [
+        {"feature": "gap_rel", "op": "gte", "value": 0.0}
+      ],
+      "weight": 2.0,
+      "text": "That's a real building block for us at a fair price. Let's finalize it.",
+      "slots": []
+    },
+    {
+      "id": "accept_after_counter_took_a_round",
+      "philosophies": [],
+      "situations": ["accept_after_counter"],
+      "windows": [],
+      "triggers": [
+        {"feature": "round_index", "op": "gte", "value": 1}
+      ],
+      "weight": 2.5,
+      "text": "Took a round to get there, but this works now.",
+      "slots": []
+    },
+    {
+      "id": "accept_after_counter_vet_overrater_real_offer",
+      "philosophies": ["vet_overrater"],
+      "situations": ["accept_after_counter"],
+      "windows": [],
+      "triggers": [
+        {"feature": "h2h_opened", "op": "gte", "value": 1.0}
+      ],
+      "weight": 2.0,
+      "text": "You came back with something real. We'll take it.",
+      "slots": []
+    },
+    {
+      "id": "accept_after_counter_tendency_respecter_adjustment",
+      "philosophies": ["tendency_respecter"],
+      "situations": ["accept_after_counter"],
+      "windows": [],
+      "triggers": [
+        {"feature": "top_in_share", "op": "gte", "value": 0.5}
+      ],
+      "weight": 2.0,
+      "text": "That last adjustment does it for us. Accepted.",
+      "slots": []
+    },
+    {
+      "id": "accept_after_counter_star_maxer_closed_the_gap",
+      "philosophies": ["star_maxer"],
+      "situations": ["accept_after_counter"],
+      "windows": [],
+      "triggers": [
+        {"feature": "round_index", "op": "gte", "value": 1}
+      ],
+      "weight": 2.0,
+      "text": "You closed the gap on our guy. That's a deal.",
+      "slots": []
+    },
+    {
+      "id": "accept_after_counter_egalitarian_worth_the_wait",
+      "philosophies": ["egalitarian"],
+      "situations": ["accept_after_counter"],
+      "windows": [],
+      "triggers": [
+        {"feature": "round_index", "op": "gte", "value": 1}
+      ],
+      "weight": 2.0,
+      "text": "Worth the extra round to get the spread right. We're good.",
+      "slots": []
+    },
+    {
+      "id": "accept_after_counter_defense_first_gets_there",
+      "philosophies": ["defense_first"],
+      "situations": ["accept_after_counter"],
+      "windows": [],
+      "triggers": [
+        {"feature": "round_index", "op": "gte", "value": 1}
+      ],
+      "weight": 2.0,
+      "text": "That gets us where we need to be on the defensive end. Deal.",
+      "slots": []
+    },
+    {
+      "id": "accept_after_counter_chaos_eventually",
+      "philosophies": ["chaos"],
+      "situations": ["accept_after_counter"],
+      "windows": [],
+      "triggers": [
+        {"feature": "round_index", "op": "gte", "value": 1}
+      ],
+      "weight": 2.0,
+      "text": "Took a minute, but sure, let's just do it now.",
+      "slots": []
+    },
+    {
+      "id": "accept_after_counter_youth_developer_holds_the_line",
+      "philosophies": ["youth_developer"],
+      "situations": ["accept_after_counter"],
+      "windows": [],
+      "triggers": [
+        {"feature": "round_index", "op": "gte", "value": 1}
+      ],
+      "weight": 2.0,
+      "text": "We held our line on the picks and still got here. Good with us.",
+      "slots": []
+    },
+    {
+      "id": "counter_ask_more_star_maxer_one_more_piece",
+      "philosophies": ["star_maxer"],
+      "situations": ["counter_ask_more"],
+      "windows": [],
+      "triggers": [
+        {"feature": "top_in_share", "op": "gte", "value": 0.75},
+        {"feature": "gap_rel", "op": "gte", "value": -0.1}
+      ],
+      "weight": 3.0,
+      "text": "One more piece and this works. Put your best name on the table.",
+      "slots": []
+    },
+    {
+      "id": "counter_ask_more_egalitarian_more_bodies",
+      "philosophies": ["egalitarian"],
+      "situations": ["counter_ask_more"],
+      "windows": [],
+      "triggers": [
+        {"feature": "in_players", "op": "lte", "value": 1}
+      ],
+      "weight": 2.0,
+      "text": "We need more bodies in this to make the math work for us.",
+      "slots": []
+    },
+    {
+      "id": "counter_ask_more_generic_gap",
+      "philosophies": [],
+      "situations": ["counter_ask_more"],
+      "windows": [],
+      "triggers": [
+        {"feature": "gap_rel", "op": "lt", "value": 0.0}
+      ],
+      "weight": 2.5,
+      "text": "We need a bit more before we can say yes.",
+      "slots": []
+    },
+    {
+      "id": "counter_ask_more_vet_overrater_cap_relief",
+      "philosophies": ["vet_overrater"],
+      "situations": ["counter_ask_more"],
+      "windows": [],
+      "triggers": [
+        {"feature": "cap_relief_share", "op": "lte", "value": -0.3}
+      ],
+      "weight": 2.0,
+      "text": "If we're taking on money, we need more talent coming back too.",
+      "slots": []
+    },
+    {
+      "id": "counter_give_less_defense_first_less_out",
+      "philosophies": ["defense_first"],
+      "situations": ["counter_give_less"],
+      "windows": [],
+      "triggers": [
+        {"feature": "out_players", "op": "gte", "value": 2}
+      ],
+      "weight": 2.0,
+      "text": "We can make this work giving up less on our end.",
+      "slots": []
+    },
+    {
+      "id": "counter_give_less_generic_gap",
+      "philosophies": [],
+      "situations": ["counter_give_less"],
+      "windows": [],
+      "triggers": [
+        {"feature": "gap_rel", "op": "lt", "value": 0.0}
+      ],
+      "weight": 2.5,
+      "text": "We can get there, just not with everything you're asking for.",
+      "slots": []
+    },
+    {
+      "id": "counter_give_less_star_maxer_still_want_him",
+      "philosophies": ["star_maxer"],
+      "situations": ["counter_give_less"],
+      "windows": [],
+      "triggers": [
+        {"feature": "gap_rel", "op": "lt", "value": 0.0}
+      ],
+      "weight": 2.0,
+      "text": "We still want him, just not for every asset you listed. Trim it down.",
+      "slots": []
+    },
+    {
+      "id": "counter_give_less_egalitarian_lighter_side",
+      "philosophies": ["egalitarian"],
+      "situations": ["counter_give_less"],
+      "windows": [],
+      "triggers": [
+        {"feature": "gap_rel", "op": "lt", "value": 0.0}
+      ],
+      "weight": 2.0,
+      "text": "We'd rather send a lighter package spread differently than give up that much.",
+      "slots": []
+    },
+    {
+      "id": "counter_give_less_tendency_respecter_less_is_fine",
+      "philosophies": ["tendency_respecter"],
+      "situations": ["counter_give_less"],
+      "windows": [],
+      "triggers": [
+        {"feature": "gap_rel", "op": "lt", "value": 0.0}
+      ],
+      "weight": 2.0,
+      "text": "Less on our end still gets this done the way we've always done business.",
+      "slots": []
+    },
+    {
+      "id": "counter_give_less_vet_overrater_trim_it",
+      "philosophies": ["vet_overrater"],
+      "situations": ["counter_give_less"],
+      "windows": [],
+      "triggers": [
+        {"feature": "gap_rel", "op": "lt", "value": 0.0}
+      ],
+      "weight": 2.0,
+      "text": "We'll trim what we send back, not what we think he's worth.",
+      "slots": []
+    },
+    {
+      "id": "counter_give_less_youth_developer_keep_picks",
+      "philosophies": ["youth_developer"],
+      "situations": ["counter_give_less"],
+      "windows": [],
+      "triggers": [
+        {"feature": "out_picks", "op": "gte", "value": 1}
+      ],
+      "weight": 2.0,
+      "text": "We'll hold onto more of our picks and still get this done.",
+      "slots": []
+    },
+    {
+      "id": "counter_give_less_chaos_still_a_win",
+      "philosophies": ["chaos"],
+      "situations": ["counter_give_less"],
+      "windows": [],
+      "triggers": [
+        {"feature": "cap_relief_share", "op": "gte", "value": 0.0}
+      ],
+      "weight": 1.5,
+      "text": "Take less from us and we'll still call it a win.",
+      "slots": []
+    },
+    {
+      "id": "reject_deadlock_same_spot",
+      "philosophies": [],
+      "situations": ["reject_deadlock"],
+      "windows": [],
+      "triggers": [
+        {"feature": "h2h_far_reject_streak", "op": "gte", "value": 1.0}
+      ],
+      "weight": 1.5,
+      "text": "We keep landing in the same spot. No use grinding on it further.",
+      "slots": []
+    },
+    {
+      "id": "reject_deadlock_h2h_history",
+      "philosophies": [],
+      "situations": ["reject_deadlock"],
+      "windows": [],
+      "triggers": [
+        {"feature": "h2h_opened", "op": "gte", "value": 1.0}
+      ],
+      "weight": 2.5,
+      "text": "We've done enough business with you to know this one isn't bridging. Pass.",
+      "slots": []
+    },
+    {
+      "id": "reject_deadlock_vet_overrater_not_converging",
+      "philosophies": ["vet_overrater"],
+      "situations": ["reject_deadlock"],
+      "windows": [],
+      "triggers": [
+        {"feature": "round_index", "op": "gte", "value": 1}
+      ],
+      "weight": 1.5,
+      "text": "We've gone back and forth enough. This isn't converging.",
+      "slots": []
+    },
+    {
+      "id": "reject_deadlock_youth_developer_no_progress",
+      "philosophies": ["youth_developer"],
+      "situations": ["reject_deadlock"],
+      "windows": [],
+      "triggers": [
+        {"feature": "h2h_opened", "op": "gte", "value": 1.0}
+      ],
+      "weight": 2.0,
+      "text": "No progress with you on these, and our timeline doesn't have room to wait.",
+      "slots": []
+    },
+    {
+      "id": "expire_stalled_neither_moves",
+      "philosophies": [],
+      "situations": ["expire_stalled"],
+      "windows": [],
+      "triggers": [
+        {"feature": "round_index", "op": "gte", "value": 1}
+      ],
+      "weight": 1.5,
+      "text": "Neither side's willing to move. Let's shelve this one.",
+      "slots": []
+    },
+    {
+      "id": "expire_stalled_tendency_respecter_same_gap",
+      "philosophies": ["tendency_respecter"],
+      "situations": ["expire_stalled"],
+      "windows": [],
+      "triggers": [
+        {"feature": "gap_rel", "op": "lt", "value": 0.0}
+      ],
+      "weight": 1.5,
+      "text": "We're stuck at the same gap round after round. Time to walk away.",
+      "slots": []
+    },
+    {
+      "id": "expire_rounds_out_of_runway",
+      "philosophies": [],
+      "situations": ["expire_rounds"],
+      "windows": [],
+      "triggers": [
+        {"feature": "round_index", "op": "gte", "value": 2}
+      ],
+      "weight": 1.5,
+      "text": "We're out of runway on this one. Maybe another time.",
+      "slots": []
+    },
+    {
+      "id": "expire_rounds_egalitarian_ran_out_clock",
+      "philosophies": ["egalitarian"],
+      "situations": ["expire_rounds"],
+      "windows": [],
+      "triggers": [
+        {"feature": "in_players", "op": "gte", "value": 1}
+      ],
+      "weight": 1.5,
+      "text": "We ran out the clock without closing the gap. No hard feelings.",
+      "slots": []
+    }
+  ]
+}
