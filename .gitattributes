@@ -1,0 +1,3 @@
+# Every checkout gets LF, Windows included. artifacts/media_corpus.json pins a
+# sha256 of seeds/media_phrases.json, so line endings must match on every platform.
+* text=auto eol=lf
